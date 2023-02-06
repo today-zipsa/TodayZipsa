@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"dependencies": {},
 	"devDependencies": {
-		"parcel-bundler": "^1.12.5"
+		"parcel-bundler": "^1.12.5",
+		"sass": "^1.58.0"
 	},
 	"scripts": {
 		"dev": "parcel ./src/index.html"
