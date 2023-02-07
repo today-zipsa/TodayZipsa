@@ -4,7 +4,8 @@ let headers = {
     "apikey": "FcKdtJs202301",
     "username": "KDT4_Team4",
     "masterKey": true
-}
+  }
+  
 
 const sitterEl = document.querySelector(".sitterInput")
 const btn = document.querySelector(".btn")
@@ -75,7 +76,7 @@ let data = {
              "price": 35000,
              "description": "서초구 잠원동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/1_1.png",
+             "thumbnailBase64": "sitter_one.jpg",
              "photoBase64": "five_five.jpg"
  
          },
@@ -84,7 +85,7 @@ let data = {
              "price": 35000,
              "description": "서초구 방배동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset.1_2.png",
+             "thumbnailBase64": "../asset/sitter_images/sitter_two.jpg",
              "photoBase64": "one_one.jpg"
          },
          {
@@ -92,7 +93,7 @@ let data = {
              "price": 45000,
              "description": "강남구 도곡동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/1_3.png",
+             "thumbnailBase64": "..asset/sitter_images/sitter_three.jpg",
              "photoBase64": "two_two.jpg"
          },
          {
@@ -101,7 +102,7 @@ let data = {
              "price": 60000,
              "description": "강남구 청담동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/1_4.png",
+             "thumbnailBase64": "..asset/sitter_images/sitter_four.jpg",
              "photoBase64": "three_three.jpg"
          },
          {
@@ -109,7 +110,7 @@ let data = {
              "price": 30000,
              "description": "송파구 방이동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/1_5.png",
+             "thumbnailBase64": "..asset/sitter_images/sitter_five.jpg",
              "photoBase64": "four_four.jpg"
          }
      ]
@@ -155,7 +156,7 @@ async function getSitters(){
         method: "GET",
         headers
     })
-    let pics = ["../asset/1_1.png", "../asset/1_2.png", "../asset/1_3.png", "../asset/1_4.png", "../asset/1_5.png"]
+    let pics = ["sitter_one.jpg", "sitter_two.jpg", "sitter_three.jpg", "sitter_four.jpg", "sitter_five.jpg"]
     const items = []
     const json = await res.json()
     for(let i=0; i<json.length; i++){
@@ -186,7 +187,15 @@ async function getSitters(){
             imgEl.style.height = "120px"
             imgEl.style.margin = "0px 400px 100px"
             div.append(imgEl)
+
+            div.style.backgroundColor = "yellow"
+            document.body.append(div)
+        }
+    }
+}
         
+
+            /*
             const deleteBtn = document.createElement("button")
             deleteBtn.textContent = "삭제"
             deleteBtn.addEventListener("click", function(){
@@ -194,11 +203,10 @@ async function getSitters(){
             })
             div.append(deleteBtn)
         
-            /*
+
             const inputEl2 = document.createElement("button")
             inputEl2.textContent = "수정"
             div.append(inputEl2)
-            
 
             let inp = ''
             inputEl2.addEventListener("click", function(){
@@ -216,15 +224,13 @@ async function getSitters(){
                     updateSitters(json[i], desc, inp)
                 })
             })
-            */
             
-            div.style.backgroundColor = "yellow"
-            document.body.append(div)
+           
+            
         }
     
 
     }
-    
 }
 
 
@@ -240,4 +246,4 @@ async function updateSitters(product, desc, inp){
     desc.textContent = inp
    
 }
-
+*/
