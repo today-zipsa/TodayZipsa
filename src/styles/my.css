@@ -32,23 +32,26 @@ body header .header-wrapper .main-logo {
 body header .header-wrapper .search-btn-wrapper {
   border-radius: 1.8em;
   border: 0.2em solid var(--main-key-color);
-  width: 15em;
+  width: 18em;
   height: 1.8em;
+  position: relative;
 }
 body header .header-wrapper .search-btn-wrapper .search-bar {
   display: inline-block;
-  width: 15em;
+  width: 18em;
   height: inherit;
   margin-left: 0.6em;
   border: 0px solid transparent;
   background-color: transparent;
+  padding: 0px;
 }
 body header .header-wrapper .search-btn-wrapper .search-bar:focus {
   outline: none;
 }
 body header .header-wrapper .search-btn-wrapper .search-btn {
-  display: inline;
-  text-align: end;
+  position: absolute;
+  top: 0.2em;
+  right: 0.6em;
 }
 body header .header-wrapper .welcome-word {
   font-size: 1em;
