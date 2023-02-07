@@ -28,7 +28,6 @@ get.addEventListener("click", function(){
     seeSitters()
 })
 
-
 async function deleteSitters(todoId){
     
     const res = await fetch(`https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/${todoId}`,{
