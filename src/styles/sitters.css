@@ -18,12 +18,14 @@
     position: absolute;
     margin-left: 1200px;
     margin-top: -70px;
+    cursor: pointer;
 }
 
 .signIn{
     position: absolute;
     margin-left: 1300px;
     margin-top: -70px;
+    cursor: pointer;
 }
 
 .categories{
@@ -61,3 +63,4 @@
 label {
     display: block;
 }
+
