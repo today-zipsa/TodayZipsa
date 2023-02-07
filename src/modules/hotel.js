@@ -71,45 +71,45 @@ async function addSitters(){
 let data = {
     "list": [
          {
-             "title": "서초구 잠원동",
-             "price": 35000,
-             "description": "서초구 잠원동 최고의 시터입니다.",
+             "title": "힐튼 호텔",
+             "price": 350000,
+             "description": "힐튼 호텔 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png",
+             "thumbnailBase64": "../asset/hotelImg/2_1.png",
              "photoBase64": "five_five.jpg"
  
          },
          {
-             "title": "서초구 방배동",
-             "price": 35000,
-             "description": "서초구 방배동 최고의 시터입니다.",
+             "title": "하이야트 호텔",
+             "price": 350000,
+             "description": "하이야트 호텔 입니다..",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_2.png",
+             "thumbnailBase64": "../asset/hotelImg/2_2.png",
              "photoBase64": "one_one.jpg"
          },
          {
-             "title": "강남구 도곡동",
-             "price": 45000,
-             "description": "강남구 도곡동 최고의 시터입니다.",
+             "title": "메리어트 호텔",
+             "price": 450000,
+             "description": "메리어트 호텔 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_3.png",
+             "thumbnailBase64": "../asset/hotelImg/2_3.png",
              "photoBase64": "two_two.jpg"
          },
          {
  
-             "title": "강남구 청담동",
-             "price": 60000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "title": "조선 호텔",
+             "price": 600000,
+             "description": "조선 호텔 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_4.png",
+             "thumbnailBase64": "../asset/hotelImg/2_4.png",
              "photoBase64": "three_three.jpg"
          },
          {
-             "title": "송파구 방이동",
-             "price": 30000,
-             "description": "송파구 방이동 최고의 시터입니다.",
+             "title": "신라 호텔",
+             "price": 300000,
+             "description": "신라 호텔 입니다..",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_5.png",
+             "thumbnailBase64": "../asset/hotelImg/2_5.png",
              "photoBase64": "four_four.jpg"
          }
      ]
@@ -155,7 +155,7 @@ async function getSitters(){
         method: "GET",
         headers
     })
-    let pics = ["../asset/sitterImg/1_1.png", "../asset/sitterImg/1_2.png", "../asset/sitterImg/1_3.png", "../sitterImg/asset/1_4.png", "../asset/sitterImg/1_5.png"]
+    let pics = ["../asset/hotelImg/2_1.png", "../asset/hotelImg/2_2.png", "../asset/hotelImg/2_3.png", "../asset/hotelImg/2_4.png", "../asset/hotelImg/2_5.png"]
     const items = []
     const json = await res.json()
     for(let i=0; i<json.length; i++){

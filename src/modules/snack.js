@@ -68,52 +68,55 @@ async function addSitters(){
         }
     }
 
+
 let data = {
     "list": [
          {
-             "title": "서초구 잠원동",
+             "title": "건식 간식 입니다.",
              "price": 35000,
-             "description": "서초구 잠원동 최고의 시터입니다.",
+             "description": "도그델리 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png",
+             "thumbnailBase64": "../asset/snackImg/3_1.png",
              "photoBase64": "five_five.jpg"
  
          },
          {
-             "title": "서초구 방배동",
+             "title": "습식 간식 입니다.",
              "price": 35000,
-             "description": "서초구 방배동 최고의 시터입니다.",
+             "description": "펫프렌즈 입니다..",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_2.png",
+             "thumbnailBase64": "../asset/snackImg/3_2.png",
              "photoBase64": "one_one.jpg"
          },
          {
-             "title": "강남구 도곡동",
+             "title": "생식 간식 입니다.",
              "price": 45000,
-             "description": "강남구 도곡동 최고의 시터입니다.",
+             "description": "레이앤이본 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_3.png",
+             "thumbnailBase64": "../asset/snackImg/3_3.png",
              "photoBase64": "two_two.jpg"
          },
          {
  
-             "title": "강남구 청담동",
+             "title": "화식 간식 입니다.",
              "price": 60000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "description": "핏펫 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_4.png",
+             "thumbnailBase64": "../asset/snackImg/3_4.png",
              "photoBase64": "three_three.jpg"
          },
          {
-             "title": "송파구 방이동",
+             "title": "자연식 간식 입니다.",
              "price": 30000,
-             "description": "송파구 방이동 최고의 시터입니다.",
+             "description": "어나더베이비 입니다..",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_5.png",
+             "thumbnailBase64": "../asset/snackImg/3_5.png",
              "photoBase64": "four_four.jpg"
          }
      ]
  }
+
+ 
  /*
  async function getSitters(){
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products",{
@@ -155,7 +158,7 @@ async function getSitters(){
         method: "GET",
         headers
     })
-    let pics = ["../asset/sitterImg/1_1.png", "../asset/sitterImg/1_2.png", "../asset/sitterImg/1_3.png", "../sitterImg/asset/1_4.png", "../asset/sitterImg/1_5.png"]
+    let pics = ["../asset/snackImg/3_1.png", "../asset/snackImg/3_2.png", "../asset/snackImg/3_3.png", "../asset/snackImg/3_4.png", "../asset/snackImg/3_5.png"]
     const items = []
     const json = await res.json()
     for(let i=0; i<json.length; i++){
