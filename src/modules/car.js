@@ -28,7 +28,6 @@ get.addEventListener("click", function(){
     seeSitters()
 })
 
-
 async function deleteSitters(todoId){
     
     const res = await fetch(`https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/${todoId}`,{
@@ -71,154 +70,170 @@ async function addSitters(){
 let data = {
     "list": [
          {
-             "title": "강남구 청담동 A",
-             "price": 35000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "title": "BMW",
+             "price": 350000,
+             "description": "BMW 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/carImg/4_1.png",
+             "photoBase64": "five_five.jpg"
  
          },
          {
-             "title": "강남구 청담동 B",
-             "price": 35000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "title": "BMW A",
+             "price": 350000,
+             "description": "BMW A 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/carImg4_2.png",
+             "photoBase64": "one_one.jpg"
          },
          {
-             "title": "강남구 청담동 C",
-             "price": 45000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "title": "BMW B",
+             "price": 450000,
+             "description": "BMW B 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/carImg4_3.png",
+             "photoBase64": "two_two.jpg"
          },
          {
  
-             "title": "강남구 청담동 D",
-             "price": 60000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "title": "BMW C",
+             "price": 600000,
+             "description": "BMW C 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/carImg4_4.png",
+             "photoBase64": "three_three.jpg"
          },
          {
-             "title": "강남구 청담동 E",
-             "price": 30000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "title": "BMW D",
+             "price": 300000,
+             "description": "BMW D 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/carImg4_5.png",
+             "photoBase64": "four_four.jpg"
          },
          {
-            "title": "강남구 압구정동 A",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Lexus A",
+            "price": 300000,
+            "description": "Lexus 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_1.png"
+            "thumbnailBase64": "../asset/carImg4_6.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 압구정동 B",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Lexus B",
+            "price": 300000,
+            "description": "Lexus B 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_6.jpg"
+            "thumbnailBase64": "../asset/carImg4_7.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 압구정동 C",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Lexus C",
+            "price": 300000,
+            "description": "Lexus C 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_7.jpeg"
+            "thumbnailBase64": "../asset/carImg4_8.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 압구정동 D",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Lexus D",
+            "price": 300000,
+            "description": "Lexus D 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_8.jpeg"
+            "thumbnailBase64": "../asset/carImg4_9.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 압구정동 E",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Benz A",
+            "price": 300000,
+            "description": "Benz A 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_9.png"
+            "thumbnailBase64": "../asset/carImg4_10.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 신사동 A",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Benz B",
+            "price": 300000,
+            "description": "Benz B 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_10.jpeg"
+            "thumbnailBase64": "../asset/carImg4_11.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 신사동 B",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Benz C",
+            "price": 300000,
+            "description": "Benz C 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_11.jpeg"
+            "thumbnailBase64": "../asset/carImg4_12.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 신사동 C",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Benz D",
+            "price": 300000,
+            "description": "Benz D 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_12.jpg"
+            "thumbnailBase64": "../asset/carImg4_13.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 신사동 D",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Audi A",
+            "price": 300000,
+            "description": "Audi A 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_13.jpeg"
-        },{
-            "title": "강남구 신사동 E",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
-            "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_14.jpeg"
+            "thumbnailBase64": "../asset/carImg4_14.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 도곡동 A",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Audi B",
+            "price": 300000,
+            "description": "Audi B 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_15.jpg"
+            "thumbnailBase64": "../asset/carImg4_15.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 도곡동 B",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Audi C",
+            "price": 300000,
+            "description": "Audi C 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_16.jpg"
-        },{
-            "title": "강남구 도곡동 C",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
-            "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_17.jpeg"
+            "thumbnailBase64": "../asset/carImg4_16.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 도곡동 D",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Audi D",
+            "price": 300000,
+            "description": "Audi D 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_18.jpeg"
+            "thumbnailBase64": "../asset/carImg4_17.png",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 도곡동 E",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "title": "Sonata A",
+            "price": 300000,
+            "description": "Sonata A 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_19.jpg"
-        },{
-            "title": "강남구 역삼동 A",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "thumbnailBase64": "../asset/carImg4_18.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Avante A",
+            "price": 300000,
+            "description": "Avante A 입니다.",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_20.jpeg"
+            "thumbnailBase64": "../asset/carImg4_19.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Carnival A",
+            "price": 300000,
+            "description": "Carnival A 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_20.png",
+            "photoBase64": "four_four.jpg"
         }
+
      ]
  }
- 
  /*
  async function getSitters(){
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products",{
@@ -254,6 +269,7 @@ let data = {
     })
  }
 */
+
 
 async function getSitters(){
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products",{

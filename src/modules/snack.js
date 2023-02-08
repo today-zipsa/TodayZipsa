@@ -68,156 +68,174 @@ async function addSitters(){
         }
     }
 
+
 let data = {
     "list": [
          {
-             "title": "강남구 청담동 A",
+             "title": "건식 간식 A",
              "price": 35000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "description": "도그델리 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/snackImg/3_1.png",
+             "photoBase64": "five_five.jpg"
  
          },
          {
-             "title": "강남구 청담동 B",
+             "title": "건식 간식 B",
              "price": 35000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "description": "펫프렌즈 입니다..",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/snackImg/3_2.png",
+             "photoBase64": "one_one.jpg"
          },
          {
-             "title": "강남구 청담동 C",
+             "title": "건식 간식 C",
              "price": 45000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "description": "레이앤이본 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/snackImg/3_3.png",
+             "photoBase64": "two_two.jpg"
          },
          {
  
-             "title": "강남구 청담동 D",
+             "title": "건식 간식 D",
              "price": 60000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "description": "핏펫 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/snackImg/3_4.png",
+             "photoBase64": "three_three.jpg"
          },
          {
-             "title": "강남구 청담동 E",
+             "title": "건식 간식 E",
              "price": 30000,
-             "description": "강남구 청담동 최고의 시터입니다.",
+             "description": "어나더베이비 입니다..",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+             "thumbnailBase64": "../asset/snackImg/3_5.png",
+             "photoBase64": "four_four.jpg"
          },
          {
-            "title": "강남구 압구정동 A",
+            "title": "자연식 간식 A",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_1.png"
+            "thumbnailBase64": "../asset/snackImg/3_6.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 압구정동 B",
+            "title": "자연식 간식 B",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_6.jpg"
+            "thumbnailBase64": "../asset/snackImg/3_6.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 압구정동 C",
+            "title": "자연식 간식 C",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_7.jpeg"
+            "thumbnailBase64": "../asset/snackImg/3_8.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 압구정동 D",
+            "title": "자연식 간식 D",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_8.jpeg"
+            "thumbnailBase64": "../asset/snackImg/3_9.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 압구정동 E",
+            "title": "자연식 간식 E",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_9.png"
+            "thumbnailBase64": "../asset/snackImg/3_10.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 신사동 A",
+            "title": "화식 간식 A",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_10.jpeg"
+            "thumbnailBase64": "../asset/snackImg/3_11.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 신사동 B",
+            "title": "화식 간식 B",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_11.jpeg"
+            "thumbnailBase64": "../asset/snackImg/3_12.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 신사동 C",
+            "title": "화식 간식 C",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_12.jpg"
+            "thumbnailBase64": "../asset/snackImg/3_13.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 신사동 D",
+            "title": "화식 간식 D",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_13.jpeg"
-        },{
-            "title": "강남구 신사동 E",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
-            "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_14.jpeg"
+            "thumbnailBase64": "../asset/snackImg/3_4.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 도곡동 A",
+            "title": "화식 간식 E",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_15.jpg"
+            "thumbnailBase64": "../asset/snackImg/3_15.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 도곡동 B",
+            "title": "생식 간식 A",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_16.jpg"
-        },{
-            "title": "강남구 도곡동 C",
-            "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
-            "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_17.jpeg"
+            "thumbnailBase64": "../asset/snackImg/3_16.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 도곡동 D",
+            "title": "생식 간식 B",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_18.jpeg"
+            "thumbnailBase64": "../asset/snackImg/3_17.jpg",
+            "photoBase64": "four_four.jpg"
         },
         {
-            "title": "강남구 도곡동 E",
+            "title": "생식 간식 C",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_19.jpg"
-        },{
-            "title": "강남구 역삼동 A",
+            "thumbnailBase64": "../asset/snackImg/3_18.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "생식 간식 D",
             "price": 30000,
-            "description": "강남구 청담동 최고의 시터입니다.",
+            "description": "어나더베이비 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/sitterImg/1_20.jpeg"
+            "thumbnailBase64": "../asset/snackImg/3_19.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "생식 간식 E",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_20.jpg",
+            "photoBase64": "four_four.jpg"
         }
-     ]
+    ]
  }
+
  
  /*
  async function getSitters(){
