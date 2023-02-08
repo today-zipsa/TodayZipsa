@@ -80,7 +80,7 @@ let data = {
  
          },
          {
-             "title": "하이야트 호텔",
+             "title": "힐튼 호텔 A",
              "price": 350000,
              "description": "하이야트 호텔 입니다..",
              "tags": [],
@@ -88,7 +88,7 @@ let data = {
              "photoBase64": "one_one.jpg"
          },
          {
-             "title": "메리어트 호텔",
+             "title": "힐튼 호텔 B",
              "price": 450000,
              "description": "메리어트 호텔 입니다.",
              "tags": [],
@@ -97,7 +97,7 @@ let data = {
          },
          {
  
-             "title": "조선 호텔",
+             "title": "힐튼 호텔 C",
              "price": 600000,
              "description": "조선 호텔 입니다.",
              "tags": [],
@@ -105,13 +105,133 @@ let data = {
              "photoBase64": "three_three.jpg"
          },
          {
-             "title": "신라 호텔",
+             "title": "힐튼 호텔 D",
              "price": 300000,
              "description": "신라 호텔 입니다..",
              "tags": [],
              "thumbnailBase64": "../asset/hotelImg/2_5.png",
              "photoBase64": "four_four.jpg"
-         }
+         },
+         {
+            "title": "힐튼 호텔 E",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_6.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "신라 호텔 A",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_7.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "신라 호텔 B",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_8.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "신라 호텔 C",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_9.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "신라 호텔 D",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_10.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "신라 호텔 E",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_11.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "조선 호텔 A",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_12.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "조선 호텔 B",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_13.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "조선 호텔 C",
+            "price": 300000, 
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_14.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "조선 호텔 D",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_15.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "조선 호텔 E",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_16.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "메리어트 호텔 A",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_17.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "메리어트 호텔 B",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_18.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "메리어트 호텔 C",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_19.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "메리어트 호텔 D",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/hotelImg/2_20.jpg",
+            "photoBase64": "four_four.jpg"
+        }
      ]
  }
  /*
@@ -155,7 +275,7 @@ async function getSitters(){
         method: "GET",
         headers
     })
-    let pics = ["../asset/hotelImg/2_1.png", "../asset/hotelImg/2_2.png", "../asset/hotelImg/2_3.png", "../asset/hotelImg/2_4.png", "../asset/hotelImg/2_5.png"]
+    let pics = ["../asset/sitterImg/1_1.png", "../asset/sitterImg/1_1.png", "../asset/sitterImg/1_1.png", "../sitterImg/asset/1_1.png", "../asset/sitterImg/1_1.png"]
     const items = []
     const json = await res.json()
     for(let i=0; i<json.length; i++){
@@ -168,34 +288,50 @@ async function getSitters(){
             div.style.height = "200px"
             div.style.width = "800px"
             div.style.margin = "20px 300px"
-            div.style.border = "3px solid black"
-            div.textContent = json[i].title
+            div.style.borderTop = "1px solid lightgrey"
+            div.style.borderBottom = "1px solid lightgrey"
+
+            const title = document.createElement("h4")
+            title.textContent = json[i].title
+            title.style.marginLeft = "300px"
+            title.style.marginTop = "55px"
+            div.append(title)
 
             const priceEl = document.createElement("button")
-            priceEl.textContent = json[i].price
-            priceEl.style.color = "green"
+            priceEl.textContent = json[i].price + " KRW"
+            priceEl.style.marginLeft = "640px"
+            priceEl.style.marginTop = "50px"
+            priceEl.style.width = "130px"
+            priceEl.style.height = "35px"
+            priceEl.style.backgroundColor = "green"
+            priceEl.style.color = "white"
             div.append(priceEl)
             priceEl.addEventListener("click", function(){
                 window.location.href = "../pages/payment1.html"
             })
 
             const desc = document.createElement("p")
+            desc.style.marginLeft = "300px"
+            desc.style.marginTop = "-100px"
             desc.textContent = json[i].description
             div.append(desc)
 
             let imgEl = document.createElement("img")
             imgEl.src = pics[i]
-            imgEl.style.width = "300px"
+            imgEl.style.width = "270px"
             imgEl.style.height = "120px"
-            imgEl.style.margin = "0px 400px 100px"
+            imgEl.style.marginLeft = "20px"
+            imgEl.style.marginTop = "-102px"
             div.append(imgEl)
         
+            /*
             const deleteBtn = document.createElement("button")
             deleteBtn.textContent = "삭제"
             deleteBtn.addEventListener("click", function(){
                 deleteSitters(json[i].id)
             })
             div.append(deleteBtn)
+            */
         
             /*
             const inputEl2 = document.createElement("button")
@@ -221,7 +357,6 @@ async function getSitters(){
             })
             */
             
-            div.style.backgroundColor = "yellow"
             document.body.append(div)
         }
     

@@ -72,7 +72,7 @@ async function addSitters(){
 let data = {
     "list": [
          {
-             "title": "건식 간식 입니다.",
+             "title": "건식 간식 A",
              "price": 35000,
              "description": "도그델리 입니다.",
              "tags": [],
@@ -81,7 +81,7 @@ let data = {
  
          },
          {
-             "title": "습식 간식 입니다.",
+             "title": "건식 간식 B",
              "price": 35000,
              "description": "펫프렌즈 입니다..",
              "tags": [],
@@ -89,7 +89,7 @@ let data = {
              "photoBase64": "one_one.jpg"
          },
          {
-             "title": "생식 간식 입니다.",
+             "title": "건식 간식 C",
              "price": 45000,
              "description": "레이앤이본 입니다.",
              "tags": [],
@@ -98,7 +98,7 @@ let data = {
          },
          {
  
-             "title": "화식 간식 입니다.",
+             "title": "건식 간식 D",
              "price": 60000,
              "description": "핏펫 입니다.",
              "tags": [],
@@ -106,14 +106,134 @@ let data = {
              "photoBase64": "three_three.jpg"
          },
          {
-             "title": "자연식 간식 입니다.",
+             "title": "건식 간식 E",
              "price": 30000,
              "description": "어나더베이비 입니다..",
              "tags": [],
              "thumbnailBase64": "../asset/snackImg/3_5.png",
              "photoBase64": "four_four.jpg"
-         }
-     ]
+         },
+         {
+            "title": "자연식 간식 A",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_6.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "자연식 간식 B",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_6.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "자연식 간식 C",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_8.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "자연식 간식 D",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_9.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "자연식 간식 E",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_10.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "화식 간식 A",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_11.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "화식 간식 B",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_12.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "화식 간식 C",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_13.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "화식 간식 D",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_4.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "화식 간식 E",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_15.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "생식 간식 A",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_16.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "생식 간식 B",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_17.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "생식 간식 C",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_18.jpg",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "생식 간식 D",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_19.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "생식 간식 E",
+            "price": 30000,
+            "description": "어나더베이비 입니다..",
+            "tags": [],
+            "thumbnailBase64": "../asset/snackImg/3_20.jpg",
+            "photoBase64": "four_four.jpg"
+        }
+    ]
  }
 
  
@@ -158,7 +278,7 @@ async function getSitters(){
         method: "GET",
         headers
     })
-    let pics = ["../asset/snackImg/3_1.png", "../asset/snackImg/3_2.png", "../asset/snackImg/3_3.png", "../asset/snackImg/3_4.png", "../asset/snackImg/3_5.png"]
+    let pics = ["../asset/sitterImg/1_1.png", "../asset/sitterImg/1_1.png", "../asset/sitterImg/1_1.png", "../sitterImg/asset/1_1.png", "../asset/sitterImg/1_1.png"]
     const items = []
     const json = await res.json()
     for(let i=0; i<json.length; i++){
@@ -171,34 +291,50 @@ async function getSitters(){
             div.style.height = "200px"
             div.style.width = "800px"
             div.style.margin = "20px 300px"
-            div.style.border = "3px solid black"
-            div.textContent = json[i].title
+            div.style.borderTop = "1px solid lightgrey"
+            div.style.borderBottom = "1px solid lightgrey"
+
+            const title = document.createElement("h4")
+            title.textContent = json[i].title
+            title.style.marginLeft = "300px"
+            title.style.marginTop = "55px"
+            div.append(title)
 
             const priceEl = document.createElement("button")
-            priceEl.textContent = json[i].price
-            priceEl.style.color = "green"
+            priceEl.textContent = json[i].price + " KRW"
+            priceEl.style.marginLeft = "640px"
+            priceEl.style.marginTop = "50px"
+            priceEl.style.width = "130px"
+            priceEl.style.height = "35px"
+            priceEl.style.backgroundColor = "green"
+            priceEl.style.color = "white"
             div.append(priceEl)
             priceEl.addEventListener("click", function(){
                 window.location.href = "../pages/payment1.html"
             })
 
             const desc = document.createElement("p")
+            desc.style.marginLeft = "300px"
+            desc.style.marginTop = "-100px"
             desc.textContent = json[i].description
             div.append(desc)
 
             let imgEl = document.createElement("img")
             imgEl.src = pics[i]
-            imgEl.style.width = "300px"
+            imgEl.style.width = "270px"
             imgEl.style.height = "120px"
-            imgEl.style.margin = "0px 400px 100px"
+            imgEl.style.marginLeft = "20px"
+            imgEl.style.marginTop = "-102px"
             div.append(imgEl)
         
+            /*
             const deleteBtn = document.createElement("button")
             deleteBtn.textContent = "삭제"
             deleteBtn.addEventListener("click", function(){
                 deleteSitters(json[i].id)
             })
             div.append(deleteBtn)
+            */
         
             /*
             const inputEl2 = document.createElement("button")
@@ -224,7 +360,6 @@ async function getSitters(){
             })
             */
             
-            div.style.backgroundColor = "yellow"
             document.body.append(div)
         }
     

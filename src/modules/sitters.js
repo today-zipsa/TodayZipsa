@@ -71,47 +71,151 @@ async function addSitters(){
 let data = {
     "list": [
          {
-             "title": "서초구 잠원동",
+             "title": "강남구 청담동 A",
              "price": 35000,
-             "description": "서초구 잠원동 최고의 시터입니다.",
+             "description": "강남구 청담동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_1.png",
-             "photoBase64": "five_five.jpg"
+             "thumbnailBase64": "../asset/sitterImg/1_1.png"
  
          },
          {
-             "title": "서초구 방배동",
+             "title": "강남구 청담동 B",
              "price": 35000,
-             "description": "서초구 방배동 최고의 시터입니다.",
+             "description": "강남구 청담동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_2.png",
-             "photoBase64": "one_one.jpg"
+             "thumbnailBase64": "../asset/sitterImg/1_1.png"
          },
          {
-             "title": "강남구 도곡동",
+             "title": "강남구 청담동 C",
              "price": 45000,
-             "description": "강남구 도곡동 최고의 시터입니다.",
+             "description": "강남구 청담동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_3.png",
-             "photoBase64": "two_two.jpg"
+             "thumbnailBase64": "../asset/sitterImg/1_1.png"
          },
          {
  
-             "title": "강남구 청담동",
+             "title": "강남구 청담동 D",
              "price": 60000,
              "description": "강남구 청담동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_4.png",
-             "photoBase64": "three_three.jpg"
+             "thumbnailBase64": "../asset/sitterImg/1_1.png"
          },
          {
-             "title": "송파구 방이동",
+             "title": "강남구 청담동 E",
              "price": 30000,
-             "description": "송파구 방이동 최고의 시터입니다.",
+             "description": "강남구 청담동 최고의 시터입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/sitterImg/1_5.png",
-             "photoBase64": "four_four.jpg"
-         }
+             "thumbnailBase64": "../asset/sitterImg/1_1.png"
+         },
+         {
+            "title": "강남구 압구정동 A",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_1.png"
+        },
+        {
+            "title": "강남구 압구정동 B",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_6.jpg"
+        },
+        {
+            "title": "강남구 압구정동 C",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_7.jpeg"
+        },
+        {
+            "title": "강남구 압구정동 D",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_8.jpeg"
+        },
+        {
+            "title": "강남구 압구정동 E",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_9.png"
+        },
+        {
+            "title": "강남구 신사동 A",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_10.jpeg"
+        },
+        {
+            "title": "강남구 신사동 B",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_11.jpeg"
+        },
+        {
+            "title": "강남구 신사동 C",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_12.jpg"
+        },
+        {
+            "title": "강남구 신사동 D",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_13.jpeg"
+        },{
+            "title": "강남구 신사동 E",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_14.jpeg"
+        },
+        {
+            "title": "강남구 도곡동 A",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_15.jpg"
+        },
+        {
+            "title": "강남구 도곡동 B",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_16.jpg"
+        },{
+            "title": "강남구 도곡동 C",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_17.jpeg"
+        },
+        {
+            "title": "강남구 도곡동 D",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_18.jpeg"
+        },
+        {
+            "title": "강남구 도곡동 E",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_19.jpg"
+        },{
+            "title": "강남구 역삼동 A",
+            "price": 30000,
+            "description": "강남구 청담동 최고의 시터입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/sitterImg/1_20.jpeg"
+        }
      ]
  }
  
@@ -156,7 +260,7 @@ async function getSitters(){
         method: "GET",
         headers
     })
-    let pics = ["../asset/sitterImg/1_1.png", "../asset/sitterImg/1_2.png", "../asset/sitterImg/1_3.png", "../sitterImg/asset/1_4.png", "../asset/sitterImg/1_5.png"]
+    let pics = ["../asset/sitterImg/1_1.png", "../asset/sitterImg/1_1.png", "../asset/sitterImg/1_1.png", "../sitterImg/asset/1_1.png", "../asset/sitterImg/1_1.png"]
     const items = []
     const json = await res.json()
     for(let i=0; i<json.length; i++){
@@ -169,34 +273,50 @@ async function getSitters(){
             div.style.height = "200px"
             div.style.width = "800px"
             div.style.margin = "20px 300px"
-            div.style.border = "3px solid black"
-            div.textContent = json[i].title
+            div.style.borderTop = "1px solid lightgrey"
+            div.style.borderBottom = "1px solid lightgrey"
+
+            const title = document.createElement("h4")
+            title.textContent = json[i].title
+            title.style.marginLeft = "300px"
+            title.style.marginTop = "55px"
+            div.append(title)
 
             const priceEl = document.createElement("button")
-            priceEl.textContent = json[i].price
-            priceEl.style.color = "green"
+            priceEl.textContent = json[i].price + " KRW"
+            priceEl.style.marginLeft = "640px"
+            priceEl.style.marginTop = "50px"
+            priceEl.style.width = "130px"
+            priceEl.style.height = "35px"
+            priceEl.style.backgroundColor = "green"
+            priceEl.style.color = "white"
             div.append(priceEl)
             priceEl.addEventListener("click", function(){
                 window.location.href = "../pages/payment1.html"
             })
 
             const desc = document.createElement("p")
+            desc.style.marginLeft = "300px"
+            desc.style.marginTop = "-100px"
             desc.textContent = json[i].description
             div.append(desc)
 
             let imgEl = document.createElement("img")
             imgEl.src = pics[i]
-            imgEl.style.width = "300px"
+            imgEl.style.width = "270px"
             imgEl.style.height = "120px"
-            imgEl.style.margin = "0px 400px 100px"
+            imgEl.style.marginLeft = "20px"
+            imgEl.style.marginTop = "-102px"
             div.append(imgEl)
         
+            /*
             const deleteBtn = document.createElement("button")
             deleteBtn.textContent = "삭제"
             deleteBtn.addEventListener("click", function(){
                 deleteSitters(json[i].id)
             })
             div.append(deleteBtn)
+            */
         
             /*
             const inputEl2 = document.createElement("button")
@@ -222,7 +342,6 @@ async function getSitters(){
             })
             */
             
-            div.style.backgroundColor = "yellow"
             document.body.append(div)
         }
     

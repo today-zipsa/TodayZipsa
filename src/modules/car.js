@@ -79,38 +79,159 @@ let data = {
  
          },
          {
-             "title": "마르세데츠 벤츠",
+             "title": "BMW A",
              "price": 350000,
-             "description": "벤츠 입니다..",
+             "description": "BMW A 입니다.",
              "tags": [],
              "thumbnailBase64": "../asset/carImg4_2.png",
              "photoBase64": "one_one.jpg"
          },
          {
-             "title": "렉서스",
+             "title": "BMW B",
              "price": 450000,
-             "description": "렉서스 입니다.",
+             "description": "BMW B 입니다.",
              "tags": [],
              "thumbnailBase64": "../asset/carImg4_3.png",
              "photoBase64": "two_two.jpg"
          },
          {
  
-             "title": "코란도",
+             "title": "BMW C",
              "price": 600000,
-             "description": "코란도 입니다.",
+             "description": "BMW C 입니다.",
              "tags": [],
              "thumbnailBase64": "../asset/carImg4_4.png",
              "photoBase64": "three_three.jpg"
          },
          {
-             "title": "아우디",
+             "title": "BMW D",
              "price": 300000,
-             "description": "아우디 입니다..",
+             "description": "BMW D 입니다.",
              "tags": [],
              "thumbnailBase64": "../asset/carImg4_5.png",
              "photoBase64": "four_four.jpg"
-         }
+         },
+         {
+            "title": "Lexus A",
+            "price": 300000,
+            "description": "Lexus 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_6.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Lexus B",
+            "price": 300000,
+            "description": "Lexus B 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_7.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Lexus C",
+            "price": 300000,
+            "description": "Lexus C 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_8.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Lexus D",
+            "price": 300000,
+            "description": "Lexus D 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_9.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Benz A",
+            "price": 300000,
+            "description": "Benz A 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_10.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Benz B",
+            "price": 300000,
+            "description": "Benz B 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_11.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Benz C",
+            "price": 300000,
+            "description": "Benz C 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_12.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Benz D",
+            "price": 300000,
+            "description": "Benz D 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_13.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Audi A",
+            "price": 300000,
+            "description": "Audi A 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_14.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Audi B",
+            "price": 300000,
+            "description": "Audi B 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_15.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Audi C",
+            "price": 300000,
+            "description": "Audi C 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_16.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Audi D",
+            "price": 300000,
+            "description": "Audi D 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_17.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Sonata A",
+            "price": 300000,
+            "description": "Sonata A 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_18.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Avante A",
+            "price": 300000,
+            "description": "Avante A 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_19.png",
+            "photoBase64": "four_four.jpg"
+        },
+        {
+            "title": "Carnival A",
+            "price": 300000,
+            "description": "Carnival A 입니다.",
+            "tags": [],
+            "thumbnailBase64": "../asset/carImg4_20.png",
+            "photoBase64": "four_four.jpg"
+        }
+
      ]
  }
  /*
@@ -155,7 +276,7 @@ async function getSitters(){
         method: "GET",
         headers
     })
-    let pics = ["../asset/carImg/4_1.png", "../asset/carImg/4_2.png", "../asset/carImg/4_3.png", "../asset/carImg/4_4.png", "../asset/carImg/4_5.png"]
+    let pics = ["../asset/sitterImg/1_1.png", "../asset/sitterImg/1_1.png", "../asset/sitterImg/1_1.png", "../sitterImg/asset/1_1.png", "../asset/sitterImg/1_1.png"]
     const items = []
     const json = await res.json()
     for(let i=0; i<json.length; i++){
@@ -168,34 +289,50 @@ async function getSitters(){
             div.style.height = "200px"
             div.style.width = "800px"
             div.style.margin = "20px 300px"
-            div.style.border = "3px solid black"
-            div.textContent = json[i].title
+            div.style.borderTop = "1px solid lightgrey"
+            div.style.borderBottom = "1px solid lightgrey"
+
+            const title = document.createElement("h4")
+            title.textContent = json[i].title
+            title.style.marginLeft = "300px"
+            title.style.marginTop = "55px"
+            div.append(title)
 
             const priceEl = document.createElement("button")
-            priceEl.textContent = json[i].price
-            priceEl.style.color = "green"
+            priceEl.textContent = json[i].price + " KRW"
+            priceEl.style.marginLeft = "640px"
+            priceEl.style.marginTop = "50px"
+            priceEl.style.width = "130px"
+            priceEl.style.height = "35px"
+            priceEl.style.backgroundColor = "green"
+            priceEl.style.color = "white"
             div.append(priceEl)
             priceEl.addEventListener("click", function(){
                 window.location.href = "../pages/payment1.html"
             })
 
             const desc = document.createElement("p")
+            desc.style.marginLeft = "300px"
+            desc.style.marginTop = "-100px"
             desc.textContent = json[i].description
             div.append(desc)
 
             let imgEl = document.createElement("img")
             imgEl.src = pics[i]
-            imgEl.style.width = "300px"
+            imgEl.style.width = "270px"
             imgEl.style.height = "120px"
-            imgEl.style.margin = "0px 400px 100px"
+            imgEl.style.marginLeft = "20px"
+            imgEl.style.marginTop = "-102px"
             div.append(imgEl)
         
+            /*
             const deleteBtn = document.createElement("button")
             deleteBtn.textContent = "삭제"
             deleteBtn.addEventListener("click", function(){
                 deleteSitters(json[i].id)
             })
             div.append(deleteBtn)
+            */
         
             /*
             const inputEl2 = document.createElement("button")
@@ -221,7 +358,6 @@ async function getSitters(){
             })
             */
             
-            div.style.backgroundColor = "yellow"
             document.body.append(div)
         }
     
