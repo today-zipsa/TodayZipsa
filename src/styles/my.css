@@ -5,6 +5,8 @@
 
 body {
   margin: 0px;
+  width: inherit;
+  min-height: 100%;
 }
 body header {
   display: flex;
@@ -13,6 +15,7 @@ body header {
   height: 6em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin: 0;
+  min-width: 40em;
 }
 body header .header-wrapper {
   display: flex;
@@ -32,23 +35,28 @@ body header .header-wrapper .main-logo {
 body header .header-wrapper .search-btn-wrapper {
   border-radius: 1.8em;
   border: 0.2em solid var(--main-key-color);
-  width: 15em;
+  width: 18em;
   height: 1.8em;
+  position: relative;
 }
 body header .header-wrapper .search-btn-wrapper .search-bar {
   display: inline-block;
-  width: 15em;
+  width: 18em;
   height: inherit;
   margin-left: 0.6em;
   border: 0px solid transparent;
   background-color: transparent;
+  padding: 0px;
 }
 body header .header-wrapper .search-btn-wrapper .search-bar:focus {
   outline: none;
 }
 body header .header-wrapper .search-btn-wrapper .search-btn {
-  display: inline;
-  text-align: end;
+  height: 1.4em;
+  width: 1.4em;
+  position: absolute;
+  top: 0.2em;
+  right: 0.6em;
 }
 body header .header-wrapper .welcome-word {
   font-size: 1em;
@@ -57,4 +65,10 @@ body header .header-wrapper .welcome-word {
 body header .header-wrapper .logout {
   font-size: 1em;
   font-weight: 600;
+  margin-right: 0.2em;
+}
+body section {
+  width: 50em;
+  background-color: red;
+  height: inherit;
 }/*# sourceMappingURL=my.css.map */
