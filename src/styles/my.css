@@ -27,7 +27,7 @@ body header .header-wrapper {
 body header .header-wrapper .main-logo {
   display: block;
   background-repeat: no-repeat;
-  width: 8em;
+  width: 10em;
   height: 2.4em;
   transform: scale(0.8);
   background-color: var(--main-key-color);
