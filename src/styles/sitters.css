@@ -18,12 +18,14 @@
     position: absolute;
     margin-left: 1200px;
     margin-top: -70px;
+    cursor: pointer;
 }
 
 .signIn{
     position: absolute;
     margin-left: 1300px;
     margin-top: -70px;
+    cursor: pointer;
 }
 
 .categories{
@@ -60,4 +62,28 @@
 
 label {
     display: block;
+}
+
+.banner{
+    position: relative;
+}
+
+.arrowRight{
+    position: absolute;
+    margin-left: 1240px;
+    margin-top: -200px;
+    color: white;
+    font-weight: 900;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.arrowLeft{
+    position: absolute;
+    margin-left: 170px;
+    margin-top: -200px;
+    color: white;
+    font-weight: 900;
+    font-size: 60px;
+    cursor: pointer;
 }

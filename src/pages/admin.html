@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"/>
+    <link rel="stylesheet" href="../styles/header.css" />
+		<link rel="stylesheet" href="../styles/admin.css" />
+		<title>오늘의집사 - 관리자 페이지</title>
+    <script type="module" defer src="../modules/admin.js"></script>
+	</head>
+
+	<body>
+
+    <header>
+			<div class="header-wrapper">
+        <a href="../index.html">
+          <img src="../asset/main-logo.png" alt="main-logo" class="main-logo"></img>
+        </a>
+				<div>
+          <span class="welcome-word">안녕하세요, 관리자님!</span>
+          <span class="logout">로그아웃</span>
+        </div>
+			</div>
+		</header>
+
+    <main>
+      <div class="admin">
+        <div class="main_title">안녕하세요, 관리자 페이지입니다.</div>
+        <input id="tab1" type="radio" name="tabs" checked>
+        <label for="tab1">상품관리</label>
+        <input id="tab2" type="radio" name="tabs">
+        <label for="tab2">주문관리</label>
+      
+        <section id="content1">
+            <!-- <p>상품 리스트</p> -->
+            <div class="item_btn">
+              <button class="main_btn add_btn">상품 추가</button>
+            </div>
+            
+            <div>
+              <ul id="item_list"></ul>
+            </div>
+        </section>
+      
+        <section id="content2">
+            <p>고객주문 리스트</p>
+        </section>
+      </div>
+    </main>
+
+<!-- Modal Start -->
+    <div class="modal hidden">
+      <div class="modal__background"></div>
+      <div class="modal__content">
+        <div class="m_head">
+          <div class="modal_title">신규 상품 추가</div>
+        </div>
+        <div class="m_body">
+          <div class="row">
+            <div class="col-lg">
+              <table class="table table-bordered">
+                <colgroup>
+                  <col width="25%">
+                  <col width="75%">
+                </colgroup>
+                <tr>
+                  <th>상품명 <span class="required-input">*</span></th>
+                  <td>
+                    <input type="text" id="title" class="form-control" placeholder="상품명을 입력하세요.">
+                  </td>
+                </tr>
+                <tr>
+                  <th>상품 가격 <span class="required-input">*</span></th>
+                  <td>
+                    <div class="input-group">
+                      <div class="input-group-prepend"><span class="input-group-text">₩</span></div>
+                      <input type="text" id="price" class="form-control" placeholder="상품가격을 입력하세요.">
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>상품 카테고리 <span class="required-input">*</span></th>
+                  <td>
+                    <select id="category" class="custom-select">
+                      <option value="">- 카테고리를 선택하세요 -</option>
+                      <option value="Hotel">호텔 서비스</option>
+                      <option value="Car">차량 서비스</option>
+                      <option value="Sitter">시터 서비스</option>
+                      <option value="Spa">스파 서비스</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <th>상품 상세 설명 <span class="required-input">*</span></th>
+                  <td>
+                    <textarea id="description" class="form-control" rows="5" placeholder="상품 상세 설명을 입력하세요.(최대100자)"></textarea>
+                  </td>
+                </tr>
+                <tr>
+                  <th>태그</th>
+                  <td>
+                    <input type="text" id="tag" class="form-control" placeholder="상품 태그를 입력 후 Enter키를 누르세요.">
+                    <div class="tag">
+                      <ul id="tag-list"></ul>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <th>썸네일 이미지</th>
+                  <td>
+                    <input type="file" id="thumbnailBase64" class="form-control">
+                  </td>
+                </tr>
+                <tr>
+                  <th>상세 이미지</th>
+                  <td>
+                    <input type="file" id="photoBase64" class="form-control">
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="m_footer">
+          <button class="main_btn close_modal">닫기</button>
+          <button class="main_btn save_modal">저장</button>
+        </div>
+      </div>
+    </div>
+<!-- Modal End -->
+	</body>
+</html>
