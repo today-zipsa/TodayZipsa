@@ -60,7 +60,6 @@ paymentsInfo.forEach(payment => {
 	itemImage.src = thumbnailUrl;
 	itemImage.alt = "상품이미지";
 
-	console.log("되고 있는거임?");
 	itemInfoBox.append(paymentDate, itemName, itemPrice, detailInfoBtn);
 	paymentInfoBox.append(itemImage, itemInfoBox);
 	paymentContainer.append(paymentStateBox, paymentInfoBox);
