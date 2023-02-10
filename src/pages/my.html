@@ -8,12 +8,13 @@
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
 		/>
-		<link rel="stylesheet" href="/styles/my.css" />
+		<link rel="stylesheet" href="../styles/my.css" />
+		<script defer type="module" src="../modules/my.js"></script>
 		<title>오늘의집사</title>
 	</head>
 	<body>
-		<header>
-			<div class="header-wrapper">
+		<header class="my-header">
+			<div class="my-header-wrapper">
 				<img src="../asset/main-logo.png" alt="main-logo" class="main-logo"></img>
 				<div class="search-btn-wrapper">
 					<input type="text" class="search-bar" placeholder="검색어를 입력해주세요." />
@@ -23,8 +24,21 @@
 				<span class="logout">로그아웃</span>
 			</div>
 		</header>
-		<section>
-			
+		<section class="my-section">
+			<box class="profile-container">
+				<box class="profile-box">
+					<box class="welcome-word">
+						<img class="profile-image" src="../asset/profile.png" alt="profile-image">
+						<span class="profile-words1"></span>
+					</box>
+					<span class="profile-words2"></span>
+				</box>
+				<span class="payment-period"></span>
+			</box>
+			<box class="info-container">
+				<box class="payments-container"></box>
+				<box class="accounts-container"></box>
+			</box>
 		</section>
 	</body>
 </html>
