@@ -8,7 +8,7 @@ body {
   width: inherit;
   min-height: 100%;
 }
-body header {
+body .my-header {
   display: flex;
   justify-content: center;
   width: 100%;
@@ -17,14 +17,14 @@ body header {
   margin: 0;
   min-width: 40em;
 }
-body header .header-wrapper {
+body .my-header .my-header-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: inherit;
   width: 50em;
 }
-body header .header-wrapper .main-logo {
+body .my-header .my-header-wrapper .main-logo {
   display: block;
   background-repeat: no-repeat;
   width: 10em;
@@ -32,14 +32,14 @@ body header .header-wrapper .main-logo {
   transform: scale(0.8);
   background-color: var(--main-key-color);
 }
-body header .header-wrapper .search-btn-wrapper {
+body .my-header .my-header-wrapper .search-btn-wrapper {
   border-radius: 1.8em;
   border: 0.2em solid var(--main-key-color);
   width: 18em;
   height: 1.8em;
   position: relative;
 }
-body header .header-wrapper .search-btn-wrapper .search-bar {
+body .my-header .my-header-wrapper .search-btn-wrapper .search-bar {
   display: inline-block;
   width: 18em;
   height: inherit;
@@ -48,27 +48,80 @@ body header .header-wrapper .search-btn-wrapper .search-bar {
   background-color: transparent;
   padding: 0px;
 }
-body header .header-wrapper .search-btn-wrapper .search-bar:focus {
+body .my-header .my-header-wrapper .search-btn-wrapper .search-bar:focus {
   outline: none;
 }
-body header .header-wrapper .search-btn-wrapper .search-btn {
+body .my-header .my-header-wrapper .search-btn-wrapper .search-btn {
   height: 1.4em;
   width: 1.4em;
   position: absolute;
   top: 0.2em;
   right: 0.6em;
 }
-body header .header-wrapper .welcome-word {
+body .my-header .my-header-wrapper .welcome-word {
   font-size: 1em;
   font-weight: 600;
 }
-body header .header-wrapper .logout {
+body .my-header .my-header-wrapper .logout {
   font-size: 1em;
   font-weight: 600;
   margin-right: 0.2em;
 }
-body section {
+body .my-section {
+  width: inherit;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body .my-section .profile-container {
+  display: flex;
+  align-items: center;
   width: 50em;
-  background-color: red;
-  height: inherit;
+  height: 7em;
+}
+body .my-section .profile-container .profile-box {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+body .my-section .profile-container .profile-box .welcome-word {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+body .my-section .profile-container .profile-box .welcome-word .profile-image {
+  width: 2.2em;
+  height: 2.2em;
+  padding: 1.4em 0em;
+}
+body .my-section .profile-container .profile-box .welcome-word .profile-words1 {
+  padding-top: 0.2em;
+  margin-left: 0.6em;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  text-decoration: underline;
+}
+body .my-section .profile-container .profile-box .profile-words2 {
+  display: block;
+  padding-top: 0.4em;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  font-weight: 340;
+}
+body .my-section .info-container {
+  width: 50em;
+  height: 100%;
+  display: flex;
+}
+body .my-section .info-container .payments-container {
+  background-color: royalblue;
+  width: 36em;
+}
+body .my-section .info-container .accounts-container {
+  display: flex;
+  background-color: green;
+  width: 14em;
+  height: 100%;
 }/*# sourceMappingURL=my.css.map */
