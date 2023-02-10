@@ -1,0 +1,89 @@
+.sitterLogo{
+    margin-left: 30px;
+    margin-top: 30px;
+    position: relative;
+}
+
+.sitterInput{
+    position: absolute;
+    margin-left: 600px;
+    margin-top: -55px;
+    width: 360px;
+    height: 30px;
+    border: green 2px solid;
+    border-radius: 12px;
+}
+
+.signUp{
+    position: absolute;
+    margin-left: 1200px;
+    margin-top: -70px;
+    cursor: pointer;
+}
+
+.signIn{
+    position: absolute;
+    margin-left: 1300px;
+    margin-top: -70px;
+    cursor: pointer;
+}
+
+.categories{
+    display: flex;
+    margin-left: 250px;
+    margin-top: 50px;
+}
+
+.categories :nth-child(n){
+    margin-right: 220px;
+}
+
+.categories :nth-child(n):hover{
+    color: green;
+}
+
+.bannerPic{
+    margin-top: 70px;
+    width: 1100px;
+    height: 450px;
+    margin-left: 170px;
+}
+
+
+.one_btn{
+    background-color: green;
+    color: white;
+}
+
+.oneImg{
+    width: 280px;
+    height: 120px;
+}
+
+label {
+    display: block;
+}
+
+.banner{
+    position: relative;
+}
+
+.arrowRight{
+    position: absolute;
+    margin-left: 1240px;
+    margin-top: -200px;
+    color: white;
+    font-weight: 900;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+.arrowLeft{
+    position: absolute;
+    margin-left: 170px;
+    margin-top: -200px;
+    color: white;
+    font-weight: 900;
+    font-size: 60px;
+    cursor: pointer;
+}
