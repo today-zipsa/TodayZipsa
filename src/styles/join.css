@@ -1,0 +1,186 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Jal_Onuel";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --main-key-color: #0c8a4e;
+  --main-bg-color: #f9f9f9;
+  --required-color: #de0404;
+  --disable-color: #666666;
+  --input-color: #d9d9d9;
+}
+
+body {
+  width: 100%;
+  min-width: 1540px;
+  height: auto;
+  justify-content: center;
+  align-content: center;
+}
+
+body header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 6em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 0;
+}
+body header .header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+  width: 50em;
+}
+body header .header-wrapper .main-logo {
+  display: block;
+  background-repeat: no-repeat;
+  width: 10em;
+  height: 2.4em;
+  transform: scale(0.8);
+  background-color: var(--main-key-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main h1 {
+  margin: 2em 0 0.5em 0;
+  font-size: 32px;
+  font-weight: 600;
+}
+main h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--disable-color);
+}
+main .division-container {
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  width: 94%;
+  height: 65%;
+  margin: 12.2px 0 13.4px 0;
+}
+main span {
+  color: var(--required-color);
+  font-size: 18;
+  font-weight: 600;
+}
+main .join-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3em;
+  padding-bottom: 2em;
+  /* imaged preview */
+  /* 추가될 이미지를 감싸는 요소 */
+}
+main .join-wrapper .label-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+main .join-wrapper .label-wrapper label {
+  display: flex;
+  align-items: center;
+  text-align: left !important;
+}
+main .join-wrapper .label-wrapper h5 {
+  font-size: 20px;
+  font-weight: 600;
+}
+main .join-wrapper .label-wrapper input {
+  width: 25em;
+  height: 3em;
+  margin: 20px 0 25px 30px;
+  padding-left: 10px;
+  border-radius: 6px;
+  border: 2px solid var(--input-color);
+  color: var(--disable-color);
+  font-size: 18px;
+  font-weight: 600;
+}
+/* named upload */
+/* 파일업로드 외형 감추기 */
+main .join-wrapper .filebox input.upload-name {
+  padding: 0.5em 0.75em;
+  font-size: inherit;
+  font-family: inherit;
+  border: 2px solid var(--input-color);
+  border-radius: 6px;
+  -webkit-appearance: none; /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+}
+main .join-wrapper .filebox label.upload-btn {
+  display: inline-block;
+  padding: 0.75em;
+  font-size: inherit;
+  line-height: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid var(--main-key-color);
+  border-radius: 6px;
+  color: var(--main-key-color);
+  font-weight: 600;
+  background-color: #fff;
+}
+main .join-wrapper .filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+main .join-wrapper .filebox .upload-display {
+  /* 이미지가 표시될 지역 */
+  margin-bottom: 5px;
+}
+@media (min-width: 768px) {
+  main .join-wrapper .filebox .upload-display {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 0;
+  }
+}
+main .join-wrapper .filebox .upload-thumb-wrap {
+  display: inline-block;
+  width: 54px;
+  padding: 2px;
+  vertical-align: middle;
+  border: 2px solid var(--main-key-color);
+  border-radius: 5px;
+  background-color: #fff;
+}
+main .join-wrapper .filebox .upload-display img {
+  display: block;
+  max-width: 100%;
+  width: 100% \9;
+  height: auto;
+}
+main .agree-wrapper {
+  display: flex;
+  align-items: center;
+  padding-top: 3em;
+  padding-bottom: 2em;
+}
+main .agree-wrapper .termsConditions {
+  display: flex;
+}
+main .agree-wrapper .radio-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 3em;
+  padding-bottom: 2em;
+} /*# sourceMappingURL=join.css.map */
