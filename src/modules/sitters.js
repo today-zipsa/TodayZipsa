@@ -421,7 +421,7 @@ async function getSitters(searchText, pageNumber){
     const items = []
     let pics = ["../asset/sitterImg/1_2.png", "../asset/sitterImg/1_3.png", "../asset/sitterImg/1_4.png", "../asset/sitterImg/1_6.jpg", "../asset/sitterImg/1_7.jpeg", "../asset/sitterImg/1_8.jpeg", "../asset/sitterImg/1_9.png", "../asset/sitterImg/1_10.jpeg", "../asset/sitterImg/1_11.jpeg", "../asset/sitterImg/1_12.jpg", "../asset/sitterImg/1_13.jpeg", "../asset/sitterImg/1_4.jpeg", "../asset/sitterImg/1_15.jpg", "../asset/sitterImg/1_16.jpg", "../asset/sitterImg/1_17.jpeg", "../asset/sitterImg/1_18.jpeg", "../asset/sitterImg/1_19.jpg", "../asset/sitterImg/1_20.jpeg"]
 
-    const itemsPerPage = 2
+    const itemsPerPage = 3
     const startIndex = (pageNumber - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
 
@@ -431,7 +431,7 @@ async function getSitters(searchText, pageNumber){
         if (json[i].title.includes(inputValue)) {
             items.push(json[i].title)
             const div = document.createElement("div")
-            div.classList.add(".container")
+            div.classList.add("container")
             div.style.height = "200px"
             div.style.width = "800px"
             div.style.margin = "20px 300px"
@@ -455,6 +455,7 @@ async function getSitters(searchText, pageNumber){
 });
 
             const title = document.createElement("h4")
+            title.classList.add("titleEl")
             title.textContent = json[i].title
             title.classList.add("title")
             title.style.marginLeft = "300px"
@@ -468,6 +469,7 @@ async function getSitters(searchText, pageNumber){
             div.append(desc)
 
             const purchaseImm = document.createElement("button")
+            purchaseImm.classList.add("baro")
             purchaseImm.textContent = "바로구매"
             purchaseImm.style.marginLeft = "700px"
             purchaseImm.style.marginBottom = "-100px"
@@ -483,6 +485,7 @@ async function getSitters(searchText, pageNumber){
             })
 
             const priceEl = document.createElement("button")
+            priceEl.classList.add("price")
             priceEl.textContent = json[i].price + " KRW"
             priceEl.style.marginLeft = "640px"
             priceEl.style.marginTop = "20px"
@@ -506,6 +509,7 @@ async function getSitters(searchText, pageNumber){
         buttonEl.textContent = i
         if (i === pageNumber) buttonEl.disabled = true
         buttonEl.addEventListener("click", function () {
+            document.querySelectorAll(".container").forEach(item => item.remove())
             getSitters(inputValue, i)
         })
         paginationDiv.style.marginLeft = "600px"
