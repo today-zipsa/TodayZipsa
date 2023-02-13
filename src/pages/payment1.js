@@ -1,4 +1,7 @@
 // import { bankaccountList, productdetailinfo } from './payment-mockupdata.js'
+// import { request } from "../api/common.js";
+
+
 // import { request } from "../api/common";
 // 뱅크어카운트리스트 는 배열이다.
 // 각 요소를 순회하면서, account_list 에 append 시킨다.
@@ -161,11 +164,15 @@ document.querySelector(".payment-btn").innerText = "결제버튼"
 // span  태그를 만들어서 
 // 계좌목록 없음 텍스트를 넣어서
 // append 
-if (BankAccountList.length === 0) {
-  accountlist.innerHTML =
-  `<span>계좌목록이 없습니다</span>`
-}
-console.log(BankAccountList)
+
+//추후 수정
+// if (BankAccountList.length === 0) {
+//   accountlist.innerHTML =
+//   `<span>계좌목록이 없습니다</span>`
+// }
+
+
+// console.log(BankAccountList)
 // 뱅크어카운트 리스트를 순회해서
 // 각 요소마다 li 태그를 생성하고
 // li 태그에 account 정보를 span태그 안에 넣고
@@ -177,14 +184,14 @@ console.log(BankAccountList)
 // const account = liEl.append(account);
 // accountlist.append(liEl);
 
-// 원래 만들었던거 (아래)
-  for(let i = 0; i < BankAccountList.length ; i ++) {
-    const liEl = document.createElement('li')
-    liEl.innerHTML =
-      `<span>${BankAccountList[i].bankName} ${BankAccountList[i].accountNumber} ${BankAccountList[i].balance}</span>`
+// 원래 만들었던거 (아래)(추후 수정)
+//   for(let i = 0; i < BankAccountList.length ; i ++) {
+//     const liEl = document.createElement('li')
+//     liEl.innerHTML =
+//       `<span>${BankAccountList[i].bankName} ${BankAccountList[i].accountNumber} ${BankAccountList[i].balance}</span>`
 
-    paymentEmtpy.append(liEl)
-}
+//     paymentEmtpy.append(liEl)
+// }
 //아 이거 뭔가 잘못된거같은데
 
 //만약 계좌 잔액이 부족한 경우, ‘잔액이 부족합니다’라는 단순 텍스트 알림만 보여 주어야 한다.
