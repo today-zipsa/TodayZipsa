@@ -1,8 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Jal_Onuel";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -14,7 +13,7 @@
   --input-color: #d9d9d9;
 }
 
-body {
+#join-page {
   width: 100%;
   min-width: 1540px;
   height: auto;
@@ -22,37 +21,37 @@ body {
   align-content: center;
 }
 
-main.join {
+#join {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-main.join h1 {
+#join h1 {
   margin: 2em 0 0.5em 0;
   font-size: 32px;
   font-weight: 600;
 }
-main.join h3 {
+#join h3 {
   float: right;
   margin: 0.5em 0 0.5em 75%;
   font-size: 18px;
   font-weight: 600;
   color: var(--disable-color);
 }
-main.join .division-container {
+#join .division-container {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
   width: 84%;
   height: 65%;
   margin: 12.2px 0 13.4px 0;
 }
-main.join span.required {
+#join span.required {
   color: var(--required-color);
   font-size: 18;
   font-weight: 600;
 }
-main.join .join-wrapper {
+#join .join-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,24 +60,24 @@ main.join .join-wrapper {
   /* imaged preview */
   /* 추가될 이미지를 감싸는 요소 */
 }
-main.join .join-wrapper .label-wrapper {
+#join .join-wrapper .label-wrapper {
   display: flex;
   flex-direction: row;
   margin: 18px 0;
 }
-main.join .join-wrapper .label-wrapper label {
+#join .join-wrapper .label-wrapper label {
   display: flex;
   align-items: center;
 }
-main.join .join-wrapper .label-wrapper label.required-contents {
+#join .join-wrapper .label-wrapper label.required-contents {
   width: 10em;
   height: 4em;
 }
-main.join .join-wrapper .label-wrapper label.required-contents h5 {
+#join .join-wrapper .label-wrapper label.required-contents h5 {
   font-size: 18px;
   font-weight: 600;
 }
-main.join .join-wrapper .label-wrapper label.validator-btn {
+#join .join-wrapper .label-wrapper label.validator-btn {
   display: inline-block;
   width: 4em;
   height: 2em;
@@ -92,7 +91,7 @@ main.join .join-wrapper .label-wrapper label.validator-btn {
   font-weight: 600;
   background-color: transparent;
 }
-main.join .join-wrapper .label-wrapper input {
+#join .join-wrapper .label-wrapper input {
   width: 20em;
   height: 3.3em;
   padding-left: 10px;
@@ -102,11 +101,11 @@ main.join .join-wrapper .label-wrapper input {
   font-size: 16px;
   font-weight: 600;
 }
-
-/* named upload */
-/* 파일업로드 외형 감추기 */
-
-main.join .join-wrapper .filebox input.upload-name {
+#join .join-wrapper .filebox {
+  /* named upload */
+  /* 파일업로드 외형 감추기 */
+}
+#join .join-wrapper .filebox input.upload-name {
   width: 20em;
   height: 3.3em;
   border: 2px solid var(--input-color);
@@ -115,7 +114,7 @@ main.join .join-wrapper .filebox input.upload-name {
   -moz-appearance: none;
   appearance: none;
 }
-main.join .join-wrapper .filebox label.upload-btn {
+#join .join-wrapper .filebox label.upload-btn {
   display: inline-block;
   width: 4em;
   height: 2em;
@@ -130,7 +129,7 @@ main.join .join-wrapper .filebox label.upload-btn {
   font-weight: 600;
   background-color: transparent;
 }
-main.join .join-wrapper .filebox input[type="file"] {
+#join .join-wrapper .filebox input[type=file] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -140,18 +139,18 @@ main.join .join-wrapper .filebox input[type="file"] {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-main.join .join-wrapper .filebox .upload-display {
+#join .join-wrapper .filebox .upload-display {
   /* 이미지가 표시될 지역 */
   margin-bottom: 5px;
 }
 @media (min-width: 768px) {
-  main.join .join-wrapper .filebox .upload-display {
+  #join .join-wrapper .filebox .upload-display {
     display: inline-block;
     margin-right: 5px;
     margin-bottom: 0;
   }
 }
-main.join .join-wrapper .filebox .upload-thumb-wrap {
+#join .join-wrapper .filebox .upload-thumb-wrap {
   display: inline-block;
   width: 54px;
   padding: 2px;
@@ -159,29 +158,29 @@ main.join .join-wrapper .filebox .upload-thumb-wrap {
   border: 2px solid var(--main-key-color);
   border-radius: 5px;
 }
-main.join .join-wrapper .filebox .upload-display img {
+#join .join-wrapper .filebox .upload-display img {
   display: block;
   max-width: 100%;
-  width: 100% \9;
+  width: 100% \9 ;
   height: auto;
 }
-main.join .label-wrapper--agree {
+#join .label-wrapper--agree {
   display: flex;
   align-items: center;
   padding-top: 3em;
   padding-bottom: 2em;
 }
-main.join .label-wrapper--agree .required-contents {
+#join .label-wrapper--agree .required-contents {
   display: flex;
 }
-main.join .label-wrapper .check-wrapper {
+#join .label-wrapper .check-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 3em;
   padding-bottom: 2em;
 }
-main.join .label-wrapper--agree {
+#join .label-wrapper--agree {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -189,29 +188,29 @@ main.join .label-wrapper--agree {
   height: 65%;
   margin: 12.2px 0 13.4px 0;
 }
-main.join .label-wrapper--agree .required-contents {
+#join .label-wrapper--agree .required-contents {
   width: 10em;
   height: 4em;
 }
-main.join .label-wrapper--agree .required-contents h5 {
+#join .label-wrapper--agree .required-contents h5 {
   font-size: 18px;
   font-weight: 600;
 }
-main.join .label-wrapper--agree .check-wrapper .check-item:first-child label {
+#join .label-wrapper--agree .check-wrapper .check-item:first-child label {
   font-size: 20px;
   font-weight: 600;
   color: var(--disable-color);
   padding-top: 0.25em;
 }
-main.join .label-wrapper--agree .check-wrapper .check-item {
+#join .label-wrapper--agree .check-wrapper .check-item {
   display: flex;
 }
-main.join .label-wrapper--agree .check-wrapper .check-item label {
+#join .label-wrapper--agree .check-wrapper .check-item label {
   padding-top: 0.5em;
   font-size: 16px;
   color: var(--disable-color);
 }
-main.join button.join-btn {
+#join button.join-btn {
   width: 15em;
   height: 3em;
   margin: 50px;
@@ -221,4 +220,4 @@ main.join button.join-btn {
   color: #fff;
   font-size: 22px;
   font-weight: 600;
-} /*# sourceMappingURL=join.css.map */
+}/*# sourceMappingURL=join.css.map */
