@@ -12,13 +12,15 @@ let accessToken = 'Bearer ' + window.localStorage.getItem('accessToken');
  * return json
  *  // ex) MEB01, params{ email:'fast@emil.com', password:'1234'}
  */
-export async function request(api, reqParams){
+export async function request(api, params){
   let url = '';
   let method = '';
   let strId = ''; // detailId or productId
   let apiParams = null;
+  let reqParams = params || {};
   let addHeaders = {};
-
+  const prdSkipAPI = ['PRD03', 'PRD05', 'PRD06', 'PRD07'];
+  
   for (let key in apis) {
     if(key === api){
       const obj = apis[key];
@@ -41,9 +43,14 @@ export async function request(api, reqParams){
     // detailId or productId 담기
     if(reqParams.hasOwnProperty('detailId') || reqParams.hasOwnProperty('productId')){
       strId = reqParams['detailId'] || reqParams['productId'];
+
+      // 특정 API요청의 경우 파라미터에 직접 productId가 들어가지 않고
+      // url 뒤에 붙어서 호출되기에 실제 파라미터에서는 제외
+      if(prdSkipAPI.includes(api)){
+        delete reqParams.productId;
+      }
     }
   }
-  let resResult = '';
   try{
     const res = await fetch(url +`${strId}`,{
       method: method,
@@ -51,7 +58,9 @@ export async function request(api, reqParams){
         ...headers,
         ...addHeaders
       },
-      body: JSON.stringify(reqParams)
+      body: Object.keys(reqParams).length > 0
+        ? JSON.stringify(reqParams)
+        : undefined
     });
 
     const json = await res.json();
