@@ -20,61 +20,70 @@
     </div>
   </header>
 
-  <main>
+  <main class="join">
+    <!-- 회원가입 input section -->
     <h1>회원가입</h1>
     <h3>
       <span class="required">*</span>필수입력사항
     </h3>
     <div class="division-container">
       <div class="join-wrapper">
+
         <div class="label-wrapper">
-          <label>
+          <label class="required-contents">
             <h5>이메일</h5><span class="required">*</span>
           </label>
           <input type="text" class="id" placeholder="이메일 주소를 입력해주세요">
+          <label for="input_file" class="validator-btn">중복확인</label>
         </div>
 
         <div class="label-wrapper">
-          <label>
+          <label class="required-contents">
             <h5>비밀번호</h5><span class="required">*</span>
-            <input type="password" class="password" placeholder="비밀번호를 입력해주세요">
           </label>
+          <input type="password" class="password" placeholder="비밀번호를 입력해주세요">
         </div>
+
         <div class="label-wrapper">
-          <label>
+          <label class="required-contents">
             <h5>비밀번호 확인</h5><span class="required">*</span>
-            <input type="password" class="password-check" placeholder="비밀번호를 한 번 더 입력해주세요">
           </label>
+          <input type="password" class="password-check" placeholder="비밀번호를 한 번 더 입력해주세요">
         </div>
+
         <div class="label-wrapper filebox">
-          <h5>프로필 사진</h5><span class="required">*</span>
-          <input class="upload-name" value="1MB 이하 사이즈로 업로드해주세요" disabled="disabled">
+          <label class="required-contents">
+            <h5>프로필 사진</h5><span class="required">*</span>
+          </label>
+          <input class="upload-name" value="1MB 이하 사이즈로 업로드해주세요" />
           <label for="input_file" class="upload-btn">업로드</label>
           <input type="file" id="input_file" class="upload-hidden">
         </div>
+
       </div>
     </div>
 
-    <div class="agree-wrapper">
-      <label class="termsConditions">
+    <!-- 이용약관 radio section -->
+    <div class="label-wrapper--agree">
+      <label class="required-contents">
         <h5>이용약관 동의</h5><span class="required">*</span>
       </label>
-      <div class="radio-wrapper">
-        <div class="radio-item">
-          <input type="radio" id="radio-item" class="upload-hidden" />
+      <div class="check-wrapper">
+        <div class="check-item">
+          <img src="../asset/check.svg" alt="check">
           <label> 전체 동의합니다.</label>
         </div>
-        <div class="radio-item">
-          <input type="radio" id="radio-item" class="upload-hidden" />
-          <label> 이용약관동의 <span class="pilsu">필수</span></label>
+        <div class="check-item">
+          <img src="../asset/check.svg" alt="check">
+          <label> 이용약관동의 <span class="pilsu">(필수)</span></label>
         </div>
-        <div class="radio-item">
-          <input type="radio" id="radio-item" class="upload-hidden" />
-          <label> 개인정보 수집 및 이용 동의 <span class="pilsu">필수</span></label>
+        <div class="check-item">
+          <img src="../asset/check.svg" alt="check">
+          <label> 개인정보 수집 및 이용 동의 <span class="pilsu">(필수)</span></label>
         </div>
-        <div class="radio-item">
-          <input type="radio" id="radio-item" class="upload-hidden" />
-          <label> 본인은 14세 이상입니다. <span class="pilsu">필수</span></label>
+        <div class="check-item">
+          <img src="../asset/check.svg" alt="check">
+          <label> 본인은 14세 이상입니다. <span class="pilsu">(필수)</span></label>
         </div>
       </div>
     </div>

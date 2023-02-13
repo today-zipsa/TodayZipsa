@@ -43,7 +43,6 @@ body header .header-wrapper .main-logo {
   width: 10em;
   height: 2.4em;
   transform: scale(0.8);
-  background-color: var(--main-key-color);
 }
 
 main {
@@ -58,6 +57,8 @@ main h1 {
   font-weight: 600;
 }
 main h3 {
+  float: right;
+  margin: 0.5em 0 0.5em 75%;
   font-size: 18px;
   font-weight: 600;
   color: var(--disable-color);
@@ -65,11 +66,11 @@ main h3 {
 main .division-container {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
-  width: 94%;
+  width: 84%;
   height: 65%;
   margin: 12.2px 0 13.4px 0;
 }
-main span {
+main span.required {
   color: var(--required-color);
   font-size: 18;
   font-weight: 600;
@@ -86,33 +87,49 @@ main .join-wrapper {
 main .join-wrapper .label-wrapper {
   display: flex;
   flex-direction: row;
+  margin: 18px 0;
 }
 main .join-wrapper .label-wrapper label {
   display: flex;
   align-items: center;
-  text-align: left !important;
 }
-main .join-wrapper .label-wrapper h5 {
-  font-size: 20px;
+main .join-wrapper .label-wrapper label.required-contents {
+  width: 10em;
+  height: 4em;
+}
+main .join-wrapper .label-wrapper label.required-contents h5 {
+  font-size: 18px;
   font-weight: 600;
 }
+main .join-wrapper .label-wrapper label.validator-btn {
+  display: inline-block;
+  width: 4em;
+  height: 2em;
+  margin-left: 0.5em;
+  line-height: normal;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 2px solid var(--main-key-color);
+  border-radius: 6px;
+  color: var(--main-key-color);
+  font-weight: 600;
+  background-color: transparent;
+}
 main .join-wrapper .label-wrapper input {
-  width: 25em;
-  height: 3em;
-  margin: 20px 0 25px 30px;
+  width: 20em;
+  height: 3.3em;
   padding-left: 10px;
   border-radius: 6px;
   border: 2px solid var(--input-color);
   color: var(--disable-color);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 /* named upload */
 /* 파일업로드 외형 감추기 */
 main .join-wrapper .filebox input.upload-name {
-  padding: 0.5em 0.75em;
-  font-size: inherit;
-  font-family: inherit;
+  width: 20em;
+  height: 3.3em;
   border: 2px solid var(--input-color);
   border-radius: 6px;
   -webkit-appearance: none; /* 네이티브 외형 감추기 */
@@ -121,7 +138,9 @@ main .join-wrapper .filebox input.upload-name {
 }
 main .join-wrapper .filebox label.upload-btn {
   display: inline-block;
-  padding: 0.75em;
+  width: 4em;
+  height: 2em;
+  margin-left: 0.5em;
   font-size: inherit;
   line-height: normal;
   vertical-align: middle;
@@ -130,7 +149,7 @@ main .join-wrapper .filebox label.upload-btn {
   border-radius: 6px;
   color: var(--main-key-color);
   font-weight: 600;
-  background-color: #fff;
+  background-color: transparent;
 }
 main .join-wrapper .filebox input[type="file"] {
   position: absolute;
@@ -160,7 +179,6 @@ main .join-wrapper .filebox .upload-thumb-wrap {
   vertical-align: middle;
   border: 2px solid var(--main-key-color);
   border-radius: 5px;
-  background-color: #fff;
 }
 main .join-wrapper .filebox .upload-display img {
   display: block;
@@ -168,19 +186,60 @@ main .join-wrapper .filebox .upload-display img {
   width: 100% \9;
   height: auto;
 }
-main .agree-wrapper {
+main .label-wrapper--agree {
   display: flex;
   align-items: center;
   padding-top: 3em;
   padding-bottom: 2em;
 }
-main .agree-wrapper .termsConditions {
+main .label-wrapper--agree .required-contents {
   display: flex;
 }
-main .agree-wrapper .radio-wrapper {
+main .label-wrapper .check-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 3em;
   padding-bottom: 2em;
+}
+main .label-wrapper--agree {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84%;
+  height: 65%;
+  margin: 12.2px 0 13.4px 0;
+}
+main .label-wrapper--agree .required-contents {
+  width: 10em;
+  height: 4em;
+}
+main .label-wrapper--agree .required-contents h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+main .label-wrapper--agree .check-wrapper .check-item:first-child label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--disable-color);
+  padding-top: 0.25em;
+}
+main .label-wrapper--agree .check-wrapper .check-item {
+  display: flex;
+}
+main .label-wrapper--agree .check-wrapper .check-item label {
+  padding-top: 0.5em;
+  font-size: 16px;
+  color: var(--disable-color);
+}
+main button.join-btn {
+  width: 15em;
+  height: 3em;
+  margin: 50px;
+  background-color: var(--main-key-color);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
 } /*# sourceMappingURL=join.css.map */
