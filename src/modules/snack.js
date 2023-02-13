@@ -294,10 +294,18 @@ async function getSitters(){
             div.style.borderTop = "1px solid lightgrey"
             div.style.borderBottom = "1px solid lightgrey"
 
+            let imgEl = document.createElement("img")
+            imgEl.src = pics[i]
+            imgEl.style.width = "270px"
+            imgEl.style.height = "120px"
+            imgEl.style.marginLeft = "20px"
+            imgEl.style.marginTop = "42px"
+            div.append(imgEl)
+
             const title = document.createElement("h4")
             title.textContent = json[i].title
             title.style.marginLeft = "300px"
-            title.style.marginTop = "55px"
+            title.style.marginTop = "-125px"
             div.append(title)
 
             const priceEl = document.createElement("button")
@@ -313,19 +321,13 @@ async function getSitters(){
                 window.location.href = "../pages/payment1.html"
             })
 
+
             const desc = document.createElement("p")
             desc.style.marginLeft = "300px"
             desc.style.marginTop = "-100px"
             desc.textContent = json[i].description
             div.append(desc)
 
-            let imgEl = document.createElement("img")
-            imgEl.src = pics[i]
-            imgEl.style.width = "270px"
-            imgEl.style.height = "120px"
-            imgEl.style.marginLeft = "20px"
-            imgEl.style.marginTop = "-102px"
-            div.append(imgEl)
         
             /*
             const deleteBtn = document.createElement("button")
