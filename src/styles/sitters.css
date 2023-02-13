@@ -68,22 +68,3 @@ label {
     position: relative;
 }
 
-.arrowRight{
-    position: absolute;
-    margin-left: 1240px;
-    margin-top: -200px;
-    color: white;
-    font-weight: 900;
-    font-size: 60px;
-    cursor: pointer;
-}
-
-.arrowLeft{
-    position: absolute;
-    margin-left: 170px;
-    margin-top: -200px;
-    color: white;
-    font-weight: 900;
-    font-size: 60px;
-    cursor: pointer;
-}
