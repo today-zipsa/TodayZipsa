@@ -4,19 +4,40 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/sitters.css" />
+    <link rel="stylesheet" href="../styles/my.css" />
     <script defer src="../modules/sitters.js"></script>
     <title>JS</title>
 </head>
 <body>
   <div>
-    <h1 class="sitterLogo">오늘의집사</h1>
-    <input type="text" placeholder="검색어를 입력해주세요" class="sitterInput"/>
-    <button class="btn">추가</button>
-    <button class="searchBtn">검색</button>
-    <button class="getBtn">보기</button>
-    <h4 class="signUp" onclick="window.location.href='join.html'">회원가입</h4>
-    <h4 class="signIn" onclick="window.location.href='login.html'">로그인</h4>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+  />
+  <link rel="stylesheet" href="/styles/my.css" />
+  <script defer src="../modules/sitters.js"></script>
+  <title>오늘의집사</title>
+</head>
+<body>
+  <header>
+    <div class="header-wrapper">
+      <img src="../asset/main-logo.png" alt="main-logo" class="main-logo"></img>
+      <div class="search-btn-wrapper">
+        <input type="text" class="search-bar" placeholder="검색어를 입력해주세요." />
+        <img class="search-btn" src="../asset/search-btn.png" alt="search-btn">
+      </div>
+      <span class="welcome-word">반가워요, 집사님!</span>
+      <span class="logout">로그아웃</span>
+    </div>
+  </header>
+  <button class="btn">추가!</button>
+  <button class="getBtn">보기</button>
+
+  <!-- <button id="open-modal">Open Modal</button> -->
+  <div id="modal">
+    <p>로그인 하시겠습니까?</p>
+    <button class="yes">네</button>
+    <button class="no">아니오</button>
   </div>
 
   <div class="categories">
@@ -28,8 +49,6 @@
 
   <div class="banner">
     <img src="../asset/sitterImg/banner.png" class="bannerPic" >
-    <h2 class="arrowLeft"><</h2>
-    <h2 class="arrowRight">></h2>
   </img>
   </div>
 
