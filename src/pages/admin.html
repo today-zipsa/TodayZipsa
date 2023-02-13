@@ -27,26 +27,24 @@
 
     <main>
       <div class="admin">
-        <div class="main_title">안녕하세요, 관리자 페이지입니다.</div>
-        <input id="tab1" type="radio" name="tabs" checked>
-        <label for="tab1">상품관리</label>
-        <input id="tab2" type="radio" name="tabs">
-        <label for="tab2">주문관리</label>
-      
-        <section id="content1">
-            <!-- <p>상품 리스트</p> -->
-            <div class="item_btn">
-              <button class="main_btn add_btn">상품 추가</button>
-            </div>
-            
-            <div>
-              <ul id="item_list"></ul>
-            </div>
-        </section>
-      
-        <section id="content2">
-            <p>고객주문 리스트</p>
-        </section>
+        <div class="admin-tab">
+          <div class="main_title">안녕하세요, 관리자 페이지입니다.</div>
+          <input id="tab1" type="radio" name="tabs" checked>
+          <label for="tab1">상품관리</label>
+          <input id="tab2" type="radio" name="tabs">
+          <label for="tab2">주문관리</label>
+        
+          <tab id="content1">
+              <div class="item_btn">
+                <button class="main_btn add_btn">상품 추가</button>
+              </div>
+              <div>
+                <ul id="item_list"></ul>
+              </div>
+          </tab>
+          <tab id="content2">
+              <p>고객주문 리스트</p>
+          </tab>
       </div>
     </main>
 
