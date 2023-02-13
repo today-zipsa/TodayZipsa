@@ -57,7 +57,7 @@ async function showProductList(items){
     // tag
     const tagsEl = document.createElement('div');
     tagsEl.classList.add('tags');
-    const arrTag = item.tag;
+    const arrTag = item.tags;
     if(arrTag){
       if(arrTag.length > 0){
         arrTag.forEach(tag => {
@@ -130,7 +130,7 @@ saveModalBtn.addEventListener("click", async () => {
     description: m_descEl.value,
   }
   if(m_tag.length > 0){
-    params.tag = getTagList();
+    params.tags = getTagList();
   }
   if(m_thumbnailEl.value !== ''){
     params.thumbnailBase64 = m_thumbnailEl.value;
@@ -171,7 +171,7 @@ function addTag(value){
 }
 
 function getTagList(){// 전체 입력된 태그 추출
-  let newTags = [...new Set(tag)];// 중복제거
+  let newTags = [...new Set(m_tag)];// 중복제거
   return Object.values(newTags).filter((word)=> {
     return word !== '';
   });
