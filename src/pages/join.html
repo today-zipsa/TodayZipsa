@@ -1,48 +1,101 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>오늘의집사 | 회원가입</title>
+  <!-- css -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
-  <link rel="stylesheet" href="./main.css">
-  <title>Document</title>
-  <script type="module" defer src="./main.js"></script>
+  <link rel="stylesheet" href="../styles/header.css">
+  <link rel="stylesheet" href="../styles/join.css">
 </head>
 
-<header>
+<body id="join-page">
+  <header>
+    <div class="header-wrapper">
+      <img src="../asset/main-logo.png" alt="main-logo" class="main-logo">
+      오늘의집사 GNB ALL
+    </div>
+  </header>
 
-</header>
-<main>
-  <h1>회원가입</h1>
-  <label>
-    아이디(이메일)
-    <input type="text" class="id">
-  </label>
-  <label>
-    비밀번호
-    <input type="password" class="password">
-  </label>
-  <label>
-    사용자 이름!
-    <input type="text" class="display-name">
-  </label>
-  <label>
-    사용자 프로필 이미지!
-    <input type="file">
-  </label>
-  <button class="signup">
-    회원가입!
-  </button>
-  <button class="login">
-    로그인!
-  </button>
-  <button class="authorization">
-    인증확인!
-  </button>
-</main>
-<footer>
+  <main id="join">
+    <!-- 회원가입 input section -->
+    <h1>회원가입</h1>
+    <h3>
+      <span class="required">*</span>필수입력사항
+    </h3>
+    <div class="division-container">
+      <div class="join-wrapper">
 
-</footer>
+        <div class="label-wrapper">
+          <label class="required-contents">
+            <h5>이메일</h5><span class="required">*</span>
+          </label>
+          <input type="text" class="id" placeholder="이메일 주소를 입력해주세요">
+          <label for="input_file" class="validator-btn">중복확인</label>
+        </div>
+
+        <div class="label-wrapper">
+          <label class="required-contents">
+            <h5>비밀번호</h5><span class="required">*</span>
+          </label>
+          <input type="password" class="password" placeholder="비밀번호를 입력해주세요">
+        </div>
+
+        <div class="label-wrapper">
+          <label class="required-contents">
+            <h5>비밀번호 확인</h5><span class="required">*</span>
+          </label>
+          <input type="password" class="password-check" placeholder="비밀번호를 한 번 더 입력해주세요">
+        </div>
+
+        <div class="label-wrapper filebox">
+          <label class="required-contents">
+            <h5>프로필 사진</h5><span class="required">*</span>
+          </label>
+          <input class="upload-name" value="1MB 이하 사이즈로 업로드해주세요" />
+          <label for="input_file" class="upload-btn">업로드</label>
+          <input type="file" id="input_file" class="upload-hidden">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 이용약관 radio section -->
+    <div class="label-wrapper--agree">
+      <label class="required-contents">
+        <h5>이용약관 동의</h5><span class="required">*</span>
+      </label>
+      <div class="check-wrapper">
+        <div class="check-item">
+          <img src="../asset/check.svg" alt="check">
+          <label> 전체 동의합니다.</label>
+        </div>
+        <div class="check-item">
+          <img src="../asset/check.svg" alt="check">
+          <label> 이용약관동의 <span class="pilsu">(필수)</span></label>
+        </div>
+        <div class="check-item">
+          <img src="../asset/check.svg" alt="check">
+          <label> 개인정보 수집 및 이용 동의 <span class="pilsu">(필수)</span></label>
+        </div>
+        <div class="check-item">
+          <img src="../asset/check.svg" alt="check">
+          <label> 본인은 14세 이상입니다. <span class="pilsu">(필수)</span></label>
+        </div>
+      </div>
+    </div>
+
+    <button class="join-btn">
+      가입하기
+    </button>
+  </main>
+  <footer>
+
+  </footer>
+
 </body>
+
 </html>
