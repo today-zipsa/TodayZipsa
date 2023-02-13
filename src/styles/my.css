@@ -48,15 +48,14 @@ body header .header-wrapper .search-btn-wrapper .search-bar {
   background-color: transparent;
   padding: 0px;
 }
-body header .header-wrapper .search-btn-wrapper .search-bar:focus {
-  outline: none;
-}
+
 body header .header-wrapper .search-btn-wrapper .search-btn {
   height: 1.4em;
   width: 1.4em;
   position: absolute;
   top: 0.2em;
   right: 0.6em;
+  cursor: pointer;
 }
 body header .header-wrapper .welcome-word {
   font-size: 1em;
@@ -72,3 +71,125 @@ body section {
   background-color: red;
   height: inherit;
 }/*# sourceMappingURL=my.css.map */
+
+.sitterLogo{
+  margin-left: 30px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.sitterLogo{
+  margin-left: 30px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.signUp{
+  position: absolute;
+  margin-left: 1200px;
+  margin-top: -70px;
+  cursor: pointer;
+}
+
+.signIn{
+  position: absolute;
+  margin-left: 1300px;
+  margin-top: -70px;
+  cursor: pointer;
+}
+
+.categories{
+  display: flex;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+.categories :nth-child(n){
+  margin-right: 220px;
+}
+
+.categories :nth-child(n):hover{
+  color: green;
+}
+
+.bannerPic{
+  margin-top: 70px;
+  width: 1100px;
+  height: 450px;
+  margin-left: 170px;
+}
+
+
+.one_btn{
+  background-color: green;
+  color: white;
+}
+
+.oneImg{
+  width: 280px;
+  height: 120px;
+}
+
+label {
+  display: block;
+}
+
+.banner{
+  position: relative;
+}
+
+.details{
+  margin-top: 200px;
+  margin-left: 200px;
+  font-size: 34px;
+  font-weight: 900;
+}
+
+.det2{
+  margin-top: 20px;
+  margin-left: 200px
+}
+
+
+
+
+
+#modal {
+  display: none;
+  position: fixed;
+  top: 100;
+  left: 480px;
+  width: 30%;
+  height: 30%;
+  background-color: grey;
+}
+
+#modal p {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+}
+
+.yes{
+  margin-top: 150px;
+  margin-left: 190px;
+}
+
+.btn{
+  display: none;
+}
+
+.getBtn{
+  display: none;
+}
