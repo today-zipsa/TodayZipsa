@@ -22,60 +22,37 @@ body {
   align-content: center;
 }
 
-body header {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 6em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 0;
-}
-body header .header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: inherit;
-  width: 50em;
-}
-body header .header-wrapper .main-logo {
-  display: block;
-  background-repeat: no-repeat;
-  width: 10em;
-  height: 2.4em;
-  transform: scale(0.8);
-}
-
-main {
+main.join {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-main h1 {
+main.join h1 {
   margin: 2em 0 0.5em 0;
   font-size: 32px;
   font-weight: 600;
 }
-main h3 {
+main.join h3 {
   float: right;
   margin: 0.5em 0 0.5em 75%;
   font-size: 18px;
   font-weight: 600;
   color: var(--disable-color);
 }
-main .division-container {
+main.join .division-container {
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
   width: 84%;
   height: 65%;
   margin: 12.2px 0 13.4px 0;
 }
-main span.required {
+main.join span.required {
   color: var(--required-color);
   font-size: 18;
   font-weight: 600;
 }
-main .join-wrapper {
+main.join .join-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -84,24 +61,24 @@ main .join-wrapper {
   /* imaged preview */
   /* 추가될 이미지를 감싸는 요소 */
 }
-main .join-wrapper .label-wrapper {
+main.join .join-wrapper .label-wrapper {
   display: flex;
   flex-direction: row;
   margin: 18px 0;
 }
-main .join-wrapper .label-wrapper label {
+main.join .join-wrapper .label-wrapper label {
   display: flex;
   align-items: center;
 }
-main .join-wrapper .label-wrapper label.required-contents {
+main.join .join-wrapper .label-wrapper label.required-contents {
   width: 10em;
   height: 4em;
 }
-main .join-wrapper .label-wrapper label.required-contents h5 {
+main.join .join-wrapper .label-wrapper label.required-contents h5 {
   font-size: 18px;
   font-weight: 600;
 }
-main .join-wrapper .label-wrapper label.validator-btn {
+main.join .join-wrapper .label-wrapper label.validator-btn {
   display: inline-block;
   width: 4em;
   height: 2em;
@@ -115,7 +92,7 @@ main .join-wrapper .label-wrapper label.validator-btn {
   font-weight: 600;
   background-color: transparent;
 }
-main .join-wrapper .label-wrapper input {
+main.join .join-wrapper .label-wrapper input {
   width: 20em;
   height: 3.3em;
   padding-left: 10px;
@@ -125,9 +102,11 @@ main .join-wrapper .label-wrapper input {
   font-size: 16px;
   font-weight: 600;
 }
+
 /* named upload */
 /* 파일업로드 외형 감추기 */
-main .join-wrapper .filebox input.upload-name {
+
+main.join .join-wrapper .filebox input.upload-name {
   width: 20em;
   height: 3.3em;
   border: 2px solid var(--input-color);
@@ -136,7 +115,7 @@ main .join-wrapper .filebox input.upload-name {
   -moz-appearance: none;
   appearance: none;
 }
-main .join-wrapper .filebox label.upload-btn {
+main.join .join-wrapper .filebox label.upload-btn {
   display: inline-block;
   width: 4em;
   height: 2em;
@@ -151,7 +130,7 @@ main .join-wrapper .filebox label.upload-btn {
   font-weight: 600;
   background-color: transparent;
 }
-main .join-wrapper .filebox input[type="file"] {
+main.join .join-wrapper .filebox input[type="file"] {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -161,18 +140,18 @@ main .join-wrapper .filebox input[type="file"] {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-main .join-wrapper .filebox .upload-display {
+main.join .join-wrapper .filebox .upload-display {
   /* 이미지가 표시될 지역 */
   margin-bottom: 5px;
 }
 @media (min-width: 768px) {
-  main .join-wrapper .filebox .upload-display {
+  main.join .join-wrapper .filebox .upload-display {
     display: inline-block;
     margin-right: 5px;
     margin-bottom: 0;
   }
 }
-main .join-wrapper .filebox .upload-thumb-wrap {
+main.join .join-wrapper .filebox .upload-thumb-wrap {
   display: inline-block;
   width: 54px;
   padding: 2px;
@@ -180,29 +159,29 @@ main .join-wrapper .filebox .upload-thumb-wrap {
   border: 2px solid var(--main-key-color);
   border-radius: 5px;
 }
-main .join-wrapper .filebox .upload-display img {
+main.join .join-wrapper .filebox .upload-display img {
   display: block;
   max-width: 100%;
   width: 100% \9;
   height: auto;
 }
-main .label-wrapper--agree {
+main.join .label-wrapper--agree {
   display: flex;
   align-items: center;
   padding-top: 3em;
   padding-bottom: 2em;
 }
-main .label-wrapper--agree .required-contents {
+main.join .label-wrapper--agree .required-contents {
   display: flex;
 }
-main .label-wrapper .check-wrapper {
+main.join .label-wrapper .check-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 3em;
   padding-bottom: 2em;
 }
-main .label-wrapper--agree {
+main.join .label-wrapper--agree {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -210,29 +189,29 @@ main .label-wrapper--agree {
   height: 65%;
   margin: 12.2px 0 13.4px 0;
 }
-main .label-wrapper--agree .required-contents {
+main.join .label-wrapper--agree .required-contents {
   width: 10em;
   height: 4em;
 }
-main .label-wrapper--agree .required-contents h5 {
+main.join .label-wrapper--agree .required-contents h5 {
   font-size: 18px;
   font-weight: 600;
 }
-main .label-wrapper--agree .check-wrapper .check-item:first-child label {
+main.join .label-wrapper--agree .check-wrapper .check-item:first-child label {
   font-size: 20px;
   font-weight: 600;
   color: var(--disable-color);
   padding-top: 0.25em;
 }
-main .label-wrapper--agree .check-wrapper .check-item {
+main.join .label-wrapper--agree .check-wrapper .check-item {
   display: flex;
 }
-main .label-wrapper--agree .check-wrapper .check-item label {
+main.join .label-wrapper--agree .check-wrapper .check-item label {
   padding-top: 0.5em;
   font-size: 16px;
   color: var(--disable-color);
 }
-main button.join-btn {
+main.join button.join-btn {
   width: 15em;
   height: 3em;
   margin: 50px;
