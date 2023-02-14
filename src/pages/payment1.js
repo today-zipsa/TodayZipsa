@@ -12,7 +12,7 @@ import { request } from "../api/common.js";
 // const BankAccountList = bankaccountList.accounts
 
 // 계좌목록 (수정필요)
-const accountlist = document.querySelector(".payment-emtpy")
+const accountlist = document.querySelector(".payment1-emtpy")
 
 
 //payment.html
@@ -122,10 +122,10 @@ const paymentModalBody = document.createElement("div")
 const paymentModalBtn = document.createElement("button")
 const paymentModalBtnClose = document.createElement("button")
 
-paymentModal.classList.add("payment-modal")
-paymentModalBody.classList.add("payment-modal-body")
-paymentModalBtn.classList.add("payment-modal-btn")
-paymentModalBtnClose.classList.add("payment-modal-btn-close")
+paymentModal.classList.add("payment1-modal")
+paymentModalBody.classList.add("payment1-modal-body")
+paymentModalBtn.classList.add("payment1-modal-btn")
+paymentModalBtnClose.classList.add("payment1-modal-btn-close")
 
 paymentModalBody.innerHTML = "잔액이 부족합니다"
 paymentModalBtn.innerHTML = "나중에 없앨 모달버튼"
@@ -150,7 +150,7 @@ paymentModalBtnClose.addEventListener('click',() =>{
 
 
 //결제버튼!!BTN수정한것
-document.querySelector(".payment-btn").innerText = "결제버튼"
+document.querySelector(".payment1-btn").innerText = "결제버튼"
 // document.querySelector(".payment-btn").addEventListener('click', ()=> {/*원하시는 콜백함수 아무거나*/})
 
 
