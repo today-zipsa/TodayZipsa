@@ -56,6 +56,7 @@ async function addSitters() {
                 title: data["list"][i].title,
                 price: data["list"][i].price,
                 description: data["list"][i].description,
+                tags: data["list"][i].tags,
                 thumbnail: data["list"][i].thumbnailBase64
             })
         })
@@ -409,7 +410,7 @@ async function getSitters(searchText, pageNumber){
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/search", {
         method: "POST",
         headers,
-        body: JSON.stringify({searchText : `${searchText}`})
+        body: JSON.stringify({searchText : `${searchText}`, searchTags: ['프리미엄']})
 
     })
 
@@ -421,14 +422,14 @@ async function getSitters(searchText, pageNumber){
     const items = []
     let pics = ["../asset/sitterImg/1_2.png", "../asset/sitterImg/1_3.png", "../asset/sitterImg/1_4.png", "../asset/sitterImg/1_6.jpg", "../asset/sitterImg/1_7.jpeg", "../asset/sitterImg/1_8.jpeg", "../asset/sitterImg/1_9.png", "../asset/sitterImg/1_10.jpeg", "../asset/sitterImg/1_11.jpeg", "../asset/sitterImg/1_12.jpg", "../asset/sitterImg/1_13.jpeg", "../asset/sitterImg/1_4.jpeg", "../asset/sitterImg/1_15.jpg", "../asset/sitterImg/1_16.jpg", "../asset/sitterImg/1_17.jpeg", "../asset/sitterImg/1_18.jpeg", "../asset/sitterImg/1_19.jpg", "../asset/sitterImg/1_20.jpeg"]
 
-    const itemsPerPage = 3
+    const itemsPerPage = 4
     const startIndex = (pageNumber - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
 
 
     for (let i = startIndex; i < endIndex && i < json.length; i++) {
         if (items.includes(json[i].title)) return
-        if (json[i].title.includes(inputValue)) {
+        if (json[i].title.includes(searchText)) {
             items.push(json[i].title)
             const div = document.createElement("div")
             div.classList.add("container")
@@ -502,15 +503,16 @@ async function getSitters(searchText, pageNumber){
             document.body.append(div)
         }
     }
-    const pagesCount = Math.ceil(json.length / itemsPerPage)
+    //const pagesCount = Math.ceil(json.length / itemsPerPage)
     const paginationDiv = document.createElement("div")
-    for (let i = 1; i <= pagesCount; i++) {
+    for (let i = 1; i <= 10; i++) {
         const buttonEl = document.createElement("button")
         buttonEl.textContent = i
         if (i === pageNumber) buttonEl.disabled = true
         buttonEl.addEventListener("click", function () {
             document.querySelectorAll(".container").forEach(item => item.remove())
             getSitters(inputValue, i)
+            paginationDiv.style.position = "fixed"
         })
         paginationDiv.style.marginLeft = "600px"
         paginationDiv.append(buttonEl)
