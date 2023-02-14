@@ -1,8 +1,9 @@
 // import { bankaccountList, productdetailinfo } from './payment-mockupdata.js'
-// import { request } from "../api/common.js";
+import { request } from "../api/common.js";
+
+// const res = await request("ACC02", {productID:})
 
 
-// import { request } from "../api/common";
 // 뱅크어카운트리스트 는 배열이다.
 // 각 요소를 순회하면서, account_list 에 append 시킨다.
 // El을 만들어서 순회 후 append를 한다.
@@ -10,7 +11,7 @@
 // bankAccountList 
 // const BankAccountList = bankaccountList.accounts
 
-// 계좌목록 
+// 계좌목록 (수정필요)
 const accountlist = document.querySelector(".payment-emtpy")
 
 
@@ -41,35 +42,35 @@ const paymentLastDiscount = document.createElement("div")
 const paymentLastTotalAccount = document.createElement("div")
 const paymentBtn = document.createElement("div")
 
-paymentOrderpage.classList.add("payment-orderpage")
-paymentTotal.classList.add("payment-total")
-paymentOrder.classList.add("payment-order")
-paymentOrder.classList.add("payment-h3")
-paymentOrderContainer.classList.add("payment-order-container")
-paymentProductInfo.classList.add("payment-text")
-paymentProductPrice.classList.add("payment-text")
-paymentProductCount.classList.add("payment-text")
-paymentOrderer.classList.add("payment-orderer")
-paymentOrderer.classList.add("payment-h3")
-paymentOrdererContatiner.classList.add("payment-orderer-container")
-paymentOrdererOrderer.classList.add("payment-text")
-paymentEmail.classList.add("payment-text")
-paymentPayment.classList.add("payment-payment")
-paymentPayment.classList.add("payment-h3")
-paymentPaymentContainer.classList.add("payment-payment-container")
-paymentPaymentLeft.classList.add("payment-payment-left")
-paymentHow.classList.add("payment-how")
-paymentPaymentRight.classList.add("payment-payment-right")
-paymentAccountTransfer.classList.add("payment-account-transfer")
-paymentEmtpy.classList.add("payment-emtpy")
-paymentMoney.classList.add("payment-money")
-paymentMoney.classList.add("payment-h3")
-paymentLastpayContainer.classList.add("payment-lastpay-container")
-paymentLastAccount.classList.add("payment-text")
-paymentLastDelivery.classList.add("payment-text")
-paymentLastDiscount.classList.add("payment-text")
-paymentLastTotalAccount.classList.add("payment-text")
-paymentBtn.classList.add("payment-btn")
+paymentOrderpage.classList.add("payment1-orderpage")
+paymentTotal.classList.add("payment1-total")
+paymentOrder.classList.add("payment1-order")
+paymentOrder.classList.add("payment1-h3")
+paymentOrderContainer.classList.add("payment1-order-container")
+paymentProductInfo.classList.add("payment1-text")
+paymentProductPrice.classList.add("payment1-text")
+paymentProductCount.classList.add("payment1-text")
+paymentOrderer.classList.add("payment1-orderer")
+paymentOrderer.classList.add("payment1-h3")
+paymentOrdererContatiner.classList.add("payment1-orderer-container")
+paymentOrdererOrderer.classList.add("payment1-text")
+paymentEmail.classList.add("payment1-text")
+paymentPayment.classList.add("payment1-payment")
+paymentPayment.classList.add("payment1-h3")
+paymentPaymentContainer.classList.add("payment1-payment-container")
+paymentPaymentLeft.classList.add("payment1-payment-left")
+paymentHow.classList.add("payment1-how")
+paymentPaymentRight.classList.add("payment1-payment-right")
+paymentAccountTransfer.classList.add("payment1-account-transfer")
+paymentEmtpy.classList.add("payment1-emtpy")
+paymentMoney.classList.add("payment1-money")
+paymentMoney.classList.add("payment1-h3")
+paymentLastpayContainer.classList.add("payment1-lastpay-container")
+paymentLastAccount.classList.add("payment1-text")
+paymentLastDelivery.classList.add("payment1-text")
+paymentLastDiscount.classList.add("payment1-text")
+paymentLastTotalAccount.classList.add("payment1-text")
+paymentBtn.classList.add("payment1-btn")
 
 paymentOrderpage.innerHTML = "<h2>결제페이지</h2>"
 paymentOrder.innerHTML = "<h3>주문상품</h3>"
