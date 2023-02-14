@@ -38,6 +38,10 @@ body header .header-wrapper .logout {
 
 /* Main */
 .admin {
+  display: flex;
+  justify-content: center;
+}
+.admin-tab {
   max-width: 900px;
   margin: 30px auto;
 }
@@ -70,10 +74,10 @@ button {
 
 
 /* Tab 생성 */
-.admin #tab1, #tab2 {
+.admin-tab #tab1, #tab2 {
     display: none;
 }
-.admin label {
+.admin-tab label {
   display: inline-block;
   margin: 0 0 -1px;
   padding: 15px 25px;
@@ -82,18 +86,19 @@ button {
   color: #bbb;
   border: 1px solid transparent;
 }
-.admin label:hover {
+.admin-tab label:hover {
   color: #2e9cdf;
   cursor: pointer;
 }
-.admin input:checked + label {
+.admin-tab input:checked + label {
     color: #555;
     border: 1px solid #ddd;
     border-top: 2px solid #2e9cdf;
     border-bottom: 1px solid #ffffff;
 }
-.admin section {
+.admin-tab tab {
   display: none;
+  width: 50em;
   padding: 20px 0 0;
   border-top: 1px solid #ddd;
 }
@@ -131,6 +136,23 @@ button {
   font-size: 14px;
   line-height: 19px;
 }
+#item_list li .info .tags {
+  display: flex;
+  margin-left: 10px;
+}
+#item_list li .info .tags span{
+  max-width: 100%;
+  margin-right: 10px;
+  padding: 1px 3px;
+  border: 1px solid #0C8A4E;
+  border-radius: 50px;
+  font-size: 13px;
+  line-height: 1.69;
+  color: #0C8A4E;
+  text-decoration: none;
+  overflow: hidden;
+}
+
 #item_list li .price{
   margin: 3%;  
 }
@@ -243,7 +265,6 @@ button {
   padding: 0.5rem 1.875rem 0.5rem 0.875rem;
   font-size: 0.8125rem;
   line-height: 1.47;
-  color: #495057;
   border: 1px solid #E5E5E5;
   border-radius: 4px;
   appearance: none;
