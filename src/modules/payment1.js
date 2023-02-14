@@ -1,9 +1,3 @@
-// import { bankaccountList, productdetailinfo } from './payment-mockupdata.js'
-import { request } from "../api/common.js";
-
-// const res = await request("ACC02", {productID:})
-
-
 // 뱅크어카운트리스트 는 배열이다.
 // 각 요소를 순회하면서, account_list 에 append 시킨다.
 // El을 만들어서 순회 후 append를 한다.
@@ -153,15 +147,6 @@ paymentModalBtnClose.addEventListener('click',() =>{
 document.querySelector(".payment1-btn").innerText = "결제버튼"
 // document.querySelector(".payment-btn").addEventListener('click', ()=> {/*원하시는 콜백함수 아무거나*/})
 
-
-//버튼
-// const btnEl = document.querySelector("payment_btn")
-// //쓰긴했는데 이게 뭐람
-// btnEl.addEventListener('keydown', event => {
-//   if (event.key === 'Enter' && !event.isComposing) {
-//     btnEl.click()
-//   }
-// })
 // span  태그를 만들어서 
 // 계좌목록 없음 텍스트를 넣어서
 // append 
@@ -193,7 +178,7 @@ document.querySelector(".payment1-btn").innerText = "결제버튼"
 
 //     paymentEmtpy.append(liEl)
 // }
-//아 이거 뭔가 잘못된거같은데
+
 
 //만약 계좌 잔액이 부족한 경우, ‘잔액이 부족합니다’라는 단순 텍스트 알림만 보여 주어야 한다.
 //단일계좌기준
@@ -224,18 +209,3 @@ checkBalance(totalBalance, productPrice);
 const { price, thumbnail, title } = productdetailinfo
 
 console.log(price, thumbnail, title)
-
-
-//결제하기
-//버튼을 누르면 bankaccountList. accounts. balance와 productdetailinfo의 price를 비교해
-//balance의 금액을 price의 금액만큼을 차감한다.
-
-//JS로 html옮기기
-// const payment_text = document.createElement("div")
-
-// payment_text.classList.add("payment-text")
-
-// payment_text.textContent="상품정보"
-
-// document.body.append(payment_text)
-//---------
