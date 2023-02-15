@@ -10,18 +10,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
   <link rel="stylesheet" href="../styles/header.css">
   <link rel="stylesheet" href="../styles/join.css">
+  <!-- js -->
+  <script defer type="modules" src="../modules/join.js"></script>
 </head>
 
 <body id="join-page">
   <header>
     <div class="header-wrapper">
-      <img src="../asset/main-logo.png" alt="main-logo" class="main-logo">
+      <a href="/">
+        <img src="../asset/main-logo.png" alt="main-logo" class="main-logo">
+      </a>
       오늘의집사 GNB ALL
     </div>
   </header>
 
   <main id="join">
-    <!-- 회원가입 input section -->
     <h1>회원가입</h1>
     <h3>
       <span class="required">*</span>필수입력사항
@@ -42,6 +45,7 @@
             <h5>비밀번호</h5><span class="required">*</span>
           </label>
           <input type="password" class="password" placeholder="비밀번호를 입력해주세요">
+          <div class="sized-box--pw"></div>
         </div>
 
         <div class="label-wrapper">
@@ -49,6 +53,7 @@
             <h5>비밀번호 확인</h5><span class="required">*</span>
           </label>
           <input type="password" class="password-check" placeholder="비밀번호를 한 번 더 입력해주세요">
+          <div class="sized-box--pwc"></div>
         </div>
 
         <div class="label-wrapper filebox">
@@ -63,7 +68,6 @@
       </div>
     </div>
 
-    <!-- 이용약관 radio section -->
     <div class="label-wrapper--agree">
       <label class="required-contents">
         <h5>이용약관 동의</h5><span class="required">*</span>
@@ -87,15 +91,11 @@
         </div>
       </div>
     </div>
-
+    <!-- <div class="sized-box--agree"></div> -->
     <button class="join-btn">
       가입하기
     </button>
   </main>
-  <footer>
-
-  </footer>
-
 </body>
 
 </html>
