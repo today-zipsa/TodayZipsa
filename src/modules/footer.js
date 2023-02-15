@@ -1,4 +1,8 @@
-const footer = /*html*/ `
+import facebook from "../asset/facebook.svg";
+import instagram from "../asset/instagram.svg";
+import twitter from "../asset/twitter.svg";
+
+export default footer = /*html*/ `
   <footer>
     <div class="footer--top">
 
@@ -32,9 +36,9 @@ const footer = /*html*/ `
     <div class="footer--bottom">
       <label for="copyright">©TodayZipsa - All Rights Reserved</label>
       <div class="social-wrapper">
-        <img src="../asset/facebook.svg" alt="facebook">
-        <img src="../asset/instagram.svg" alt="instagram">
-        <img src="../asset/twitter.svg" alt="twitter">
+        <img src="${facebook}" alt="facebook">
+        <img src="${instagram}" alt="instagram">
+        <img src="${twitter}" alt="twitter">
       </div>
     </div>
   </footer>
