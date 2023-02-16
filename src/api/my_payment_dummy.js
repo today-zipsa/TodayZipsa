@@ -1,4 +1,4 @@
-export const datas = [
+export const payments = [
 	{
 		detailId: "9jAoagzrZBkSWI5NctEB",
 		product: {
@@ -12,7 +12,7 @@ export const datas = [
 				"https://storage.googleapis.com/heropy-api/vIKMk_jy4Yv195256.png",
 		},
 		reservation: null,
-		timePaid: "2021-11-07T20:17:32.112Z",
+		timePaid: "2023-01-07T20:17:32.112Z",
 		isCanceled: true,
 		done: false,
 	},
@@ -37,5 +37,28 @@ export const datas = [
 		timePaid: "2021-11-07T20:01:49.100Z",
 		isCanceled: false,
 		done: true,
+	},
+
+	{
+		detailId: "dMhfxyrAupQP18OYmywy",
+		product: {
+			productId: "cFmaC9aY5KjZbBAkJE9y",
+			title: "애플와치 SE Series",
+			price: 233600,
+			description:
+				"107.9cm(43인치) / 와이드(16:9) / 평면 / VA / 3840 x 2160(4K UHD) / 픽셀피치: 0.2451mm / 8ms(GTG) / 300cd / 5,00",
+			tags: ["가전", "모니터", "컴퓨터"],
+			thumbnail:
+				"https://storage.googleapis.com/heropy-api/vBAK4MQdH5v195712.png",
+		},
+		reservation: {
+			start: "2021-11-12T06:00:00.000Z",
+			end: "2021-11-12T07:00:00.000Z",
+			isCanceled: false,
+			isExpired: true,
+		},
+		timePaid: "2021-09-07T20:01:49.100Z",
+		isCanceled: false,
+		done: false,
 	},
 ];
