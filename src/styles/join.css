@@ -62,18 +62,25 @@
 }
 #join .join-wrapper .label-wrapper {
   display: flex;
-  flex-direction: row;
   margin: 18px 0;
 }
-#join .join-wrapper .label-wrapper label {
+#join .join-wrapper .label-wrapper label.required-contents {
   display: flex;
   align-items: center;
-}
-#join .join-wrapper .label-wrapper label.required-contents {
   width: 10em;
   height: 4em;
 }
 #join .join-wrapper .label-wrapper label.required-contents h5 {
+  font-size: 18px;
+  font-weight: 600;
+}
+#join .join-wrapper .label-wrapper label.required-contents:nth-child(2) {
+  display: flex;
+  align-items: center;
+  width: 10em;
+  height: 4em;
+}
+#join .join-wrapper .label-wrapper label.required-contents:nth-child(2) h5 {
   font-size: 18px;
   font-weight: 600;
 }
@@ -82,8 +89,7 @@
   width: 4em;
   height: 2em;
   margin-left: 0.5em;
-  line-height: normal;
-  vertical-align: middle;
+  padding: 1.3em 1em 0.3em 1em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
   border-radius: 6px;
@@ -93,7 +99,7 @@
 }
 #join .join-wrapper .label-wrapper input {
   width: 20em;
-  height: 3.3em;
+  height: 3.5em;
   padding-left: 10px;
   border-radius: 6px;
   border: 2px solid var(--input-color);
@@ -101,13 +107,22 @@
   font-size: 16px;
   font-weight: 600;
 }
+#join .join-wrapper .label-wrapper .sized-box {
+  width: 100px;
+}
+#join .join-wrapper .label-wrapper .sized-box--pw {
+  margin-left: 110px;
+}
+#join .join-wrapper .label-wrapper .sized-box--pwc {
+  margin-left: 110px;
+}
 #join .join-wrapper .filebox {
   /* named upload */
   /* 파일업로드 외형 감추기 */
 }
 #join .join-wrapper .filebox input.upload-name {
   width: 20em;
-  height: 3.3em;
+  height: 3.5em;
   border: 2px solid var(--input-color);
   border-radius: 6px;
   -webkit-appearance: none; /* 네이티브 외형 감추기 */
@@ -119,9 +134,7 @@
   width: 4em;
   height: 2em;
   margin-left: 0.5em;
-  font-size: inherit;
-  line-height: normal;
-  vertical-align: middle;
+  padding: 1.3em 0.5em 0.3em 1.5em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
   border-radius: 6px;
@@ -167,30 +180,16 @@
 #join .label-wrapper--agree {
   display: flex;
   align-items: center;
-  padding-top: 3em;
-  padding-bottom: 2em;
-}
-#join .label-wrapper--agree .required-contents {
-  display: flex;
-}
-#join .label-wrapper .check-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 3em;
-  padding-bottom: 2em;
-}
-#join .label-wrapper--agree {
-  display: flex;
   justify-content: center;
-  align-items: center;
   width: 84%;
   height: 65%;
-  margin: 12.2px 0 13.4px 0;
+  margin: 3em 6.5em 3em 0;
 }
 #join .label-wrapper--agree .required-contents {
+  display: flex;
   width: 10em;
   height: 4em;
+  margin: 0 50px 136px 0;
 }
 #join .label-wrapper--agree .required-contents h5 {
   font-size: 18px;
@@ -204,6 +203,10 @@
 }
 #join .label-wrapper--agree .check-wrapper .check-item {
   display: flex;
+  margin-bottom: 25px;
+}
+#join .label-wrapper--agree .check-wrapper .check-item img {
+  margin: 5px 16px 0 0;
 }
 #join .label-wrapper--agree .check-wrapper .check-item label {
   padding-top: 0.5em;

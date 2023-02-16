@@ -141,12 +141,7 @@ paymentModalBtnClose.addEventListener('click',() =>{
 })
 // (/payment1 Modal)
 
-// payment1-btn 페이지이동
-// paymentBtn.setAttribute('onclick', nextpage())
-
-// function nextpage() {
-//   window.location.href='payment2.html'
-// }
+// payment1-btn으로 payment2.html 페이지이동
 paymentBtn.addEventListener('click', nextpage);
 
 function nextpage() {
