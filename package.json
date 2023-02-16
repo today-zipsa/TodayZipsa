@@ -2,14 +2,16 @@
 	"name": "todayzipsa",
 	"version": "1.0.0",
 	"description": "![IMG_5258 2](https://user-images.githubusercontent.com/55748886/216059408-1616791d-2a54-4b5e-bda1-ea2e96623e44.jpg)",
-	"main": "index.js",
-	"dependencies": {},
+	"source": "index.html",
+	"dependencies": {
+		"navigo": "^8.11.1"
+	},
 	"devDependencies": {
 		"parcel-bundler": "^1.12.5",
 		"sass": "^1.58.0"
 	},
 	"scripts": {
-		"dev": "parcel ./src/index.html"
+		"dev": "parcel index.html"
 	},
 	"repository": {
 		"type": "git",
