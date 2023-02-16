@@ -34,7 +34,7 @@ const paymentLastAccount = document.createElement("div")
 const paymentLastDelivery = document.createElement("div")
 const paymentLastDiscount = document.createElement("div")
 const paymentLastTotalAccount = document.createElement("div")
-const paymentBtn = document.createElement("div")
+const paymentBtn = document.createElement("button")
 
 paymentOrderpage.classList.add("payment1-orderpage")
 paymentTotal.classList.add("payment1-total")
@@ -141,6 +141,17 @@ paymentModalBtnClose.addEventListener('click',() =>{
 })
 // (/payment1 Modal)
 
+// payment1-btn 페이지이동
+// paymentBtn.setAttribute('onclick', nextpage())
+
+// function nextpage() {
+//   window.location.href='payment2.html'
+// }
+paymentBtn.addEventListener('click', nextpage);
+
+function nextpage() {
+  window.location.href = 'payment2.html';
+}
 
 
 //결제버튼!!BTN수정한것
