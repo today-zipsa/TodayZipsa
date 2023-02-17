@@ -94,9 +94,9 @@ async function getSitters(searchText, pageNumber){
 
 
     const items = []
-    let pics = ["../asset/sitterImg/1_2.png", "../asset/sitterImg/1_3.png", "../asset/sitterImg/1_4.png", "../asset/sitterImg/1_6.jpg", "../asset/sitterImg/1_7.jpeg", "../asset/sitterImg/1_8.jpeg", "../asset/sitterImg/1_9.png", "../asset/sitterImg/1_10.jpeg", "../asset/sitterImg/1_11.jpeg", "../asset/sitterImg/1_12.jpg", "../asset/sitterImg/1_13.jpeg", "../asset/sitterImg/1_4.jpeg", "../asset/sitterImg/1_15.jpg", "../asset/sitterImg/1_16.jpg", "../asset/sitterImg/1_17.jpeg", "../asset/sitterImg/1_18.jpeg", "../asset/sitterImg/1_19.jpg", "../asset/sitterImg/1_20.jpeg"]
+    let pics = ["asset/sitterImg/1_2.png", "asset/sitterImg/1_3.png", "asset/sitterImg/1_4.png", "asset/sitterImg/1_6.jpg", "asset/sitterImg/1_7.jpeg", "asset/sitterImg/1_8.jpeg", "asset/sitterImg/1_9.png", "asset/sitterImg/1_10.jpeg", "asset/sitterImg/1_11.jpeg", "asset/sitterImg/1_12.jpg", "asset/sitterImg/1_13.jpeg", "asset/sitterImg/1_4.jpeg", "asset/sitterImg/1_15.jpg", "asset/sitterImg/1_16.jpg", "asset/sitterImg/1_17.jpeg", "asset/sitterImg/1_18.jpeg", "asset/sitterImg/1_19.jpg", "asset/sitterImg/1_20.jpeg"]
 
-    const itemsPerPage = 4
+    const itemsPerPage = 2
     const startIndex = (pageNumber - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
 
@@ -125,7 +125,7 @@ async function getSitters(searchText, pageNumber){
                 localStorage.setItem("variable", e.target.src);
                 localStorage.setItem("var2", json[i].title)
                 localStorage.setItem("var3", json[i].description)
-                window.location.href = "../pages/detail.html";
+                window.location.href = "pages/detail.html"
                 
 });
 
@@ -152,7 +152,7 @@ async function getSitters(searchText, pageNumber){
             purchaseImm.addEventListener("click", function(){
                 modal.style.display = "block";
                 document.querySelector(".yes").addEventListener("click", function(){
-                    window.location.href = "../pages/login.html"
+                    window.location.href = "pages/login.html"
                 })
                 document.querySelector(".no").addEventListener("click", function(){
                     modal.style.display = "none"
