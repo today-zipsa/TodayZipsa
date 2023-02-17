@@ -1,9 +1,13 @@
+// import {accounts} from "../api/my_accounts_dummy"
+// import {payments} from "../api/my_payment_dummy"
+
 // 뱅크어카운트리스트 는 배열이다.
 // 각 요소를 순회하면서, account_list 에 append 시킨다.
 // El을 만들어서 순회 후 append를 한다.
 
 // bankAccountList 
 // const BankAccountList = bankaccountList.accounts
+// const BankAccountList = accounts.accounts *더미데이터 가져오기
 
 // 계좌목록 (수정필요)
 const accountlist = document.querySelector(".payment1-emtpy")
