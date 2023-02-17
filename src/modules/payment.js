@@ -145,7 +145,7 @@ paymentModalBtnClose.addEventListener('click',() =>{
 paymentBtn.addEventListener('click', nextpage);
 
 function nextpage() {
-  window.location.href = 'payment2.html';
+  window.location.href = 'paymentDone.html';
 }
 
 
