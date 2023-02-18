@@ -258,7 +258,6 @@ async function getSitters(searchText, pageNumber){
 
 
     const items = []
-    let pics = ["asset/sitterImg/1_2.png", "asset/sitterImg/1_3.png", "asset/sitterImg/1_4.png", "asset/sitterImg/1_6.jpg", "asset/sitterImg/1_7.jpeg", "asset/sitterImg/1_8.jpeg", "asset/sitterImg/1_9.png", "asset/sitterImg/1_10.jpeg", "asset/sitterImg/1_11.jpeg", "asset/sitterImg/1_12.jpg", "asset/sitterImg/1_13.jpeg", "asset/sitterImg/1_4.jpeg", "asset/sitterImg/1_15.jpg", "asset/sitterImg/1_16.jpg", "asset/sitterImg/1_17.jpeg", "asset/sitterImg/1_18.jpeg", "asset/sitterImg/1_19.jpg", "asset/sitterImg/1_20.jpeg"]
 
     const itemsPerPage = 2
     const startIndex = (pageNumber - 1) * itemsPerPage
