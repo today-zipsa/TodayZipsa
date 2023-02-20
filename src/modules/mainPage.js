@@ -1,4 +1,5 @@
 const header = document.createElement('header');
+header.classList.add("header")
 
 const headerWrapper = document.createElement('div');
 headerWrapper.classList.add('header-wrapper');
