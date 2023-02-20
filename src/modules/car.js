@@ -26,15 +26,17 @@ get.addEventListener("click", function () {
 
 
 async function deleteSitters(todoId) {
-
-    const res = await fetch(`https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/${todoId}`, {
+    try {
+      const res = await fetch(`https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/${todoId}`, {
         method: "DELETE",
         headers
-    })
-    const json = await res.json()
-    console.log(json)
-
-}
+      });
+      const json = await res.json();
+      console.log(json);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
 async function seeSitters() {
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products", {
@@ -84,7 +86,7 @@ async function getSitters(searchText, pageNumber){
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/search", {
         method: "POST",
         headers,
-        body: JSON.stringify({searchText : `${searchText}` /*, searchTags: ['프리미엄']*/})
+        body: JSON.stringify({searchText : `${searchText}` , searchTags: ['차량']})
 
     })
 
@@ -96,7 +98,7 @@ async function getSitters(searchText, pageNumber){
     const items = []
     let pics = ["../asset/sitterImg/1_2.png", "../asset/sitterImg/1_3.png", "../asset/sitterImg/1_4.png", "../asset/sitterImg/1_6.jpg", "../asset/sitterImg/1_7.jpeg", "../asset/sitterImg/1_8.jpeg", "../asset/sitterImg/1_9.png", "../asset/sitterImg/1_10.jpeg", "../asset/sitterImg/1_11.jpeg", "../asset/sitterImg/1_12.jpg", "../asset/sitterImg/1_13.jpeg", "../asset/sitterImg/1_4.jpeg", "../asset/sitterImg/1_15.jpg", "../asset/sitterImg/1_16.jpg", "../asset/sitterImg/1_17.jpeg", "../asset/sitterImg/1_18.jpeg", "../asset/sitterImg/1_19.jpg", "../asset/sitterImg/1_20.jpeg"]
 
-    const itemsPerPage = 4
+    const itemsPerPage = 2
     const startIndex = (pageNumber - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
 
@@ -114,7 +116,7 @@ async function getSitters(searchText, pageNumber){
             div.style.borderBottom = "1px solid lightgrey"
 
             imgEl = document.createElement("img")
-            imgEl.src = pics[items.length-1]
+            imgEl.src = json[i].thumbnail
             imgEl.style.width = "270px"
             imgEl.style.height = "120px"
             imgEl.style.marginLeft = "20px"
