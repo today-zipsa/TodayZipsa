@@ -8,7 +8,7 @@
     width: inherit;
     min-height: 100%;
   }
-  #main header {
+  #main .header {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -17,14 +17,14 @@
     margin: 0;
     min-width: 40em;
   }
-  #main header .header-wrapper {
+  #main .header .header-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: inherit;
     width: 50em;
   }
-  #main header .header-wrapper .main-logo {
+  #main .header .header-wrapper .main-logo {
     display: block;
     background-repeat: no-repeat;
     width: 10em;
@@ -32,14 +32,14 @@
     transform: scale(0.8);
     background-color: var(--main-key-color);
   }
-  #main header .header-wrapper .search-btn-wrapper {
+  #main .header .header-wrapper .search-btn-wrapper {
     border-radius: 1.8em;
     border: 0.2em solid var(--main-key-color);
     width: 18em;
     height: 1.8em;
     position: relative;
   }
- #main header .header-wrapper .search-btn-wrapper .search-bar {
+ #main .header .header-wrapper .search-btn-wrapper .search-bar {
     display: inline-block;
     width: 18em;
     height: inherit;
@@ -48,21 +48,21 @@
     background-color: transparent;
     padding: 0px;
   }
-  #main header .header-wrapper .search-btn-wrapper .search-bar:focus {
+  #main .header .header-wrapper .search-btn-wrapper .search-bar:focus {
     outline: none;
   }
-  #main header .header-wrapper .search-btn-wrapper .search-btn {
+  #main .header .header-wrapper .search-btn-wrapper .search-btn {
     height: 1.4em;
     width: 1.4em;
     position: absolute;
     top: 0.2em;
     right: 0.6em;
   }
-  #main header .header-wrapper .welcome-word {
+  #main .header .header-wrapper .welcome-word {
     font-size: 1em;
     font-weight: 600;
   }
-  #main header .header-wrapper .logout {
+  #main .header .header-wrapper .logout {
     font-size: 1em;
     font-weight: 600;
     margin-right: 0.2em;
@@ -71,7 +71,7 @@
     width: 50em;
     background-color: red;
     height: inherit;
-  }/*# sourceMappingURL=my.css.map */
+  }
 
   .sitterLogo{
     margin-left: 30px;
