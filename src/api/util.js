@@ -30,6 +30,26 @@ const util = {
   },
 
   /**
+
+   * HTML Element 생성
+   * @param string tagName (생성할 태그)
+   * @param {} attributes (태그에 추가할 속성들)
+   */
+  createEl : function(tagName, ...attr){
+    const el = document.createElement(tagName);
+    attr.forEach(prop => {
+      const [key, value] = Object.entries(prop)[0];
+      if (key === 'textContent' || key === 'innerText'){
+        el.textContent = value;
+      } else {
+        el.setAttribute(key, value);
+      }
+    });
+    return el;
+  },
+
+  /**
+
    * 숫자 천단위 콤마 표시
    * @param Number value 
    * @returns String
