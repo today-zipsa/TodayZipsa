@@ -1,3 +1,7 @@
+@import url(./home.scss);
+@import url(./my.scss);
+@import url(./header.scss);/*# sourceMappingURL=main.css.map */
+
 :root {
     --main-key-color: #0c8a4e;
     --main-bg-color: #f9f9f9;

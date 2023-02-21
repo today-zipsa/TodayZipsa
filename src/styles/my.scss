@@ -4,317 +4,318 @@
 	--hightlight-font-color: #909190;
 }
 
-#my {
-	margin: 0px;
-	width: inherit;
-	min-height: 100%;
+#app {
+	// margin: 0px;
+	// width: inherit;
+	// min-height: 100%;
+	// background-color: var(--main-bg-color);
+	// .my-header {
+	// 	display: flex;
+	// 	justify-content: center;
+	// 	width: 100%;
+	// 	height: 6em;
+	// 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	// 	margin: 0;
+	// 	min-width: 40em;
+	// 	background-color: #fff;
+	// 	.my-header-wrapper {
+	// 		display: flex;
+	// 		justify-content: space-between;
+	// 		align-items: center;
+	// 		height: inherit;
+	// 		width: 50em;
+	// 		background-color: #fff;
+	// 		.main-logo {
+	// 			display: block;
+	// 			background-repeat: no-repeat;
+	// 			width: 10em;
+	// 			height: 2.4em;
+	// 			transform: scale(0.8);
+	// 			background-color: var(--main-key-color);
+	// 		}
+	// 		.search-btn-wrapper {
+	// 			border-radius: 1.8em;
+	// 			border: 0.2em solid var(--main-key-color);
+	// 			width: 18em;
+	// 			height: 1.8em;
+	// 			position: relative;
+
+	// 			.search-bar {
+	// 				display: inline-block;
+	// 				width: 18em;
+	// 				height: inherit;
+	// 				margin-left: 0.6em;
+	// 				border: 0px solid transparent;
+	// 				background-color: transparent;
+	// 				padding: 0px;
+	// 				&:focus {
+	// 					outline: none;
+	// 				}
+	// 			}
+
+	// 			.search-btn {
+	// 				height: 1.4em;
+	// 				width: 1.4em;
+	// 				position: absolute;
+	// 				top: 0.2em;
+	// 				right: 0.6em;
+	// 			}
+	// 		}
+
+	// 		.welcome-word-box {
+	// 			font-size: 1em;
+	// 			font-weight: 600;
+	// 		}
+	// 		.logout {
+	// 			font-size: 1em;
+	// 			font-weight: 600;
+	// 			margin-right: 0.2em;
+	// 		}
+	// 	}
+	// }
+}
+
+.my-section {
 	background-color: var(--main-bg-color);
-	.my-header {
+	width: inherit;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	.profile-container {
 		display: flex;
-		justify-content: center;
-		width: 100%;
-		height: 6em;
-		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-		margin: 0;
-		min-width: 40em;
-		background-color: #fff;
-		.my-header-wrapper {
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			height: inherit;
-			width: 50em;
-			background-color: #fff;
-			.main-logo {
-				display: block;
-				background-repeat: no-repeat;
-				width: 10em;
-				height: 2.4em;
-				transform: scale(0.8);
-				background-color: var(--main-key-color);
-			}
-			.search-btn-wrapper {
-				border-radius: 1.8em;
-				border: 0.2em solid var(--main-key-color);
-				width: 18em;
-				height: 1.8em;
-				position: relative;
-
-				.search-bar {
-					display: inline-block;
-					width: 18em;
-					height: inherit;
+		align-items: center;
+		width: 50em;
+		margin: 1em 0em;
+		padding-left: 1em;
+		.profile-box {
+			width: fit-content;
+			.welcome-word-box {
+				display: flex;
+				align-items: center;
+				justify-content: flex-start;
+				height: 3.2em;
+				.profile-image {
+					width: 2.2em;
+					height: 2.2em;
+					padding: 1.4em 0em;
+				}
+				.profile-words1 {
+					padding-top: 0.2em;
 					margin-left: 0.6em;
-					border: 0px solid transparent;
-					background-color: transparent;
-					padding: 0px;
-					&:focus {
-						outline: none;
-					}
-				}
-
-				.search-btn {
-					height: 1.4em;
-					width: 1.4em;
-					position: absolute;
-					top: 0.2em;
-					right: 0.6em;
+					font-size: 1em;
+					letter-spacing: 0.02em;
+					font-weight: 600;
+					text-decoration: underline;
 				}
 			}
-
-			.welcome-word {
+			.profile-words2 {
+				display: block;
+				padding-top: 0.4em;
 				font-size: 1em;
-				font-weight: 600;
-			}
-			.logout {
-				font-size: 1em;
-				font-weight: 600;
-				margin-right: 0.2em;
+				letter-spacing: 0.02em;
+				font-weight: 340;
 			}
 		}
 	}
-
-	.my-section {
-		width: inherit;
-		height: 100vh;
+	.info-container {
+		width: 50em;
+		height: 100%;
 		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-		.profile-container {
+		.payments-container {
+			width: 36em;
 			display: flex;
-			align-items: center;
-			width: 50em;
-			margin: 1em 0em;
-			padding-left: 1em;
-			.profile-box {
-				width: fit-content;
-				.welcome-word {
+			flex-direction: column;
+			padding-right: 0.4em;
+			.payment-container {
+				box-shadow: 0 4px 16px 0 rgb(0 0 0 / 5%);
+				background-color: #fff;
+				display: inline-block;
+				flex-direction: column;
+				height: fit-content;
+				position: relative;
+				margin-bottom: 0.8em;
+				padding: 1em;
+				border-radius: 1em;
+				box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.02);
+				.payment-state-box {
+					margin-bottom: 0.4em;
+					.payment-state {
+						font-weight: 700;
+						white-space: nowrap;
+						font-size: 0.8em;
+					}
+				}
+				.payment-info-box {
 					display: flex;
 					align-items: center;
-					justify-content: flex-start;
-					height: 3.2em;
-					.profile-image {
-						width: 2.2em;
-						height: 2.2em;
-						padding: 1.4em 0em;
+					.item-image {
+						height: 4em;
+						width: 4em;
+						border-radius: 0.2em;
 					}
-					.profile-words1 {
-						padding-top: 0.2em;
+					.item-info-box {
+						display: flex;
+						flex-direction: column;
 						margin-left: 0.6em;
-						font-size: 1em;
-						letter-spacing: 0.02em;
-						font-weight: 600;
-						text-decoration: underline;
-					}
-				}
-				.profile-words2 {
-					display: block;
-					padding-top: 0.4em;
-					font-size: 1em;
-					letter-spacing: 0.02em;
-					font-weight: 340;
-				}
-			}
-		}
-		.info-container {
-			width: 50em;
-			height: 100%;
-			display: flex;
-			.payments-container {
-				width: 36em;
-				display: flex;
-				flex-direction: column;
-				padding-right: 0.4em;
-				.payment-container {
-					box-shadow: 0 4px 16px 0 rgb(0 0 0 / 5%);
-					background-color: #fff;
-					display: inline-block;
-					flex-direction: column;
-					height: fit-content;
-					position: relative;
-					margin-bottom: 0.8em;
-					padding: 1em;
-					border-radius: 1em;
-					box-shadow: 0px 4px 4px rgb(0, 0, 0, 0.02);
-					.payment-state-box {
-						margin-bottom: 0.4em;
-						.payment-state {
-							font-weight: 700;
-							white-space: nowrap;
-							font-size: 0.8em;
+						line-height: 1em;
+						.payment-date {
+							font-size: 0.68em;
+							color: #a4a4a4;
+							font-weight: 360;
+						}
+
+						.item-name {
+							font-size: 0.72em;
+							font-weight: 380;
+						}
+						.item-price {
+							font-size: 0.72em;
+							font-weight: 550;
+						}
+						.detail-info-btn {
+							font-size: 0.7em;
+							font-weight: 400;
+							color: var(--main-key-color);
+							cursor: pointer;
 						}
 					}
-					.payment-info-box {
+				}
+
+				.two-btn-box {
+					margin-top: 1em;
+					display: flex;
+					height: 2em;
+
+					.btn-pay-confirmed {
+						flex: 1;
 						display: flex;
 						align-items: center;
-						.item-image {
-							height: 4em;
-							width: 4em;
-							border-radius: 0.2em;
-						}
-						.item-info-box {
-							display: flex;
-							flex-direction: column;
-							margin-left: 0.6em;
-							line-height: 1em;
-							.payment-date {
-								font-size: 0.68em;
-								color: #a4a4a4;
-								font-weight: 360;
-							}
-
-							.item-name {
-								font-size: 0.72em;
-								font-weight: 380;
-							}
-							.item-price {
-								font-size: 0.72em;
-								font-weight: 550;
-							}
-							.detail-info-btn {
-								font-size: 0.7em;
-								font-weight: 400;
-								color: var(--main-key-color);
-								cursor: pointer;
-							}
-						}
+						justify-content: center;
+						font-size: 0.7em;
+						font-weight: 500;
+						border: 0.08em solid var(--main-key-color);
+						margin-right: 0.4em;
+						color: var(--main-key-color);
+						border-radius: 0.3em;
+						cursor: pointer;
 					}
 
-					.two-btn-box {
-						margin-top: 1em;
+					.btn-pay-canceled {
+						flex: 1;
 						display: flex;
-						height: 2em;
-
-						.btn-pay-confirmed {
-							flex: 1;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							font-size: 0.7em;
-							font-weight: 500;
-							border: 0.08em solid var(--main-key-color);
-							margin-right: 0.4em;
-							color: var(--main-key-color);
-							border-radius: 0.3em;
-							cursor: pointer;
-						}
-
-						.btn-pay-canceled {
-							flex: 1;
-							display: flex;
-							align-items: center;
-							justify-content: center;
-							font-size: 0.7em;
-							font-weight: 500;
-							border: 0.08em solid #dcdee0;
-							border-radius: 0.3em;
-							cursor: pointer;
-						}
-
-						.none {
-							display: none;
-						}
+						align-items: center;
+						justify-content: center;
+						font-size: 0.7em;
+						font-weight: 500;
+						border: 0.08em solid #dcdee0;
+						border-radius: 0.3em;
+						cursor: pointer;
 					}
 
 					.none {
 						display: none;
 					}
+				}
 
-					.my-payment-list-delete-btn {
+				.none {
+					display: none;
+				}
+
+				.my-payment-list-delete-btn {
+					position: absolute;
+					top: 1em;
+					right: 1em;
+					height: 0.8em;
+					cursor: pointer;
+				}
+			}
+		}
+
+		.accounts-container {
+			display: flex;
+			width: 14em;
+			height: fit-content;
+			border-radius: 16px;
+			background-color: #fff;
+			box-shadow: 0 4px 16px 0 rgb(0 0 0 / 5%);
+			margin-left: 0.6em;
+			padding: 0em 1.2em;
+			flex-direction: column;
+			.accounts-container-title {
+				padding: 1.2em 0 0.4em;
+				font-size: 0.8em;
+				font-weight: 700;
+				text-align: center;
+				height: fit-content;
+				width: inherit;
+				border-bottom: 0.02em solid var(--hightlight-font-color);
+			}
+
+			.accounts-list {
+				.account-container {
+					margin-top: 0.1em;
+					border-bottom: 0.02em solid var(--hightlight-font-color);
+					position: relative;
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					justify-content: flex-start;
+					.bank-img-box {
+						display: flex;
+						align-items: center;
+						width: 4em;
+						height: 4em;
+						.bank-img {
+							width: 100%;
+							transform: scale(0.4);
+						}
+					}
+
+					.account-info-box {
+						flex: 1;
+						display: flex;
+						padding-left: 0.1em;
+						flex-direction: column;
+						line-height: 1.2em;
+						.account-info {
+							font-size: 0.2em;
+							text-decoration: underline;
+							color: var(--hightlight-font-color);
+						}
+
+						.account-balance {
+							font-size: 0.8em;
+							font-weight: 550;
+						}
+					}
+
+					.delete-btn {
 						position: absolute;
-						top: 1em;
-						right: 1em;
-						height: 0.8em;
+						top: 0.2em;
+						right: 0.2em;
+						height: 0.6em;
 						cursor: pointer;
 					}
 				}
 			}
 
-			.accounts-container {
+			.add-account-btn-box {
 				display: flex;
-				width: 14em;
-				height: fit-content;
-				border-radius: 16px;
-				background-color: #fff;
-				box-shadow: 0 4px 16px 0 rgb(0 0 0 / 5%);
-				margin-left: 0.6em;
-				padding: 0em 1.2em;
+				justify-content: center;
+				align-items: center;
 				flex-direction: column;
-				.accounts-container-title {
-					padding: 1.2em 0 0.4em;
-					font-size: 0.8em;
-					font-weight: 700;
-					text-align: center;
-					height: fit-content;
-					width: inherit;
-					border-bottom: 0.02em solid var(--hightlight-font-color);
+				margin-bottom: 0.8em;
+				.btn-img {
+					width: 1.4em;
+					margin-bottom: 0.4em;
+					cursor: pointer;
 				}
-
-				.accounts-list {
-					.account-container {
-						margin-top: 0.1em;
-						border-bottom: 0.02em solid var(--hightlight-font-color);
-						position: relative;
-						display: flex;
-						flex-direction: row;
-						align-items: center;
-						justify-content: flex-start;
-						.bank-img-box {
-							display: flex;
-							align-items: center;
-							width: 4em;
-							height: 4em;
-							.bank-img {
-								width: 100%;
-								transform: scale(0.4);
-							}
-						}
-
-						.account-info-box {
-							flex: 1;
-							display: flex;
-							padding-left: 0.1em;
-							flex-direction: column;
-							line-height: 1.2em;
-							.account-info {
-								font-size: 0.2em;
-								text-decoration: underline;
-								color: var(--hightlight-font-color);
-							}
-
-							.account-balance {
-								font-size: 0.8em;
-								font-weight: 550;
-							}
-						}
-
-						.delete-btn {
-							position: absolute;
-							top: 0.2em;
-							right: 0.2em;
-							height: 0.6em;
-							cursor: pointer;
-						}
-					}
-				}
-
-				.add-account-btn-box {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					flex-direction: column;
-					margin-bottom: 0.8em;
-					.btn-img {
-						width: 1.4em;
-						margin-bottom: 0.4em;
-						cursor: pointer;
-					}
-					.btn-title {
-						font-size: 0.7em;
-						font-weight: 400;
-						color: var(--main-key-color);
-					}
+				.btn-title {
+					font-size: 0.7em;
+					font-weight: 400;
+					color: var(--main-key-color);
 				}
 			}
 		}
