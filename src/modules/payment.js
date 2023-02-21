@@ -1,13 +1,9 @@
-// import {accounts} from "../api/my_accounts_dummy"
-// import {payments} from "../api/my_payment_dummy"
+import {accounts} from "../api/my_accounts_dummy.js"
+import {payments} from "../api/my_payment_dummy.js"
 
-// 뱅크어카운트리스트 는 배열이다.
-// 각 요소를 순회하면서, account_list 에 append 시킨다.
-// El을 만들어서 순회 후 append를 한다.
 
-// bankAccountList 
-// const BankAccountList = bankaccountList.accounts
-// const BankAccountList = accounts.accounts *더미데이터 가져오기
+// *더미데이터 가져오기
+const BankAccountList = accounts.accounts 
 
 // 계좌목록 (수정필요)
 const accountlist = document.querySelector(".payment1-emtpy")
@@ -31,7 +27,7 @@ const paymentPaymentLeft = document.createElement("div")
 const paymentHow = document.createElement("div")
 const paymentPaymentRight = document.createElement("div")
 const paymentAccountTransfer = document.createElement("span")
-const paymentEmtpy = document.createElement("div")
+const paymentEmtpy = document.createElement("ul")
 const paymentMoney = document.createElement("div")
 const paymentLastpayContainer = document.createElement("div")
 const paymentLastAccount = document.createElement("div")
@@ -81,7 +77,7 @@ paymentEmail.textContent = "E-mail"
 paymentPayment.innerHTML = "<h3>결제수단</h3>"
 paymentHow.textContent = "결제수단"
 paymentAccountTransfer.textContent = "계좌이체"
-paymentEmtpy.innerHTML = "<h4>등록된 계좌가 없습니다</h4>"
+// paymentEmtpy.innerHTML = "<h4>등록된 계좌가 없습니다</h4>"
 paymentMoney.innerHTML = "<h3>결제 금액</h3>"
 paymentLastAccount.textContent = "주문금액"
 paymentLastDelivery.textContent = "배송비"
@@ -147,11 +143,9 @@ paymentModalBtnClose.addEventListener('click',() =>{
 
 // payment1-btn으로 payment2.html 페이지이동
 paymentBtn.addEventListener('click', nextpage);
-
 function nextpage() {
   window.location.href = 'paymentDone.html';
 }
-
 
 //결제버튼!!BTN수정한것
 document.querySelector(".payment1-btn").innerText = "결제버튼"
@@ -162,10 +156,10 @@ document.querySelector(".payment1-btn").innerText = "결제버튼"
 // append 
 
 //추후 수정
-// if (BankAccountList.length === 0) {
-//   accountlist.innerHTML =
-//   `<span>계좌목록이 없습니다</span>`
-// }
+if (BankAccountList.length === 0) {
+  accountlist.innerHTML =
+  `<span>계좌목록이 없습니다</span>`
+}
 
 
 // console.log(BankAccountList)
@@ -173,21 +167,22 @@ document.querySelector(".payment1-btn").innerText = "결제버튼"
 // 각 요소마다 li 태그를 생성하고
 // li 태그에 account 정보를 span태그 안에 넣고
 // 원하는 위치에 접목시킨다.
+// input(type:radio)를 추가
 
-//만들어주신것
-// const account = document.createElement("span")
-// account.innerText = bankaccountList[I] + ...;
-// const account = liEl.append(account);
-// accountlist.append(liEl);
+for (let i = 0; i < BankAccountList.length; i++) {
+  const liEl = document.createElement('li');
+  const radioEl = document.createElement('input');
+  radioEl.type = "radio";
+  radioEl.name = "accountSelection";
+  radioEl.value = i;
+  liEl.appendChild(radioEl);
+  const spanEl = document.createElement('span');
+  spanEl.innerHTML = `${BankAccountList[i].bankName} ${BankAccountList[i].accountNumber} 잔액:${BankAccountList[i].balance}`;
+  liEl.appendChild(spanEl);
+  paymentEmtpy.append(liEl);
+}
 
-// 원래 만들었던거 (아래)(추후 수정)
-//   for(let i = 0; i < BankAccountList.length ; i ++) {
-//     const liEl = document.createElement('li')
-//     liEl.innerHTML =
-//       `<span>${BankAccountList[i].bankName} ${BankAccountList[i].accountNumber} ${BankAccountList[i].balance}</span>`
 
-//     paymentEmtpy.append(liEl)
-// }
 
 
 //만약 계좌 잔액이 부족한 경우, ‘잔액이 부족합니다’라는 단순 텍스트 알림만 보여 주어야 한다.
@@ -195,27 +190,17 @@ document.querySelector(".payment1-btn").innerText = "결제버튼"
 //bankaccount리스트에서 balance값이 상품값보다 부족할경우
 //'잔액이 부족합니다'텍스트 출력
 
-// 아래주석은 원래 만들어봤던 코드...
-// if(BankAccountList.balance < productdetailinfo.price){
-//   "잔액이 부족합니다"
-// }
 function checkBalance(balance, price) {
   if (balance < price) {
     console.log("잔액이 부족합니다");
     return;
   }
-  // Add other code here if the balance is sufficient
 }
 
-const totalBalance = bankaccountList.totalBalance;
-const productPrice = productdetailinfo.price;
+const totalBalance = accounts.totalBalance;
+const productPrice = payments;
 checkBalance(totalBalance, productPrice);
 
 
-
-// 제품목록
-// 쓸 데이터는 price, thumbnail, title
-
-const { price, thumbnail, title } = productdetailinfo
-
-console.log(price, thumbnail, title)
+//계좌목록 css적용
+paymentEmtpy.setAttribute("style", "list-style:none")
