@@ -1,3 +1,295 @@
 @import url(./home.scss);
 @import url(./my.scss);
 @import url(./header.scss);/*# sourceMappingURL=main.css.map */
+
+:root {
+    --main-key-color: #0c8a4e;
+    --main-bg-color: #f9f9f9;
+  }
+  
+  #main {
+    margin: 0px;
+    width: inherit;
+    min-height: 100%;
+  }
+  #main .header {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 6em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 0;
+    min-width: 40em;
+  }
+  #main .header .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: inherit;
+    width: 50em;
+  }
+  #main .header .header-wrapper .main-logo {
+    display: block;
+    background-repeat: no-repeat;
+    width: 10em;
+    height: 2.4em;
+    transform: scale(0.8);
+    background-color: var(--main-key-color);
+  }
+  #main .header .header-wrapper .search-btn-wrapper {
+    border-radius: 1.8em;
+    border: 0.2em solid var(--main-key-color);
+    width: 18em;
+    height: 1.8em;
+    position: relative;
+  }
+ #main .header .header-wrapper .search-btn-wrapper .search-bar {
+    display: inline-block;
+    width: 18em;
+    height: inherit;
+    margin-left: 0.6em;
+    border: 0px solid transparent;
+    background-color: transparent;
+    padding: 0px;
+  }
+  #main .header .header-wrapper .search-btn-wrapper .search-bar:focus {
+    outline: none;
+  }
+  #main .header .header-wrapper .search-btn-wrapper .search-btn {
+    height: 1.4em;
+    width: 1.4em;
+    position: absolute;
+    top: 0.2em;
+    right: 0.6em;
+  }
+  #main .header .header-wrapper .welcome-word {
+    font-size: 1em;
+    font-weight: 600;
+  }
+  #main .header .header-wrapper .logout {
+    font-size: 1em;
+    font-weight: 600;
+    margin-right: 0.2em;
+  }
+ #main section {
+    width: 50em;
+    background-color: red;
+    height: inherit;
+  }
+
+  .sitterLogo{
+    margin-left: 30px;
+    margin-top: 30px;
+    position: relative;
+  }
+  
+  .sitterLogo{
+    margin-left: 30px;
+    margin-top: 30px;
+    position: relative;
+  }
+  
+  .signUp{
+    position: absolute;
+    margin-left: 1200px;
+    margin-top: -70px;
+    cursor: pointer;
+  }
+  
+  .signIn{
+    position: absolute;
+    margin-left: 1300px;
+    margin-top: -70px;
+    cursor: pointer;
+  }
+  
+  .categories{
+    display: flex;
+    margin-left: 250px;
+    margin-top: 50px;
+  }
+  
+  .categories :nth-child(n){
+    margin-right: 220px;
+  }
+  
+  .categories :nth-child(n):hover{
+    color: green;
+  }
+  
+  .bannerPic{
+    margin-top: 70px;
+    width: 1100px;
+    height: 450px;
+    margin-left: 170px;
+  }
+  
+  
+  .one_btn{
+    background-color: green;
+    color: white;
+  }
+  
+  .oneImg{
+    width: 280px;
+    height: 120px;
+  }
+  
+  /* label {
+    display: block;
+  }
+   */
+  .banner{
+    position: relative;
+  }
+  
+  .details{
+    margin-top: 200px;
+    margin-left: 200px;
+    font-size: 34px;
+    font-weight: 900;
+  }
+  
+  .det2{
+    margin-top: 20px;
+    margin-left: 200px
+  }
+  
+  
+  
+  
+  
+  #modal {
+    display: none;
+    position: fixed;
+    top: 100;
+    left: 480px;
+    width: 30%;
+    height: 30%;
+    background-color: grey;
+  }
+  
+  #modal p {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  #close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+  }
+  
+  .yes{
+    margin-top: 150px;
+    margin-left: 190px;
+  }
+
+
+  .swiper-container {
+    width: 100%;
+    height: 300px;
+    margin: 0 auto;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .swiper-button-next, .swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+  }
+  
+  .swiper-button-next {
+    right: 10px;
+  }
+  
+  .swiper-button-prev {
+    left: 10px;
+  }
+  .btn{
+    display: none;
+  }
+  
+  .getBtn{
+    display: none;
+  }
+
+
+  .container{
+    height: 200px;
+    width: 800px;
+    margin: 20px 300px;
+    border-top: 1px solid lightgrey;
+    border-bottom: 1px solid lightgrey;
+  }
+
+  .titleEl{
+    margin-left: 300px;
+    margin-top: -120px;
+  }
+
+  .mainImg{
+    width: 270px;
+    height: 120px;
+    margin-left: 20px;
+    margin-top: 42px;
+  }
+
+  .desc{
+    margin-left: 300px;
+    margin-top: 30px;
+  }
+
+  .baro{
+    margin-left: 700px;
+    margin-bottom: 10px;
+  }
+
+  .price{
+    margin-left: 640px;
+    margin-top: -20px;
+    width: 130px;
+    height: 35px;
+    background-color: green;
+    color: white;
+  }
+
+  .detailImg{
+    width: 390px;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: 200px;
+  }
+
+  .newTitle{
+    margin-top: -260px;
+    margin-left: 620px;
+    font-size: 32px;
+  }
+
+  .newDesc{
+    margin-left: 620px;
+    margin-top: 20px;
+  }
+
+  .priceEl{
+    margin-top: 30px;
+    margin-left: 620px;
+    font-size: 35px;
+  }
