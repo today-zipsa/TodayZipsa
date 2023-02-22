@@ -1,22 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <body id="main">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/sitters.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
     <script defer src="../modules/car.js"></script>
     <title>JS</title>
-</head>
-<body>
   <div>
-    <h1 class="sitterLogo">오늘의집사</h1>
-    <input type="text" placeholder="검색어를 입력해주세요" class="sitterInput"/>
-    <button class="btn">추가</button>
-    <button class="searchBtn">검색</button>
-    <button class="getBtn">보기</button>
-    <h4 class="signUp" onclick="window.location.href='join.html'">회원가입</h4>
-    <h4 class="signIn" onclick="window.location.href='login.html'">로그인</h4>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+  />
+
+
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+  <title>오늘의집사</title>
+  <header>
+    <div class="header-wrapper">
+      <img src="../asset/main-logo.png" alt="main-logo" class="main-logo"></img>
+      <div class="search-btn-wrapper">
+        <input type="text" class="search-bar" placeholder="검색어를 입력해주세요." />
+        <img class="search-btn" src="../asset/search-btn.png" alt="search-btn">
+      </div>
+      <span class="welcome-word">반가워요, 집사님!</span>
+      <span class="logout">로그아웃</span>
+    </div>
+  </header>
+  <button class="btn">추가!</button>
+  <button class="getBtn">보기</button>
+
+
+
+  <div class="swiper-container">
+	<div class="swiper-wrapper">
+	  <div class="swiper-slide"><img src="../asset/swiper1.jpg" /></div>
+	  <div class="swiper-slide"><img src="../asset/swiper2.jpg" /></div>
+	  <div class="swiper-slide"><img src="../asset/swiper3.jpg" /></div>
+	</div>
+
+	<div class="swiper-button-next"></div>
+	<div class="swiper-button-prev"></div>
+
+  </div>
+
+
+  <div id="modal">
+    <p>로그인 하시겠습니까?</p>
+    <button class="yes">네</button>
+    <button class="no">아니오</button>
   </div>
 
   <div class="categories">
@@ -25,17 +60,18 @@
     <h2 class="sitter" onclick="window.location.href='sitters.html'">펫시터</h2>
     <h2 class="snack" onclick="window.location.href='snack.html'">펫간식</h2>
   </div>
-
+  <!--
   <div class="banner">
-    <img src="../asset/carImg/4_1.png" class="bannerPic" >
-    <h2 class="arrowLeft"><</h2>
-    <h2 class="arrowRight">></h2>
+    <img src="asset/hotelImg/2_2.png" class="bannerPic" >
+      <h2 class="arrowRight" onClick="window.location.href='rental.html'">></h2>
     </img>
   </div>
+-->
 
   <div class="products">
     <div class="one">
     </div>
   </div>
 </body>
+</head>
 </html>
