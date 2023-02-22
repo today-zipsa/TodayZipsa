@@ -1,7 +1,13 @@
 import Navigo from "navigo";
+/**
+ * Common
+ */
+import Header from "../components/templates/header";
+/**
+ * Pages
+ */
 import homeMainPage from "../pages/home";
-
-console.log("test");
+import MyPage from "../components/pages/myPage";
 
 const app = document.querySelector("#app");
 
@@ -10,17 +16,46 @@ const router = new Navigo("/");
 router
 	.on({
 		"/": () => {
-			console.log("home");
 			renderPage(homeMainPage);
 		},
-		"/login": () => {
-			console.log("login");
+		"/sitter": () => {
+			renderPage(/**SitterPage*/);
 		},
-		"/join": () => {
-			console.log("join");
+		"/snack": () => {
+			renderPage(/**SnackPage*/);
+		},
+		"/rental": () => {
+			renderPage(/**RentalPage*/);
+		},
+		"/detail": () => {
+			renderPage(/**DetailPage*/);
+		},
+		"/snack": () => {
+			renderPage(/**SnackPage*/);
 		},
 		"/my": () => {
-			console.log("my");
+			renderPage([Header, MyPage]);
+		},
+		"/my/order/detail": () => {
+			renderPage(/**MyOrderDetailPage*/);
+		},
+		"/my/payment/detail": () => {
+			renderPage(/**MyPaymentDetailPage*/);
+		},
+		"/login": () => {
+			renderPage(/**LoginPage*/);
+		},
+		"/join": () => {
+			renderPage(/**JoinPage*/);
+		},
+		"/payment": () => {
+			renderPage(/**PaymentPage*/);
+		},
+		"/payment/done": () => {
+			renderPage(/**PaymentDonePage*/);
+		},
+		"/admin": () => {
+			renderPage(/**PaymentDonePage*/);
 		},
 		"product/:productId": match => {
 			const { productId } = match?.data;
@@ -33,10 +68,13 @@ router
 	.resolve();
 
 function renderPage(page) {
-	//const app = document.querySelector("#app");
 	console.log({ app, page });
-	app.replaceChildren();
-	app.appendChild(page);
+	app.innerHTML = "";
+	if (Array.isArray(page)) {
+		page.forEach(node => app.appendChild(node));
+	} else {
+		app.appendChild(page);
+	}
 }
 
 /**
