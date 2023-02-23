@@ -1,3 +1,4 @@
+import Modal from "../templates/modal";
 const MyPage = document.createElement("section");
 const profileContainer = document.createElement("box");
 const profileBox = document.createElement("box");
@@ -50,6 +51,6 @@ accountsContainer.append(
 	accountsList,
 	addAccountBtnBox
 );
-MyPage.append(profileContainer, infoContainer);
+MyPage.append(profileContainer, infoContainer, Modal);
 
 export default MyPage;
