@@ -4,10 +4,6 @@
 	--hightlight-font-color: #909190;
 }
 
-.--hide {
-	display: none;
-}
-
 .my-section {
 	background-color: var(--main-bg-color);
 	width: inherit;
@@ -264,12 +260,75 @@
 		display: flex;
 		justify-content: center;
 		align-items: start;
+
 		.modal-template {
+			padding: 10px 0px;
 			margin-top: 50px;
-			width: 500px;
-			height: 600px;
+			width: 351px;
+			height: 490px;
 			background-color: #fff;
-			border-radius: 30px;
+			border-radius: 0.3em;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			flex-direction: column;
+
+			.input-box {
+				display: flex;
+				flex-direction: column;
+				.input-bar-name {
+					font-weight: 600;
+					margin-bottom: 5px;
+					color: #2f3438;
+					padding-left: 3px;
+				}
+				.input-bar {
+					height: 31px;
+					width: 280px;
+					border: 0.08em solid #dcdee0;
+					padding-left: 5px;
+					border-radius: 5px;
+				}
+
+				&::placeholder {
+					color: #dcdee06c;
+				}
+			}
+			.modal-btn-box {
+				display: flex;
+				flex-direction: column;
+				.complete-btn {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 0.7em;
+					font-weight: 500;
+					border: 0.08em solid var(--main-key-color);
+					margin-right: 0.4em;
+					color: var(--main-key-color);
+					border-radius: 0.3em;
+					cursor: pointer;
+					height: 35px;
+					width: 289px;
+					margin-bottom: 5px;
+				}
+				.cancel-btn {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					font-size: 0.7em;
+					font-weight: 500;
+					border: 0.08em solid #dcdee0;
+					border-radius: 0.3em;
+					cursor: pointer;
+					height: 35px;
+					width: 289px;
+				}
+			}
 		}
+	}
+
+	.--hide {
+		display: none;
 	}
 }

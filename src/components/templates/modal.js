@@ -1,8 +1,8 @@
 const Modal = document.createElement("box");
 const ModalTemplate = document.createElement("box");
 
-Modal.className = "modal";
-// Modal.className = "--hide";
+Modal.classList.add("modal");
+Modal.classList.add("--hide");
 ModalTemplate.className = "modal-template";
 
 Modal.appendChild(ModalTemplate);
