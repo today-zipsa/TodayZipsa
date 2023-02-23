@@ -1,6 +1,6 @@
 // import { request } from "../src/api/common.js";
-import { payments } from "../api/my_payment_dummy.js";
-import { accounts } from "../api/my_accounts_dummy.js";
+import { payments } from "../api/my_payment_dummy";
+import { accounts } from "../api/my_accounts_dummy";
 // import { banks } from "../api/my_usable_banks_dummy.js";
 
 const app = document.querySelector("#app");
@@ -154,10 +154,17 @@ const accountsList = accountsInfo.map(account => {
 	}
 });
 
-profileWelcomeWord.innerText = `안녕하세요, ${memberName}님`;
-peoriodOfPayment.innerText = `${firstDateToPay} ~ ${lastDateToPay} 동안 구매해주신 내역이에요.`;
-paymentsContainer.append(...paymentsList);
-accountsBoxs.append(...accountsList);
+if (
+	profileWelcomeWord &&
+	peoriodOfPayment &&
+	paymentsContainer &&
+	accountsBoxs
+) {
+	profileWelcomeWord.innerText = `안녕하세요, ${memberName}님`;
+	peoriodOfPayment.innerText = `${firstDateToPay} ~ ${lastDateToPay} 동안 구매해주신 내역이에요.`;
+	paymentsContainer.append(...paymentsList);
+	accountsBoxs.append(...accountsList);
+}
 
 function setDetailInfoButtonState(paymentState) {
 	switch (paymentState) {
