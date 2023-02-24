@@ -74,54 +74,110 @@
   border-radius: 1em;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
 }
-.my-section .info-container .payments-container .payment-container .payment-state-box {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-state-box {
   margin-bottom: 0.4em;
 }
-.my-section .info-container .payments-container .payment-container .payment-state-box .payment-state {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-state-box
+  .payment-state {
   font-weight: 700;
   white-space: nowrap;
   font-size: 0.8em;
 }
-.my-section .info-container .payments-container .payment-container .payment-info-box {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-info-box {
   display: flex;
   align-items: center;
 }
-.my-section .info-container .payments-container .payment-container .payment-info-box .item-image {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-info-box
+  .item-image {
   height: 4em;
   width: 4em;
   border-radius: 0.2em;
 }
-.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-info-box
+  .item-info-box {
   display: flex;
   flex-direction: column;
   margin-left: 0.6em;
   line-height: 1em;
 }
-.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box .payment-date {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-info-box
+  .item-info-box
+  .payment-date {
   font-size: 0.68em;
   color: #a4a4a4;
   font-weight: 360;
 }
-.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box .item-name {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-info-box
+  .item-info-box
+  .item-name {
   font-size: 0.72em;
   font-weight: 380;
 }
-.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box .item-price {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-info-box
+  .item-info-box
+  .item-price {
   font-size: 0.72em;
   font-weight: 550;
 }
-.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box .detail-info-btn {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .payment-info-box
+  .item-info-box
+  .detail-info-btn {
   font-size: 0.7em;
   font-weight: 400;
   color: var(--main-key-color);
   cursor: pointer;
 }
-.my-section .info-container .payments-container .payment-container .two-btn-box {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .two-btn-box {
   margin-top: 1em;
   display: flex;
   height: 2em;
 }
-.my-section .info-container .payments-container .payment-container .two-btn-box .btn-pay-confirmed {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .two-btn-box
+  .btn-pay-confirmed {
   flex: 1;
   display: flex;
   align-items: center;
@@ -134,7 +190,12 @@
   border-radius: 0.3em;
   cursor: pointer;
 }
-.my-section .info-container .payments-container .payment-container .two-btn-box .btn-pay-canceled {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .two-btn-box
+  .btn-pay-canceled {
   flex: 1;
   display: flex;
   align-items: center;
@@ -145,13 +206,22 @@
   border-radius: 0.3em;
   cursor: pointer;
 }
-.my-section .info-container .payments-container .payment-container .two-btn-box .none {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .two-btn-box
+  .none {
   display: none;
 }
 .my-section .info-container .payments-container .payment-container .none {
   display: none;
 }
-.my-section .info-container .payments-container .payment-container .my-payment-list-delete-btn {
+.my-section
+  .info-container
+  .payments-container
+  .payment-container
+  .my-payment-list-delete-btn {
   position: absolute;
   top: 1em;
   right: 1em;
@@ -180,7 +250,11 @@
   width: inherit;
   border-bottom: 0.02em solid var(--hightlight-font-color);
 }
-.my-section .info-container .accounts-container .accounts-list .account-container {
+.my-section
+  .info-container
+  .accounts-container
+  .accounts-list
+  .account-container {
   margin-top: 0.1em;
   border-bottom: 0.02em solid var(--hightlight-font-color);
   position: relative;
@@ -189,33 +263,66 @@
   align-items: center;
   justify-content: flex-start;
 }
-.my-section .info-container .accounts-container .accounts-list .account-container .bank-img-box {
+.my-section
+  .info-container
+  .accounts-container
+  .accounts-list
+  .account-container
+  .bank-img-box {
   display: flex;
   align-items: center;
   width: 4em;
   height: 4em;
 }
-.my-section .info-container .accounts-container .accounts-list .account-container .bank-img-box .bank-img {
+.my-section
+  .info-container
+  .accounts-container
+  .accounts-list
+  .account-container
+  .bank-img-box
+  .bank-img {
   width: 100%;
   transform: scale(0.4);
 }
-.my-section .info-container .accounts-container .accounts-list .account-container .account-info-box {
+.my-section
+  .info-container
+  .accounts-container
+  .accounts-list
+  .account-container
+  .account-info-box {
   flex: 1;
   display: flex;
   padding-left: 0.1em;
   flex-direction: column;
   line-height: 1.2em;
 }
-.my-section .info-container .accounts-container .accounts-list .account-container .account-info-box .account-info {
+.my-section
+  .info-container
+  .accounts-container
+  .accounts-list
+  .account-container
+  .account-info-box
+  .account-info {
   font-size: 0.2em;
   text-decoration: underline;
   color: var(--hightlight-font-color);
 }
-.my-section .info-container .accounts-container .accounts-list .account-container .account-info-box .account-balance {
+.my-section
+  .info-container
+  .accounts-container
+  .accounts-list
+  .account-container
+  .account-info-box
+  .account-balance {
   font-size: 0.8em;
   font-weight: 550;
 }
-.my-section .info-container .accounts-container .accounts-list .account-container .delete-btn {
+.my-section
+  .info-container
+  .accounts-container
+  .accounts-list
+  .account-container
+  .delete-btn {
   position: absolute;
   top: 0.2em;
   right: 0.2em;
@@ -234,8 +341,12 @@
   margin-bottom: 0.4em;
   cursor: pointer;
 }
-.my-section .info-container .accounts-container .add-account-btn-box .btn-title {
+.my-section
+  .info-container
+  .accounts-container
+  .add-account-btn-box
+  .btn-title {
   font-size: 0.7em;
   font-weight: 400;
   color: var(--main-key-color);
-}/*# sourceMappingURL=my.css.map */
+} /*# sourceMappingURL=my.css.map */
