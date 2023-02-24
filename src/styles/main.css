@@ -1,9 +1,15 @@
+@import url(./home.scss);
+@import url(./my.scss);
+@import url(./header.css); /*# sourceMappingURL=main.css.map */
+
+
 :root {
   --main-key-color: #0c8a4e;
   --main-bg-color: #f9f9f9;
 }
 
-#main {margin: 0px;
+#main {
+  margin: 0px;
   width: inherit;
   min-height: 100%;
 }
@@ -72,53 +78,59 @@
   height: inherit;
 }
 
-.sitterLogo{
+
+
+.sitterLogo {
   margin-left: 30px;
   margin-top: 30px;
   position: relative;
 }
 
-.sitterLogo{
+
+.sitterLogo {
   margin-left: 30px;
   margin-top: 30px;
   position: relative;
 }
 
-.signUp{
+
+.signUp {
   position: absolute;
   margin-left: 1200px;
   margin-top: -70px;
   cursor: pointer;
 }
 
-.signIn{
+.signIn {
+
   position: absolute;
   margin-left: 1300px;
   margin-top: -70px;
   cursor: pointer;
 }
 
-.categories{
+
+.categories {
   display: flex;
   margin-left: 250px;
   margin-top: 50px;
 }
 
-.categories :nth-child(n){
+.categories :nth-child(n) {
   margin-right: 220px;
 }
 
-.categories :nth-child(n):hover{
+.categories :nth-child(n):hover {
   color: green;
 }
 
-.bannerPic{
+.bannerPic {
+
   margin-top: 70px;
   width: 1100px;
   height: 450px;
   margin-left: 170px;
 }
-
 
 .one_btn{
   background-color: green;
@@ -130,28 +142,34 @@
   height: 120px;
 }
 
-/* label {
+.label {
   display: block;
 }
- */
+
 .banner{
   position: relative;
 }
 
 .details{
+    display: block;
+  }
+
+.banner {
+  position: relative;
+}
+
+.details {
+
   margin-top: 200px;
   margin-left: 200px;
   font-size: 34px;
   font-weight: 900;
 }
 
-.det2{
+.det2 {
   margin-top: 20px;
-  margin-left: 200px
+  margin-left: 200px;
 }
-
-
-
 
 
 #modal {
@@ -186,7 +204,6 @@
   margin-left: 190px;
 }
 
-
 .swiper-container {
   width: 100%;
   height: 300px;
@@ -199,7 +216,9 @@
   object-fit: cover;
 }
 
-.swiper-button-next, .swiper-button-prev {
+
+
+.swiper-button-prev {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -217,16 +236,17 @@
 .swiper-button-prev {
   left: 10px;
 }
+
 .btn{
   display: none;
 }
 
-.getBtn{
+.getBtn {
   display: none;
 }
 
+.container {
 
-.container{
   height: 200px;
   width: 800px;
   margin: 20px 300px;
@@ -234,10 +254,12 @@
   border-bottom: 1px solid lightgrey;
 }
 
+
 .titleEl{
   margin-left: 300px;
   margin-top: -120px;
 }
+
 
 .mainImg{
   width: 270px;
@@ -245,6 +267,7 @@
   margin-left: 20px;
   margin-top: 42px;
 }
+
 
 .desc{
   margin-left: 300px;
@@ -265,25 +288,26 @@
   color: white;
 }
 
-.detailImg{
+.detailImg {
   width: 390px;
   height: 300px;
   margin-top: 100px;
   margin-left: 200px;
 }
 
-.newTitle{
+
+.newTitle {
   margin-top: -260px;
   margin-left: 620px;
   font-size: 32px;
 }
 
-.newDesc{
+.newDesc {
   margin-left: 620px;
   margin-top: 20px;
 }
 
-.priceEl{
+.priceEl {
   margin-top: 30px;
   margin-left: 620px;
   font-size: 35px;
