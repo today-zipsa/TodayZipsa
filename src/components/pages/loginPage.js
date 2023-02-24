@@ -15,6 +15,7 @@ const btnEl = document.createElement("div");
 const btnLoginEl = document.createElement("button");
 const btnJoinEl = document.createElement("button");
 
+
 /** className() -> className으로 수정 */
 loginWapperEl.className = "login-wrapper";
 inputEl.className = "login-wrapper--input";
@@ -26,6 +27,7 @@ btnEl.className = "btn-wrapper";
 btnLoginEl.className = "login-btn";
 btnJoinEl.className = "login-btn";
 
+
 LoginPage.setAttribute("id", "login-page");
 inputIdEl.setAttribute("type", "text");
 inputIdEl.setAttribute("id", "id");
@@ -33,6 +35,7 @@ inputIdEl.setAttribute("placeholder", "아이디를 입력해주세요");
 inputIdEl.setAttribute("type", "password");
 inputIdEl.setAttribute("id", "pw");
 inputIdEl.setAttribute("placeholder", "비밀번호를 입력해주세요");
+
 
 h1El.textContent = "로그인";
 findIdEl.textContent = "아이디 찾기";

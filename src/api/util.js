@@ -30,12 +30,7 @@ const util = {
   },
 
   /**
-<<<<<<< HEAD
-
-   * HTML Element 생성
-=======
    * HTML Element 생성 
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
    * @param string tagName (생성할 태그)
    * @param {} attributes (태그에 추가할 속성들)
    */
@@ -53,10 +48,6 @@ const util = {
   },
 
   /**
-<<<<<<< HEAD
-
-=======
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
    * 숫자 천단위 콤마 표시
    * @param Number value 
    * @returns String

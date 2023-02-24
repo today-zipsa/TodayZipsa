@@ -3,12 +3,16 @@ import Navigo from "navigo";
  * Common
  */
 import Header from "../components/templates/header";
+import Footer from "../components/templates/footer";
 /**
  * Pages
  */
 import homeMainPage from "../pages/home";
 import { myPage } from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
+// import MyPage from "../components/pages/myPage";
+import LoginPage from "../components/pages/loginPage";
+import JoinPage from "../components/pages/joinPage";
 
 const app = document.querySelector("#app");
 
@@ -61,12 +65,12 @@ router
 		"product/:productId": match => {
 			const { productId } = match?.data;
 
-			console.log({ productId });
+      console.log({ productId });
 
-			renderPage(document.createTextNode(`product ID => ${productId}`));
-		},
-	})
-	.resolve();
+      renderPage(document.createTextNode(`product ID => ${productId}`));
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
 	console.log({ app, page });
