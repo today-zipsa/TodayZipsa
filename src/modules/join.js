@@ -1,6 +1,9 @@
 import { request } from "../api/common.js";
 // import Navigo from "navigo";
 // import homeMainPage from "../pages/home";
+
+///뭘 바꿔볼까
+
 import JoinPage from "../components/pages/joinPage_cE.js";
 // import JoinPage from "../components/pages/joinPage";
 // import { joinBtnEl } from "../components/pages/joinPage";
