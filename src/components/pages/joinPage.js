@@ -168,13 +168,13 @@ const cAllSpanEl = util.createEl(
 const checkUseEl = util.createEl("div", { class: "check-item" });
 const cUseImgBtnEl = util.createEl("button", { class: "img-btn" });
 // cUseImgBtnEl.addEventListener("click", () => {
-//   // console.log("[modal open click]");
-//   // const modal = CheckModalEl.querySelectorAll(".check-modal .hidden");
-//   // console.log("modal>>>>", modal);
-//   // const hidden = modal.classList.remove("hidden");
-//   // console.log("hidden????>>>>", hidden);
-//   // const open = () => hidden;
-//   // open();
+//   console.log("[modal open click]");
+//   const modal = CheckModalEl.querySelectorAll(".check-modal .hidden");
+//   console.log("modal>>>>", modal);
+//   const hidden = modal.classList.remove("hidden");
+//   console.log("hidden????>>>>", hidden);
+//   const open = () => hidden;
+//   open();
 // });
 
 const cUseImgEl = util.createEl("img", { src: src });
@@ -379,36 +379,37 @@ function closeModal() {
   ModalTemplate.querySelector(".modal-template").innerHTML = "";
 }
 
-// function popup() {
-//   const CheckModal = document.createElement("div");
-//   const modalWrapper = document.createElement("div");
-//   const modalBox = document.createElement("div");
-//   const firstPEl = document.createElement("p");
-//   const secondPEl = document.createElement("p");
-//   const thirdPEl = document.createElement("p");
-//   const allPEl = [firstPEl, secondPEl, thirdPEl];
-//   const checkMoalTitle = [
-//     { innerText: "이용약관 동의" },
-//     { innerText: "개인정보 수집 및 이용동의" },
-//   ];
-//   const confirmBtn = document.createElement("button");
+//모달 이벤트를 위한 함수
+function popup() {
+  const CheckModal = document.createElement("div");
+  const modalWrapper = document.createElement("div");
+  const modalBox = document.createElement("div");
+  const firstPEl = document.createElement("p");
+  const secondPEl = document.createElement("p");
+  const thirdPEl = document.createElement("p");
+  const allPEl = [firstPEl, secondPEl, thirdPEl];
+  const checkMoalTitle = [
+    { innerText: "이용약관 동의" },
+    { innerText: "개인정보 수집 및 이용동의" },
+  ];
+  const confirmBtn = document.createElement("button");
 
-//   ModalTemplate.classList.remove("--hide");
+  ModalTemplate.classList.remove("--hide");
 
-//   CheckModal.classList.add("check-modal");
-//   modalWrapper.classList.add("check-modal-wrapper");
-//   modalBox.classList.add("check-modal-box");
-//   confirmBtn.classList.add("check-confirm-btn");
+  CheckModal.classList.add("check-modal");
+  modalWrapper.classList.add("check-modal-wrapper");
+  modalBox.classList.add("check-modal-box");
+  confirmBtn.classList.add("check-confirm-btn");
 
-//   confirmBtn.innerText = "확인";
+  confirmBtn.innerText = "확인";
 
-//   modalWrapper.append(modalBox);
-//   modalBox.append(...checkMoalTitle, allPEl);
+  modalWrapper.append(modalBox);
+  modalBox.append(...checkMoalTitle, allPEl);
 
-//   ModalTemplate.addEventListener("click", (e) => {
-//     closeModal();
-//     // const active = [cUseImgActiveEl, cAInfoImgActiveEl];
-//     const active = cUseImgActiveEl;
-//     active.style.display = "block";
-//   });
-// }
+  ModalTemplate.addEventListener("click", (e) => {
+    closeModal();
+    // const active = [cUseImgActiveEl, cAInfoImgActiveEl];
+    const active = cUseImgActiveEl;
+    active.style.display = "block";
+  });
+}

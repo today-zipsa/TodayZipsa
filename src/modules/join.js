@@ -1,20 +1,32 @@
 import { request } from "../api/common.js";
-import * as joinPage from "../pages/joinPage.js";
-
-const idEl = joinPage.querySelector(".id");
-const passwordEl = joinPage.querySelector(".password");
-const inputFileEl = joinPage.querySelector('input[type="file"]');
-
-// const displayNameEl = joinPage.querySelector(".display-name");
+// import Navigo from "navigo";
+// import homeMainPage from "../pages/home";
+import JoinPage from "../components/pages/joinPage_cE.js";
+// import JoinPage from "../components/pages/joinPage";
+// import { joinBtnEl } from "../components/pages/joinPage";
+// const authorizationEl = document.querySelector(".authorization");
 // const loginEl = document.querySelector(".login");
-const joinBtnEl = joinPage.querySelector(".join-btn");
-const authorizationEl = document.querySelector(".authorization");
+
+/**
+ * 가입 양식 입력란: 닉네임, 계정, 비번, 파일
+ */
+const displayNameEl = JoinPage.querySelector(".display-name");
+const idEl = JoinPage.querySelector(".id");
+const passwordEl = JoinPage.querySelector(".password");
+const passwordCheckEl = JoinPage.querySelector(".password-check");
+const inputFileEl = JoinPage.querySelector(".upload-name");
 
 // 데이터 관리
+let displayName = "";
 let email = "";
 let password = "";
-// let displayName = "";
+let passwordCheck = "";
 let profileImgBase64 = "";
+
+displayNameEl.addEventListener("input", (event) => {
+  displayName = event.target.value.trim();
+  // displayName = displayNameEl.value.trim();
+});
 
 idEl.addEventListener("input", (event) => {
   email = event.target.value.trim();
@@ -26,10 +38,10 @@ passwordEl.addEventListener("input", (event) => {
   // password = passwordEl.value.trim();
 });
 
-// displayNameEl.addEventListener("input", (event) => {
-//   displayName = event.target.value.trim();
-//   // displayName = displayNameEl.value.trim();
-// });
+passwordCheckEl.addEventListener("input", (event) => {
+  passwordCheck = event.target.value.trim();
+  // passwordCheck = passwordCheckEl.value.trim();
+});
 
 inputFileEl.addEventListener("change", (event) => {
   const file = event.target.files[0];
@@ -43,13 +55,15 @@ inputFileEl.addEventListener("change", (event) => {
   });
 });
 
-// 회원가입
+// const router = new Navigo("/");
+
+// 회원가입;
 joinBtnEl.addEventListener("click", async () => {
   // 회원가입 param 담기
   const params = {
+    displayName: displayName,
     email: email,
     password: password,
-    // displayName: displayName,
     profileImgBase64: profileImgBase64,
   };
   // 회원가입API 호출
@@ -58,36 +72,6 @@ joinBtnEl.addEventListener("click", async () => {
 
   // 토큰 저장
   setAccessToken(res.accessToken);
+  // router.on({ "/": () => homeMainPage });
+  console.log("눌려?");
 });
-
-// 회원 로그인
-// loginEl.addEventListener("click", async () => {
-//   // 로그인 param 담기
-//   const params = {
-//     email: email,
-//     password: password,
-//   };
-//   //회원로그인 API 호출
-//   const res = await request("MEB02", params);
-//   console.log("로그인 성공", res);
-
-//   // 토큰 저장
-//   setAccessToken(res.accessToken);
-// });
-
-// // 회원 인증
-// authorizationEl.addEventListener("click", async () => {
-//   //회원인증 API 호출
-//   const res = await request("MEB03");
-// });
-
-// // 토큰 세팅
-// function setAccessToken(accessToken) {
-//   //localStorage 초기화
-//   if (localStorage.length > 0) localStorage.removeItem("accessToken");
-
-//   //로컬스토리지에 토큰 저장
-//   if (accessToken !== null && accessToken !== "") {
-//     window.localStorage.setItem("accessToken", accessToken);
-//   }
-// }
