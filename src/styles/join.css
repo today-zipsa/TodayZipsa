@@ -13,14 +13,6 @@
   --input-color: #d9d9d9;
 }
 
-#join-page {
-  width: 100%;
-  min-width: 1540px;
-  height: auto;
-  justify-content: center;
-  align-content: center;
-}
-
 #join {
   display: flex;
   flex-direction: column;
@@ -32,12 +24,18 @@
   font-size: 32px;
   font-weight: 600;
 }
-#join h3 {
+#join .join--required {
+  display: flex;
   float: right;
   margin: 0.5em 0 0.5em 75%;
+}
+#join .join--required h3 {
   font-size: 18px;
   font-weight: 600;
   color: var(--disable-color);
+}
+#join .join--required span.required {
+  padding: 1em 0.2em 0 0;
 }
 #join .division-container {
   border-top: 2px solid #000;
@@ -74,22 +72,15 @@
   font-size: 18px;
   font-weight: 600;
 }
-#join .join-wrapper .label-wrapper label.required-contents:nth-child(2) {
-  display: flex;
-  align-items: center;
-  width: 10em;
-  height: 4em;
-}
-#join .join-wrapper .label-wrapper label.required-contents:nth-child(2) h5 {
-  font-size: 18px;
-  font-weight: 600;
+#join .join-wrapper .label-wrapper label.required-contents span.required {
+  margin: 0 0 8px 2px;
 }
 #join .join-wrapper .label-wrapper label.validator-btn {
   display: inline-block;
   width: 4em;
   height: 2em;
   margin-left: 0.5em;
-  padding: 1.3em 1em 0.3em 1em;
+  padding: 1.2em 0.9em 0.4em 0.9em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
   border-radius: 6px;
@@ -116,11 +107,11 @@
 #join .join-wrapper .label-wrapper .sized-box--pwc {
   margin-left: 110px;
 }
-#join .join-wrapper .filebox {
+#join .join-wrapper #filebox {
   /* named upload */
   /* 파일업로드 외형 감추기 */
 }
-#join .join-wrapper .filebox input.upload-name {
+#join .join-wrapper #filebox input.upload-name {
   width: 20em;
   height: 3.5em;
   border: 2px solid var(--input-color);
@@ -129,12 +120,12 @@
   -moz-appearance: none;
   appearance: none;
 }
-#join .join-wrapper .filebox label.upload-btn {
+#join .join-wrapper #filebox label.upload-btn {
   display: inline-block;
   width: 4em;
   height: 2em;
   margin-left: 0.5em;
-  padding: 1.3em 0.5em 0.3em 1.5em;
+  padding: 1.2em 0.4em 0.5em 1.4em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
   border-radius: 6px;
@@ -142,7 +133,7 @@
   font-weight: 600;
   background-color: transparent;
 }
-#join .join-wrapper .filebox input[type=file] {
+#join .join-wrapper #filebox > input[type=file]#input_file {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -150,7 +141,7 @@
   margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
-  border: 0;
+  border-color: none;
 }
 #join .join-wrapper .filebox .upload-display {
   /* 이미지가 표시될 지역 */
@@ -183,35 +174,59 @@
   justify-content: center;
   width: 84%;
   height: 65%;
-  margin: 3em 6.5em 3em 0;
+  margin: 3em 3em 3em 0;
 }
 #join .label-wrapper--agree .required-contents {
   display: flex;
   width: 10em;
-  height: 4em;
-  margin: 0 50px 136px 0;
+  margin: 0 50px 180px 0;
 }
 #join .label-wrapper--agree .required-contents h5 {
   font-size: 18px;
   font-weight: 600;
 }
+#join .label-wrapper--agree .required-contents span.required {
+  padding: 27px 0 0 2px;
+}
+#join .label-wrapper--agree .check-wrapper {
+  padding-right: 50px;
+}
 #join .label-wrapper--agree .check-wrapper .check-item:first-child label {
-  font-size: 20px;
+  font-size: 23px !important;
   font-weight: 600;
   color: var(--disable-color);
-  padding-top: 0.25em;
+  padding-top: 0.28em !important;
 }
 #join .label-wrapper--agree .check-wrapper .check-item {
   display: flex;
   margin-bottom: 25px;
 }
-#join .label-wrapper--agree .check-wrapper .check-item img {
-  margin: 5px 16px 0 0;
+#join .label-wrapper--agree .check-wrapper .check-item button.img-btn {
+  cursor: pointer;
+  position: absolute;
+  left: 38.5%;
+  margin-top: 0.5em;
+  border: none;
+  background-color: transparent;
 }
-#join .label-wrapper--agree .check-wrapper .check-item label {
-  padding-top: 0.5em;
-  font-size: 16px;
+#join .label-wrapper--agree .check-wrapper .check-item button.img-btn img {
+  position: relative;
+}
+#join .label-wrapper--agree .check-wrapper .check-item button.img-btn img.active {
+  position: relative;
+  left: 35px;
+}
+#join .label-wrapper--agree .check-wrapper .check-item label.agree-title {
+  margin-right: 0.3em;
+  padding-top: 0.6em;
+  display: flex;
+  font-size: 18px;
   color: var(--disable-color);
+}
+#join .label-wrapper--agree .check-wrapper .check-item span.pilsu {
+  padding-top: 0.6em;
+  color: var(--input-color) !important;
+  font-weight: 600;
 }
 #join button.join-btn {
   width: 15em;
