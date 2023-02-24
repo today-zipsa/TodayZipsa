@@ -4,6 +4,8 @@ import src from "../../asset/global/check.svg";
 import srcActive from "../../asset/global/check_green.svg";
 
 const JoinPage = util.createEl("main", { id: "join" });
+export default JoinPage;
+
 
 /**
  * 필수입력사항 createElement
@@ -325,6 +327,7 @@ cAInfoImgEl.addEventListener("click", () => {});
 cAgeImgBtnEl.append(cAgeImgActiveEl, cAgeImgEl); //check btn
 checkAgeEl.append(cAgeImgBtnEl, cAgeLabelEl, cAgeSpanEl);
 
+
 //이용약관 modal
 cUseImgBtnEl.addEventListener("click", () => {
   const template = ModalTemplate.querySelector(".modal-template");
@@ -369,12 +372,14 @@ cUseImgBtnEl.addEventListener("click", () => {
   console.log("나오고있어?");
 
   template.append(CheckModal);
+
 });
 
 function closeModal() {
   ModalTemplate.classList.add("--hide");
   ModalTemplate.querySelector(".modal-template").innerHTML = "";
 }
+
 
 //all Elements for join Page
 JoinPage.append(
@@ -421,3 +426,4 @@ ModalTemplate.addEventListener("click", (e) => {
 });
 
 export default JoinPage;
+
