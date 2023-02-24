@@ -1,0 +1,241 @@
+:root {
+  --main-key-color: #0c8a4e;
+  --main-bg-color: #f4f6f8;
+  --hightlight-font-color: #909190;
+}
+
+.my-section {
+  background-color: var(--main-bg-color);
+  width: inherit;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.my-section .profile-container {
+  display: flex;
+  align-items: center;
+  width: 50em;
+  margin: 1em 0em;
+  padding-left: 1em;
+}
+.my-section .profile-container .profile-box {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.my-section .profile-container .profile-box .welcome-word-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 3.2em;
+}
+.my-section .profile-container .profile-box .welcome-word-box .profile-image {
+  width: 2.2em;
+  height: 2.2em;
+  padding: 1.4em 0em;
+}
+.my-section .profile-container .profile-box .welcome-word-box .profile-words1 {
+  padding-top: 0.2em;
+  margin-left: 0.6em;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  text-decoration: underline;
+}
+.my-section .profile-container .profile-box .profile-words2 {
+  display: block;
+  padding-top: 0.4em;
+  font-size: 1em;
+  letter-spacing: 0.02em;
+  font-weight: 340;
+}
+.my-section .info-container {
+  width: 50em;
+  height: 100%;
+  display: flex;
+}
+.my-section .info-container .payments-container {
+  width: 36em;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0.4em;
+}
+.my-section .info-container .payments-container .payment-container {
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  display: inline-block;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  position: relative;
+  margin-bottom: 0.8em;
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.02);
+}
+.my-section .info-container .payments-container .payment-container .payment-state-box {
+  margin-bottom: 0.4em;
+}
+.my-section .info-container .payments-container .payment-container .payment-state-box .payment-state {
+  font-weight: 700;
+  white-space: nowrap;
+  font-size: 0.8em;
+}
+.my-section .info-container .payments-container .payment-container .payment-info-box {
+  display: flex;
+  align-items: center;
+}
+.my-section .info-container .payments-container .payment-container .payment-info-box .item-image {
+  height: 4em;
+  width: 4em;
+  border-radius: 0.2em;
+}
+.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.6em;
+  line-height: 1em;
+}
+.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box .payment-date {
+  font-size: 0.68em;
+  color: #a4a4a4;
+  font-weight: 360;
+}
+.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box .item-name {
+  font-size: 0.72em;
+  font-weight: 380;
+}
+.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box .item-price {
+  font-size: 0.72em;
+  font-weight: 550;
+}
+.my-section .info-container .payments-container .payment-container .payment-info-box .item-info-box .detail-info-btn {
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--main-key-color);
+  cursor: pointer;
+}
+.my-section .info-container .payments-container .payment-container .two-btn-box {
+  margin-top: 1em;
+  display: flex;
+  height: 2em;
+}
+.my-section .info-container .payments-container .payment-container .two-btn-box .btn-pay-confirmed {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-weight: 500;
+  border: 0.08em solid var(--main-key-color);
+  margin-right: 0.4em;
+  color: var(--main-key-color);
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+.my-section .info-container .payments-container .payment-container .two-btn-box .btn-pay-canceled {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-weight: 500;
+  border: 0.08em solid #dcdee0;
+  border-radius: 0.3em;
+  cursor: pointer;
+}
+.my-section .info-container .payments-container .payment-container .two-btn-box .none {
+  display: none;
+}
+.my-section .info-container .payments-container .payment-container .none {
+  display: none;
+}
+.my-section .info-container .payments-container .payment-container .my-payment-list-delete-btn {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  height: 0.8em;
+  cursor: pointer;
+}
+.my-section .info-container .accounts-container {
+  display: flex;
+  width: 14em;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.05);
+  margin-left: 0.6em;
+  padding: 0em 1.2em;
+  flex-direction: column;
+}
+.my-section .info-container .accounts-container .accounts-container-title {
+  padding: 1.2em 0 0.4em;
+  font-size: 0.8em;
+  font-weight: 700;
+  text-align: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: inherit;
+  border-bottom: 0.02em solid var(--hightlight-font-color);
+}
+.my-section .info-container .accounts-container .accounts-list .account-container {
+  margin-top: 0.1em;
+  border-bottom: 0.02em solid var(--hightlight-font-color);
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.my-section .info-container .accounts-container .accounts-list .account-container .bank-img-box {
+  display: flex;
+  align-items: center;
+  width: 4em;
+  height: 4em;
+}
+.my-section .info-container .accounts-container .accounts-list .account-container .bank-img-box .bank-img {
+  width: 100%;
+  transform: scale(0.4);
+}
+.my-section .info-container .accounts-container .accounts-list .account-container .account-info-box {
+  flex: 1;
+  display: flex;
+  padding-left: 0.1em;
+  flex-direction: column;
+  line-height: 1.2em;
+}
+.my-section .info-container .accounts-container .accounts-list .account-container .account-info-box .account-info {
+  font-size: 0.2em;
+  text-decoration: underline;
+  color: var(--hightlight-font-color);
+}
+.my-section .info-container .accounts-container .accounts-list .account-container .account-info-box .account-balance {
+  font-size: 0.8em;
+  font-weight: 550;
+}
+.my-section .info-container .accounts-container .accounts-list .account-container .delete-btn {
+  position: absolute;
+  top: 0.2em;
+  right: 0.2em;
+  height: 0.6em;
+  cursor: pointer;
+}
+.my-section .info-container .accounts-container .add-account-btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 0.8em;
+}
+.my-section .info-container .accounts-container .add-account-btn-box .btn-img {
+  width: 1.4em;
+  margin-bottom: 0.4em;
+  cursor: pointer;
+}
+.my-section .info-container .accounts-container .add-account-btn-box .btn-title {
+  font-size: 0.7em;
+  font-weight: 400;
+  color: var(--main-key-color);
+}/*# sourceMappingURL=my.css.map */
