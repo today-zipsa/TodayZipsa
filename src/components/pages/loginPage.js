@@ -15,6 +15,7 @@ const btnEl = document.createElement("div");
 const btnLoginEl = document.createElement("button");
 const btnJoinEl = document.createElement("button");
 
+/** className() -> className으로 수정 */
 loginWapperEl.className = "login-wrapper";
 inputEl.className = "login-wrapper--input";
 findEl.className = "login-wrapper--find";
