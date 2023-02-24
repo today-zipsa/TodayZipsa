@@ -288,7 +288,7 @@ async function getHotels(searchText, pageNumber){
             div.append(imgEl)
 
             imgEl.addEventListener("click", function(){
-                window.location.href = "../pages/detail.html?id=" + json[i].id
+                window.location.href = `/detail/${json[i].id}`
               });
             // imgEl.addEventListener("click", function(e){
             //     localStorage.setItem("variable", e.target.src);
@@ -346,18 +346,23 @@ async function getHotels(searchText, pageNumber){
             document.body.append(div)
         }
     }
-    //const pagesCount = Math.ceil(json.length / itemsPerPage)
+    const pagesCount = Math.ceil(json.length / itemsPerPage)
     const paginationDiv = document.createElement("div")
-    for (let i = 1; i <= 10; i++) {
+
+    paginationDiv.style.position = "absolute";
+    paginationDiv.style.top = "950px";
+    paginationDiv.style.left = "720px";
+
+    for (let i = 1; i <= pagesCount; i++) {
         const buttonEl = document.createElement("button")
         buttonEl.textContent = i
         if (i === pageNumber) buttonEl.disabled = true
         buttonEl.addEventListener("click", function () {
             document.querySelectorAll(".container").forEach(item => item.remove())
             getHotels(inputValue, i)
-            paginationDiv.style.position = "fixed"
+            //paginationDiv.style.position = "fixed"
         })
-        paginationDiv.style.marginLeft = "600px"
+        //paginationDiv.style.marginLeft = "600px"
         paginationDiv.append(buttonEl)
     }
 
