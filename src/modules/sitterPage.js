@@ -252,9 +252,15 @@ async function getSitters(searchText, pageNumber){
             // imgEl.style.marginTop = "42px"
             div.append(imgEl)
 
+            const aTag = document.createElement("a")
+            aTag.href = "/detail"
             imgEl.addEventListener("click", function(){
-                window.location.href = "../pages/detail.html?id=" + json[i].id
-              });
+                location.replace(aTag.href +"?id=" + json[i].id)
+            })
+
+            // imgEl.addEventListener("click", function(){
+            //     window.location.href = "../pages/detail.html?id=" + json[i].id
+            //   });
             // imgEl.addEventListener("click", function(e){
             //     localStorage.setItem("variable", e.target.src);
             //     localStorage.setItem("var2", json[i].title)
@@ -311,18 +317,23 @@ async function getSitters(searchText, pageNumber){
             document.body.append(div)
         }
     }
-    //const pagesCount = Math.ceil(json.length / itemsPerPage)
+    const pagesCount = Math.ceil(json.length / itemsPerPage)
     const paginationDiv = document.createElement("div")
-    for (let i = 1; i <= 10; i++) {
+
+    paginationDiv.style.position = "absolute";
+    paginationDiv.style.top = "950px";
+    paginationDiv.style.left = "720px";
+
+    for (let i = 1; i <= pagesCount; i++) {
         const buttonEl = document.createElement("button")
         buttonEl.textContent = i
         if (i === pageNumber) buttonEl.disabled = true
         buttonEl.addEventListener("click", function () {
             document.querySelectorAll(".container").forEach(item => item.remove())
-            getSitters(inputValue, i)
-            paginationDiv.style.position = "fixed"
+            getHotels(inputValue, i)
+            //paginationDiv.style.position = "fixed"
         })
-        paginationDiv.style.marginLeft = "600px"
+        //paginationDiv.style.marginLeft = "600px"
         paginationDiv.append(buttonEl)
     }
 
