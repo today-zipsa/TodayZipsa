@@ -311,18 +311,23 @@ async function getCars(searchText, pageNumber){
             document.body.append(div)
         }
     }
-    //const pagesCount = Math.ceil(json.length / itemsPerPage)
+    const pagesCount = Math.ceil(json.length / itemsPerPage)
     const paginationDiv = document.createElement("div")
-    for (let i = 1; i <= 10; i++) {
+
+    paginationDiv.style.position = "absolute";
+    paginationDiv.style.top = "950px";
+    paginationDiv.style.left = "720px";
+
+    for (let i = 1; i <= pagesCount; i++) {
         const buttonEl = document.createElement("button")
         buttonEl.textContent = i
         if (i === pageNumber) buttonEl.disabled = true
         buttonEl.addEventListener("click", function () {
             document.querySelectorAll(".container").forEach(item => item.remove())
-            getCars(inputValue, i)
-            paginationDiv.style.position = "fixed"
+            getHotels(inputValue, i)
+            //paginationDiv.style.position = "fixed"
         })
-        paginationDiv.style.marginLeft = "600px"
+        //paginationDiv.style.marginLeft = "600px"
         paginationDiv.append(buttonEl)
     }
 
