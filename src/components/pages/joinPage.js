@@ -4,7 +4,6 @@ import src from "../../asset/global/check.svg";
 import srcActive from "../../asset/global/check_green.svg";
 
 const JoinPage = util.createEl("main", { id: "join" });
-export default JoinPage;
 
 /**
  * 필수입력사항 createElement
@@ -246,7 +245,6 @@ export const joinBtnEl = util.createEl(
 /**
  * 요소 append
  */
-document.body.append(JoinPage);
 
 //join--required: 회원가입 필수입력사항*
 joinRequiredEl.append(asteriskEl, h3El);
@@ -327,6 +325,57 @@ cAInfoImgEl.addEventListener("click", () => {});
 cAgeImgBtnEl.append(cAgeImgActiveEl, cAgeImgEl); //check btn
 checkAgeEl.append(cAgeImgBtnEl, cAgeLabelEl, cAgeSpanEl);
 
+//이용약관 modal
+cUseImgBtnEl.addEventListener("click", () => {
+  const template = ModalTemplate.querySelector(".modal-template");
+
+  const CheckModal = document.createElement("div");
+  const modalWrapper = document.createElement("div");
+  const modalBox = document.createElement("div");
+
+  const checkMoalTitle = document.createElement("div");
+  checkMoalTitle.innerText = "이용약관 동의";
+
+  const firstPEl = document.createElement("p");
+  firstPEl.innerText = "제1조 [목적]";
+
+  const secondPEl = document.createElement("p");
+  secondPEl.innerText = " 제2조 [정의]";
+
+  const thirdPEl = document.createElement("p");
+  thirdPEl.innerText = "제3조 [약관 등의 명시와 설명 및 개정]";
+
+  // const allPEl = [firstPEl, secondPEl, thirdPEl];
+
+  const confirmBtn = document.createElement("button");
+  confirmBtn.classList.add("check-confirm-btn");
+  confirmBtn.innerText = "확인";
+
+  ModalTemplate.classList.remove("--hide");
+
+  CheckModal.classList.add("check-modal");
+  modalWrapper.classList.add("check-modal-wrapper");
+  modalBox.classList.add("check-modal-box");
+
+  modalBox.append(checkMoalTitle, firstPEl, secondPEl, thirdPEl);
+  modalWrapper.append(modalBox, confirmBtn);
+  CheckModal.append(modalWrapper);
+
+  ModalTemplate.addEventListener("click", (e) => {
+    closeModal();
+    cUseImgEl.style.display = "none";
+    cUseImgActiveEl.style.display = "block";
+  });
+  console.log("나오고있어?");
+
+  template.append(CheckModal);
+});
+
+function closeModal() {
+  ModalTemplate.classList.add("--hide");
+  ModalTemplate.querySelector(".modal-template").innerHTML = "";
+}
+
 //all Elements for join Page
 JoinPage.append(
   h1El,
@@ -337,80 +386,38 @@ JoinPage.append(
   joinBtnEl
 );
 
-//이용약관 modal
-cUseImgBtnEl.addEventListener("click", () => {
-  const CheckModal = document.createElement("div");
-  const modalWrapper = document.createElement("div");
-  const modalBox = document.createElement("div");
-  const checkMoalTitle = document.createElement("div");
-  const firstPEl = document.createElement("p");
-  const secondPEl = document.createElement("p");
-  const thirdPEl = document.createElement("p");
-  const allPEl = [firstPEl, secondPEl, thirdPEl];
-  checkMoalTitle.innerText = "이용약관 동의";
-  firstPEl.innerText = "제1조 [목적]";
-  secondPEl.innerText = " 제2조 [정의]";
-  thirdPEl.innerText = "제3조 [약관 등의 명시와 설명 및 개정]";
-  const confirmBtn = document.createElement("button");
+//모달 이벤트를 위한 함수
+// function popup() {
+//   const CheckModal = document.createElement("div");
+//   const modalWrapper = document.createElement("div");
+//   const modalBox = document.createElement("div");
+//   const firstPEl = document.createElement("p");
+//   const secondPEl = document.createElement("p");
+//   const thirdPEl = document.createElement("p");
+//   const allPEl = [firstPEl, secondPEl, thirdPEl];
+//   const checkMoalTitle = [
+//     { innerText: "이용약관 동의" },
+//     { innerText: "개인정보 수집 및 이용동의" },
+//   ];
+//   const confirmBtn = document.createElement("button");
 
-  ModalTemplate.classList.remove("--hide");
+//   ModalTemplate.classList.remove("--hide");
 
-  CheckModal.classList.add("check-modal");
-  modalWrapper.classList.add("check-modal-wrapper");
-  modalBox.classList.add("check-modal-box");
-  confirmBtn.classList.add("check-confirm-btn");
+//   CheckModal.classList.add("check-modal");
+//   modalWrapper.classList.add("check-modal-wrapper");
+//   modalBox.classList.add("check-modal-box");
+//   confirmBtn.classList.add("check-confirm-btn");
 
-  confirmBtn.innerText = "확인";
+//   confirmBtn.innerText = "확인";
 
-  CheckModal.append(modalWrapper);
-  modalWrapper.append(modalBox);
-  modalBox.append(checkMoalTitle, allPEl);
+//   modalWrapper.append(modalBox);
+//   modalBox.append(...checkMoalTitle, allPEl);
 
-  ModalTemplate.addEventListener("click", (e) => {
-    closeModal();
-    cUseImgEl.style.display = "none";
-    cUseImgActiveEl.style.display = "block";
-  });
-  console.log("나오고있어?");
+ModalTemplate.addEventListener("click", (e) => {
+  closeModal();
+  // const active = [cUseImgActiveEl, cAInfoImgActiveEl];
+  const active = cUseImgActiveEl;
+  active.style.display = "block";
 });
 
-function closeModal() {
-  ModalTemplate.classList.add("--hide");
-  ModalTemplate.querySelector(".modal-template").innerHTML = "";
-}
-
-//모달 이벤트를 위한 함수
-function popup() {
-  const CheckModal = document.createElement("div");
-  const modalWrapper = document.createElement("div");
-  const modalBox = document.createElement("div");
-  const firstPEl = document.createElement("p");
-  const secondPEl = document.createElement("p");
-  const thirdPEl = document.createElement("p");
-  const allPEl = [firstPEl, secondPEl, thirdPEl];
-  const checkMoalTitle = [
-    { innerText: "이용약관 동의" },
-    { innerText: "개인정보 수집 및 이용동의" },
-  ];
-  const confirmBtn = document.createElement("button");
-
-  ModalTemplate.classList.remove("--hide");
-
-  CheckModal.classList.add("check-modal");
-  modalWrapper.classList.add("check-modal-wrapper");
-  modalBox.classList.add("check-modal-box");
-  confirmBtn.classList.add("check-confirm-btn");
-
-  confirmBtn.innerText = "확인";
-
-  modalWrapper.append(modalBox);
-  modalBox.append(...checkMoalTitle, allPEl);
-
-  ModalTemplate.addEventListener("click", (e) => {
-    closeModal();
-    // const active = [cUseImgActiveEl, cAInfoImgActiveEl];
-    const active = cUseImgActiveEl;
-    active.style.display = "block";
-  });
-}
-///뭘 바꿔볼까
+export default JoinPage;

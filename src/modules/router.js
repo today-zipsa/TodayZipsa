@@ -8,6 +8,7 @@ import Header from "../components/templates/header";
  */
 import homeMainPage from "../pages/home";
 import MyPage from "../components/pages/myPage";
+import LoginPage from "../components/pages/loginPage";
 
 const app = document.querySelector("#app");
 
@@ -43,7 +44,7 @@ router
       renderPage(/**MyPaymentDetailPage*/);
     },
     "/login": () => {
-      renderPage(/**LoginPage*/);
+      renderPage([Header, LoginPage]);
     },
     "/join": () => {
       renderPage(/**JoinPage*/);

@@ -4,7 +4,7 @@ import { request } from "../api/common.js";
 
 ///뭘 바꿔볼까
 
-import JoinPage from "../components/pages/joinPage_cE.js";
+import JoinPage from "../components/pages/joinPage.js";
 // import JoinPage from "../components/pages/joinPage";
 // import { joinBtnEl } from "../components/pages/joinPage";
 // const authorizationEl = document.querySelector(".authorization");
@@ -18,6 +18,7 @@ const idEl = JoinPage.querySelector(".id");
 const passwordEl = JoinPage.querySelector(".password");
 const passwordCheckEl = JoinPage.querySelector(".password-check");
 const inputFileEl = JoinPage.querySelector(".upload-name");
+const joinBtnEl = JoinPage.querySelector(".join-btn");
 
 // 데이터 관리
 let displayName = "";
