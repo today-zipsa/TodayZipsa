@@ -1,6 +1,4 @@
 // import { request } from "../src/api/common.js";
-import { payments } from "../api/my_payment_dummy";
-import { accounts } from "../api/my_accounts_dummy";
 // import { banks } from "../api/my_usable_banks_dummy.js";
 export async function renderMypage() {
 	const app = document.querySelector("#app");
