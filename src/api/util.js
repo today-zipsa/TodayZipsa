@@ -30,8 +30,7 @@ const util = {
   },
 
   /**
-
-   * HTML Element 생성
+   * HTML Element 생성 
    * @param string tagName (생성할 태그)
    * @param {} attributes (태그에 추가할 속성들)
    */
@@ -49,7 +48,6 @@ const util = {
   },
 
   /**
-
    * 숫자 천단위 콤마 표시
    * @param Number value 
    * @returns String
