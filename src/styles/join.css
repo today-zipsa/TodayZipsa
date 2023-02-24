@@ -75,18 +75,49 @@
 #join .join-wrapper .label-wrapper label.required-contents span.required {
   margin: 0 0 8px 2px;
 }
-#join .join-wrapper .label-wrapper label.validator-btn {
+#join .join-wrapper .label-wrapper button.validator-btn {
   display: inline-block;
-  width: 4em;
-  height: 2em;
+  width: 6.5em;
+  height: 4.5em;
   margin-left: 0.5em;
-  padding: 1.2em 0.9em 0.4em 0.9em;
+  padding: 0.7em 0.4em 0.5em 0.5em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
   border-radius: 6px;
   color: var(--main-key-color);
-  font-weight: 600;
   background-color: transparent;
+  font-weight: 600;
+}
+#join .join-wrapper .label-wrapper .email-check-box {
+  padding: 10px 0px;
+  margin-top: 50px;
+  width: 351px;
+  height: 290px;
+  background-color: #fff;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+#join .join-wrapper .label-wrapper .email-check-box .email-check-ment {
+  color: #000;
+  font-size: 18px;
+}
+#join .join-wrapper .label-wrapper .email-check-box .email-check-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 289px;
+  margin: 0 0.4em 5px 0;
+  background-color: var(--main-key-color);
+  border-radius: 0.3em;
+  border: none;
+  font-size: 0.7em;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
 }
 #join .join-wrapper .label-wrapper input {
   width: 20em;
@@ -101,11 +132,17 @@
 #join .join-wrapper .label-wrapper .sized-box {
   width: 100px;
 }
+#join .join-wrapper .label-wrapper .sized-box--dN {
+  margin-left: 89px;
+}
 #join .join-wrapper .label-wrapper .sized-box--pw {
-  margin-left: 110px;
+  margin-left: 90px;
 }
 #join .join-wrapper .label-wrapper .sized-box--pwc {
-  margin-left: 110px;
+  margin-left: 90px;
+}
+#join .join-wrapper .label-wrapper .sized-box--file {
+  margin-right: 5px;
 }
 #join .join-wrapper #filebox {
   /* named upload */
@@ -120,12 +157,12 @@
   -moz-appearance: none;
   appearance: none;
 }
-#join .join-wrapper #filebox label.upload-btn {
+#join .join-wrapper #filebox button.upload-btn {
   display: inline-block;
-  width: 4em;
-  height: 2em;
+  width: 6.5em;
+  height: 4.5em;
   margin-left: 0.5em;
-  padding: 1.2em 0.4em 0.5em 1.4em;
+  padding: 0.8em 0.4em 0.5em 0.5em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
   border-radius: 6px;
@@ -186,7 +223,7 @@
   font-weight: 600;
 }
 #join .label-wrapper--agree .required-contents span.required {
-  padding: 27px 0 0 2px;
+  margin: 0 0 10px 3px;
 }
 #join .label-wrapper--agree .check-wrapper {
   padding-right: 50px;
@@ -195,7 +232,7 @@
   font-size: 23px !important;
   font-weight: 600;
   color: var(--disable-color);
-  padding-top: 0.28em !important;
+  padding-top: 0.4em !important;
 }
 #join .label-wrapper--agree .check-wrapper .check-item {
   display: flex;
@@ -214,7 +251,7 @@
 }
 #join .label-wrapper--agree .check-wrapper .check-item button.img-btn img.active {
   position: relative;
-  left: 35px;
+  left: 34px;
 }
 #join .label-wrapper--agree .check-wrapper .check-item label.agree-title {
   margin-right: 0.3em;
@@ -228,6 +265,70 @@
   color: var(--input-color) !important;
   font-weight: 600;
 }
+#join .label-wrapper--agree .check-wrapper .modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+#join .label-wrapper--agree .check-wrapper .modal .modal-template {
+  padding: 10px 0px;
+  margin-top: 50px;
+  width: 351px;
+  height: 490px;
+  background-color: #fff;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+}
+#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper {
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  width: 500px;
+  height: 600px;
+}
+#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper > .check-modal-box {
+  background-color: #fff;
+  padding: 15px;
+  width: 15em;
+  overflow: auto;
+  height: 5em;
+}
+#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper > button.check-confirm-btn {
+  width: 15em;
+  height: 3em;
+  margin: 50px;
+  background-color: var(--main-key-color);
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+#join .label-wrapper--agree .check-wrapper .modal .modal-template .--hidden {
+  display: none;
+}
 #join button.join-btn {
   width: 15em;
   height: 3em;
@@ -238,4 +339,5 @@
   color: #fff;
   font-size: 22px;
   font-weight: 600;
+  cursor: pointer;
 }/*# sourceMappingURL=join.css.map */
