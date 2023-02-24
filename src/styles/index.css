@@ -1,3 +1,8 @@
 @import url(./home.scss);
 @import url(./my.scss);
+<<<<<<< HEAD
 @import url(./header.scss);/*# sourceMappingURL=main.css.map */
+=======
+@import url(./login.scss);
+@import url(./header.scss); /*# sourceMappingURL=main.css.map */
+>>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89

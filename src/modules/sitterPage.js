@@ -5,11 +5,7 @@ const headerWrapper = document.createElement('div');
 headerWrapper.classList.add('header-wrapper');
 
 const mainLogo = document.createElement('img');
-<<<<<<< HEAD
-mainLogo.setAttribute('src', '../asset/main-logo.png');
-=======
 mainLogo.setAttribute('src', '../asset/global/main-logo.png');
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
 mainLogo.setAttribute('alt', '../main-logo');
 mainLogo.classList.add('main-logo');
 
@@ -28,21 +24,13 @@ searchBar.addEventListener("input", function (e) {
 })
 
 const searchBtn = document.createElement('img');
-<<<<<<< HEAD
-searchBtn.setAttribute('src', '../asset/search-btn.png');
-=======
 searchBtn.setAttribute('src', '../asset/btnImg/search_btn.png');
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
 searchBtn.setAttribute('alt', 'search-btn');
 searchBtn.classList.add('search-btn');
 
 searchBtn.addEventListener("click", function () {
     if(inputValue){
-<<<<<<< HEAD
         getSitters(inputValue, 1)
-=======
-        getHotels(inputValue, 1)
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
     }
 })
 
@@ -140,7 +128,6 @@ categories.classList.add('categories');
 const hotelCategory = document.createElement('h2');
 hotelCategory.classList.add('hotel');
 hotelCategory.setAttribute('onclick', "window.location.href='../pages/hotel.html'");
-hotelCategory.style.color = 'red';
 hotelCategory.textContent = '호텔';
 
 const rentalCategory = document.createElement('h2');
@@ -151,29 +138,19 @@ rentalCategory.textContent = '카렌트';
 const sitterCategory = document.createElement('h2');
 sitterCategory.classList.add('sitter');
 sitterCategory.setAttribute('onclick', "window.location.href='../pages/sitters.html'");
+sitterCategory.style.color = 'red';
 sitterCategory.textContent = '펫시터';
 
-<<<<<<< HEAD
-const snackCategory = document.createElement('h2');
-snackCategory.classList.add('snack');
-snackCategory.setAttribute('onclick', "window.location.href='../pages/snack.html'");
-snackCategory.textContent = '펫간식';
-=======
 const spaCategory = document.createElement('h2');
 spaCategory.classList.add('snack');
 spaCategory.setAttribute('onclick', "window.location.href='../pages/spa.html'");
 spaCategory.textContent = '펫스파';
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
 
 
 categories.appendChild(hotelCategory);
 categories.appendChild(rentalCategory);
 categories.appendChild(sitterCategory)
-<<<<<<< HEAD
-categories.appendChild(snackCategory)
-=======
 categories.appendChild(spaCategory)
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
 
 document.body.append(categories)
 
@@ -204,11 +181,7 @@ const get = document.querySelector(".getBtn")
 //const res = await request("PRD08", { searchTags: ["가전"] });
 
 btn.addEventListener("click", function () {
-<<<<<<< HEAD
     addSitters()
-=======
-    addHotels()
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
 })
 
 
@@ -217,11 +190,7 @@ get.addEventListener("click", function () {
 })
 
 
-<<<<<<< HEAD
 async function deleteSitters(todoId) {
-=======
-async function deleteHotels(todoId) {
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
 
     const res = await fetch(`https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/${todoId}`, {
         method: "DELETE",
@@ -232,10 +201,6 @@ async function deleteHotels(todoId) {
 
 }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
 async function seeSitters() {
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products", {
         method: "GET",
@@ -246,57 +211,11 @@ async function seeSitters() {
 }
 
 
-<<<<<<< HEAD
-async function addSitters() {
-=======
-async function addHotels() {
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
-    for (let i = 0; i < data["list"].length; i++) {
-        const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products", {
-            method: "POST",
-            headers,
-            body: JSON.stringify({
-                title: data["list"][i].title,
-                price: data["list"][i].price,
-                description: data["list"][i].description,
-                tags: data["list"][i].tags,
-                thumbnail: data["list"][i].thumbnailBase64
-            })
-        })
-        const json = await res.json()
-        console.log(json)
-    }
-}
-
-
-
-
-// let inputValue = ''
-// sitterEl.addEventListener("input", function (e) {
-//     e.preventDefault()
-//     inputValue = e.target.value
-// })
-
-// search.addEventListener("click", function () {
-//     if(inputValue){
-<<<<<<< HEAD
-//         getSitters(inputValue, 1)
-=======
-//         getHotels(inputValue, 1)
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
-//     }
-// })
-
-
-<<<<<<< HEAD
 async function getSitters(searchText, pageNumber){
-=======
-async function getHotels(searchText, pageNumber){
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/search", {
         method: "POST",
         headers,
-        body: JSON.stringify({searchText : `${searchText}` , searchTags: ['호텔']})
+        body: JSON.stringify({searchText : `${searchText}` , searchTags: ['펫시터']})
 
     })
 
@@ -333,13 +252,15 @@ async function getHotels(searchText, pageNumber){
             // imgEl.style.marginTop = "42px"
             div.append(imgEl)
 
+            const aTag = document.createElement("a")
+            aTag.href = "/detail"
             imgEl.addEventListener("click", function(){
-<<<<<<< HEAD
-                window.location.href = "../pages/detail.html?id=" + json[i].id
-=======
-                window.location.href = `/detail/${json[i].id}`
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
-              });
+                location.replace(aTag.href +"?id=" + json[i].id)
+            })
+
+            // imgEl.addEventListener("click", function(){
+            //     window.location.href = "../pages/detail.html?id=" + json[i].id
+            //   });
             // imgEl.addEventListener("click", function(e){
             //     localStorage.setItem("variable", e.target.src);
             //     localStorage.setItem("var2", json[i].title)
@@ -371,11 +292,7 @@ async function getHotels(searchText, pageNumber){
             purchaseImm.addEventListener("click", function(){
                 modal.style.display = "block";
                 document.querySelector(".yes").addEventListener("click", function(){
-<<<<<<< HEAD
-                    window.location.href = "pages/login.html"
-=======
                     window.location.href = "../pages/login.html"
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
                 })
                 document.querySelector(".no").addEventListener("click", function(){
                     modal.style.display = "none"
@@ -400,11 +317,6 @@ async function getHotels(searchText, pageNumber){
             document.body.append(div)
         }
     }
-<<<<<<< HEAD
-    //const pagesCount = Math.ceil(json.length / itemsPerPage)
-    const paginationDiv = document.createElement("div")
-    for (let i = 1; i <= 10; i++) {
-=======
     const pagesCount = Math.ceil(json.length / itemsPerPage)
     const paginationDiv = document.createElement("div")
 
@@ -413,23 +325,15 @@ async function getHotels(searchText, pageNumber){
     paginationDiv.style.left = "720px";
 
     for (let i = 1; i <= pagesCount; i++) {
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
         const buttonEl = document.createElement("button")
         buttonEl.textContent = i
         if (i === pageNumber) buttonEl.disabled = true
         buttonEl.addEventListener("click", function () {
             document.querySelectorAll(".container").forEach(item => item.remove())
-<<<<<<< HEAD
-            getSitters(inputValue, i)
-            paginationDiv.style.position = "fixed"
-        })
-        paginationDiv.style.marginLeft = "600px"
-=======
             getHotels(inputValue, i)
             //paginationDiv.style.position = "fixed"
         })
         //paginationDiv.style.marginLeft = "600px"
->>>>>>> a3344e8a00e45b1abcec526c7d84c6223490ca89
         paginationDiv.append(buttonEl)
     }
 
