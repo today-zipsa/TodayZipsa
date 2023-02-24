@@ -68,175 +68,172 @@ async function addSitters(){
         }
     }
 
-
 let data = {
     "list": [
          {
-             "title": "건식 간식 A",
-             "price": 35000,
-             "description": "도그델리 입니다.",
+             "title": "힐튼 호텔",
+             "price": 350000,
+             "description": "힐튼 호텔 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/snackImg/3_1.png",
+             "thumbnailBase64": "../asset/hotelImg/2_1.png",
              "photoBase64": "five_five.jpg"
  
          },
          {
-             "title": "건식 간식 B",
-             "price": 35000,
-             "description": "펫프렌즈 입니다..",
+             "title": "힐튼 호텔 A",
+             "price": 350000,
+             "description": "하이야트 호텔 입니다..",
              "tags": [],
-             "thumbnailBase64": "../asset/snackImg/3_2.png",
+             "thumbnailBase64": "../asset/hotelImg/2_2.png",
              "photoBase64": "one_one.jpg"
          },
          {
-             "title": "건식 간식 C",
-             "price": 45000,
-             "description": "레이앤이본 입니다.",
+             "title": "힐튼 호텔 B",
+             "price": 450000,
+             "description": "메리어트 호텔 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/snackImg/3_3.png",
+             "thumbnailBase64": "../asset/hotelImg/2_3.png",
              "photoBase64": "two_two.jpg"
          },
          {
  
-             "title": "건식 간식 D",
-             "price": 60000,
-             "description": "핏펫 입니다.",
+             "title": "힐튼 호텔 C",
+             "price": 600000,
+             "description": "조선 호텔 입니다.",
              "tags": [],
-             "thumbnailBase64": "../asset/snackImg/3_4.png",
+             "thumbnailBase64": "../asset/hotelImg/2_4.png",
              "photoBase64": "three_three.jpg"
          },
          {
-             "title": "건식 간식 E",
-             "price": 30000,
-             "description": "어나더베이비 입니다..",
+             "title": "힐튼 호텔 D",
+             "price": 300000,
+             "description": "신라 호텔 입니다..",
              "tags": [],
-             "thumbnailBase64": "../asset/snackImg/3_5.png",
+             "thumbnailBase64": "../asset/hotelImg/2_5.png",
              "photoBase64": "four_four.jpg"
          },
          {
-            "title": "자연식 간식 A",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "힐튼 호텔 E",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_6.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_6.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "자연식 간식 B",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "신라 호텔 A",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_6.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_7.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "자연식 간식 C",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "신라 호텔 B",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_8.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_8.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "자연식 간식 D",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "신라 호텔 C",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_9.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_9.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "자연식 간식 E",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "신라 호텔 D",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_10.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_10.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "화식 간식 A",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "신라 호텔 E",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_11.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_11.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "화식 간식 B",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "조선 호텔 A",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_12.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_12.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "화식 간식 C",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "조선 호텔 B",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_13.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_13.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "화식 간식 D",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "조선 호텔 C",
+            "price": 300000, 
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_4.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_14.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "화식 간식 E",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "조선 호텔 D",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_15.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_15.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "생식 간식 A",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "조선 호텔 E",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_16.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_16.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "생식 간식 B",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "메리어트 호텔 A",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_17.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_17.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "생식 간식 C",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "메리어트 호텔 B",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_18.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_18.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "생식 간식 D",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "메리어트 호텔 C",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_19.png",
+            "thumbnailBase64": "../asset/hotelImg/2_19.jpg",
             "photoBase64": "four_four.jpg"
         },
         {
-            "title": "생식 간식 E",
-            "price": 30000,
-            "description": "어나더베이비 입니다..",
+            "title": "메리어트 호텔 D",
+            "price": 300000,
+            "description": "신라 호텔 입니다..",
             "tags": [],
-            "thumbnailBase64": "../asset/snackImg/3_20.jpg",
+            "thumbnailBase64": "../asset/hotelImg/2_20.jpg",
             "photoBase64": "four_four.jpg"
         }
-    ]
+     ]
  }
-
- 
  /*
  async function getSitters(){
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products",{
