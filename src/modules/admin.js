@@ -3,6 +3,7 @@ import { util } from "../api/util.js";
 
 /**
  * 변수 선언
+ * 
  */
 let pageCount = 0;
 let currentPage = 1;

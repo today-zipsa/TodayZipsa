@@ -3,7 +3,7 @@ import { util } from "/src/api/util.js";
 const adminPage = util.createEl('div');
 
 /**
- * admin header 생성
+ * admin header 생성 
  */
 const headerEl = util.createEl('header', {class:'admin-header'});
 const div1El = util.createEl('div', {class:'admin-header-wrapper'});
