@@ -78,7 +78,6 @@
   background-color: transparent;
   border: 1px solid var(--main-key-color);
   color: var(--main-key-color);
-
 }
 
 footer {
@@ -149,5 +148,4 @@ footer .footer--bottom {
 }
 footer .footer--bottom img {
   margin: 0 10px;
-
 }/*# sourceMappingURL=login.css.map */
