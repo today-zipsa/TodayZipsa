@@ -30,7 +30,7 @@ const util = {
   },
 
   /**
-   * HTML Element 생성
+   * HTML Element 생성 
    * @param string tagName (생성할 태그)
    * @param {} attributes (태그에 추가할 속성들)
    */
