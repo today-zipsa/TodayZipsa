@@ -1,6 +1,5 @@
 import ModalTwo from "../templates/modalTwo";
 import { request } from "../../api/common";
-import { renderMypage } from "../../modules/my";
 import profileImg from "../../asset/myImg/profile.png";
 import addBtnImg from "../../asset/btnImg/add_btn.png";
 import deleteBtnImg from "../../asset/btnImg/close_btn.png";
@@ -168,12 +167,9 @@ export function myPage() {
 }
 
 async function renderTest(page) {
-	const app = document.querySelector("#app");
-	const div = document.createElement("div");
-	const box = Array.from(document.querySelectorAll("box"));
+	// app만 querySelector로 잘 불러와지고 나머지는 null이 됨
+	// const app = document.querySelector("#app");
 
-	div.className = "payment-test";
-	div.textContent = "payment";
 	const [profileContainer, infoContainer, profileEditmodal] = Array.from(
 		page.children
 	);
