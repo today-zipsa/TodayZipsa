@@ -49,7 +49,7 @@ router
       renderPage([Header, LoginPage]);
     },
     "/join": () => {
-      renderPage([Header, JoinPage]);
+      renderPage([Header, JoinPage, Footer]);
     },
     "/payment": () => {
       renderPage(/**PaymentPage*/);
