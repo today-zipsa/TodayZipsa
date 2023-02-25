@@ -8,6 +8,8 @@ import Footer from "../components/templates/footer";
  * Pages
  */
 import homeMainPage from "../pages/home";
+import { myPage } from "../components/pages/myPage";
+import LoginPage from "../components/pages/loginPage";
 // import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
@@ -74,7 +76,8 @@ function renderPage(page) {
   console.log({ app, page });
   app.innerHTML = "";
   if (Array.isArray(page)) {
-    page.forEach((node) => app.appendChild(node));
+    app.append(...page);
+    //page.forEach(node => app.appendChild(node));
   } else {
     app.appendChild(page);
   }

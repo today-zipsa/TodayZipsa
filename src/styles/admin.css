@@ -1,4 +1,8 @@
-/* Header*/
+/* Header */
+body {
+  margin: 0px;
+}
+body header {
 .admin-header {
   display: flex;
   justify-content: center;
@@ -20,12 +24,18 @@
 .admin-header .admin-header-wrapper .main-logo-btn-image {
   display: block;
   background-repeat: no-repeat;
+  background-color: #fff;
+}
+.admin-header .admin-header-wrapper .main-logo-btn-image {
+  display: block;
+  background-repeat: no-repeat;
   width: 10em;
   height: 2.4em;
   transform: scale(0.8);
   background-color: var(--main-key-color);
 }
 .admin-header .admin-header-wrapper .admin-welcome-word {
+
   font-size: 1em;
   font-weight: 600;
 }
@@ -51,6 +61,7 @@
   font-size: 20px;
   line-height: 30px;
 }
+
 .show-select-list {
   padding: 5px 0px;
   margin: 5px;
@@ -62,7 +73,7 @@
   all: unset;
   border-radius: 2px;
   cursor: pointer;
-}
+
 .admin_main_btn {
   background-color: #0C8A4E;
   color: white;
@@ -107,7 +118,6 @@
 #tab2:checked ~ #content2 {
   display: block;
 }
-
 
 /* 상품 리스트 */
 #item_list {
@@ -154,6 +164,7 @@
   text-decoration: none;
   overflow: hidden;
 }
+
 #item_list li .price{
   margin: 3% auto;
 }
@@ -161,6 +172,8 @@
   font-size: 13px;
   background-color: #0C8A4E;
   color: white;
+  padding: 0px 10px;
+  margin: 20px 10px;
   padding: 0px 10px;
   margin: 20px 10px;
 }
@@ -171,7 +184,6 @@
   padding: 0px 10px;
   margin: 20px 10px;
 }
-
 
 /* Modal 처리 */
 .modal {
@@ -199,6 +211,7 @@
   background-color: white;
   border-radius: 10px;
   width: 50%;
+
 }
 .m_head{
   padding: 20px;
@@ -269,6 +282,7 @@
 textarea {
   resize: none;
 }
+
 .input-group {
   position: relative;
   display: flex;
@@ -303,7 +317,6 @@ textarea {
   width: 70px;
   height: 70px;
 }
-
 
 /* Tag 처리 */
 .tag ul {

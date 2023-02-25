@@ -4,6 +4,7 @@ import src from "../../asset/global/check.svg";
 import srcActive from "../../asset/global/check_green.svg";
 
 const JoinPage = util.createEl("main", { id: "join" });
+
 /**
  * 필수입력사항 createElement
  */
@@ -412,13 +413,6 @@ cAInfoImgEl.addEventListener("click", () => {
   CheckModal.append(modalWrapper);
 
   template.append(CheckModal);
-
-  ModalTemplate.addEventListener("click", (e) => {
-    CheckModal.style.display = "block";
-    cAInfoImgEl.style.display = "none";
-    cAInfoImgActiveEl.style.display = "block";
-    closeModal();
-  });
 });
 
 function closeModal() {
