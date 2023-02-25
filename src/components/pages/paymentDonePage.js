@@ -1,4 +1,5 @@
-
+export function paymentDone()
+{
 const paymentDoneFinishPage = document.createElement("div")
 const paymentDoneOrderDone = document.createElement("div")
 const paymentDoneOrderText1 = document.createElement("div")
@@ -35,3 +36,6 @@ paymentDoneDelivery.append(paymentDoneDeliveryText)
 paymentDoneFinishPage.append(paymentDoneBtn)
 paymentDoneBtn.append(paymentDoneContinueShop)
 paymentDoneBtn.append(paymentDonePurchaseHistory)
+
+return paymentDoneFinishPage
+}

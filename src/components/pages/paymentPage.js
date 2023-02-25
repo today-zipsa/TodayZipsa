@@ -1,9 +1,9 @@
-import {accounts} from "../api/my_accounts_dummy.js"
-import {payments} from "../api/my_payment_dummy.js"
-import {request} from "../api/common.js";
+import {accounts} from "/src/api/my_accounts_dummy"
+import {payments} from "/src/api/my_payment_dummy"
+// import {request} from "../api/common.js";
 
-
-// //헤더?
+export function paymentPage(){
+  // //헤더?
 // let headers = {
 //   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVlc3hyc0RsVW5USHkxRmpsdnZUIiwiaWF0IjoxNjc1NjkyNTI4LCJleHAiOjE2NzU3Nzg5MjgsImlzcyI6InRoZXNlY29uQGdtYWlsLmNvbSJ9.8VvD-JwUEt-YJ7LfG8P3vBZd3Zskc_1G7FJemxuJWTo",
 //   "content-type": "application/json",
@@ -112,8 +112,8 @@ paymentLastDiscount.textContent = "상품할인"
 paymentLastTotalAccount.textContent = "총 금액"
 
 //append
-document.body.append(paymentOrderpage)
 document.body.append(paymentTotal)
+paymentTotal.append(paymentOrderpage)
 paymentTotal.append(paymentOrder)
 paymentTotal.append(paymentOrderContainer)
 paymentOrderContainer.append(paymentProductInfoWrapper)
@@ -146,22 +146,26 @@ paymentLastpayContainer.append(paymentBtn)
 const paymentModal = document.createElement("div")
 const paymentModalBody = document.createElement("div")
 const paymentModalBtn = document.createElement("button")
+const paymentModalBtnMove = document.createElement("button")
 const paymentModalBtnClose = document.createElement("button")
 
 paymentModal.classList.add("payment1-modal")
 paymentModalBody.classList.add("payment1-modal-body")
 paymentModalBtn.classList.add("payment1-modal-btn")
+paymentModalBtnMove.classList.add("payment1-modal-btn-move")
 paymentModalBtnClose.classList.add("payment1-modal-btn-close")
 
 paymentModalBody.innerHTML = "잔액이 부족합니다.<br>계좌를 추가해주세요."
 paymentModalBtn.innerHTML = "나중에 없앨 모달버튼"
 paymentModalBtnClose.innerHTML = "확인"
+paymentModalBtnMove.innerHTML = "마이페이지 이동"
 
 
 document.body.append(paymentModal)
 paymentModal.append(paymentModalBody)
 // document.body.append(paymentModalBtn)
 paymentModalBody.append(paymentModalBtnClose)
+paymentModalBody.append(paymentModalBtnMove)
 // (/payment1 Modal)
 
 // (payment1 Modal JS...)
@@ -294,3 +298,5 @@ paymentProductPrice.after(payment_span_price)
 // );
 // const json = await res.json();
 // console.log(json);
+return paymentTotal;
+}
