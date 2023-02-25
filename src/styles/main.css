@@ -1,6 +1,6 @@
 @import url(./home.scss);
 @import url(./my.scss);
-@import url(./header.scss); /*# sourceMappingURL=main.css.map */
+@import url(./header.css); /*# sourceMappingURL=main.css.map */
 
 :root {
   --main-key-color: #0c8a4e;
@@ -134,10 +134,18 @@
   height: 120px;
 }
 
-/* label {
-    display: block;
-  }
-   */
+.label {
+  display: block;
+}
+
+.banner {
+  position: relative;
+}
+
+.details {
+  display: block;
+}
+
 .banner {
   position: relative;
 }
@@ -198,7 +206,6 @@
   object-fit: cover;
 }
 
-.swiper-button-next,
 .swiper-button-prev {
   position: absolute;
   top: 50%;
@@ -217,6 +224,7 @@
 .swiper-button-prev {
   left: 10px;
 }
+
 .btn {
   display: none;
 }

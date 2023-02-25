@@ -3,12 +3,14 @@ import Navigo from "navigo";
  * Common
  */
 import Header from "../components/templates/header";
+import Footer from "../components/templates/footer";
 /**
  * Pages
  */
 import homeMainPage from "../pages/home";
-import MyPage from "../components/pages/myPage";
+// import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
+import JoinPage from "../components/pages/joinPage";
 
 const app = document.querySelector("#app");
 
@@ -17,7 +19,7 @@ const router = new Navigo("/");
 router
   .on({
     "/": () => {
-      renderPage(homeMainPage);
+      renderPage([Header, homeMainPage, Footer]);
     },
     "/sitter": () => {
       renderPage(/**SitterPage*/);
@@ -35,7 +37,7 @@ router
       renderPage(/**SnackPage*/);
     },
     "/my": () => {
-      renderPage([Header, MyPage]);
+      // renderPage([Header, MyPage]);
     },
     "/my/order/detail": () => {
       renderPage(/**MyOrderDetailPage*/);
@@ -47,7 +49,7 @@ router
       renderPage([Header, LoginPage]);
     },
     "/join": () => {
-      renderPage(/**JoinPage*/);
+      renderPage([Header, JoinPage, Footer]);
     },
     "/payment": () => {
       renderPage(/**PaymentPage*/);
