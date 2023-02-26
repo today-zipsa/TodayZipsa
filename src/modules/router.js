@@ -8,7 +8,6 @@ import Footer from "../components/templates/footer";
  * Pages
  */
 import homeMainPage from "../pages/home";
-import { myPage } from "../components/pages/myPage";
 // import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
