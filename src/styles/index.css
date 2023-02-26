@@ -1,4 +1,6 @@
 @import url(./home.scss);
+@import url(./footer.scss);
 @import url(./my.scss);
 @import url(./login.scss);
-@import url(./header.scss); /*# sourceMappingURL=main.css.map */
+@import url(./join.scss);
+@import url(./header.css);/*# sourceMappingURL=index.css.map */

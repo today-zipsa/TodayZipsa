@@ -25,15 +25,12 @@ searchBar.addEventListener("input", function (e) {
 
 const searchBtn = document.createElement('img');
 searchBtn.setAttribute('src', '../asset/btnImg/search_btn.png');
-
-
-
 searchBtn.setAttribute('alt', 'search-btn');
 searchBtn.classList.add('search-btn');
 
 searchBtn.addEventListener("click", function () {
     if(inputValue){
-        getHotels(inputValue, 1)
+        getSitters(inputValue, 1)
     }
 })
 
@@ -131,7 +128,6 @@ categories.classList.add('categories');
 const hotelCategory = document.createElement('h2');
 hotelCategory.classList.add('hotel');
 hotelCategory.setAttribute('onclick', "window.location.href='../pages/hotel.html'");
-hotelCategory.style.color = 'red';
 hotelCategory.textContent = '호텔';
 
 const rentalCategory = document.createElement('h2');
@@ -142,6 +138,7 @@ rentalCategory.textContent = '카렌트';
 const sitterCategory = document.createElement('h2');
 sitterCategory.classList.add('sitter');
 sitterCategory.setAttribute('onclick', "window.location.href='../pages/sitters.html'");
+sitterCategory.style.color = 'red';
 sitterCategory.textContent = '펫시터';
 
 const spaCategory = document.createElement('h2');
@@ -184,8 +181,7 @@ const get = document.querySelector(".getBtn")
 //const res = await request("PRD08", { searchTags: ["가전"] });
 
 btn.addEventListener("click", function () {
-    addHotels()
-
+    addSitters()
 })
 
 
@@ -194,8 +190,7 @@ get.addEventListener("click", function () {
 })
 
 
-
-async function deleteHotels(todoId) {
+async function deleteSitters(todoId) {
 
     const res = await fetch(`https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/${todoId}`, {
         method: "DELETE",
@@ -205,7 +200,6 @@ async function deleteHotels(todoId) {
     console.log(json)
 
 }
-
 
 async function seeSitters() {
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products", {
@@ -217,47 +211,11 @@ async function seeSitters() {
 }
 
 
-async function addHotels() {
-
-    for (let i = 0; i < data["list"].length; i++) {
-        const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products", {
-            method: "POST",
-            headers,
-            body: JSON.stringify({
-                title: data["list"][i].title,
-                price: data["list"][i].price,
-                description: data["list"][i].description,
-                tags: data["list"][i].tags,
-                thumbnail: data["list"][i].thumbnailBase64
-            })
-        })
-        const json = await res.json()
-        console.log(json)
-    }
-}
-
-
-
-
-// let inputValue = ''
-// sitterEl.addEventListener("input", function (e) {
-//     e.preventDefault()
-//     inputValue = e.target.value
-// })
-
-// search.addEventListener("click", function () {
-//     if(inputValue){
-//         getHotels(inputValue, 1)
-
-//     }
-// })
-
-async function getHotels(searchText, pageNumber){
-
+async function getSitters(searchText, pageNumber){
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/search", {
         method: "POST",
         headers,
-        body: JSON.stringify({searchText : `${searchText}` , searchTags: ['호텔']})
+        body: JSON.stringify({searchText : `${searchText}` , searchTags: ['펫시터']})
 
     })
 
@@ -294,9 +252,15 @@ async function getHotels(searchText, pageNumber){
             // imgEl.style.marginTop = "42px"
             div.append(imgEl)
 
+            const aTag = document.createElement("a")
+            aTag.href = "/detail"
             imgEl.addEventListener("click", function(){
-                window.location.href = `/detail/${json[i].id}`
-              });
+                location.replace(aTag.href +"?id=" + json[i].id)
+            })
+
+            // imgEl.addEventListener("click", function(){
+            //     window.location.href = "../pages/detail.html?id=" + json[i].id
+            //   });
             // imgEl.addEventListener("click", function(e){
             //     localStorage.setItem("variable", e.target.src);
             //     localStorage.setItem("var2", json[i].title)
@@ -353,6 +317,8 @@ async function getHotels(searchText, pageNumber){
             document.body.append(div)
         }
     }
+    const pagesCount = Math.ceil(json.length / itemsPerPage)
+    const paginationDiv = document.createElement("div")
 
     paginationDiv.style.position = "absolute";
     paginationDiv.style.top = "950px";
