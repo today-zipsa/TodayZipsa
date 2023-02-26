@@ -4,9 +4,6 @@ import src from "../../asset/global/check.svg";
 import srcActive from "../../asset/global/check_green.svg";
 
 const JoinPage = util.createEl("main", { id: "join" });
-export default JoinPage;
-
-
 /**
  * 필수입력사항 createElement
  */
@@ -28,11 +25,9 @@ const h3El = util.createEl("h3", { textContent: "필수입력사항" });
 const labeldNWrapperEl = util.createEl("div", { class: "label-wrapper" });
 const labeldNEl = util.createEl("label", { class: "required-contents" });
 const h5dNEl = util.createEl("h5", { textContent: "닉네임" });
-const asteriskdNEl = util.createEl(
-  "span",
-  { class: "required" },
-  { textContent: "*" }
-);
+const asteriskdNEl = util.createEl("span", { class: "required" });
+asteriskdNEl.innerText = "*";
+
 const inputdNEl = util.createEl(
   "input",
   { type: "text" },
@@ -168,16 +163,6 @@ const cAllSpanEl = util.createEl(
 // 이용약관 동의 - cUse == checkUse
 const checkUseEl = util.createEl("div", { class: "check-item" });
 const cUseImgBtnEl = util.createEl("button", { class: "img-btn" });
-// cUseImgBtnEl.addEventListener("click", () => {
-//   console.log("[modal open click]");
-//   const modal = CheckModalEl.querySelectorAll(".check-modal .hidden");
-//   console.log("modal>>>>", modal);
-//   const hidden = modal.classList.remove("hidden");
-//   console.log("hidden????>>>>", hidden);
-//   const open = () => hidden;
-//   open();
-// });
-
 const cUseImgEl = util.createEl("img", { src: src });
 const cUseImgActiveEl = util.createEl(
   "img",
@@ -274,9 +259,9 @@ requiredBtnEl.addEventListener("click", () => {
   const confirmBtn = document.createElement("button");
 
   ModalTemplate.classList.remove("--hide");
-  sameEmailCheck.classList.add("email-check-box");
-  mailChecked.classList.add("email-check-ment");
-  confirmBtn.classList.add("email-check-btn");
+  sameEmailCheck.classList = "email-check-box";
+  mailChecked.classList = "email-check-ment";
+  confirmBtn.classList = "email-check-btn";
 
   mailChecked.innerText = "사용가능한 이메일 입니다.";
   confirmBtn.innerText = "확인";
@@ -313,6 +298,28 @@ checkWrapperEl.append(checkAllEl, checkUseEl, checkAgreeInfoEl, checkAgeEl);
 //전체동의 check-item
 cAllImgBtnEl.append(cAllImgActiveEl, cAllImgEl); //check btn
 checkAllEl.append(cAllImgBtnEl, cAllLabelEl, cAllSpanEl);
+let isChecked = false;
+cAllImgBtnEl.addEventListener("click", () => {
+  if ((isChecked = !isChecked)) {
+    cAllImgEl.style.display = "none";
+    cAllImgActiveEl.style.display = "block";
+    cUseImgEl.style.display = "none";
+    cUseImgActiveEl.style.display = "block";
+    cAInfoImgEl.style.display = "none";
+    cAInfoImgActiveEl.style.display = "block";
+    cAgeImgEl.style.display = "none";
+    cAgeImgActiveEl.style.display = "block";
+  } else {
+    cAllImgEl.style.display = "block";
+    cAllImgActiveEl.style.display = "none";
+    cUseImgEl.style.display = "block";
+    cUseImgActiveEl.style.display = "none";
+    cAInfoImgEl.style.display = "block";
+    cAInfoImgActiveEl.style.display = "none";
+    cAgeImgEl.style.display = "block";
+    cAgeImgActiveEl.style.display = "none";
+  }
+});
 
 //이용약관
 cUseImgBtnEl.append(cUseImgActiveEl, cUseImgEl); //check btn
@@ -322,7 +329,6 @@ checkUseEl.append(cUseImgBtnEl, cUseLabelEl, cUseSpanEl);
 cAInfoImgBtnEl.append(cAInfoImgActiveEl, cAInfoImgEl); //check btn
 checkAgreeInfoEl.append(cAInfoImgBtnEl, cAInfoLabelEl, cAInfoSpanEl);
 
-cAInfoImgEl.addEventListener("click", () => {});
 //14세이상
 cAgeImgBtnEl.append(cAgeImgActiveEl, cAgeImgEl); //check btn
 checkAgeEl.append(cAgeImgBtnEl, cAgeLabelEl, cAgeSpanEl);
@@ -331,10 +337,16 @@ checkAgeEl.append(cAgeImgBtnEl, cAgeLabelEl, cAgeSpanEl);
 //이용약관 modal
 cUseImgBtnEl.addEventListener("click", () => {
   const template = ModalTemplate.querySelector(".modal-template");
+  template.classList.remove("--hide");
 
   const CheckModal = document.createElement("div");
+  CheckModal.className = "check-modal";
+
   const modalWrapper = document.createElement("div");
+  modalWrapper.className = "check-modal-wrapper";
+
   const modalBox = document.createElement("div");
+  modalBox.className = "check-modal-box";
 
   const checkMoalTitle = document.createElement("div");
   checkMoalTitle.innerText = "이용약관 동의";
@@ -348,31 +360,65 @@ cUseImgBtnEl.addEventListener("click", () => {
   const thirdPEl = document.createElement("p");
   thirdPEl.innerText = "제3조 [약관 등의 명시와 설명 및 개정]";
 
-  // const allPEl = [firstPEl, secondPEl, thirdPEl];
-
   const confirmBtn = document.createElement("button");
-  confirmBtn.classList.add("check-confirm-btn");
+  confirmBtn.className = ".check-confirm-btn";
   confirmBtn.innerText = "확인";
-
-  ModalTemplate.classList.remove("--hide");
-
-  CheckModal.classList.add("check-modal");
-  modalWrapper.classList.add("check-modal-wrapper");
-  modalBox.classList.add("check-modal-box");
 
   modalBox.append(checkMoalTitle, firstPEl, secondPEl, thirdPEl);
   modalWrapper.append(modalBox, confirmBtn);
   CheckModal.append(modalWrapper);
 
-  ModalTemplate.addEventListener("click", (e) => {
-    closeModal();
-    cUseImgEl.style.display = "none";
-    cUseImgActiveEl.style.display = "block";
-  });
-  console.log("나오고있어?");
-
   template.append(CheckModal);
 
+  ModalTemplate.addEventListener("click", (e) => {
+    CheckModal.style.display = "block";
+    cUseImgEl.style.display = "none";
+    cUseImgActiveEl.style.display = "block";
+    closeModal();
+  });
+});
+
+//개인정보 modal
+cAInfoImgEl.addEventListener("click", () => {
+  const template = ModalTemplate.querySelector(".modal-template");
+  template.classList.remove("--hide");
+
+  const CheckModal = document.createElement("div");
+  CheckModal.className = "check-modal";
+
+  const modalWrapper = document.createElement("div");
+  modalWrapper.className = "check-modal-wrapper";
+
+  const modalBox = document.createElement("div");
+  modalBox.className = "check-modal-box";
+
+  const checkMoalTitle = document.createElement("div");
+  checkMoalTitle.innerText = "개인정보 수집 및 이용 동의";
+
+  const firstPEl = document.createElement("p");
+  firstPEl.innerText = "제1조 [목적]";
+
+  const secondPEl = document.createElement("p");
+  secondPEl.innerText = " 제2조 [정의]";
+
+  const thirdPEl = document.createElement("p");
+  thirdPEl.innerText = "제3조 [약관 등의 명시와 설명 및 개정]";
+
+  const confirmBtn = document.createElement("button");
+  confirmBtn.className = ".check-confirm-btn";
+  confirmBtn.innerText = "확인";
+
+  modalBox.append(checkMoalTitle, firstPEl, secondPEl, thirdPEl);
+  modalWrapper.append(modalBox, confirmBtn);
+  CheckModal.append(modalWrapper);
+
+  template.append(CheckModal);
+  ModalTemplate.addEventListener("click", (e) => {
+    CheckModal.style.display = "block";
+    cAInfoImgEl.style.display = "none";
+    cAInfoImgActiveEl.style.display = "block";
+    closeModal();
+  });
 });
 
 function closeModal() {
@@ -390,40 +436,6 @@ JoinPage.append(
   ModalTemplate,
   joinBtnEl
 );
-
-//모달 이벤트를 위한 함수
-// function popup() {
-//   const CheckModal = document.createElement("div");
-//   const modalWrapper = document.createElement("div");
-//   const modalBox = document.createElement("div");
-//   const firstPEl = document.createElement("p");
-//   const secondPEl = document.createElement("p");
-//   const thirdPEl = document.createElement("p");
-//   const allPEl = [firstPEl, secondPEl, thirdPEl];
-//   const checkMoalTitle = [
-//     { innerText: "이용약관 동의" },
-//     { innerText: "개인정보 수집 및 이용동의" },
-//   ];
-//   const confirmBtn = document.createElement("button");
-
-//   ModalTemplate.classList.remove("--hide");
-
-//   CheckModal.classList.add("check-modal");
-//   modalWrapper.classList.add("check-modal-wrapper");
-//   modalBox.classList.add("check-modal-box");
-//   confirmBtn.classList.add("check-confirm-btn");
-
-//   confirmBtn.innerText = "확인";
-
-//   modalWrapper.append(modalBox);
-//   modalBox.append(...checkMoalTitle, allPEl);
-
-ModalTemplate.addEventListener("click", (e) => {
-  closeModal();
-  // const active = [cUseImgActiveEl, cAInfoImgActiveEl];
-  const active = cUseImgActiveEl;
-  active.style.display = "block";
-});
 
 export default JoinPage;
 

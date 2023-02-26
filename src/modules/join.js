@@ -1,24 +1,18 @@
 import { request } from "../api/common.js";
 // import Navigo from "navigo";
 // import homeMainPage from "../pages/home";
-
-///뭘 바꿔볼까
-
-import JoinPage from "../components/pages/joinPage.js";
-// import JoinPage from "../components/pages/joinPage";
-// import { joinBtnEl } from "../components/pages/joinPage";
 // const authorizationEl = document.querySelector(".authorization");
 // const loginEl = document.querySelector(".login");
 
 /**
  * 가입 양식 입력란: 닉네임, 계정, 비번, 파일
  */
-const displayNameEl = JoinPage.querySelector(".display-name");
-const idEl = JoinPage.querySelector(".id");
-const passwordEl = JoinPage.querySelector(".password");
-const passwordCheckEl = JoinPage.querySelector(".password-check");
-const inputFileEl = JoinPage.querySelector(".upload-name");
-const joinBtnEl = JoinPage.querySelector(".join-btn");
+const displayNameEl = document.querySelector(".display-name");
+const idEl = document.querySelector(".id");
+const passwordEl = document.querySelector(".password");
+const passwordCheckEl = document.querySelector(".password-check");
+const inputFileEl = document.querySelector(".upload-name");
+const joinBtnEl = document.querySelector(".join-btn");
 
 // 데이터 관리
 let displayName = "";
