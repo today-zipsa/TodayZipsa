@@ -1,7 +1,8 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Jal_Onuel";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff") format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -170,7 +171,7 @@
   font-weight: 600;
   background-color: transparent;
 }
-#join .join-wrapper #filebox > input[type=file]#input_file {
+#join .join-wrapper #filebox > input[type="file"]#input_file {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -202,7 +203,7 @@
 #join .join-wrapper .filebox .upload-display img {
   display: block;
   max-width: 100%;
-  width: 100% \9 ;
+  width: 100% \9;
   height: auto;
 }
 #join .label-wrapper--agree {
@@ -249,7 +250,12 @@
 #join .label-wrapper--agree .check-wrapper .check-item button.img-btn img {
   position: relative;
 }
-#join .label-wrapper--agree .check-wrapper .check-item button.img-btn img.active {
+#join
+  .label-wrapper--agree
+  .check-wrapper
+  .check-item
+  button.img-btn
+  img.active {
   position: relative;
   left: 34px;
 }
@@ -290,7 +296,12 @@
   align-items: center;
   flex-direction: column;
 }
-#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal {
+#join
+  .label-wrapper--agree
+  .check-wrapper
+  .modal
+  .modal-template
+  > .check-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -301,21 +312,41 @@
   align-items: center;
   background-color: #fff;
 }
-#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper {
+#join
+  .label-wrapper--agree
+  .check-wrapper
+  .modal
+  .modal-template
+  > .check-modal
+  > .check-modal-wrapper {
   position: absolute;
   display: block;
   background-color: #fff;
   width: 500px;
   height: 600px;
 }
-#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper > .check-modal-box {
+#join
+  .label-wrapper--agree
+  .check-wrapper
+  .modal
+  .modal-template
+  > .check-modal
+  > .check-modal-wrapper
+  > .check-modal-box {
   background-color: #fff;
   padding: 15px;
   width: 15em;
   overflow: auto;
   height: 5em;
 }
-#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper > button.check-confirm-btn {
+#join
+  .label-wrapper--agree
+  .check-wrapper
+  .modal
+  .modal-template
+  > .check-modal
+  > .check-modal-wrapper
+  > button.check-confirm-btn {
   width: 15em;
   height: 3em;
   margin: 50px;
@@ -340,4 +371,4 @@
   font-size: 22px;
   font-weight: 600;
   cursor: pointer;
-}/*# sourceMappingURL=join.css.map */
+} /*# sourceMappingURL=join.css.map */
