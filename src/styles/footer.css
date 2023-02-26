@@ -16,6 +16,9 @@ footer {
   margin: 100px 0 0 0;
   background-color: rgb(247, 249, 250);
   color: var(--disable-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 footer .footerWrapper {
   display: flex;
