@@ -1,4 +1,8 @@
-/* Header*/
+/* Header */
+body {
+  margin: 0px;
+}
+body header {
 .admin-header {
   display: flex;
   justify-content: center;
@@ -20,12 +24,18 @@
 .admin-header .admin-header-wrapper .main-logo-btn-image {
   display: block;
   background-repeat: no-repeat;
+  background-color: #fff;
+}
+.admin-header .admin-header-wrapper .main-logo-btn-image {
+  display: block;
+  background-repeat: no-repeat;
   width: 10em;
   height: 2.4em;
   transform: scale(0.8);
   background-color: var(--main-key-color);
 }
 .admin-header .admin-header-wrapper .admin-welcome-word {
+
   font-size: 1em;
   font-weight: 600;
 }
@@ -51,6 +61,7 @@
   font-size: 20px;
   line-height: 30px;
 }
+
 .show-select-list {
   padding: 5px 0px;
   margin: 5px;
@@ -62,7 +73,7 @@
   all: unset;
   border-radius: 2px;
   cursor: pointer;
-}
+
 .admin_main_btn {
   background-color: #0C8A4E;
   color: white;
@@ -163,6 +174,8 @@
   color: white;
   padding: 0px 10px;
   margin: 20px 10px;
+  padding: 0px 10px;
+  margin: 20px 10px;
 }
 #item_list li .delete_btn {
   font-size: 13px;
@@ -199,6 +212,7 @@
   background-color: white;
   border-radius: 10px;
   width: 50%;
+
 }
 .m_head{
   padding: 20px;
@@ -304,7 +318,6 @@ textarea {
   height: 70px;
 }
 
-
 /* Tag 처리 */
 .tag ul {
   padding-top: 5px;
@@ -331,6 +344,74 @@ textarea {
   font-weight: bold;
   cursor: pointer;
   margin-left: 8px;
+}
+
+
+/* 페이징 처리 */
+#item_list .hidden {
+  display: none;
+}
+.pagination {
+  width: calc(100% - 2rem);
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  padding: 1rem;
+  justify-content: center;
+}
+.page-number,
+.admin-paging-btn{
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  border-radius: .2rem;
+}
+.page-number:hover,
+.admin-paging-btn:not(.disabled):hover {
+  background: #fff;
+}
+.page-number.active {
+  color: #fff;
+  background: #0C8A4E;
+}
+
+
+/* 페이징 처리 */
+#item_list .hidden {
+  display: none;
+}
+.pagination {
+  width: calc(100% - 2rem);
+  display: flex;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  padding: 1rem;
+  justify-content: center;
+}
+.page-number,
+.admin-paging-btn{
+  font-size: 1.2rem;
+  background-color: transparent;
+  border: none;
+  margin: 0.25rem 0.25rem;
+  cursor: pointer;
+  height: 2rem;
+  width: 2rem;
+  border-radius: .2rem;
+}
+.page-number:hover,
+.admin-paging-btn:not(.disabled):hover {
+  background: #fff;
+}
+.page-number.active {
+  color: #fff;
+  background: #0C8A4E;
 }
 
 

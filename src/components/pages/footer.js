@@ -1,8 +1,8 @@
-import facebook from "../asset/facebook.svg";
-import instagram from "../asset/instagram.svg";
-import twitter from "../asset/twitter.svg";
+import facebook from "../../asset/facebook.svg";
+import instagram from "../../asset/instagram.svg";
+import twitter from "../../asset/twitter.svg";
 
-export default footer = /*html*/ `
+export default Footer = /*html*/ `
   <footer>
     <div class="footer--top">
 

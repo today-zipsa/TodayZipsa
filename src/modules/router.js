@@ -3,12 +3,19 @@ import Navigo from "navigo";
  * Common
  */
 import Header from "../components/templates/header";
+import Footer from "../components/templates/footer";
 /**
  * Pages
  */
 import homeMainPage from "../pages/home";
+import { myPage } from "../components/pages/myPage";
+import LoginPage from "../components/pages/loginPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
+<<<<<<< HEAD
+=======
+import JoinPage from "../components/pages/joinPage";
+>>>>>>> bc846b4b486c9b82a0fe444a4481ae9c9348cdd1
 
 const app = document.querySelector("#app");
 
@@ -17,7 +24,11 @@ const router = new Navigo("/");
 router
   .on({
     "/": () => {
+<<<<<<< HEAD
       renderPage(homeMainPage);
+=======
+      renderPage([Header, homeMainPage, Footer]);
+>>>>>>> bc846b4b486c9b82a0fe444a4481ae9c9348cdd1
     },
     "/sitter": () => {
       renderPage(/**SitterPage*/);
@@ -47,7 +58,11 @@ router
       renderPage([Header, LoginPage]);
     },
     "/join": () => {
+<<<<<<< HEAD
       renderPage(/**JoinPage*/);
+=======
+      renderPage([Header, JoinPage, Footer]);
+>>>>>>> bc846b4b486c9b82a0fe444a4481ae9c9348cdd1
     },
     "/payment": () => {
       renderPage(/**PaymentPage*/);
@@ -69,6 +84,7 @@ router
   .resolve();
 
 function renderPage(page) {
+<<<<<<< HEAD
   console.log({ app, page });
   app.innerHTML = "";
   if (Array.isArray(page)) {
@@ -76,6 +92,16 @@ function renderPage(page) {
   } else {
     app.appendChild(page);
   }
+=======
+	console.log({ app, page });
+	app.innerHTML = "";
+	if (Array.isArray(page)) {
+		app.append(...page);
+		page.forEach(node => app.appendChild(node));
+	} else {
+		app.appendChild(page);
+	}
+>>>>>>> bc846b4b486c9b82a0fe444a4481ae9c9348cdd1
 }
 
 /**

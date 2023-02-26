@@ -2,7 +2,6 @@
 @import url(./my.scss);
 @import url(./header.css); /*# sourceMappingURL=main.css.map */
 
-
 :root {
   --main-key-color: #0c8a4e;
   --main-bg-color: #f9f9f9;
@@ -102,7 +101,6 @@
 }
 
 .signIn {
-
   position: absolute;
   margin-left: 1300px;
   margin-top: -70px;
@@ -125,45 +123,35 @@
 }
 
 .bannerPic {
-
   margin-top: 70px;
   width: 1100px;
   height: 450px;
   margin-left: 170px;
 }
 
-.one_btn{
+.one_btn {
   background-color: green;
   color: white;
 }
 
-.oneImg{
+.oneImg {
   width: 280px;
   height: 120px;
 }
 
-.label {
-  display: block;
-}
-
-.banner{
-  position: relative;
-}
-
-.details{
+/* label {
     display: block;
   }
-
+   */
 .banner {
   position: relative;
 }
 
 .details {
-
-  margin-top: 200px;
-  margin-left: 200px;
-  font-size: 34px;
-  font-weight: 900;
+	margin-top: 200px;
+	margin-left: 200px;
+	font-size: 34px;
+	font-weight: 900;
 }
 
 .det2 {
@@ -199,9 +187,9 @@
   background-color: red;
 }
 
-.yes{
-  margin-top: 150px;
-  margin-left: 190px;
+.yes {
+	margin-top: 150px;
+	margin-left: 190px;
 }
 
 .swiper-container {
@@ -216,8 +204,7 @@
   object-fit: cover;
 }
 
-
-
+.swiper-button-next,
 .swiper-button-prev {
   position: absolute;
   top: 50%;
@@ -236,9 +223,8 @@
 .swiper-button-prev {
   left: 10px;
 }
-
-.btn{
-  display: none;
+.btn {
+	display: none;
 }
 
 .getBtn {
@@ -246,46 +232,42 @@
 }
 
 .container {
-
-  height: 200px;
-  width: 800px;
-  margin: 20px 300px;
-  border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
+	height: 200px;
+	width: 800px;
+	margin: 20px 300px;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
 }
 
-
-.titleEl{
-  margin-left: 300px;
-  margin-top: -120px;
+.titleEl {
+	margin-left: 300px;
+	margin-top: -120px;
 }
 
-
-.mainImg{
-  width: 270px;
-  height: 120px;
-  margin-left: 20px;
-  margin-top: 42px;
+.mainImg {
+	width: 270px;
+	height: 120px;
+	margin-left: 20px;
+	margin-top: 42px;
 }
 
-
-.desc{
-  margin-left: 300px;
-  margin-top: 30px;
+.desc {
+	margin-left: 300px;
+	margin-top: 30px;
 }
 
-.baro{
-  margin-left: 700px;
-  margin-bottom: 10px;
+.baro {
+	margin-left: 700px;
+	margin-bottom: 10px;
 }
 
-.price{
-  margin-left: 640px;
-  margin-top: -20px;
-  width: 130px;
-  height: 35px;
-  background-color: green;
-  color: white;
+.price {
+	margin-left: 640px;
+	margin-top: -20px;
+	width: 130px;
+	height: 35px;
+	background-color: green;
+	color: white;
 }
 
 .detailImg {
