@@ -1,5 +1,5 @@
 import { util } from "../../api/util.js";
-import ModalTemplate from "../templates/modal.js";
+import ModalTemplate from "../templates/modalTwo";
 import src from "../../asset/global/check.svg";
 import srcActive from "../../asset/global/check_green.svg";
 

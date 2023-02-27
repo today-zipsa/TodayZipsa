@@ -77,17 +77,21 @@
   height: inherit;
 }
 
-.sitterLogo {
-  margin-left: 30px;
-  margin-top: 30px;
-  position: relative;
-}
+
 
 .sitterLogo {
   margin-left: 30px;
   margin-top: 30px;
   position: relative;
 }
+
+
+.sitterLogo {
+  margin-left: 30px;
+  margin-top: 30px;
+  position: relative;
+}
+
 
 .signUp {
   position: absolute;
@@ -102,6 +106,7 @@
   margin-top: -70px;
   cursor: pointer;
 }
+
 
 .categories {
   display: flex;
@@ -134,33 +139,26 @@
   height: 120px;
 }
 
-.label {
-  display: block;
-}
-
+/* label {
+    display: block;
+  }
+   */
 .banner {
   position: relative;
 }
 
 .details {
-  display: block;
-}
-
-.banner {
-  position: relative;
-}
-
-.details {
-  margin-top: 200px;
-  margin-left: 200px;
-  font-size: 34px;
-  font-weight: 900;
+	margin-top: 200px;
+	margin-left: 200px;
+	font-size: 34px;
+	font-weight: 900;
 }
 
 .det2 {
   margin-top: 20px;
   margin-left: 200px;
 }
+
 
 #modal {
   display: none;
@@ -190,8 +188,8 @@
 }
 
 .yes {
-  margin-top: 150px;
-  margin-left: 190px;
+	margin-top: 150px;
+	margin-left: 190px;
 }
 
 .swiper-container {
@@ -206,6 +204,7 @@
   object-fit: cover;
 }
 
+.swiper-button-next,
 .swiper-button-prev {
   position: absolute;
   top: 50%;
@@ -224,9 +223,8 @@
 .swiper-button-prev {
   left: 10px;
 }
-
 .btn {
-  display: none;
+	display: none;
 }
 
 .getBtn {
@@ -234,42 +232,42 @@
 }
 
 .container {
-  height: 200px;
-  width: 800px;
-  margin: 20px 300px;
-  border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
+	height: 200px;
+	width: 800px;
+	margin: 20px 300px;
+	border-top: 1px solid lightgrey;
+	border-bottom: 1px solid lightgrey;
 }
 
 .titleEl {
-  margin-left: 300px;
-  margin-top: -120px;
+	margin-left: 300px;
+	margin-top: -120px;
 }
 
 .mainImg {
-  width: 270px;
-  height: 120px;
-  margin-left: 20px;
-  margin-top: 42px;
+	width: 270px;
+	height: 120px;
+	margin-left: 20px;
+	margin-top: 42px;
 }
 
 .desc {
-  margin-left: 300px;
-  margin-top: 30px;
+	margin-left: 300px;
+	margin-top: 30px;
 }
 
 .baro {
-  margin-left: 700px;
-  margin-bottom: 10px;
+	margin-left: 700px;
+	margin-bottom: 10px;
 }
 
 .price {
-  margin-left: 640px;
-  margin-top: -20px;
-  width: 130px;
-  height: 35px;
-  background-color: green;
-  color: white;
+	margin-left: 640px;
+	margin-top: -20px;
+	width: 130px;
+	height: 35px;
+	background-color: green;
+	color: white;
 }
 
 .detailImg {
@@ -278,6 +276,7 @@
   margin-top: 100px;
   margin-left: 200px;
 }
+
 
 .newTitle {
   margin-top: -260px;

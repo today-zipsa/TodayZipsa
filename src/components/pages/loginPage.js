@@ -64,4 +64,3 @@ loginWapperEl.append(h1El, inputEl, findEl, btnEl);
 LoginPage.append(loginWapperEl);
 
 export default LoginPage;
-
