@@ -1,8 +1,8 @@
-import {accounts} from "/src/api/my_accounts_dummy"
-import {payments} from "/src/api/my_payment_dummy"
+import {accounts} from "../../api/my_accounts_dummy"
+import {payments} from "../../api/my_payment_dummy"
 // import {request} from "../api/common.js";
 
-export function paymentPage(){
+function paymentPage(){
   // //헤더?
 // let headers = {
 //   "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IkVlc3hyc0RsVW5USHkxRmpsdnZUIiwiaWF0IjoxNjc1NjkyNTI4LCJleHAiOjE2NzU3Nzg5MjgsImlzcyI6InRoZXNlY29uQGdtYWlsLmNvbSJ9.8VvD-JwUEt-YJ7LfG8P3vBZd3Zskc_1G7FJemxuJWTo",
@@ -270,8 +270,8 @@ paymentBtn.addEventListener(('click'),() =>{
   
 
 //은행잔고와 상품금액 비교. payments[]<값 비교
-  if(check_input.value >= payments[0].product.price) {
-    window.location.href = 'paymentDone.html';
+  if(check_input.value >= payments[1].product.price) {
+    window.location.href = 'src/components/pages/paymentDonepage';
     } else{
       paymentModal.style.display = "block"
     }
@@ -304,7 +304,7 @@ const payment_span_price = document.createElement('span')
 payment_span_price.innerHTML = payments[0].product.price
 paymentProductPrice.after(payment_span_price)
 
-
+console.log(paymentTotal)
 // 로컬스토리지에 있는 토큰값 가져오기
 // const res = await fetch(
 //   "https://asia-northeast3-heropy-api.cloudfunctions.net/api/account/banks",
@@ -318,3 +318,4 @@ paymentProductPrice.after(payment_span_price)
 // console.log(json);
 return paymentTotal;
 }
+export default PaymentPage;

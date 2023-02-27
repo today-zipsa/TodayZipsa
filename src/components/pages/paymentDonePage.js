@@ -1,4 +1,4 @@
-export function paymentDone()
+function paymentDone()
 {
 const paymentDoneFinishPage = document.createElement("div")
 const paymentDoneOrderDone = document.createElement("div")
@@ -39,3 +39,4 @@ paymentDoneBtn.append(paymentDonePurchaseHistory)
 
 return paymentDoneFinishPage
 }
+export default PaymentDonePage
