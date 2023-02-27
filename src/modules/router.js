@@ -12,6 +12,7 @@ import homeMainPage from "../pages/home";
 import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
 
+
 const app = document.querySelector("#app");
 
 const router = new Navigo("/");
@@ -76,6 +77,7 @@ function renderPage(page) {
   if (Array.isArray(page)) {
     app.append(...page);
     //page.forEach(node => app.appendChild(node));
+
   } else {
     app.appendChild(page);
   }
