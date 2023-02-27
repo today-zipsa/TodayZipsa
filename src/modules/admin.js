@@ -580,13 +580,14 @@ export default function Admin() {
 		}, 500);
 	}
 
-// 이전(<), 다음(>) 버튼 활성/비활성 처리
-function disableButton(button){
-  button.classList.add("disabled");
-  button.setAttribute("disabled", true);
-}
-function enableButton(button){
-  button.classList.remove("disabled");
-  button.removeAttribute("disabled");
-}
+	// 이전(<), 다음(>) 버튼 활성/비활성 처리
+	function disableButton(button) {
+		button.classList.add("disabled");
+		button.setAttribute("disabled", true);
+	}
+	function enableButton(button) {
+		button.classList.remove("disabled");
+		button.removeAttribute("disabled");
+	}
 
+}
