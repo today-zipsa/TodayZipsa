@@ -9,6 +9,8 @@ import Footer from "../components/templates/footer";
  */
 import homeMainPage from "../pages/home";
 // import MyPage from "../components/pages/myPage";
+import { myPage } from "../components/pages/myPage";
+import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
 
@@ -38,7 +40,7 @@ router
       renderPage(/**SnackPage*/);
     },
     "/my": () => {
-      // renderPage([Header, MyPage]);
+      renderPage([Header, MyPage]);
     },
     "/my/order/detail": () => {
       renderPage(/**MyOrderDetailPage*/);
@@ -72,15 +74,14 @@ router
   .resolve();
 
 function renderPage(page) {
-  console.log({ app, page });
-  app.innerHTML = "";
-  if (Array.isArray(page)) {
-    app.append(...page);
-    //page.forEach(node => app.appendChild(node));
-
-  } else {
-    app.appendChild(page);
-  }
+	console.log({ app, page });
+	app.innerHTML = "";
+	if (Array.isArray(page)) {
+		app.append(...page);
+		page.forEach(node => app.appendChild(node));
+	} else {
+		app.appendChild(page);
+	}
 }
 
 /**

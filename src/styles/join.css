@@ -360,7 +360,6 @@
 #join .label-wrapper--agree .check-wrapper .modal .modal-template .--hidden {
   display: none;
 }
-
 #join button.join-btn {
   width: 15em;
   height: 3em;
@@ -372,4 +371,4 @@
   font-size: 22px;
   font-weight: 600;
   cursor: pointer;
-} /*# sourceMappingURL=join.css.map */
+}/*# sourceMappingURL=join.css.map */
