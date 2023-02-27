@@ -163,6 +163,16 @@ const cAllSpanEl = util.createEl(
 // 이용약관 동의 - cUse == checkUse
 const checkUseEl = util.createEl("div", { class: "check-item" });
 const cUseImgBtnEl = util.createEl("button", { class: "img-btn" });
+// cUseImgBtnEl.addEventListener("click", () => {
+//   console.log("[modal open click]");
+//   const modal = CheckModalEl.querySelectorAll(".check-modal .hidden");
+//   console.log("modal>>>>", modal);
+//   const hidden = modal.classList.remove("hidden");
+//   console.log("hidden????>>>>", hidden);
+//   const open = () => hidden;
+//   open();
+// });
+
 const cUseImgEl = util.createEl("img", { src: src });
 const cUseImgActiveEl = util.createEl(
   "img",
