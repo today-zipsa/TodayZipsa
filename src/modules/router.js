@@ -10,7 +10,7 @@ import Footer from "../components/templates/footer";
 import homeMainPage from "../pages/home";
 import { myPage } from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
-// import MyPage from "../components/pages/myPage";
+import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
 
@@ -19,51 +19,51 @@ const app = document.querySelector("#app");
 const router = new Navigo("/");
 
 router
-	.on({
-		"/": () => {
-			renderPage(homeMainPage);
-		},
-		"/sitter": () => {
-			renderPage(/**SitterPage*/);
-		},
-		"/snack": () => {
-			renderPage(/**SnackPage*/);
-		},
-		"/rental": () => {
-			renderPage(/**RentalPage*/);
-		},
-		"/detail": () => {
-			renderPage(/**DetailPage*/);
-		},
-		"/snack": () => {
-			renderPage(/**SnackPage*/);
-		},
-		"/my": () => {
-			renderPage([Header, myPage()]);
-		},
-		"/my/order/detail": () => {
-			renderPage(/**MyOrderDetailPage*/);
-		},
-		"/my/payment/detail": () => {
-			renderPage(/**MyPaymentDetailPage*/);
-		},
-		"/login": () => {
-			renderPage([Header, LoginPage]);
-		},
-		"/join": () => {
-			renderPage(/**JoinPage*/);
-		},
-		"/payment": () => {
-			renderPage(/**PaymentPage*/);
-		},
-		"/payment/done": () => {
-			renderPage(/**PaymentDonePage*/);
-		},
-		"/admin": () => {
-			renderPage(/**PaymentDonePage*/);
-		},
-		"product/:productId": match => {
-			const { productId } = match?.data;
+  .on({
+    "/": () => {
+      renderPage([Header, homeMainPage, Footer]);
+    },
+    "/sitter": () => {
+      renderPage(/**SitterPage*/);
+    },
+    "/snack": () => {
+      renderPage(/**SnackPage*/);
+    },
+    "/rental": () => {
+      renderPage(/**RentalPage*/);
+    },
+    "/detail": () => {
+      renderPage(/**DetailPage*/);
+    },
+    "/snack": () => {
+      renderPage(/**SnackPage*/);
+    },
+    "/my": () => {
+      renderPage([Header, MyPage]);
+    },
+    "/my/order/detail": () => {
+      renderPage(/**MyOrderDetailPage*/);
+    },
+    "/my/payment/detail": () => {
+      renderPage(/**MyPaymentDetailPage*/);
+    },
+    "/login": () => {
+      renderPage([Header, LoginPage]);
+    },
+    "/join": () => {
+      renderPage([Header, JoinPage, Footer]);
+    },
+    "/payment": () => {
+      renderPage(/**PaymentPage*/);
+    },
+    "/payment/done": () => {
+      renderPage(/**PaymentDonePage*/);
+    },
+    "/admin": () => {
+      renderPage(/**PaymentDonePage*/);
+    },
+    "product/:productId": (match) => {
+      const { productId } = match?.data;
 
       console.log({ productId });
 
@@ -77,7 +77,7 @@ function renderPage(page) {
 	app.innerHTML = "";
 	if (Array.isArray(page)) {
 		app.append(...page);
-		//page.forEach(node => app.appendChild(node));
+		page.forEach(node => app.appendChild(node));
 	} else {
 		app.appendChild(page);
 	}
