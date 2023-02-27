@@ -73,52 +73,8 @@ export async function renderMypage() {
 		}
 	});
 
-	// if (
-	// 	profileWelcomeWord &&
-	// 	peoriodOfPayment &&
-	// 	paymentsContainer &&
-	// 	accountsBoxs
-	// ) {
-
-	// }
 	profileWelcomeWord.innerText = `안녕하세요, ${memberName}님`;
 	peoriodOfPayment.innerText = `${firstDateToPay} ~ ${lastDateToPay} 동안 구매해주신 내역이에요.`;
 	paymentsContainer.append(...Array.from(paymentsList));
 	accountsBoxs.append(...accountsList);
-
-	function setDetailInfoButtonState(paymentState) {
-		switch (paymentState) {
-			case "구매확정완료":
-				return "주문상세>";
-			default:
-				return "결제상세>";
-		}
-	}
-
-	function setDetailInfoHref(paymentState) {
-		switch (paymentState) {
-			case "구매확정완료":
-				return "../pages/my_order_detail.html";
-			default:
-				return "../pages/my_payment_detail.html";
-		}
-	}
-
-	function getKRW(digit) {
-		const digitArray = digit.toString().split("");
-		const newArray = [];
-		let index = 0;
-		while (digitArray.length > 0) {
-			newArray.push(digitArray.pop());
-			index += 1;
-			if (index === 3) {
-				newArray.push(",");
-				index = 0;
-			}
-		}
-		if (newArray[newArray.length - 1] === ",") {
-			newArray.pop();
-		}
-		return newArray.reverse().join("") + "원";
-	}
 }
