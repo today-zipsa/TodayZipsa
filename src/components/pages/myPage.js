@@ -6,7 +6,7 @@ import deleteBtnImg from "../../asset/btnImg/close_btn.png";
 import { payments } from "../../api/my_payment_dummy";
 import { accounts } from "../../api/my_accounts_dummy";
 
-export function myPage() {
+export default function MyPage() {
 	const MyPage = document.createElement("section");
 	const profileContainer = document.createElement("box");
 	const profileBox = document.createElement("box");
@@ -169,7 +169,7 @@ export function myPage() {
 async function renderTest(page) {
 	// app만 querySelector로 잘 불러와지고 나머지는 null이 됨
 	// const app = document.querySelector("#app");
-
+	console.log(page);
 	const [profileContainer, infoContainer, profileEditmodal] = Array.from(
 		page.children
 	);
@@ -199,88 +199,6 @@ async function renderTest(page) {
 				</div>
 				</box>
 				`;
-	function paymentsList() {
-		return payments.map(payment => {
-			const isTransactionCompleted = payment.done;
-			const isCanceled = payment.isCanceled;
-			const productPrice = payment.product.price;
-			const productName = payment.product.title;
-			const thumbnailUrl = "https://picsum.photos/id/237/200/300"; //myimg; //payment.product.thumbnail;
-			const paymentTime = payment.timePaid
-				.slice(5, 10)
-				.split("-")
-				.map(digit => (digit.length < 2 ? "0" + digit : digit));
-
-			let paymentState = "결제완료";
-
-			const paymentContainer = document.createElement("box");
-			const paymentStateBox = document.createElement("div");
-			const paymentStateWord = document.createElement("span");
-			const paymentInfoBox = document.createElement("div");
-			const itemImage = document.createElement("img");
-			const itemInfoBox = document.createElement("div");
-			const paymentDate = document.createElement("span");
-			const itemName = document.createElement("span");
-			const itemPrice = document.createElement("span");
-			const detailInfoBtn = document.createElement("a");
-			const deleteBtn = document.createElement("img");
-			const twoBtnBox = document.createElement("div");
-			const btnPayConfirmed = document.createElement("div");
-			const btnPayCanceled = document.createElement("div");
-
-			paymentContainer.classList.add("payment-container");
-			paymentStateBox.classList.add("payment-state-box");
-			paymentStateWord.classList.add("payment-state");
-			paymentInfoBox.classList.add("payment-info-box");
-			itemImage.classList.add("item-image");
-			itemInfoBox.classList.add("item-info-box");
-			paymentDate.classList.add("payment-date");
-			itemName.classList.add("item-name");
-			itemPrice.classList.add("item-price");
-			detailInfoBtn.classList.add("detail-info-btn");
-			deleteBtn.classList.add("my-payment-list-delete-btn");
-			twoBtnBox.classList.add("two-btn-box");
-			btnPayConfirmed.classList.add("btn-pay-confirmed");
-			btnPayCanceled.classList.add("btn-pay-canceled");
-
-			if (isCanceled) {
-				twoBtnBox.classList.add("none");
-				paymentState = "결제취소";
-				paymentStateBox.style.color = "#909190";
-			}
-			if (isTransactionCompleted) {
-				btnPayConfirmed.classList.add("none");
-				paymentState = "구매확정완료";
-				paymentStateBox.style.color = "#909190";
-			}
-
-			detailInfoBtn.href = setDetailInfoHref(paymentState);
-			detailInfoBtn.innerText = setDetailInfoButtonState(paymentState);
-			detailInfoBtn.setAttribute("data-navigo", "");
-			paymentStateWord.innerText = paymentState;
-			paymentDate.innerText = `${paymentTime[0]}.${paymentTime[1]} 결제`;
-			itemName.innerText = productName;
-			itemPrice.innerText = getKRW(productPrice);
-			itemImage.src = thumbnailUrl;
-			itemImage.alt = "상품이미지";
-			deleteBtn.src = deleteBtnImg;
-			btnPayConfirmed.innerText = "구매확정";
-			btnPayCanceled.innerText = "주문취소";
-
-			paymentStateBox.append(paymentStateWord);
-			itemInfoBox.append(paymentDate, itemName, itemPrice, detailInfoBtn);
-			paymentInfoBox.append(itemImage, itemInfoBox);
-			twoBtnBox.append(btnPayConfirmed, btnPayCanceled);
-			paymentContainer.append(
-				paymentStateBox,
-				paymentInfoBox,
-				twoBtnBox,
-				deleteBtn
-			);
-			return paymentContainer;
-		});
-	}
-	console.log(paymentsList());
 }
 
 function setDetailInfoButtonState(paymentState) {
@@ -317,4 +235,86 @@ function getKRW(digit) {
 		newArray.pop();
 	}
 	return newArray.reverse().join("") + "원";
+}
+
+function paymentsList() {
+	return payments.map(payment => {
+		const isTransactionCompleted = payment.done;
+		const isCanceled = payment.isCanceled;
+		const productPrice = payment.product.price;
+		const productName = payment.product.title;
+		const thumbnailUrl = "https://picsum.photos/id/237/200/300"; //myimg; //payment.product.thumbnail;
+		const paymentTime = payment.timePaid
+			.slice(5, 10)
+			.split("-")
+			.map(digit => (digit.length < 2 ? "0" + digit : digit));
+
+		let paymentState = "결제완료";
+
+		const paymentContainer = document.createElement("box");
+		const paymentStateBox = document.createElement("div");
+		const paymentStateWord = document.createElement("span");
+		const paymentInfoBox = document.createElement("div");
+		const itemImage = document.createElement("img");
+		const itemInfoBox = document.createElement("div");
+		const paymentDate = document.createElement("span");
+		const itemName = document.createElement("span");
+		const itemPrice = document.createElement("span");
+		const detailInfoBtn = document.createElement("a");
+		const deleteBtn = document.createElement("img");
+		const twoBtnBox = document.createElement("div");
+		const btnPayConfirmed = document.createElement("div");
+		const btnPayCanceled = document.createElement("div");
+
+		paymentContainer.classList.add("payment-container");
+		paymentStateBox.classList.add("payment-state-box");
+		paymentStateWord.classList.add("payment-state");
+		paymentInfoBox.classList.add("payment-info-box");
+		itemImage.classList.add("item-image");
+		itemInfoBox.classList.add("item-info-box");
+		paymentDate.classList.add("payment-date");
+		itemName.classList.add("item-name");
+		itemPrice.classList.add("item-price");
+		detailInfoBtn.classList.add("detail-info-btn");
+		deleteBtn.classList.add("my-payment-list-delete-btn");
+		twoBtnBox.classList.add("two-btn-box");
+		btnPayConfirmed.classList.add("btn-pay-confirmed");
+		btnPayCanceled.classList.add("btn-pay-canceled");
+
+		if (isCanceled) {
+			twoBtnBox.classList.add("none");
+			paymentState = "결제취소";
+			paymentStateBox.style.color = "#909190";
+		}
+		if (isTransactionCompleted) {
+			btnPayConfirmed.classList.add("none");
+			paymentState = "구매확정완료";
+			paymentStateBox.style.color = "#909190";
+		}
+
+		detailInfoBtn.href = setDetailInfoHref(paymentState);
+		detailInfoBtn.innerText = setDetailInfoButtonState(paymentState);
+		detailInfoBtn.setAttribute("data-navigo", "");
+		paymentStateWord.innerText = paymentState;
+		paymentDate.innerText = `${paymentTime[0]}.${paymentTime[1]} 결제`;
+		itemName.innerText = productName;
+		itemPrice.innerText = getKRW(productPrice);
+		itemImage.src = thumbnailUrl;
+		itemImage.alt = "상품이미지";
+		deleteBtn.src = deleteBtnImg;
+		btnPayConfirmed.innerText = "구매확정";
+		btnPayCanceled.innerText = "주문취소";
+
+		paymentStateBox.append(paymentStateWord);
+		itemInfoBox.append(paymentDate, itemName, itemPrice, detailInfoBtn);
+		paymentInfoBox.append(itemImage, itemInfoBox);
+		twoBtnBox.append(btnPayConfirmed, btnPayCanceled);
+		paymentContainer.append(
+			paymentStateBox,
+			paymentInfoBox,
+			twoBtnBox,
+			deleteBtn
+		);
+		return paymentContainer;
+	});
 }

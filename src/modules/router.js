@@ -8,20 +8,26 @@ import Footer from "../components/templates/footer";
  * Pages
  */
 import homeMainPage from "../pages/home";
-import { myPage } from "../components/pages/myPage";
-import LoginPage from "../components/pages/loginPage";
+import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
+import PaymentPage from "../components/pages/paymentPage";
+import PaymentDonePage from "../components/pages/paymentDonePage";
 
-const app = document.querySelector("#app");
+/**
+ * Modules
+ */
+import Admin from "../modules/admin";
+import My from "../modules/my";
+import Join from "../modules/join";
 
 const router = new Navigo("/");
 
 router
   .on({
     "/": () => {
-      renderPage([Header, homeMainPage, Footer]);
+      renderPage(homeMainPage);
     },
     "/sitter": () => {
       renderPage(/**SitterPage*/);
@@ -39,7 +45,7 @@ router
       renderPage(/**SnackPage*/);
     },
     "/my": () => {
-      renderPage([Header, MyPage]);
+      renderPage([Header, MyPage(), Footer]);
     },
     "/my/order/detail": () => {
       renderPage(/**MyOrderDetailPage*/);
@@ -48,19 +54,21 @@ router
       renderPage(/**MyPaymentDetailPage*/);
     },
     "/login": () => {
-      renderPage([Header, LoginPage]);
+      renderPage([Header, LoginPage, Footer]);
     },
     "/join": () => {
       renderPage([Header, JoinPage, Footer]);
+      Join();
     },
     "/payment": () => {
-      renderPage(/**PaymentPage*/);
+      renderPage([Header, PaymentPage(), Footer]);
     },
     "/payment/done": () => {
-      renderPage(/**PaymentDonePage*/);
+      renderPage([Header, PaymentDonePage(), Footer]);
     },
     "/admin": () => {
-      renderPage(/**PaymentDonePage*/);
+      renderPage([AdminPage, Footer]);
+      Admin();
     },
     "product/:productId": (match) => {
       const { productId } = match?.data;
@@ -73,14 +81,14 @@ router
   .resolve();
 
 function renderPage(page) {
-	console.log({ app, page });
-	app.innerHTML = "";
-	if (Array.isArray(page)) {
-		app.append(...page);
-		page.forEach(node => app.appendChild(node));
-	} else {
-		app.appendChild(page);
-	}
+  console.log({ app, page });
+  app.innerHTML = "";
+  if (Array.isArray(page)) {
+    app.append(...page);
+    page.forEach((node) => app.appendChild(node));
+  } else {
+    app.appendChild(page);
+  }
 }
 
 /**
