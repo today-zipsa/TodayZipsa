@@ -589,4 +589,5 @@ export default function Admin() {
 		button.classList.remove("disabled");
 		button.removeAttribute("disabled");
 	}
+
 }

@@ -164,8 +164,9 @@ body {
 	text-decoration: none;
 	overflow: hidden;
 }
-#item_list li .price {
-	margin: 3% auto;
+
+#item_list li .price{
+  margin: 3% auto;
 }
 #item_list li .edit_btn {
 	font-size: 13px;
@@ -443,72 +444,4 @@ textarea {
 .page-number.active {
 	color: #fff;
 	background: #0c8a4e;
-}
-
-
-/* 페이징 처리 */
-#item_list .hidden {
-  display: none;
-}
-.pagination {
-  width: calc(100% - 2rem);
-  display: flex;
-  align-items: center;
-  position: relative;
-  bottom: 0;
-  padding: 1rem;
-  justify-content: center;
-}
-.page-number,
-.admin-paging-btn{
-  font-size: 1.2rem;
-  background-color: transparent;
-  border: none;
-  margin: 0.25rem 0.25rem;
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  border-radius: .2rem;
-}
-.page-number:hover,
-.admin-paging-btn:not(.disabled):hover {
-  background: #fff;
-}
-.page-number.active {
-  color: #fff;
-  background: #0C8A4E;
-}
-
-
-/* 페이징 처리 */
-#item_list .hidden {
-  display: none;
-}
-.pagination {
-  width: calc(100% - 2rem);
-  display: flex;
-  align-items: center;
-  position: relative;
-  bottom: 0;
-  padding: 1rem;
-  justify-content: center;
-}
-.page-number,
-.admin-paging-btn{
-  font-size: 1.2rem;
-  background-color: transparent;
-  border: none;
-  margin: 0.25rem 0.25rem;
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  border-radius: .2rem;
-}
-.page-number:hover,
-.admin-paging-btn:not(.disabled):hover {
-  background: #fff;
-}
-.page-number.active {
-  color: #fff;
-  background: #0C8A4E;
 }
