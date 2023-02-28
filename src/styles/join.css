@@ -1,8 +1,6 @@
-@charset "UTF-8";
 @font-face {
   font-family: "Jal_Onuel";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -36,7 +34,7 @@
   color: var(--disable-color);
 }
 #join .join--required span.required {
-  padding: 1em 0.2em 0 0;
+  padding: 0 0.2em 0 0;
 }
 #join .division-container {
   border-top: 2px solid #000;
@@ -56,8 +54,6 @@
   align-items: center;
   padding-top: 3em;
   padding-bottom: 2em;
-  /* imaged preview */
-  /* 추가될 이미지를 감싸는 요소 */
 }
 #join .join-wrapper .label-wrapper {
   display: flex;
@@ -78,16 +74,22 @@
 }
 #join .join-wrapper .label-wrapper button.validator-btn {
   display: inline-block;
-  width: 6.5em;
+  width: 6.8em;
   height: 4.5em;
   margin-left: 0.5em;
-  padding: 0.7em 0.4em 0.5em 0.5em;
+  padding: 0.7em 0.6em 0.5em 0.6em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
   border-radius: 6px;
   color: var(--main-key-color);
   background-color: transparent;
   font-weight: 600;
+}
+#join .join-wrapper .label-wrapper .input-wrapper {
+  flex-direction: column;
+}
+#join .join-wrapper .label-wrapper .input-wrapper p {
+  margin-top: 10px;
 }
 #join .join-wrapper .label-wrapper .email-check-box {
   padding: 10px 0px;
@@ -142,69 +144,23 @@
 #join .join-wrapper .label-wrapper .sized-box--pwc {
   margin-left: 90px;
 }
-#join .join-wrapper .label-wrapper .sized-box--file {
-  margin-right: 5px;
-}
-#join .join-wrapper #filebox {
-  /* named upload */
-  /* 파일업로드 외형 감추기 */
-}
-#join .join-wrapper #filebox input.upload-name {
-  width: 20em;
-  height: 3.5em;
-  border: 2px solid var(--input-color);
+#join .join-wrapper #filebox .img-wrapper img.upload-img {
+  width: 70px;
+  height: 70px;
+  border: 2px solid var(--disable-color);
   border-radius: 6px;
-  -webkit-appearance: none; /* 네이티브 외형 감추기 */
-  -moz-appearance: none;
-  appearance: none;
 }
-#join .join-wrapper #filebox button.upload-btn {
+#join .join-wrapper #filebox .img-wrapper input#input_file {
   display: inline-block;
-  width: 6.5em;
-  height: 4.5em;
+  width: 4.2em;
   margin-left: 0.5em;
-  padding: 0.8em 0.4em 0.5em 0.5em;
+  padding: 1.4em 0 0 1em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
   border-radius: 6px;
   color: var(--main-key-color);
   font-weight: 600;
   background-color: transparent;
-}
-#join .join-wrapper #filebox > input[type="file"]#input_file {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border-color: none;
-}
-#join .join-wrapper .filebox .upload-display {
-  /* 이미지가 표시될 지역 */
-  margin-bottom: 5px;
-}
-@media (min-width: 768px) {
-  #join .join-wrapper .filebox .upload-display {
-    display: inline-block;
-    margin-right: 5px;
-    margin-bottom: 0;
-  }
-}
-#join .join-wrapper .filebox .upload-thumb-wrap {
-  display: inline-block;
-  width: 54px;
-  padding: 2px;
-  vertical-align: middle;
-  border: 2px solid var(--main-key-color);
-  border-radius: 5px;
-}
-#join .join-wrapper .filebox .upload-display img {
-  display: block;
-  max-width: 100%;
-  width: 100% \9;
-  height: auto;
 }
 #join .label-wrapper--agree {
   display: flex;
@@ -217,7 +173,7 @@
 #join .label-wrapper--agree .required-contents {
   display: flex;
   width: 10em;
-  margin: 0 50px 180px 0;
+  margin: 0 83px 218px 0;
 }
 #join .label-wrapper--agree .required-contents h5 {
   font-size: 18px;
@@ -227,7 +183,9 @@
   margin: 0 0 10px 3px;
 }
 #join .label-wrapper--agree .check-wrapper {
-  padding-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 #join .label-wrapper--agree .check-wrapper .check-item:first-child label {
   font-size: 23px !important;
@@ -237,27 +195,23 @@
 }
 #join .label-wrapper--agree .check-wrapper .check-item {
   display: flex;
-  margin-bottom: 25px;
+  padding: 25px 0;
 }
 #join .label-wrapper--agree .check-wrapper .check-item button.img-btn {
-  cursor: pointer;
-  position: absolute;
-  left: 38.5%;
-  margin-top: 0.5em;
+  display: block;
   border: none;
+  position: relative;
+  right: 4.5em;
+  bottom: 0.8em;
   background-color: transparent;
+  cursor: pointer;
 }
 #join .label-wrapper--agree .check-wrapper .check-item button.img-btn img {
-  position: relative;
+  position: absolute;
+  display: block;
 }
-#join
-  .label-wrapper--agree
-  .check-wrapper
-  .check-item
-  button.img-btn
-  img.active {
-  position: relative;
-  left: 34px;
+#join .label-wrapper--agree .check-wrapper .check-item button.img-btn img.active {
+  display: block;
 }
 #join .label-wrapper--agree .check-wrapper .check-item label.agree-title {
   margin-right: 0.3em;
@@ -296,12 +250,7 @@
   align-items: center;
   flex-direction: column;
 }
-#join
-  .label-wrapper--agree
-  .check-wrapper
-  .modal
-  .modal-template
-  > .check-modal {
+#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal {
   position: fixed;
   top: 0;
   left: 0;
@@ -312,41 +261,21 @@
   align-items: center;
   background-color: #fff;
 }
-#join
-  .label-wrapper--agree
-  .check-wrapper
-  .modal
-  .modal-template
-  > .check-modal
-  > .check-modal-wrapper {
+#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper {
   position: absolute;
   display: block;
   background-color: #fff;
   width: 500px;
   height: 600px;
 }
-#join
-  .label-wrapper--agree
-  .check-wrapper
-  .modal
-  .modal-template
-  > .check-modal
-  > .check-modal-wrapper
-  > .check-modal-box {
+#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper > .check-modal-box {
   background-color: #fff;
   padding: 15px;
   width: 15em;
   overflow: auto;
   height: 5em;
 }
-#join
-  .label-wrapper--agree
-  .check-wrapper
-  .modal
-  .modal-template
-  > .check-modal
-  > .check-modal-wrapper
-  > button.check-confirm-btn {
+#join .label-wrapper--agree .check-wrapper .modal .modal-template > .check-modal > .check-modal-wrapper > button.check-confirm-btn {
   width: 15em;
   height: 3em;
   margin: 50px;
