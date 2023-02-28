@@ -333,7 +333,6 @@ checkAgreeInfoEl.append(cAInfoImgBtnEl, cAInfoLabelEl, cAInfoSpanEl);
 cAgeImgBtnEl.append(cAgeImgActiveEl, cAgeImgEl); //check btn
 checkAgeEl.append(cAgeImgBtnEl, cAgeLabelEl, cAgeSpanEl);
 
-
 //이용약관 modal
 cUseImgBtnEl.addEventListener("click", () => {
   const template = ModalTemplate.querySelector(".modal-template");
@@ -385,7 +384,7 @@ cAInfoImgEl.addEventListener("click", () => {
 
   const CheckModal = document.createElement("div");
   CheckModal.className = "check-modal";
-
+  
   const modalWrapper = document.createElement("div");
   modalWrapper.className = "check-modal-wrapper";
 
@@ -413,6 +412,7 @@ cAInfoImgEl.addEventListener("click", () => {
   CheckModal.append(modalWrapper);
 
   template.append(CheckModal);
+
   ModalTemplate.addEventListener("click", (e) => {
     CheckModal.style.display = "block";
     cAInfoImgEl.style.display = "none";
@@ -426,7 +426,6 @@ function closeModal() {
   ModalTemplate.querySelector(".modal-template").innerHTML = "";
 }
 
-
 //all Elements for join Page
 JoinPage.append(
   h1El,
@@ -438,4 +437,3 @@ JoinPage.append(
 );
 
 export default JoinPage;
-

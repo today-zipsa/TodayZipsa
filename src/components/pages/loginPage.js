@@ -1,45 +1,56 @@
 /**
  * 요소 createElement
  */
+// <main id="login-page"></main>
 const LoginPage = document.createElement("main");
-const loginWapperEl = document.createElement("div");
-const h1El = document.createElement("h1");
-const inputEl = document.createElement("div");
-const inputIdEl = document.createElement("input");
-const inputPwEl = document.createElement("input");
-const findEl = document.createElement("div");
-const findIdEl = document.createElement("button");
-const divisionLineEl = document.createElement("div");
-const findPwEl = document.createElement("button");
-const btnEl = document.createElement("div");
-const btnLoginEl = document.createElement("button");
-const btnJoinEl = document.createElement("button");
-
-/** className() -> className으로 수정 */
-loginWapperEl.className = "login-wrapper";
-inputEl.className = "login-wrapper--input";
-findEl.className = "login-wrapper--find";
-findIdEl.className = "find-id";
-divisionLineEl.className = "division-line";
-findPwEl.className = "find-pw";
-btnEl.className = "btn-wrapper";
-btnLoginEl.className = "login-btn";
-btnJoinEl.className = "login-btn";
-
 LoginPage.setAttribute("id", "login-page");
+
+const loginWapperEl = document.createElement("div");
+loginWapperEl.className = "login-wrapper";
+const h1El = document.createElement("h1");
+h1El.innerText = "로그인";
+
+const inputEl = document.createElement("div");
+inputEl.className = "login-wrapper--input";
+
+// 아이디 입력
+const inputIdEl = document.createElement("input");
 inputIdEl.setAttribute("type", "text");
 inputIdEl.setAttribute("id", "id");
 inputIdEl.setAttribute("placeholder", "아이디를 입력해주세요");
-inputIdEl.setAttribute("type", "password");
-inputIdEl.setAttribute("id", "pw");
-inputIdEl.setAttribute("placeholder", "비밀번호를 입력해주세요");
+// 비밀번호 입력
+const inputPwEl = document.createElement("input");
+inputPwEl.setAttribute("type", "password");
+inputPwEl.setAttribute("id", "pw");
+inputPwEl.setAttribute("placeholder", "비밀번호를 입력해주세요");
 
-h1El.textContent = "로그인";
-findIdEl.textContent = "아이디 찾기";
-divisionLineEl.textContent = "|";
-findPwEl.textContent = "비밀번호 찾기";
-btnLoginEl.textContent = "로그인";
-btnJoinEl.textContent = "회원가입";
+// 아이디 비밀번호 찾기 buttonWrapper
+const findEl = document.createElement("div");
+findEl.className = "login-wrapper--find";
+// 아이디 찾기 button
+const findIdEl = document.createElement("button");
+findIdEl.className = "find-id";
+findIdEl.innerText = "아이디 찾기";
+// vertical bar |
+const divisionLineEl = document.createElement("div");
+divisionLineEl.className = "division-line";
+divisionLineEl.innerText = "|";
+// 비밀번호 찾기 button
+const findPwEl = document.createElement("button");
+findPwEl.className = "find-pw";
+findPwEl.innerText = "비밀번호 찾기";
+
+// 로그인 회원가입 button
+const btnEl = document.createElement("div");
+btnEl.className = "btn-wrapper";
+// 로그인 button
+const btnLoginEl = document.createElement("button");
+btnLoginEl.className = "login-btn";
+btnLoginEl.innerText = "로그인";
+// 회원가입 button
+const btnJoinEl = document.createElement("button");
+btnJoinEl.className = "join-btn";
+btnJoinEl.innerText = "회원가입";
 
 /**
  * 요소 append
@@ -48,7 +59,7 @@ inputEl.append(inputIdEl, inputPwEl);
 findEl.append(findIdEl, divisionLineEl, findPwEl);
 btnEl.append(btnLoginEl, btnJoinEl);
 
-loginWapperEl.append(inputEl, findEl, btnEl);
+loginWapperEl.append(h1El, inputEl, findEl, btnEl);
 
 LoginPage.append(loginWapperEl);
 
