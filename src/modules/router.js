@@ -7,7 +7,7 @@ import Footer from "../components/templates/footer";
 /**
  * Pages
  */
-import homeMainPage from "../pages/home";
+import homeMainPage from "../components/pages/homePage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
@@ -18,6 +18,7 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
 /**
  * Modules
  */
+import Home from "../modules/home";
 import Admin from "../modules/admin";
 import My from "../modules/my";
 import Join from "../modules/join";
@@ -27,7 +28,8 @@ const router = new Navigo("/");
 router
   .on({
     "/": () => {
-      renderPage(homeMainPage);
+      renderPage([Header, homeMainPage, Footer]);
+      Home();
     },
     "/sitter": () => {
       renderPage(/**SitterPage*/);
