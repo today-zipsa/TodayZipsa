@@ -185,6 +185,35 @@ export default function PaymentPage() {
 	paymentModalBody.append(paymentModalBtnMove);
 	// (/payment1 Modal)
 
+	// payment1 Fail Modal
+	const paymentFailModal = document.createElement("div");
+  const paymentFailModalBody = document.createElement("div");
+  const paymentFailModalBtn = document.createElement("button");
+  const paymentFailModalBtnClose = document.createElement("button");
+
+  paymentFailModal.classList.add("payment1-fail-modal");
+  paymentFailModalBody.classList.add("payment1-fail-modal-body");
+  paymentFailModalBtn.classList.add("payment1-fail-modal-btn");
+  paymentFailModalBtnClose.classList.add("payment1-fail-modal-btn-close");
+
+  paymentFailModalBody.innerHTML = "등록된 계좌가 없습니다.<br>마이페이지에서 계좌를 추가해주세요";
+  paymentFailModalBtn.innerHTML = "마이페이지 이동";
+  paymentFailModalBtnClose.innerHTML = "확인";
+
+  document.body.append(paymentFailModal);
+  paymentFailModal.append(paymentFailModalBody);
+  paymentFailModalBody.append(paymentFailModalBtn);
+  paymentFailModalBody.append(paymentFailModalBtnClose);
+	// /payment1 Fail Modal
+
+	// payment1 Fail Modal JS
+	paymentFailModalBtn.addEventListener("click", () => {
+		paymentFailModal.style.display = "block"
+	})
+	paymentFailModalBtnClose.addEventListener("click", () => {
+		paymentFailModal.style.display = "none"
+	})
+
 	// (payment1 Modal JS...)
 	paymentModalBtn.addEventListener("click", () => {
 		paymentModal.style.display = "block";
@@ -257,17 +286,23 @@ export default function PaymentPage() {
 
 		// 계좌목록 클릭 안했을때 텍스트 출력하기
 		if (check_input == null) {
-			alert("클릭해주삼");
-			return;
+			paymentFailModal.style.display = "block"
 		}
 
 		//은행잔고와 상품금액 비교. payments[]<값 비교
-		if (check_input.value >= payments[1].product.price) {
-			window.location.href = "src/components/pages/paymentDonepage";
+		if (check_input.value >= payments[0].product.price) {
+			window.location.href = "../payment/done";
 		} else {
 			paymentModal.style.display = "block";
 		}
 	});
+	//마이페이지 이동 버튼 눌렀을때 마이페이지로 이동
+	paymentModalBtnMove.addEventListener('click',() =>{
+		window.location.href = "../my"
+	})
+	paymentFailModalBtn.addEventListener('click', () =>{
+		window.location.href = "../my"
+	})
 
 	//고객이 선택한 은행 잔액 값을 가져와야한다.
 	//라디오의 value값을 가져오면 됨
