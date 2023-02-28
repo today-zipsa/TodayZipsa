@@ -1,297 +1,256 @@
-@import url(./home.scss);
-@import url(./my.scss);
-@import url(./header.css); /*# sourceMappingURL=main.css.map */
-
-:root {
-  --main-key-color: #0c8a4e;
-  --main-bg-color: #f9f9f9;
+.home-page a {
+  text-decoration: none;
 }
 
-#main {
-  margin: 0px;
-  width: inherit;
-  min-height: 100%;
+/* 메인페이지 > 카테고리 메뉴 */
+.home-header {
+  margin-top: 20px;
+  border-bottom: 1px solid #eaedef;
 }
-#main .header {
+.home-top-menus {
+  max-width: 1256px;
+  margin: 0 auto;
+  padding: 0 60px;
   display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 6em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 0;
-  min-width: 40em;
-}
-#main .header .header-wrapper {
-  display: flex;
-  justify-content: space-between;
+  -webkit-box-align: center;
   align-items: center;
-  height: inherit;
-  width: 50em;
+  justify-content: space-between;
+  box-sizing: border-box;
+  overflow: auto;
 }
-#main .header .header-wrapper .main-logo {
-  display: block;
-  background-repeat: no-repeat;
-  width: 10em;
-  height: 2.4em;
-  transform: scale(0.8);
-  background-color: var(--main-key-color);
+.home-top-div {
+  flex: 1 0 0px;
 }
-#main .header .header-wrapper .search-btn-wrapper {
-  border-radius: 1.8em;
-  border: 0.2em solid var(--main-key-color);
-  width: 18em;
-  height: 1.8em;
+.home-top-nav {
+  display: flex;
+  -webkit-box-align: stretch;
+  align-items: stretch;
+  overflow-x: auto;
+  white-space: nowrap;
+  margin: 0 -5px;
+  height: 50px;
+}
+.home-top-nav.home-top-nav > * {
+  margin: 0 5px;
+}
+.home-link {
+  border: none;
+  background: none;
+  font: inherit;
   position: relative;
-}
-#main .header .header-wrapper .search-btn-wrapper .search-bar {
-  display: inline-block;
-  width: 18em;
-  height: inherit;
-  margin-left: 0.6em;
-  border: 0px solid transparent;
-  background-color: transparent;
-  padding: 0px;
-}
-#main .header .header-wrapper .search-btn-wrapper .search-bar:focus {
+  display: inline-flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 12px 6px;
   outline: none;
 }
-#main .header .header-wrapper .search-btn-wrapper .search-btn {
-  height: 1.4em;
-  width: 1.4em;
-  position: absolute;
-  top: 0.2em;
-  right: 0.6em;
+.home-link div {
+  padding: 4px;
+  margin: -4px;
 }
-#main .header .header-wrapper .welcome-word {
-  font-size: 1em;
-  font-weight: 600;
-}
-#main .header .header-wrapper .logout {
-  font-size: 1em;
-  font-weight: 600;
-  margin-right: 0.2em;
-}
-#main section {
-  width: 50em;
-  background-color: red;
-  height: inherit;
-}
-
-.sitterLogo {
-  margin-left: 30px;
-  margin-top: 30px;
+.home-link div p {
+  font-size: 20px;
+  line-height: 20px;
   position: relative;
+  font-weight: 700;
+  color: #0c8a4e;
 }
-
-.sitterLogo {
-  margin-left: 30px;
-  margin-top: 30px;
+.home-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0c8a4e;
+  transition: transform 0.2s;
+  transform: scale(1);
+}
+.home-category {
+  border: none;
+  background: none;
+  font: inherit;
   position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  vertical-align: top;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 12px 6px;
+  outline: none;
 }
-
-.signUp {
+.home-category::after {
+  content: "";
+  display: block;
   position: absolute;
-  margin-left: 1200px;
-  margin-top: -70px;
-  cursor: pointer;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #0c8a4e;
+  transition: transform 0.2s;
+  transform: scale(0);
+}
+.home-category div {
+  padding: 4px;
+  margin: -4px;
+}
+.home-category div p {
+  font-size: 20px;
+  line-height: 20px;
+  position: relative;
+  font-weight: 500;
+  color: #2f3438;
 }
 
-.signIn {
-  position: absolute;
-  margin-left: 1300px;
-  margin-top: -70px;
-  cursor: pointer;
+/* 메인페이지 > 카테고리 상품 노출 */
+.home-main {
+  height: 100%;
 }
-
-.categories {
+.main-layout > * {
+  flex: 0 0 auto;
+}
+.main-layout {
   display: flex;
-  margin-left: 250px;
-  margin-top: 50px;
+  flex-direction: column;
 }
-
-.categories :nth-child(n) {
-  margin-right: 220px;
+.main-layout-div {
+  margin-top: 30px;
 }
-
-.categories :nth-child(n):hover {
-  color: green;
+.home-items-list {
+  max-width: 1256px;
+  margin: 40px auto;
+  padding: 0px 60px;
+  box-sizing: border-box;
+  background: rgb(255, 255, 255);
 }
-
-.bannerPic {
-  margin-top: 70px;
-  width: 1100px;
-  height: 450px;
-  margin-left: 170px;
-}
-
-.one_btn {
-  background-color: green;
-  color: white;
-}
-
-.oneImg {
-  width: 280px;
-  height: 120px;
-}
-
-.label {
-  display: block;
-}
-
-.banner {
-  position: relative;
-}
-
-.details {
-  display: block;
-}
-
-.banner {
-  position: relative;
-}
-
-.details {
-  margin-top: 200px;
-  margin-left: 200px;
-  font-size: 34px;
-  font-weight: 900;
-}
-
-.det2 {
-  margin-top: 20px;
-  margin-left: 200px;
-}
-
-#modal {
-  display: none;
-  position: fixed;
-  top: 100;
-  left: 480px;
-  width: 30%;
-  height: 30%;
-  background-color: grey;
-}
-
-#modal p {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#close-modal {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: red;
-}
-
-.yes {
-  margin-top: 150px;
-  margin-left: 190px;
-}
-
-.swiper-container {
+.home-items-intro {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
   width: 100%;
-  height: 300px;
-  margin: 0 auto;
+  padding: 20px 0px;
+  font-size: 0px;
+  line-height: 1;
 }
-
-.swiper-slide img {
+.intro-title {
+  flex: 1 1 0%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  min-width: 0px;
+}
+.intro-title div {
+  display: inline-flex;
+  -webkit-box-align: center;
+  align-items: center;
+  max-width: 100%;
+  cursor: pointer;
+}
+.intro-title strong {
+  overflow: hidden;
+  display: inline-block;
+  font-weight: 700;
+  color: rgb(47, 52, 56);
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 20px;
+  line-height: 28px;
+}
+.show-more {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  height: 0px;
+  margin-left: 10px;
+}
+.show-more button {
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background: none;
+  font-style: inherit;
+  font-variant: inherit;
+  font-stretch: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+  color: #0c8a4e;
+  cursor: pointer;
+}
+.home-items-line {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.home-item {
+  position: relative;
+  display: flex;
   width: 100%;
-  height: 300px;
+  min-width: 0px;
+  flex-flow: column;
+  margin-bottom: 20px;
+}
+.home-item-img {
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+.home-item-img::before {
+  content: "";
+  display: block;
+  padding-top: 66.6667%;
+}
+.home-item-img img {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-}
-
-.swiper-button-prev {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 30px;
-  height: 30px;
-  background-color: #fff;
-  border-radius: 50%;
-  z-index: 10;
+  top: 0px;
+  left: 0px;
+  transition: transform 0.2s ease 0s;
 }
-
-.swiper-button-next {
-  right: 10px;
+.home-item-img img:hover {
+  transform: scale(1.05);
 }
-
-.swiper-button-prev {
-  left: 10px;
+.home-item-title {
+  margin-top: 10px;
+  min-width: 0px;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: rgb(47, 52, 56);
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
-
-.btn {
-  display: none;
+.home-item-title p {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
-
-.getBtn {
-  display: none;
+.home-item-title span {
+  color: rgb(53, 197, 240);
+  font-weight: 700;
 }
-
-.container {
-  height: 200px;
-  width: 800px;
-  margin: 20px 300px;
-  border-top: 1px solid lightgrey;
-  border-bottom: 1px solid lightgrey;
+.home-item-title span::after {
+  content: " ";
 }
-
-.titleEl {
-  margin-left: 300px;
-  margin-top: -120px;
-}
-
-.mainImg {
-  width: 270px;
-  height: 120px;
-  margin-left: 20px;
-  margin-top: 42px;
-}
-
-.desc {
-  margin-left: 300px;
-  margin-top: 30px;
-}
-
-.baro {
-  margin-left: 700px;
-  margin-bottom: 10px;
-}
-
-.price {
-  margin-left: 640px;
-  margin-top: -20px;
-  width: 130px;
-  height: 35px;
-  background-color: green;
-  color: white;
-}
-
-.detailImg {
-  width: 390px;
-  height: 300px;
-  margin-top: 100px;
-  margin-left: 200px;
-}
-
-.newTitle {
-  margin-top: -260px;
-  margin-left: 620px;
-  font-size: 32px;
-}
-
-.newDesc {
-  margin-left: 620px;
-  margin-top: 20px;
-}
-
-.priceEl {
-  margin-top: 30px;
-  margin-left: 620px;
-  font-size: 35px;
+.home-item-detail {
+  position: absolute;
+  inset: 0px;
+  cursor: pointer;
 }
