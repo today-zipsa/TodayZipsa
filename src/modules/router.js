@@ -7,7 +7,7 @@ import Footer from "../components/templates/footer";
 /**
  * Pages
  */
-import homeMainPage from "../pages/home";
+import homeMainPage from "../components/pages/homePage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
@@ -18,6 +18,7 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
 /**
  * Modules
  */
+import Home from "../modules/home";
 import Admin from "../modules/admin";
 import My from "../modules/my";
 import Join from "../modules/join";
@@ -25,70 +26,71 @@ import Join from "../modules/join";
 const router = new Navigo("/");
 
 router
-	.on({
-		"/": () => {
-			renderPage(homeMainPage);
-		},
-		"/sitter": () => {
-			renderPage(/**SitterPage*/);
-		},
-		"/snack": () => {
-			renderPage(/**SnackPage*/);
-		},
-		"/rental": () => {
-			renderPage(/**RentalPage*/);
-		},
-		"/detail": () => {
-			renderPage(/**DetailPage*/);
-		},
-		"/snack": () => {
-			renderPage(/**SnackPage*/);
-		},
-		"/my": () => {
-			renderPage([Header, MyPage(), Footer]);
-		},
-		"/my/order/detail": () => {
-			renderPage(/**MyOrderDetailPage*/);
-		},
-		"/my/payment/detail": () => {
-			renderPage(/**MyPaymentDetailPage*/);
-		},
-		"/login": () => {
-			renderPage([Header, LoginPage, Footer]);
-		},
-		"/join": () => {
-			renderPage([Header, JoinPage, Footer]);
-			Join();
-		},
-		"/payment": () => {
-			renderPage([Header, PaymentPage(), Footer]);
-		},
-		"/payment/done": () => {
-			renderPage([Header, PaymentDonePage(), Footer]);
-		},
-		"/admin": () => {
-			renderPage([AdminPage, Footer]);
-			Admin();
-		},
-		"product/:productId": match => {
-			const { productId } = match?.data;
+  .on({
+    "/": () => {
+      renderPage([Header, homeMainPage, Footer]);
+      Home();
+    },
+    "/sitter": () => {
+      renderPage(/**SitterPage*/);
+    },
+    "/snack": () => {
+      renderPage(/**SnackPage*/);
+    },
+    "/rental": () => {
+      renderPage(/**RentalPage*/);
+    },
+    "/detail": () => {
+      renderPage(/**DetailPage*/);
+    },
+    "/snack": () => {
+      renderPage(/**SnackPage*/);
+    },
+    "/my": () => {
+      renderPage([Header, MyPage(), Footer]);
+    },
+    "/my/order/detail": () => {
+      renderPage(/**MyOrderDetailPage*/);
+    },
+    "/my/payment/detail": () => {
+      renderPage(/**MyPaymentDetailPage*/);
+    },
+    "/login": () => {
+      renderPage([Header, LoginPage, Footer]);
+    },
+    "/join": () => {
+      renderPage([Header, JoinPage, Footer]);
+      Join();
+    },
+    "/payment": () => {
+      renderPage([Header, PaymentPage(), Footer]);
+    },
+    "/payment/done": () => {
+      renderPage([Header, PaymentDonePage(), Footer]);
+    },
+    "/admin": () => {
+      renderPage([AdminPage, Footer]);
+      Admin();
+    },
+    "product/:productId": (match) => {
+      const { productId } = match?.data;
 
-			console.log({ productId });
+      console.log({ productId });
 
-			renderPage(document.createTextNode(`product ID => ${productId}`));
-		},
-	})
-	.resolve();
+      renderPage(document.createTextNode(`product ID => ${productId}`));
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
-	console.log({ app, page });
-	app.innerHTML = "";
-	if (Array.isArray(page)) {
-		app.append(...page);
-		page.forEach(node => app.appendChild(node));
-	} else {
-		app.appendChild(page);
-	}
+  console.log({ app, page });
+  app.innerHTML = "";
+  if (Array.isArray(page)) {
+    app.append(...page);
+    page.forEach((node) => app.appendChild(node));
+  } else {
+    app.appendChild(page);
+  }
 }
 
 /**
