@@ -37,7 +37,7 @@ searchBar.placeholder = "검색어를 입력해주세요.";
 searchBtn.src = require("../../asset/btnImg/search_btn.png");
 searchBtn.alt = "search-button";
 welcomeWord.setAttribute("data-navigo", "");
-welcomeWord.href = getNextUrl();
+welcomeWord.href = token ? getNextUrl() : "/";
 word.innerText = "반가워요, 집사님!";
 loginBtn.setAttribute("data-navigo", "");
 loginBtn.href = "/login";
@@ -45,7 +45,9 @@ logoutBtn.setAttribute("data-navigo", "");
 logoutBtn.href = "/";
 nameOfLoginBtn.innerText = "로그인";
 nameOfLogoutBtn.innerText = "로그아웃";
-!token ? (logoutBtn.style.display = "none") : (loginBtn.style.display = "none");
+!token
+	? (logoutBtn.style.display = "none") & (welcomeWord.style.display = "none")
+	: (loginBtn.style.display = "none");
 
 mainLogoBtn.append(mainLogoBtnImage);
 searchBtnWrapper.append(searchBar, searchBtn);
@@ -62,12 +64,14 @@ headerWrapper.append(
 Header.append(headerWrapper);
 
 loginBtn.addEventListener("click", () => {
-	loginBtn.style.display = "none";
-	logoutBtn.style.display = "inline-block";
+	if (token) {
+		loginBtn.style.display = "none";
+		logoutBtn.style.display = "inline";
+	}
 });
 
 logoutBtn.addEventListener("click", () => {
-	loginBtn.style.display = "inline-block";
+	loginBtn.style.display = "inline";
 	logoutBtn.style.display = "none";
 	setLogout();
 });
