@@ -52,10 +52,13 @@ searchBtnWrapper.append(searchBar, searchBtn);
 welcomeWord.append(word);
 loginBtn.append(nameOfLoginBtn);
 logoutBtn.append(nameOfLogoutBtn);
-headerWrapper.append(mainLogoBtn, searchBtnWrapper);
-!token
-	? headerWrapper.append(loginBtn)
-	: headerWrapper.append(welcomeWord, logoutBtn);
+headerWrapper.append(
+	mainLogoBtn,
+	searchBtnWrapper,
+	welcomeWord,
+	loginBtn,
+	logoutBtn
+);
 Header.append(headerWrapper);
 
 loginBtn.addEventListener("click", () => {
