@@ -8,6 +8,7 @@ import Footer from "../components/templates/footer";
  * Pages
  */
 import homeMainPage from "../components/pages/homePage";
+import categoryPage from "../components/pages/categoryPage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
@@ -19,6 +20,7 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
  * Modules
  */
 import Home from "../modules/home";
+import Category from "../modules/category";
 import Admin from "../modules/admin";
 import My from "../modules/my";
 import Join from "../modules/join";
@@ -31,20 +33,24 @@ router
       renderPage([Header, homeMainPage, Footer]);
       Home();
     },
-    "/sitter": () => {
-      renderPage(/**SitterPage*/);
-    },
-    "/snack": () => {
-      renderPage(/**SnackPage*/);
+    "/hotel": () => {
+      renderPage([Header, categoryPage, Footer]);
+      Category("hotel");
     },
     "/rental": () => {
-      renderPage(/**RentalPage*/);
+      renderPage([Header, categoryPage, Footer]);
+      Category("rental");
+    },
+    "/sitter": () => {
+      renderPage([Header, categoryPage, Footer]);
+      Category("sitter");
+    },
+    "/spa": () => {
+      renderPage([Header, categoryPage, Footer]);
+      Category("spa");
     },
     "/detail": () => {
       renderPage(/**DetailPage*/);
-    },
-    "/snack": () => {
-      renderPage(/**SnackPage*/);
     },
     "/my": () => {
       renderPage([Header, MyPage(), Footer]);
