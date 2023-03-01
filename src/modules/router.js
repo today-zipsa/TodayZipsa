@@ -26,71 +26,71 @@ import Join from "../modules/join";
 const router = new Navigo("/");
 
 router
-  .on({
-    "/": () => {
-      renderPage([Header, homeMainPage, Footer]);
-      Home();
-    },
-    "/sitter": () => {
-      renderPage(/**SitterPage*/);
-    },
-    "/snack": () => {
-      renderPage(/**SnackPage*/);
-    },
-    "/rental": () => {
-      renderPage(/**RentalPage*/);
-    },
-    "/detail": () => {
-      renderPage(/**DetailPage*/);
-    },
-    "/snack": () => {
-      renderPage(/**SnackPage*/);
-    },
-    "/my": () => {
-      renderPage([Header, MyPage(), Footer]);
-    },
-    "/my/order/detail": () => {
-      renderPage(/**MyOrderDetailPage*/);
-    },
-    "/my/payment/detail": () => {
-      renderPage(/**MyPaymentDetailPage*/);
-    },
-    "/login": () => {
-      renderPage([Header, LoginPage, Footer]);
-    },
-    "/join": () => {
-      renderPage([Header, JoinPage, Footer]);
-      Join();
-    },
-    "/payment": () => {
-      renderPage([Header, PaymentPage(), Footer]);
-    },
-    "/payment/done": () => {
-      renderPage([Header, PaymentDonePage(), Footer]);
-    },
-    "/admin": () => {
-      renderPage([AdminPage, Footer]);
-      Admin();
-    },
-    "product/:productId": (match) => {
-      const { productId } = match?.data;
+	.on({
+		"/": () => {
+			renderPage([Header, homeMainPage, Footer]);
+			Home();
+		},
+		"/sitter": () => {
+			renderPage(/**SitterPage*/);
+		},
+		"/snack": () => {
+			renderPage(/**SnackPage*/);
+		},
+		"/rental": () => {
+			renderPage(/**RentalPage*/);
+		},
+		"/detail": () => {
+			renderPage(/**DetailPage*/);
+		},
+		"/snack": () => {
+			renderPage(/**SnackPage*/);
+		},
+		"/my": () => {
+			renderPage([Header, MyPage(), Footer]);
+		},
+		"/my/order/detail": () => {
+			renderPage(/**MyOrderDetailPage*/);
+		},
+		"/my/payment/detail": () => {
+			renderPage(/**MyPaymentDetailPage*/);
+		},
+		"/login": () => {
+			renderPage([Header, LoginPage, Footer]);
+		},
+		"/join": () => {
+			renderPage([Header, JoinPage, Footer]);
+			Join();
+		},
+		"/payment": () => {
+			renderPage([Header, PaymentPage(), Footer]);
+		},
+		"/payment/done": () => {
+			renderPage([Header, PaymentDonePage(), Footer]);
+		},
+		"/admin": () => {
+			renderPage([AdminPage, Footer]);
+			Admin();
+		},
+		"product/:productId": (match) => {
+			const { productId } = match?.data;
 
-      console.log({ productId });
+			console.log({ productId });
 
-      renderPage(document.createTextNode(`product ID => ${productId}`));
-    },
-  })
-  .resolve();
+			renderPage(document.createTextNode(`product ID => ${productId}`));
+		},
+	})
+	.resolve();
 
 function renderPage(page) {
-  console.log({ app, page });
-  app.innerHTML = "";
-  if (Array.isArray(page)) {
-    app.append(...page);
-    page.forEach((node) => app.appendChild(node));
-  } else {
-    app.appendChild(page);
-  }
+	console.log({ app, page });
+	app.innerHTML = "";
+	if (Array.isArray(page)) {
+		app.append(...page);
+		page.forEach((node) => app.appendChild(node));
+	} else {
+		app.appendChild(page);
+	}
 }
 
 /**
