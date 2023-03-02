@@ -80,7 +80,6 @@ router
     },
     "product/:productId": (match) => {
       const { productId } = match?.data;
-
       console.log({ productId });
 
       renderPage(document.createTextNode(`product ID => ${productId}`));
