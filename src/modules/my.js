@@ -1,80 +1,78 @@
-// import { request } from "../src/api/common.js";
-// import { banks } from "../api/my_usable_banks_dummy.js";
-export async function renderMypage() {
+import { accountsList } from "../components/pages/myPage";
+import { request } from "../api/common";
+export default function My() {
 	const app = document.querySelector("#app");
+	const addAccountBtn = document.querySelector(".btn-img");
+	const ModalTemplate = document.querySelector(".modal-two");
+	const ModalContents = document.querySelector("modal-two-template");
 
-	const paymentsContainer = document.querySelector(".payments-container");
-	// const profileWelcomeWord = document.querySelector(".profile-words1");
-	const peoriodOfPayment = document.querySelector(".profile-words2");
-	const accountsBoxs = document.querySelector(".accounts-list");
-	const paymentsInfo = payments; // request("PRD12");
-	const accountsInfo = accounts.accounts;
-	const memberName = "이지영"; //request("MEB03").displayName;
-	const lastDateToPay = paymentsInfo[0].timePaid
-		.slice(0, 10)
-		.split("-")
-		.join(".");
-	const firstDateToPay = paymentsInfo[paymentsInfo.length - 1].timePaid
-		.slice(0, 10)
-		.split("-")
-		.join(".");
+	addAccountBtn.addEventListener("click", showAddAccountModal);
 
-	const accountsList = accountsInfo.map(account => {
-		const accountContainer = document.createElement("box");
-		const bankImgBox = document.createElement("div");
+	function showAddAccountModal() {
+		setAddAccountModal();
+		ModalTemplate.classList.remove("--hide");
+	}
+
+	function closeAddAccountModal() {
+		ModalTemplate.classList.add("--hide");
+		ModalTemplate.querySelector(".modal-template").innerHTML = "";
+	}
+
+	// 계좌목록 추가해주는 함수 - 인수는 해당 함수의 파일명
+	function setAddAccountModal() {
+		const bankList = [
+			[0, "국민은행", "kb_bank"],
+			[1, "신한은행", "sh_bank"],
+			[2, "우리은행", "woori_bank"],
+			[3, "하나은행", "hana_bank"],
+			[4, "케이뱅크", "k_bank"],
+			[5, "카카오뱅크", "kakao_bank"],
+			[6, "NH농협은행", "nh_bank"],
+		];
+		const availableBankInfo = request("ACC01");
+		console.log(availableBankInfo);
+
+		const banksBox = document.createElement("div");
 		const bankImg = document.createElement("img");
-		const accountInfoBox = document.createElement("div");
-		const accountInfo = document.createElement("span");
-		const accountBalance = document.createElement("span");
-		const deleteBtn = document.createElement("img");
+		const bankSelectedBar = document.createElement("select");
+		const accountNumberBlock = document.createElement("div");
 
-		accountContainer.classList.add("account-container");
-		bankImgBox.classList.add("bank-img-box");
-		bankImg.classList.add("bank-img");
-		accountInfoBox.classList.add("account-info-box");
-		accountInfo.classList.add("account-info");
-		accountBalance.classList.add("account-balance");
-		deleteBtn.classList.add("delete-btn");
+		const cardName = document.createElement("span");
+		const icTagBtn = document.createElement("img");
+		const myAccountNumsLength = 0; //
 
-		setBankImage(account.bankName);
-		accountInfo.innerText = `${account.bankName} ${account.accountNumber}`;
-		accountBalance.innerText = getKRW(account.balance);
-		deleteBtn.src = require("../asset/btnImg/close_btn.png");
+		banksBox.classList.add("banks-box");
 
-		bankImgBox.append(bankImg);
-		accountInfoBox.append(accountInfo, accountBalance);
-		accountContainer.append(bankImgBox, accountInfoBox, deleteBtn);
-		return accountContainer;
+		availableBankInfo.forEach((bankInfo, bankNum) => {
+			if (!bankInfo.disabled) {
+				const option = document.createElement("option");
+				option.value = bankNum;
+				option.innerText = bankInfo.name;
+				// option.dataset.digits = bankInfo.digits.join("");
 
-		function setBankImage(bankName) {
-			switch (bankName) {
-				case "KB국민은행":
-					bankImg.src = require("../asset/bankImg/kb_bank.png");
-					break;
-				case "신한은행":
-					bankImg.src = require("../asset/bankImg/sh_bank.png");
-					break;
-				case "우리은행":
-					bankImg.src = require("../asset/bankImg/woori_bank.png");
-					break;
-				case "하나은행":
-					bankImg.src = require("../asset/bankImg/hana_bank.png");
-					break;
-				case "케이뱅크":
-					bankImg.src = require("../asset/bankImg/k_bank.png");
-					break;
-				case "카카오뱅크":
-					bankImg.src = require("../asset/bankImg/kakao_bank.png");
-					break;
-				case "NH농협은행":
-					bankImg.src = require("../asset/bankImg/nh_bank.png");
-					break;
+				option.addEventListener("click", () => {
+					//계좌입력 창 리렌더링해주는 함수 실행시켜야됨
+					bankName = bankList[option.value][2];
+					bankImg.src = require(`../../asset/bankImg/${bankName}.png`);
+					accountInputBox.innerHTML = "";
+					option.digits.split("").forEach((digit) => {
+						const accountOption = document.createElement("option");
+						accountOption.classList.add("account-option");
+						accountOption.maxLength = digit;
+						bankSelectedBar.append(accountOption);
+						setAccountNumberBlockCnt(bankInfo.digits);
+					});
+				});
+				bankSelectedBar.append(option);
 			}
-		}
-	});
+		});
 
-	profileWelcomeWord.innerText = `안녕하세요, ${memberName}님`;
-	peoriodOfPayment.innerText = `${firstDateToPay} ~ ${lastDateToPay} 동안 구매해주신 내역이에요.`;
-	paymentsContainer.append(...Array.from(paymentsList));
-	accountsBoxs.append(...accountsList);
+		const bankName = bankList[bankSelectedBar[0].value][2];
+		bankImg.src = require(`../../asset/bankImg/${bankName}.png`);
+
+		function setAccountNumberBlockCnt(accountBlockCntArray) {
+			accountNumberBlock.innerHTML = "";
+			accountBlockCntArray.forEach((count) => {});
+		}
+	}
 }

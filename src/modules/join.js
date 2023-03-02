@@ -178,7 +178,7 @@ export default async function Join() {
 			const res = await request("MEB01", params);
 			console.log("회원가입 성공", res);
 			if (res.accessToken != null) {
-				localStorage.setItem("token", res.accessToken);
+				localStorage.setItem("accessToken", res.accessToken);
 				localStorage.setItem("email", res.email);
 				localStorage.setItem("displayName", res.displayName);
 				localStorage.setItem("profileImg", res.profileImgBase64);
