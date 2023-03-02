@@ -58,6 +58,43 @@ homeMenusEl.append(homeNavDivEl);
 homeHeaderEl.append(homeMenusEl);
 
 /**
+ * 배너 swiper
+ */
+const swiperEl = util.createEl("div", { class: "swiper" });
+const swiperWrapper = util.createEl("div", { class: "swiper-wrapper" });
+
+const swiperSlide1 = util.createEl("div", { class: "swiper-slide" });
+const swiperImg1 = util.createEl("img", {
+  src: require("../../asset/swiper1.jpg"),
+});
+swiperSlide1.append(swiperImg1);
+
+const swiperSlide2 = util.createEl("div", { class: "swiper-slide" });
+const swiperImg2 = util.createEl("img", {
+  src: require("../../asset/swiper2.jpg"),
+});
+swiperSlide2.append(swiperImg2);
+
+const swiperSlide3 = util.createEl("div", { class: "swiper-slide" });
+const swiperImg3 = util.createEl("img", {
+  src: require("../../asset/swiper3.jpg"),
+});
+swiperSlide3.append(swiperImg3);
+
+swiperWrapper.append(swiperSlide1);
+swiperWrapper.append(swiperSlide2);
+swiperWrapper.append(swiperSlide3);
+
+const swiperButtonNext = util.createEl("div", { class: "swiper-button-next" });
+const swiperButtonPrev = util.createEl("div", { class: "swiper-button-prev" });
+const swiperPagination = util.createEl("div", { class: "swiper-pagination" });
+
+swiperEl.append(swiperWrapper);
+swiperEl.append(swiperButtonNext);
+swiperEl.append(swiperButtonPrev);
+swiperEl.append(swiperPagination);
+
+/**
  * 메인 - 상품 노출
  * 카테고리별 4개 상품 노출(총4개 라인)
  */
@@ -177,5 +214,5 @@ homeMainEl.append(mainLayoutEl);
 // loading bar
 const loadingEl = util.createEl("div", { id: "loading_bar" });
 
-homePage.append(homeHeaderEl, homeMainEl, loadingEl);
+homePage.append(homeHeaderEl, swiperEl, homeMainEl, loadingEl);
 export default homePage;
