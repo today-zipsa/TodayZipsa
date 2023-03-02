@@ -5,7 +5,7 @@ export default async function Category(menu) {
   // 변수 선언
   const category = {
     hotel: "호텔",
-    rental: "차량",
+    rental: "렌트카",
     sitter: "펫시터",
     spa: "스파",
   };

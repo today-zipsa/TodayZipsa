@@ -24,7 +24,7 @@ hotelEl.append(hotelDivEl);
 
 const rentalEl = util.createEl("a", { href: "/rental" });
 const rentalDivEl = util.createEl("div");
-const rentalPEl = util.createEl("p", { textContent: "차량" });
+const rentalPEl = util.createEl("p", { textContent: "렌트카" });
 rentalDivEl.append(rentalPEl);
 rentalEl.append(rentalDivEl);
 
