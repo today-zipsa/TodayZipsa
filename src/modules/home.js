@@ -33,7 +33,7 @@ export default async function Home() {
 
   // 카테고리별 필터링
   const hotelItems = allItems.filter((items) => items.tags.includes("호텔"));
-  const rentalItems = allItems.filter((items) => items.tags.includes("차량"));
+  const rentalItems = allItems.filter((items) => items.tags.includes("렌트카"));
   const sitterItems = allItems.filter((items) => items.tags.includes("펫시터"));
   const spaItems = allItems.filter((items) => items.tags.includes("스파"));
 
