@@ -78,21 +78,21 @@
 				}
 			}
 			button.validator-btn {
-				display: inline-block;
-				width: 6.8em;
-				height: 4.5em;
+				display: block;
+				width: 5.8em;
+				height: 3.8em;
+				padding: 0.5em 0.6em 0.5em 0.6em;
 				margin-left: 0.5em;
-				padding: 0.7em 0.6em 0.5em 0.6em;
 				cursor: pointer;
 				border: 2px solid var(--main-key-color);
 				border-radius: 6px;
 				color: var(--main-key-color);
 				background-color: transparent;
 				font-weight: 600;
+				font-size: 16px;
 			}
 			//중복확인 멘트
 			.input-wrapper {
-				flex-direction: column;
 				p {
 					margin-top: 10px;
 				}
@@ -134,7 +134,6 @@
 			input {
 				width: 20em;
 				height: 3.5em;
-				padding-left: 10px;
 				border-radius: 6px;
 				border: 2px solid var(--input-color);
 				color: var(--disable-color);
@@ -161,34 +160,36 @@
 			height: 64px;
 			display: flex;
 			.h5-wrapper {
-				margin-right: 4.8em;
+				margin-right: 4.2em;
 			}
 			h5 {
 				font-size: 18px;
 				font-weight: 600;
 			}
 			.img-fileWrapper {
+				display: flex;
 				width: 320px;
 			}
 			img.upload-img {
-				width: 4.2em;
-				height: 2.2em;
+				display: block;
+				width: 6em;
+				height: 5.8em;
 				border: 2px solid var(--disable-color);
 				border-radius: 6px;
-				margin-right: 4em;
+				margin-right: 2em;
 			}
 			label.upload-btn {
-				display: inline-block;
-				width: 4.2em;
-				height: 2.2em;
-				margin-left: 0.5em;
-				padding: 1.4em 0 0 1em;
+				padding: 2.5em 1em 3.3em 1em;
 				cursor: pointer;
 				border: 2px solid var(--main-key-color);
 				border-radius: 6px;
 				color: var(--main-key-color);
 				font-weight: 600;
 				background-color: transparent;
+				// .upload-txt {
+				// 	width: 3em;
+				// 	height: 2.8em;
+				// }
 			}
 			input#input_file {
 				display: none;
@@ -244,7 +245,6 @@
 							display: block;
 						}
 						img.active {
-							// position: relative;
 							display: block;
 						}
 					}
@@ -302,7 +302,7 @@
 				display: block;
 				background-color: #fff;
 				width: 500px;
-				height: 600px;
+				height: 450px;
 
 				> .check-modal-box {
 					display: flex;
@@ -323,7 +323,6 @@
 						display: block;
 						margin-top: 20px;
 						width: 15em;
-						height: 10em;
 						margin: 25px;
 						padding: 12px;
 						background-color: var(--main-key-color);
