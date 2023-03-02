@@ -55,6 +55,7 @@ router
 		},
 		"/my": () => {
 			renderPage([Header, MyPage(), Footer]);
+			My();
 		},
 		"/my/order/detail": () => {
 			renderPage(/**MyOrderDetailPage*/);

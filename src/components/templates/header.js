@@ -1,5 +1,5 @@
 import { request } from "../../api/common";
-const token = localStorage.getItem("accessToken");
+let token = localStorage.getItem("accessToken");
 
 const Header = document.createElement("header");
 const headerWrapper = document.createElement("div");
@@ -80,6 +80,7 @@ function setLogout() {
 	if (token) {
 		request("MEB04");
 		window.localStorage.clear();
+		token = "";
 	}
 }
 
