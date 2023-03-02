@@ -1,7 +1,7 @@
 import { request } from "../api/common.js";
 import { util } from "../api/util.js";
 
-export default function Admin() {
+export default async function Admin() {
 	/**
 	 * 변수 선언
 	 *
@@ -41,7 +41,7 @@ export default function Admin() {
 	/**
 	 * 이벤트
 	 */
-	showListCnt.addEventListener("change", event => {
+	showListCnt.addEventListener("change", (event) => {
 		pageLimit = Number(event.target.value);
 		setPagination(pageLimit);
 	});
@@ -49,16 +49,16 @@ export default function Admin() {
 	// 상품 등록 모달 호출
 	addProductBtn.addEventListener("click", fn_modal_for_add);
 	// 가격에 콤마 표시
-	mb_priceEl.addEventListener("keyup", e => {
+	mb_priceEl.addEventListener("keyup", (e) => {
 		const numValue = Number(e.target.value.replaceAll(",", ""));
 		e.target.value = util.setLocalString(numValue);
 	});
 	// 태그 담기
-	mb_tagEl.addEventListener("keyup", e => {
+	mb_tagEl.addEventListener("keyup", (e) => {
 		setTagList(e);
 	});
 	// 썸네일 사진 등록
-	mb_thumbnailEl.addEventListener("change", event => {
+	mb_thumbnailEl.addEventListener("change", (event) => {
 		const file = event.target.files[0];
 		// 파일 사이즈 확인
 		if (file.size > 1024 * 1024) {
@@ -67,14 +67,14 @@ export default function Admin() {
 		} else {
 			const reader = new FileReader();
 			reader.readAsDataURL(file);
-			reader.addEventListener("load", e => {
+			reader.addEventListener("load", (e) => {
 				thumbnailBase64 = e.target.result;
 				mb_thumbImgEl.src = e.target.result;
 			});
 		}
 	});
 	// 디테일 사진 등록
-	mb_photoEl.addEventListener("change", event => {
+	mb_photoEl.addEventListener("change", (event) => {
 		const file = event.target.files[0];
 		// 파일 사이즈 확인
 		if (file.size > 1024 * 1024) {
@@ -83,7 +83,7 @@ export default function Admin() {
 		} else {
 			const reader = new FileReader();
 			reader.readAsDataURL(file);
-			reader.addEventListener("load", e => {
+			reader.addEventListener("load", (e) => {
 				photoBase64 = e.target.result;
 				mb_detailImgEl.src = e.target.result;
 			});
@@ -110,7 +110,7 @@ export default function Admin() {
 		util.loadingBar(false);
 	}
 	async function getProductList(items) {
-		const liEls = items.map(item => {
+		const liEls = items.map((item) => {
 			const liEl = document.createElement("li");
 
 			// 썸네일
@@ -138,7 +138,7 @@ export default function Admin() {
 			const arrTag = item.tags;
 			if (arrTag) {
 				if (arrTag.length > 0) {
-					arrTag.forEach(tag => {
+					arrTag.forEach((tag) => {
 						const tagEl = document.createElement("span");
 						tagEl.textContent = tag;
 						tagsEl.append(tagEl);
@@ -291,7 +291,7 @@ export default function Admin() {
 				mb_tagIdx = 1;
 
 				// 카테고리 세팅
-				tagList.find(tag => {
+				tagList.find((tag) => {
 					if (
 						tag === "호텔" ||
 						tag === "차량" ||
@@ -318,7 +318,7 @@ export default function Admin() {
 					addTag(tagList[i]); // tag객체에 추가
 
 					// tag 삭제
-					delEl.addEventListener("click", e => {
+					delEl.addEventListener("click", (e) => {
 						const idx = e.target.id;
 						mb_tag[idx] = "";
 						mb_tagListEl.removeChild(liEl);
@@ -423,7 +423,7 @@ export default function Admin() {
 	// 전체 입력된 태그 추출
 	function getTagList() {
 		let newTags = [...new Set(mb_tag)]; // 중복제거
-		return Object.values(newTags).filter(word => {
+		return Object.values(newTags).filter((word) => {
 			return word !== "";
 		});
 	}
@@ -434,7 +434,7 @@ export default function Admin() {
 			const tagValue = e.target.value;
 
 			if (tagValue !== "") {
-				const preValue = Object.values(tag).filter(word => {
+				const preValue = Object.values(tag).filter((word) => {
 					return word === tagValue;
 				});
 
@@ -454,7 +454,7 @@ export default function Admin() {
 					mb_tagEl.value = "";
 
 					// tag 삭제
-					delEl.addEventListener("click", e => {
+					delEl.addEventListener("click", (e) => {
 						const idx = e.target.id;
 						mb_tag[idx] = "";
 						mb_tagListEl.removeChild(liEl);
@@ -529,7 +529,7 @@ export default function Admin() {
 			showCurrentPage(currentPage + 1);
 		});
 
-		document.querySelectorAll(".page-number").forEach(button => {
+		document.querySelectorAll(".page-number").forEach((button) => {
 			const pageIndex = Number(button.dataset.pageIndex);
 			if (pageIndex) {
 				button.addEventListener("click", () => {
@@ -545,7 +545,7 @@ export default function Admin() {
 		currentPage = pageNum;
 
 		// 현 페이지번호 활성화
-		document.querySelectorAll(".page-number").forEach(button => {
+		document.querySelectorAll(".page-number").forEach((button) => {
 			button.classList.remove("active"); // 초기화
 			const pageIndex = Number(button.dataset.pageIndex);
 			if (pageIndex == currentPage) {
