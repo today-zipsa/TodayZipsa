@@ -1,6 +1,5 @@
 import { accountsList } from "../components/pages/myPage";
 import { request } from "../api/common";
-//-[x] 계좌추가 버튼을 클릭하면 계좌정보를 입력하고 추가할 수 있는 모달창이 띄워져야 한다.
 export default function My() {
 	const app = document.querySelector("#app");
 	const addAccountBtn = document.querySelector(".btn-img");

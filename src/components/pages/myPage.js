@@ -70,7 +70,6 @@ export default function MyPage() {
 
 	// 프로필 수정모달창 로직
 	welcomeWordBox.addEventListener("click", () => {
-		console.log("됌?");
 		const nameInputBox = document.createElement("box");
 		const profileImgInputBox = document.createElement("box");
 		const nowPasswordInputBox = document.createElement("box");
