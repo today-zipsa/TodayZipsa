@@ -55,7 +55,7 @@ export default async function Login() {
 			isValid = false;
 		}
 
-		if (!RegexPW.test(inputPW)) {
+		if (!RegexPW.test(inputPW.value)) {
 			alert("가입하신 비밀번호가 아닙니다 :(");
 			isValid = false;
 		}
