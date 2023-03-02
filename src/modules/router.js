@@ -7,6 +7,7 @@ import Footer from "../components/templates/footer";
 /**
  * Pages
  */
+import detailPage from "../components/pages/detailPage";
 import homeMainPage from "../components/pages/homePage";
 import categoryPage from "../components/pages/categoryPage";
 import AdminPage from "../components/pages/adminPage";
@@ -49,8 +50,16 @@ router
       renderPage([Header, categoryPage, Footer]);
       Category("spa");
     },
-    "/detail": () => {
-      renderPage(/**DetailPage*/);
+    // "/detail": () => {
+    //   renderPage(/**DetailPage*/);
+    // },
+    "detail/:productId": (match) => {
+      const { productId } = match?.data;
+      console.log({ productId });
+
+      renderPage([Header, detailPage(productId), Footer]);
+
+      //renderPage(/**DetailPage*/);
     },
     "/my": () => {
       renderPage([Header, MyPage(), Footer]);
