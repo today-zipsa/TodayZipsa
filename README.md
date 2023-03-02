@@ -20,7 +20,14 @@
  - 유저는 회원가입 및 로그인 후 상품 구매 및 장바구니를 사용할 수 있으며 그 외 주문내역, 개인정보수정 등이 가능하고 계좌관리(계좌등록)을 통해 구매가 가능합니다.
  - 관리자는 거래내역, 상품 등록, 등록 상품 내역을 볼 수 있고, 상품등록 및 수정, 거래취소 및 거래확정이 가능합니다.
  
+<br/><br/>
 ![pages]() 웹 캡처 이미지 들어갈 자리
+<br/><br />
+
+<br/><br />
+## ⏱오늘의집사 작업과정
+ [TodayZipsa Project](https://github.com/orgs/today-zipsa/projects/2/views/1)
+<br/><br />
 
 - 작업 기간 : 2023.01.30 ~ 2023.03.02
 - 데모 사이트 : [🐾오늘의집사🐾]()
@@ -33,15 +40,19 @@
   - 관리자
     - ID : admin@zipsa.com
     - PW : 1q2w3e4r
-    
-<br/>
+<br/><br />
+---
+<br/><br />
 ### 🛠️사용한 기술 스택
+```
 - Basic: `HTML`, `SCSS`, `JavaScript`
 - Library:  `Swiper`, `Navigo`, `sass`
 - Bundler: `Parcel`
 - Deploy: `Netlify`
-
-<br/>
+```
+<br/><br />
+---
+<br/><br />
 ### 📁 프로젝트 구조
 ```
 ┌─ src
@@ -65,8 +76,9 @@
 ├─package.json
 └─package-lock.json
 ```
-
-<br/>
+<br/><br />
+---
+<br/><br />
 ### 💻 프로젝트 실행 방법
 ```bash
 1. $ git clone https://github.com/today-zipsa/TodayZipsa.git
@@ -75,11 +87,8 @@
 4. root경로에 .env 파일 생성 후, api관련 정보(API_KEY, API_URL, USER_NAME) 입력 ex) API_KEY=123456
 5. $ npm run dev
 ``` 
-
-<br/><br/>
- ## ⏱ 오늘의집사 작업과정
- [TodayZipsa Project](https://github.com/orgs/today-zipsa/projects/2/views/1)
- 
+<br/><br />
+---
 <br/><br/>
  ## 🐱 오늘의집사 프로덕트 소개
 반려 동물과 여행을 떠날 때 숙박이 고민이셨던 집사님들과
