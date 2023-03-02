@@ -1,6 +1,5 @@
 import { request } from "../api/common.js";
 import { isUseChecked, isInfoChecked } from "../components/pages/joinPage.js";
-// import ModalTwo from "../components/templates/modalTwo";
 /**
  * 가입 양식 입력란: 닉네임, 계정, 비번, 파일
  */
@@ -40,7 +39,7 @@ export default async function Join() {
 		displayName = event.target.value.trim();
 	});
 
-	//로그인유무 전역 불린값
+	//로그인유무 전역 상태값
 	let signup = false;
 
 	// 정규표현식: 이메일 형식으로
@@ -91,7 +90,6 @@ export default async function Join() {
 	});
 
 	inputFileBtn.addEventListener("change", (event) => {
-		console.log("되길바래..");
 		const file = event.target.files[0];
 		console.log(file);
 
@@ -109,8 +107,8 @@ export default async function Join() {
 			});
 		}
 	});
-	// input 유효성 검사
 
+	// input 유효성 검사
 	function inputCondition() {
 		const inputName = document.querySelector(".display-name");
 		const inputID = document.querySelector(".id");
@@ -148,7 +146,7 @@ export default async function Join() {
 		inputPW.addEventListener("input", () => {
 			if (!RegexPW.test(inputPW.value)) {
 				wrongPW.innerText =
-					"비밀번호를 영어,숫자 조합의 \n 8~20자리로 입력 해 주세요 :)";
+					"비밀번호를 영어,숫자 조합의\n 8~20자리로 입력 해 주세요 :)";
 				wrongPW.style.color = "#de0404";
 				wrongPW.style.display = "block";
 			} else {
@@ -185,9 +183,8 @@ export default async function Join() {
 				localStorage.setItem("displayName", res.displayName);
 				localStorage.setItem("profileImg", res.profileImgBase64);
 			}
-			window.location.href = "/"; //**** 메인페이지로 보내지도록
+			window.location.href = "/";
 		}
-		console.log("회원가입 눌리고있어?>>");
 	});
 
 	/**
@@ -206,7 +203,7 @@ export default async function Join() {
 			alert("이용 약관을 모두 체크해주세요 :)");
 			return false;
 		} else if (!RegexPW.test(PW)) {
-			alert("비밀번호를 영어,숫자 조합의 \n 8~20자리로 입력 해 주세요 :)");
+			alert("비밀번호를 영어,숫자 조합의\n 8~20자리로 입력 해 주세요 :)");
 			return false;
 		}
 		return true;
