@@ -58,13 +58,21 @@
 			}
 
 			.welcome-word {
-				font-size: 1em;
-				font-weight: 600;
+				text-decoration: none;
+				color: #000;
+				.word {
+					font-size: 1em;
+					font-weight: 600;
+				}
 			}
-			.logout {
-				font-size: 1em;
-				font-weight: 600;
-				margin-right: 0.2em;
+			.btn {
+				text-decoration: none;
+				color: #000;
+				.btn-name {
+					font-size: 1em;
+					font-weight: 600;
+					margin-right: 0.2em;
+				}
 			}
 		}
 	}

@@ -5,50 +5,38 @@ const homePage = util.createEl("div", { class: "home-page" });
 /**
  * 메인 - 카테고리 메뉴
  */
-const homeHeaderEl = util.createEl("div", { class: "home-header" });
-const homeMenusEl = util.createEl("div", { class: "home-top-menus" });
-const homeNavDivEl = util.createEl("div", { class: "home-top-div" });
-const homeNavEl = util.createEl("nav", { class: "home-top-nav" });
+const homeHeaderEl = util.createEl('div', {class: 'home-header'});
+const homeMenusEl = util.createEl('div', {class: 'home-top-menus'});
+const homeNavDivEl = util.createEl('div', {class: 'home-top-div'});
+const homeNavEl = util.createEl('nav', {class: 'home-top-nav'});
 
-const homeEl = util.createEl("a", { class: "home-link" }, { href: "/" });
-const homeDivEl = util.createEl("div");
-const homePEl = util.createEl("p", { textContent: "홈" });
+const homeEl = util.createEl('a', {class: 'home-link'}, {href: '/'});
+const homeDivEl = util.createEl('div');
+const homePEl = util.createEl('p', {textContent: '홈'});
 homeDivEl.append(homePEl);
 homeEl.append(homeDivEl);
 
-const hotelEl = util.createEl(
-  "a",
-  { class: "home-category" },
-  { href: "/hotel" }
-);
-const hotelDivEl = util.createEl("div");
-const hotelPEl = util.createEl("p", { textContent: "호텔" });
+const hotelEl = util.createEl('a', {class: 'home-category'}, {href: '/hotel'});
+const hotelDivEl = util.createEl('div');
+const hotelPEl = util.createEl('p', {textContent: '호텔'});
 hotelDivEl.append(hotelPEl);
 hotelEl.append(hotelDivEl);
 
-const rentalEl = util.createEl(
-  "a",
-  { class: "home-category" },
-  { href: "/rental" }
-);
-const rentalDivEl = util.createEl("div");
-const rentalPEl = util.createEl("p", { textContent: "렌트카" });
+const rentalEl = util.createEl('a', {class: 'home-category'}, {href: '/rental'});
+const rentalDivEl = util.createEl('div');
+const rentalPEl = util.createEl('p', {textContent: '차량'});
 rentalDivEl.append(rentalPEl);
 rentalEl.append(rentalDivEl);
 
-const sitterEl = util.createEl(
-  "a",
-  { class: "home-category" },
-  { href: "/sitter" }
-);
-const sitterDivEl = util.createEl("div");
-const sitterPEl = util.createEl("p", { textContent: "펫시터" });
+const sitterEl = util.createEl('a', {class: 'home-category'}, {href: '/sitter'});
+const sitterDivEl = util.createEl('div');
+const sitterPEl = util.createEl('p', {textContent: '펫시터'});
 sitterDivEl.append(sitterPEl);
 sitterEl.append(sitterDivEl);
 
-const spaEl = util.createEl("a", { class: "home-category" }, { href: "/spa" });
-const spaDivEl = util.createEl("div");
-const spaPEl = util.createEl("p", { textContent: "스파" });
+const spaEl = util.createEl('a', {class: 'home-category'}, {href: '/spa'});
+const spaDivEl = util.createEl('div');
+const spaPEl = util.createEl('p', {textContent: '스파'});
 spaDivEl.append(spaPEl);
 spaEl.append(spaDivEl);
 
