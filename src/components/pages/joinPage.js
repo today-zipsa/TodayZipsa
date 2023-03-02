@@ -266,7 +266,6 @@ labeldNEl.append(h5dNEl, asteriskdNEl);
 //아이디(이메일)
 labelWrapperIdEl.append(labelIdEl, inputIdWrapper, requiredBtnEl);
 labelIdEl.append(h5IdEl, asteriskIdEl);
-
 //비밀번호
 labelWrapperPwEl.append(labelPwEl, inputPWWrapper, asteriskPwEl, sizedBoxPwEl);
 labelPwEl.append(h5PwEl, asteriskPwEl);

@@ -1,5 +1,5 @@
-import request from "../../api/common";
-const token = JSON.parse(localStorage.getItem("accessToken"));
+import { request } from "../../api/common";
+const token = localStorage.getItem("accessToken");
 
 const Header = document.createElement("header");
 const headerWrapper = document.createElement("div");
