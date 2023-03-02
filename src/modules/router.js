@@ -8,6 +8,7 @@ import Footer from "../components/templates/footer";
  * Pages
  */
 import homeMainPage from "../components/pages/homePage";
+import searchPage from "../components/pages/searchPage";
 import categoryPage from "../components/pages/categoryPage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
@@ -20,6 +21,7 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
  * Modules
  */
 import Home from "../modules/home";
+import Search from "../modules/search";
 import Category from "../modules/category";
 import Admin from "../modules/admin";
 import My from "../modules/my";
@@ -32,6 +34,11 @@ router
     "/": () => {
       renderPage([Header, homeMainPage, Footer]);
       Home();
+    },
+    "/search/:searchText": (match) => {
+      const { searchText } = match?.data;
+      renderPage([Header, searchPage, Footer]);
+      Search(searchText);
     },
     "/hotel": () => {
       renderPage([Header, categoryPage, Footer]);
@@ -81,21 +88,21 @@ router
     "product/:productId": (match) => {
       const { productId } = match?.data;
 
-			console.log({ productId });
+      console.log({ productId });
 
-			renderPage(document.createTextNode(`product ID => ${productId}`));
-		},
-	})
-	.resolve();
+      renderPage(document.createTextNode(`product ID => ${productId}`));
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
-	app.innerHTML = "";
-	if (Array.isArray(page)) {
-		app.append(...page);
-		page.forEach((node) => app.appendChild(node));
-	} else {
-		app.appendChild(page);
-	}
+  app.innerHTML = "";
+  if (Array.isArray(page)) {
+    app.append(...page);
+    page.forEach((node) => app.appendChild(node));
+  } else {
+    app.appendChild(page);
+  }
 }
 
 /**
