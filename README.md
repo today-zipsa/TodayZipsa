@@ -29,7 +29,7 @@
  [TodayZipsa Project](https://github.com/orgs/today-zipsa/projects/2/views/1)
 <br/><br />
 
-- 작업 기간 : 2023.01.30 ~ 2023.03.02
+- 작업 기간 : 2023.01.30 ~ 2023.03.03
 - 데모 사이트 : [🐾오늘의집사🐾]()
 - 팀 레포지토리 주소 : [TodayZipsa](https://github.com/today-zipsa/TodayZipsa)
 
