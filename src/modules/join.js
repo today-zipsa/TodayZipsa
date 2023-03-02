@@ -9,15 +9,13 @@ export default async function Join() {
 	const idEl = document.querySelector(".id");
 	const requiredBtnEl = document.querySelector(".validator-btn");
 	const passwordEl = document.querySelector(".password");
-	const passwordCheckEl = document.querySelector(".password-check");
-	const uploadImg = document.querySelector(".upload-img");
+	const defaultImg = document.querySelector(".default-img");
 	const joinBtnEl = document.querySelector(".join-btn");
 
 	// 데이터 관리
 	let displayName = "";
 	let email = "";
 	let password = "";
-	let passwordCheck = "";
 	let profileImgBase64 = "";
 
 	const params = {
@@ -74,36 +72,29 @@ export default async function Join() {
 			wrongID.style.display = "flex";
 		} else if (!RegexID.test(idEl)) {
 			alert("아이디가 양식에 맞지 않습니다 :(");
-		} //기존에 아이디가 있는 경우
-		// 	signup = false;
-		// 	alert("동일한 ID가 이미 사용중입니다!");
+		}
 		inputCondition();
 	});
 	// 프로필사진: 업로드 버튼 이벤트
 	const inputFileBtn = document.querySelector(".input-file");
 	const inputImg = document.querySelector(".upload-img");
 
-	document.querySelector(".upload-btn").addEventListener("click", (e) => {
+	document.querySelector(".upload-btn").addEventListener("click", () => {
 		inputFileBtn.click();
-
-		console.log("초록색업로드버튼 눌림");
 	});
 
 	inputFileBtn.addEventListener("change", (event) => {
 		const file = event.target.files[0];
-		console.log(file);
-
 		// 파일 사이즈 확인
 		if (file.size > 1024 * 1024) {
 			alert("업로드 가능한 파일의 최대 용량은 1MB입니다.");
-			mb_thumbnailEl.value = "";
+			defaultImg.value = "";
 		} else {
 			const reader = new FileReader();
 			reader.readAsDataURL(file);
 			reader.addEventListener("load", (e) => {
 				params.profileImgBase64 = e.target.result;
-				inputImg.src = e.target.result;
-				console.log(params);
+				defaultImg.src = e.target.result;
 			});
 		}
 	});
@@ -112,7 +103,6 @@ export default async function Join() {
 	function inputCondition() {
 		const inputName = document.querySelector(".display-name");
 		const inputID = document.querySelector(".id");
-		const requiredBtnEl = document.querySelector(".validator-btn");
 		const inputPW = document.querySelector(".password");
 		const inputPWC = document.querySelector(".password-check");
 		const wrongName = document.querySelector(".wrong-name");
@@ -146,7 +136,7 @@ export default async function Join() {
 		inputPW.addEventListener("input", () => {
 			if (!RegexPW.test(inputPW.value)) {
 				wrongPW.innerText =
-					"비밀번호를 영어,숫자 조합의\n 8~20자리로 입력 해 주세요 :)";
+					"비밀번호를 영어,숫자 조합의 8~20자리로 입력 해 주세요 :)";
 				wrongPW.style.color = "#de0404";
 				wrongPW.style.display = "block";
 			} else {
