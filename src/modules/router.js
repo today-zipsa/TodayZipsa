@@ -26,6 +26,7 @@ import Category from "../modules/category";
 import Admin from "../modules/admin";
 import My from "../modules/my";
 import Join from "../modules/join";
+import Login from "../modules/login";
 
 const router = new Navigo("/");
 
@@ -96,13 +97,14 @@ router
   .resolve();
 
 function renderPage(page) {
-  app.innerHTML = "";
-  if (Array.isArray(page)) {
-    app.append(...page);
-    page.forEach((node) => app.appendChild(node));
-  } else {
-    app.appendChild(page);
-  }
+	console.log({ app, page });
+	app.innerHTML = "";
+	if (Array.isArray(page)) {
+		app.append(...page);
+		page.forEach((node) => app.appendChild(node));
+	} else {
+		app.appendChild(page);
+	}
 }
 
 /**
