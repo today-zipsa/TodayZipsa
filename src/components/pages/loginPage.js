@@ -15,11 +15,13 @@ inputEl.className = "login-wrapper--input";
 
 // 아이디 입력
 const inputIdEl = document.createElement("input");
+inputIdEl.className = "input-id";
 inputIdEl.setAttribute("type", "text");
 inputIdEl.setAttribute("id", "id");
 inputIdEl.setAttribute("placeholder", "아이디를 입력해주세요");
 // 비밀번호 입력
 const inputPwEl = document.createElement("input");
+inputPwEl.className = "input-pw";
 inputPwEl.setAttribute("type", "password");
 inputPwEl.setAttribute("id", "pw");
 inputPwEl.setAttribute("placeholder", "비밀번호를 입력해주세요");

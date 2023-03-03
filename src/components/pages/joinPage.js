@@ -2,6 +2,7 @@ import { util } from "../../api/util.js";
 import ModalTwo from "../templates/modalTwo";
 import src from "../../asset/global/check.svg";
 import srcActive from "../../asset/global/check_green.svg";
+import profilesrc from "../../asset/global/no_image.png";
 
 const JoinPage = util.createEl("main", { id: "join" });
 
@@ -112,21 +113,22 @@ const h5FileBoxEl = util.createEl("h5", { textContent: "프로필 사진" });
 h5Wrapper.append(h5FileBoxEl);
 
 const imgfileWrapper = util.createEl("div", { class: "img-fileWrapper" });
+const imgsWrapper = util.createEl("div", { class: "imgs-wrapper" });
 
-const inputIMG = util.createEl(
+const defaultImg = util.createEl(
 	"img",
-	{ id: "select-img" },
-	{ class: "upload-img" },
-	{ src: "" },
-	{ alt: "profile" }
+	{ class: "default-img" },
+	{ src: profilesrc },
+	{ alt: "default Image" }
 );
+
 const uploadBntLabel = util.createEl(
 	"label",
 	{ for: "file" },
 	{ class: "upload-btn" }
 );
-
-imgfileWrapper.append(inputIMG, uploadBntLabel);
+imgsWrapper.append(defaultImg);
+imgfileWrapper.append(imgsWrapper, uploadBntLabel);
 const uploadTxt = util.createEl("div", { class: "upload-txt" });
 uploadTxt.innerText = "업로드";
 
@@ -266,7 +268,6 @@ labeldNEl.append(h5dNEl, asteriskdNEl);
 //아이디(이메일)
 labelWrapperIdEl.append(labelIdEl, inputIdWrapper, requiredBtnEl);
 labelIdEl.append(h5IdEl, asteriskIdEl);
-
 //비밀번호
 labelWrapperPwEl.append(labelPwEl, inputPWWrapper, asteriskPwEl, sizedBoxPwEl);
 labelPwEl.append(h5PwEl, asteriskPwEl);
@@ -305,15 +306,15 @@ cAllImgBtnEl.addEventListener("click", () => {
 });
 
 //이용약관
-cUseImgBtnEl.append(cUseImgActiveEl, cUseImgEl); //check btn
+cUseImgBtnEl.append(cUseImgActiveEl, cUseImgEl);
 checkUseEl.append(cUseImgBtnEl, cUseLabelEl, cUseSpanEl);
 
 //개인정보
-cAInfoImgBtnEl.append(cAInfoImgActiveEl, cAInfoImgEl); //check btn
+cAInfoImgBtnEl.append(cAInfoImgActiveEl, cAInfoImgEl);
 checkAgreeInfoEl.append(cAInfoImgBtnEl, cAInfoLabelEl, cAInfoSpanEl);
 
 //14세이상
-cAgeImgBtnEl.append(cAgeImgActiveEl, cAgeImgEl); //check btn
+cAgeImgBtnEl.append(cAgeImgActiveEl, cAgeImgEl);
 checkAgeEl.append(cAgeImgBtnEl, cAgeLabelEl, cAgeSpanEl);
 
 cAgeImgBtnEl.addEventListener("click", () => {

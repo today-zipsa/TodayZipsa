@@ -1,10 +1,12 @@
 import ModalTwo from "../templates/modalTwo";
 import { request } from "../../api/common";
+import { payments } from "../../api/my_payment_dummy";
+import { accounts } from "../../api/my_accounts_dummy";
+import { renderAccountList } from "../../modules/my";
 import profileImg from "../../asset/myImg/profile.png";
 import addBtnImg from "../../asset/btnImg/add_btn.png";
 import deleteBtnImg from "../../asset/btnImg/close_btn.png";
-import { payments } from "../../api/my_payment_dummy";
-import { accounts } from "../../api/my_accounts_dummy";
+const paymentsInfo = payments; //request("PRD12");
 
 export default function MyPage() {
 	const MyPage = document.createElement("section");
@@ -41,7 +43,7 @@ export default function MyPage() {
 	btnImg.className = "btn-img";
 	btnTitle.className = "btn-title";
 
-	profileImage.src = require("../../asset/myImg/profile.png");
+	profileImage.src = localStorage.getItem("profileImg");
 	btnImg.src = require("../../asset/btnImg/add_btn.png");
 	profileImage.alt = "profile-image";
 	btnImg.alt = "add-btn-image";
@@ -60,85 +62,7 @@ export default function MyPage() {
 	);
 	MyPage.append(profileContainer, infoContainer, ModalTwo);
 
-	console.log(MyPage.outerHTML);
-
-	btnImg.addEventListener("click", () => {
-		const accountInputBox = document.createElement("box");
-		showModalTwo();
-	});
-
-	welcomeWordBox.addEventListener("click", () => {
-		const nameInputBox = document.createElement("box");
-		const profileImgInputBox = document.createElement("box");
-		const nowPasswordInputBox = document.createElement("box");
-		const newPasswordInputBox = document.createElement("box");
-		const modalBtnBox = document.createElement("box");
-		const completeBtn = document.createElement("div");
-		const cancelBtn = document.createElement("div");
-		const editingInputTemplate = [
-			nameInputBox,
-			profileImgInputBox,
-			nowPasswordInputBox,
-			newPasswordInputBox,
-		];
-		const inputBarInfo = [
-			{ innerText: "닉네임", placeholder: "별명(20자이내)" },
-			{ innerText: "프로필이미지", placeholder: "프로필 URL주소" },
-			{ innerText: "현재비밀번호", placeholder: "현재 비밀번호" },
-			{ innerText: "신규비밀번호", placeholder: "신규 비밀번호" },
-		];
-
-		nameInputBox.classList.add("input-box");
-		profileImgInputBox.classList.add("input-box");
-		nowPasswordInputBox.classList.add("input-box");
-		newPasswordInputBox.classList.add("input-box");
-		modalBtnBox.classList.add("modal-btn-box");
-		completeBtn.classList.add("complete-btn");
-		cancelBtn.classList.add("cancel-btn");
-
-		completeBtn.innerText = "수정완료";
-		cancelBtn.innerText = "취소";
-
-		editingInputTemplate.forEach((userInfoBox, idx) => {
-			const inputBar = document.createElement("input");
-			const inputBarName = document.createElement("span");
-
-			inputBar.classList.add("input-bar");
-			inputBarName.classList.add("input-bar-name");
-
-			inputBar.type = "text";
-			inputBarName.innerText = inputBarInfo[idx].innerText;
-			inputBar.placeholder = inputBarInfo[idx].placeholder;
-
-			userInfoBox.append(inputBarName, inputBar);
-		});
-
-		completeBtn.addEventListener("click", () => {
-			const userName = nameInputBox.innerText;
-			const profileImgUrl = profileImgInputBox.innerText;
-			const nowPassword = nowPasswordInputBox.innerText;
-			const newPassword = newPasswordInputBox.innerText;
-			const params = [userName, profileImgUrl, nowPassword, newPassword];
-
-			closeModalTwo();
-			setUserInfo(params);
-		});
-
-		cancelBtn.addEventListener("click", () => {
-			closeModalTwo();
-		});
-
-		ModalTemplate.addEventListener("click", e => {
-			closeModalTwo();
-		});
-
-		modalBtnBox.append(completeBtn, cancelBtn);
-		ModalTemplate.querySelector(".modal-template").append(
-			...editingInputTemplate,
-			modalBtnBox
-		);
-		showModalTwo();
-	});
+	// console.log(MyPage.outerHTML); 문자열 html 태그값
 
 	renderTest(MyPage);
 
@@ -148,55 +72,48 @@ export default function MyPage() {
 		// 사용자 정보 수정 API로직
 		try {
 			if (localStorage.getItem("accessToken")) {
-				const res = request("MEB05", params);
-				// console.log(res);
 			}
 		} catch (error) {
 			window.alert(error);
 		}
 	}
-
-	function showModalTwo() {
-		ModalTwo.classList.remove("--hide");
-	}
-
-	function closeModalTwo() {
-		ModalTwo.classList.add("--hide");
-		ModalTwo.querySelector(".modal-template").innerHTML = "";
-	}
 }
 
 async function renderTest(page) {
-	// app만 querySelector로 잘 불러와지고 나머지는 null이 됨
-	// const app = document.querySelector("#app");
-	console.log(page);
 	const [profileContainer, infoContainer, profileEditmodal] = Array.from(
 		page.children
 	);
+	const paymentsInfo = payments;
+	const lastDateToPay = paymentsInfo[0].timePaid
+		.slice(0, 10)
+		.split("-")
+		.join(".");
+	const firstDateToPay = paymentsInfo[paymentsInfo.length - 1].timePaid
+		.slice(0, 10)
+		.split("-")
+		.join(".");
 
 	profileContainer.innerHTML = `
 				<box class="profile-box">
-				<box class="welcome-word-box">
-				<img class="profile-image" src="${profileImg}" alt="profile-image">
-				<span class="profile-words1">반가워요! 집사님</span>
+					<box class="welcome-word-box">
+						<img class="profile-image" src="${profileImg}" alt="profile-image">
+						<span class="profile-words1">안녕하세요, 이지영님</span>
+					</box>
+					<span class="profile-words2">${firstDateToPay} ~ ${lastDateToPay} 동안 구매해주신 내역이에요.</span>
 				</box>
-				<span class="profile-words2"></span>
-				</box>
-				<span class="payment-period"></span>
-				`;
+			`;
 
 	infoContainer.innerHTML = `
 				<box class="payments-container">${paymentsList()
-					.map(x => x.outerHTML)
+					.map((x) => x.outerHTML)
 					.join("")}</box>
 				<box class="accounts-container">
-				<div class="accounts-container-title">계좌관리</div>
-				<div class="accounts-list"></div>
-				
-				<div class="add-account-btn-box">
-				<img class="btn-img" src="${addBtnImg}" alt="add-btn-image"/>
-				<span class="btn-title">계좌연결</span>
-				</div>
+					<div class="accounts-container-title">계좌관리</div>
+					<div class="accounts-list"></div>
+					<div class="add-account-btn-box">
+					<img class="btn-img" src="${addBtnImg}" alt="add-btn-image"/>
+					<span class="btn-title">계좌연결</span>
+					</div>
 				</box>
 				`;
 }
@@ -219,7 +136,7 @@ function setDetailInfoHref(paymentState) {
 	}
 }
 
-function getKRW(digit) {
+export function getKRW(digit) {
 	const digitArray = digit.toString().split("");
 	const newArray = [];
 	let index = 0;
@@ -238,7 +155,7 @@ function getKRW(digit) {
 }
 
 function paymentsList() {
-	return payments.map(payment => {
+	return payments.map((payment) => {
 		const isTransactionCompleted = payment.done;
 		const isCanceled = payment.isCanceled;
 		const productPrice = payment.product.price;
@@ -247,7 +164,7 @@ function paymentsList() {
 		const paymentTime = payment.timePaid
 			.slice(5, 10)
 			.split("-")
-			.map(digit => (digit.length < 2 ? "0" + digit : digit));
+			.map((digit) => (digit.length < 2 ? "0" + digit : digit));
 
 		let paymentState = "결제완료";
 

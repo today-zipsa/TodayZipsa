@@ -7,7 +7,9 @@ import Footer from "../components/templates/footer";
 /**
  * Pages
  */
+import detailPage from "../components/pages/detailPage";
 import homeMainPage from "../components/pages/homePage";
+import categoryPage from "../components/pages/categoryPage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
@@ -19,9 +21,11 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
  * Modules
  */
 import Home from "../modules/home";
+import Category from "../modules/category";
 import Admin from "../modules/admin";
 import My from "../modules/my";
 import Join from "../modules/join";
+import Login from "../modules/login";
 
 const router = new Navigo("/");
 
@@ -31,23 +35,28 @@ router
 			renderPage([Header, homeMainPage, Footer]);
 			Home();
 		},
-		"/sitter": () => {
-			renderPage(/**SitterPage*/);
-		},
-		"/snack": () => {
-			renderPage(/**SnackPage*/);
+		"/hotel": () => {
+			renderPage([Header, categoryPage, Footer]);
+			Category("hotel");
 		},
 		"/rental": () => {
-			renderPage(/**RentalPage*/);
+			renderPage([Header, categoryPage, Footer]);
+			Category("rental");
+		},
+		"/sitter": () => {
+			renderPage([Header, categoryPage, Footer]);
+			Category("sitter");
+		},
+		"/spa": () => {
+			renderPage([Header, categoryPage, Footer]);
+			Category("spa");
 		},
 		"/detail": () => {
 			renderPage(/**DetailPage*/);
 		},
-		"/snack": () => {
-			renderPage(/**SnackPage*/);
-		},
 		"/my": () => {
 			renderPage([Header, MyPage(), Footer]);
+			My();
 		},
 		"/my/order/detail": () => {
 			renderPage(/**MyOrderDetailPage*/);
@@ -57,15 +66,19 @@ router
 		},
 		"/login": () => {
 			renderPage([Header, LoginPage, Footer]);
+			Login();
 		},
 		"/join": () => {
 			renderPage([Header, JoinPage, Footer]);
 			Join();
 		},
-		"/payment": () => {
-			renderPage([Header, PaymentPage(), Footer]);
-		},
-		"/payment/done": () => {
+		"/payment/:productId": (match) => {
+      const { productId } = match?.data;
+
+      console.log({ productId });
+      renderPage([Header, PaymentPage(productId), Footer]);
+    },
+		"/paymentDone": () => {
 			renderPage([Header, PaymentDonePage(), Footer]);
 		},
 		"/admin": () => {
@@ -74,13 +87,12 @@ router
 		},
 		"product/:productId": (match) => {
 			const { productId } = match?.data;
-
 			console.log({ productId });
 
-			renderPage(document.createTextNode(`product ID => ${productId}`));
-		},
-	})
-	.resolve();
+      renderPage(document.createTextNode(`product ID => ${productId}`));
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
 	console.log({ app, page });
@@ -94,9 +106,10 @@ function renderPage(page) {
 }
 
 /**
- * 홈메인 /
+ * 홈페이지 /
+ * 호텔페이지 /hotel
  * 시터페이지 /sitter
- * 스낵페이지 /snack
+ * 스낵페이지 /spa
  * 렌트페이지 /rental
  * 상품상세페이지 /detail
  * 마이페이지 /my
@@ -104,8 +117,8 @@ function renderPage(page) {
  * 마이결제상세페이지 /my/payment/detail
  * 로그인페이지 /login
  * 회원가입페이지 /join
- * 결제페이지1 /payment1
- * 결제페이지2 /payment2
+ * 결제페이지 /payment
+ * 결제페이지 /paymentDone
  * 어드민페이지 /admin
  *
  *

@@ -8,24 +8,28 @@
 }
 .paymentDone-order-done {
   height: 300px;
+
 }
 .paymentDone-continue-shop {
-  width: 210px;
+  width: 400px;
   height: 70px;
   background-color: #2f9546;
   color: #FFF;
   cursor: pointer;
-  font-size: 20px;
-  border : none
+  font-size: 22px;
+  border : none;
+  border-radius: 6px;
 }
 .paymentDone-purchase-history {
   margin-top: 50px;
-  width: 210px;
+  width: 400px;
   height: 70px;
   background-color: #FFF;
   cursor: pointer;
   border: 1px solid #2f9546;
-  font-size: 20px;
+  font-size: 22px;
+  border-radius: 6px;
+  color: #2f9546;
 }
 
 .paymentDone-btn {
@@ -36,4 +40,23 @@
   justify-content: center;
   text-align: center;
   align-items: center;
+}
+.paymentDone-order-text1 {
+  margin-top: 100px;
+  font-size: 75px;
+}
+.paymentDone-order-text2 {
+  margin-top: 80px;
+  font-size: 50px;
+}
+.paymentDone-delivery {
+  margin-top: 45px;
+  font-size: 30px;
+  line-height: 50px;
+}
+.paymentDone-order-text1 h1{
+  font-weight: 600;
+}
+.delivery-span {
+  font-weight: 600;
 }

@@ -1,3 +1,5 @@
+import Swiper from "swiper/swiper-bundle.min.js";
+import "swiper/swiper-bundle.min.css";
 import { request } from "../api/common.js";
 import { util } from "../api/util.js";
 
@@ -26,6 +28,24 @@ export default async function Home() {
     showMoreLocation("spa");
   });
 
+  // Swiper 실행
+  const swiper = new Swiper(".swiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+
   // 전체 상품 조회
   util.loadingBar(true);
   const allItems = await request("PRD08");
@@ -33,7 +53,7 @@ export default async function Home() {
 
   // 카테고리별 필터링
   const hotelItems = allItems.filter((items) => items.tags.includes("호텔"));
-  const rentalItems = allItems.filter((items) => items.tags.includes("차량"));
+  const rentalItems = allItems.filter((items) => items.tags.includes("렌트카"));
   const sitterItems = allItems.filter((items) => items.tags.includes("펫시터"));
   const spaItems = allItems.filter((items) => items.tags.includes("스파"));
 
@@ -53,6 +73,7 @@ export default async function Home() {
 
       const itemAEl = util.createEl("a");
       itemAEl.href = `/detail/${items[i].id}`;
+      itemAEl.setAttribute("data-navigo", "");
 
       const itemImgEl = util.createEl("div", { class: "home-item-img" });
       const imgEl = util.createEl(
