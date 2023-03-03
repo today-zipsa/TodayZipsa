@@ -1,3 +1,5 @@
+import Swiper from "swiper/swiper-bundle.min.js";
+import "swiper/swiper-bundle.min.css";
 import { request } from "../api/common.js";
 import { util } from "../api/util.js";
 
@@ -24,6 +26,24 @@ export default async function Home() {
   });
   spaMoreBtnEl.addEventListener("click", () => {
     showMoreLocation("spa");
+  });
+
+  // Swiper 실행
+  const swiper = new Swiper(".swiper", {
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
   });
 
   // 전체 상품 조회
@@ -53,6 +73,7 @@ export default async function Home() {
 
       const itemAEl = util.createEl("a");
       itemAEl.href = `/detail/${items[i].id}`;
+      itemAEl.setAttribute("data-navigo", "");
 
       const itemImgEl = util.createEl("div", { class: "home-item-img" });
       const imgEl = util.createEl(
