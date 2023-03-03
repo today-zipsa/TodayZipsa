@@ -1,7 +1,7 @@
 import { request } from "../api/common.js";
 import { util } from "../api/util.js";
 
-export default function Admin() {
+export default async function Admin() {
   /**
    * 변수 선언
    *
@@ -18,6 +18,8 @@ export default function Admin() {
   const showListCnt = document.querySelector(".show-select-list"); // 페이지 노출 아이템수량
   const addProductBtn = document.querySelector("#add_product_btn"); // 상품 추가
   const itemListEl = document.querySelector("#item_list"); // 상품 리스트
+  const orderListEl = document.querySelector("#order_list"); // 주문 리스트
+
   // 모달 관련
   const modal = document.querySelector(".modal");
   const modalBackground = document.querySelector(".modal__background");
@@ -99,6 +101,7 @@ export default function Admin() {
 
   // init
   fn_search_product();
+  fn_search_order();
 
   /**
    * 상품 조회
@@ -588,5 +591,147 @@ export default function Admin() {
   function enableButton(button) {
     button.classList.remove("disabled");
     button.removeAttribute("disabled");
+  }
+
+  /**
+   * 주문 내역 조회
+   */
+  async function fn_search_order() {
+    util.loadingBar(true);
+    const orders = await request("PRD02");
+    await getOrdertList(orders);
+    util.loadingBar(false);
+    console.log("orderList>>> ", orders);
+  }
+
+  async function getOrdertList(orders) {
+    const liEls = orders.map((order) => {
+      const userInfo = order.user;
+      const accInfo = order.account;
+      const prodInfo = order.product;
+
+      const liEl = document.createElement("li");
+
+      // 썸네일
+      const aEl = document.createElement("a");
+      aEl.setAttribute("href", `/detail/${prodInfo.productId}`);
+
+      const thumbEl = document.createElement("img");
+      thumbEl.classList.add("thumb");
+      const replaceImg = require("../asset/global/no_image.png");
+      thumbEl.src =
+        prodInfo.thumbnail === null ? replaceImg : prodInfo.thumbnail;
+      aEl.append(thumbEl);
+
+      // 상품 정보
+      const infoEl = document.createElement("div");
+      infoEl.classList.add("info");
+
+      // title
+      const titleEl = document.createElement("span");
+      titleEl.classList.add("title");
+      titleEl.textContent = prodInfo.title;
+
+      // user
+      const userEl = document.createElement("div");
+      userEl.classList.add("user");
+      const userNameEl = document.createElement("span");
+      userNameEl.textContent = "주문고객: " + userInfo.displayName;
+      const userEmailEl = document.createElement("span");
+      userEmailEl.textContent = "E-mail: " + userInfo.email;
+      const userBankEl = document.createElement("span");
+      userBankEl.textContent = "결제은행: " + accInfo.bankName;
+      userEl.append(userNameEl, userEmailEl, userBankEl);
+      infoEl.append(titleEl, userEl);
+
+      // price
+      const priceEl = document.createElement("span");
+      priceEl.classList.add("price");
+      priceEl.textContent = util.setLocalString(prodInfo.price) + "원";
+
+      // 구매확정 버튼
+      let editBtnEl = "";
+      if (!order.isCanceled) {
+        editBtnEl = document.createElement("button");
+        editBtnEl.classList.add("admin_btn");
+        editBtnEl.classList.add("edit_btn");
+        editBtnEl.textContent = order.done === true ? "구매완료" : "구매확정";
+        if (!order.done) {
+          // 구매완료가 안된 상태에서 클릭 가능
+          editBtnEl.addEventListener("click", () => {
+            fn_confirm_product("done", order.detailId);
+          });
+        }
+      }
+
+      // 구매취소 버튼
+      let delBtnEl = "";
+      if (!order.done) {
+        delBtnEl = document.createElement("button");
+        delBtnEl.classList.add("admin_btn");
+        delBtnEl.classList.add("delete_btn");
+        delBtnEl.textContent =
+          order.isCanceled === true ? "취소완료" : "구매취소";
+        if (!order.isCanceled) {
+          // 취소완료가 안된 상태에서 클릭 가능
+          delBtnEl.addEventListener("click", () => {
+            fn_confirm_product("cancel", order.detailId);
+          });
+        }
+      }
+
+      // El 합치기
+      liEl.append(aEl, infoEl, priceEl, editBtnEl, delBtnEl);
+
+      return liEl;
+    });
+
+    orderListEl.innerHTML = "";
+    orderListEl.append(...liEls);
+    //productLiEls = liEls;
+    // setPagination(pageLimit);
+  }
+
+  /**
+   * 구매 확정 또는 취소
+   */
+  async function fn_confirm_product(gbn, orderId) {
+    const msg = gbn === "cancel" ? "취소" : "확정";
+    const confirmMsg = confirm(`주문을 ${msg}하시겠습니까?`);
+
+    let param = {
+      detailId: orderId,
+    };
+    if (gbn === "cancel") {
+      param.isCanceled = true;
+    } else {
+      param.done = true;
+    }
+
+    if (confirmMsg) {
+      // API 호출
+      util.loadingBar(true);
+      const res = await request("PRD03", param);
+      console.log("confirm>> ", res);
+      util.loadingBar(false);
+
+      // 정상적인 삭제 후 새로고침
+      if (res) {
+        fn_search_order();
+      }
+    }
+  }
+  // fn_product_purchase();
+  async function fn_product_purchase() {
+    const params = {
+      productId: "QrurqbMKQ9Wqy5RmmCzQ",
+      accountId: "jjqGeFHwHBIc44iGwrD0",
+    };
+    const res = await request("PRD09", params);
+  }
+  // fn_user_accountInfo();
+  async function fn_user_accountInfo() {
+    const res = await request("ACC02");
+    console.log("accountInfo>>> ", res);
   }
 }
