@@ -11,7 +11,7 @@
 :--: | :--: | :--: | :--: | :--: 
 <img src="https://avatars.githubusercontent.com/u/55748886?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/21377593?v=4" style="width: 200px" /> | <img src="https://avatars.githubusercontent.com/u/98999052?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/76941552?v=4" style="width: 200px;" /> | <img src="https://user-images.githubusercontent.com/76941552/222496605-341c257e-028d-48ef-b223-5991f2b66c6c.png" style="width: 200px"/>
 [gygy7151](https://github.com/gygy7151) | [hlee686](https://github.com/hlee686) | [soheedev](https://github.com/soheedev) | [ronieo](https://github.com/ronieo) | [oysterjung](https://github.com/oysterjung) 
-[마이 페이지]<br> [주문 상세 페이지]<br> [결제 상세 페이지]<br> [로그인 페이지] <br>[공동 헤더]<br>[라우팅작업 및 유지보수]<br><br>|[메인 페이지]<br>- 제품 상세 페이지<br>|[어드민 페이지]<br>- 상품 관리페이지<br>- 거래 내역 페이지<br>[메인 페이지]<br>|[회원가입 페이지]<br> [로그인 페이지]<br>- 공동 Footer<br>|[결제 페이지]<br> [결제 완료 페이지]
+[마이 페이지]<br> [주문 상세 페이지]<br> [결제 상세 페이지]<br> [로그인 페이지] <br>[공동 헤더]<br>[라우팅작업 및 유지보수]<br>[CI/CD]<br>|[메인 페이지]<br>- 제품 상세 페이지<br>|[어드민 페이지]<br>- 상품 관리페이지<br>- 거래 내역 페이지<br>[메인 페이지]<br>|[회원가입 페이지]<br> [로그인 페이지]<br>- 공동 Footer<br>|[결제 페이지]<br> [결제 완료 페이지]
 
 <br/><br/>
  ## 📝 오늘의집사 프로젝트 소개
