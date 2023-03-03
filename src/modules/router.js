@@ -85,10 +85,10 @@ router
 			const { productId } = match?.data;
 			console.log({ productId });
 
-			renderPage(document.createTextNode(`product ID => ${productId}`));
-		},
-	})
-	.resolve();
+      renderPage(document.createTextNode(`product ID => ${productId}`));
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
 	console.log({ app, page });

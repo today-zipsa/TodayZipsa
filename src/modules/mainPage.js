@@ -245,7 +245,6 @@ async function addHotels() {
 // search.addEventListener("click", function () {
 //     if(inputValue){
 //         getHotels(inputValue, 1)
-
 //     }
 // })
 
