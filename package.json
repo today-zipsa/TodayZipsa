@@ -5,7 +5,9 @@
 	"source": "index.html",
 	"dependencies": {
 		"navigo": "^8.11.1",
-		"swiper": "^9.1.0"
+		"swiper": "^9.1.0",
+		"asset": "^0.4.13",
+		"lodash": "^4.17.21"
 	},
 	"devDependencies": {
 		"parcel-bundler": "^1.12.5",

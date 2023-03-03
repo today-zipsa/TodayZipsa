@@ -1,451 +1,451 @@
 /* Header */
 body {
-  margin: 0px;
+	margin: 0px;
 }
 .admin-header {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 6em;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin: 0;
-  min-width: 40em;
-  background-color: #fff;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 6em;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	margin: 0;
+	min-width: 40em;
+	background-color: #fff;
 }
 .admin-header .admin-header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: inherit;
-  width: 50em;
-  background-color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: inherit;
+	width: 50em;
+	background-color: #fff;
 }
 .admin-header .admin-header-wrapper .main-logo-btn-image {
-  display: block;
-  background-repeat: no-repeat;
-  background-color: #fff;
+	display: block;
+	background-repeat: no-repeat;
+	background-color: #fff;
 }
 .admin-header .admin-header-wrapper .main-logo-btn-image {
-  display: block;
-  background-repeat: no-repeat;
-  width: 10em;
-  height: 2.4em;
-  transform: scale(0.8);
-  background-color: var(--main-key-color);
+	display: block;
+	background-repeat: no-repeat;
+	width: 10em;
+	height: 2.4em;
+	transform: scale(0.8);
+	background-color: var(--main-key-color);
 }
 .admin-header .admin-header-wrapper .admin-welcome-word {
-  font-size: 1em;
-  font-weight: 600;
+	font-size: 1em;
+	font-weight: 600;
 }
 .admin-header .admin-header-wrapper .logout {
-  font-size: 1em;
-  font-weight: 600;
-  margin-right: 0.2em;
+	font-size: 1em;
+	font-weight: 600;
+	margin-right: 0.2em;
 }
 
 /* Main */
 .admin {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 .admin-tab {
-  max-width: 900px;
-  margin: 30px auto;
+	max-width: 900px;
+	margin: 30px auto;
 }
 .main_title {
-  text-align: left;
-  margin: 10px 0;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 30px;
+	text-align: left;
+	margin: 10px 0;
+	font-weight: 600;
+	font-size: 20px;
+	line-height: 30px;
 }
 
 .show-select-list {
-  padding: 5px 0px;
-  margin: 5px;
-  border: 2px solid #0c8a4e;
-  border-radius: 2px;
-  cursor: pointer;
+	padding: 5px 0px;
+	margin: 5px;
+	border: 2px solid #0c8a4e;
+	border-radius: 2px;
+	cursor: pointer;
 }
 .admin_btn {
-  all: unset;
-  border-radius: 2px;
-  cursor: pointer;
+	all: unset;
+	border-radius: 2px;
+	cursor: pointer;
 }
 .admin_main_btn {
-  background-color: #0c8a4e;
-  color: white;
-  padding: 5px 25px;
-  margin: 5px;
+	background-color: #0c8a4e;
+	color: white;
+	padding: 5px 25px;
+	margin: 5px;
 }
 .item_btn {
-  display: flex;
-  justify-content: end;
+	display: flex;
+	justify-content: end;
 }
 
 /* Tab 생성 */
 .admin-tab #tab1,
 #tab2 {
-  display: none;
+	display: none;
 }
 .admin-tab label {
-  display: inline-block;
-  margin: 0 0 -1px;
-  padding: 15px 25px;
-  font-weight: 600;
-  text-align: center;
-  color: #bbb;
-  border: 1px solid transparent;
+	display: inline-block;
+	margin: 0 0 -1px;
+	padding: 15px 25px;
+	font-weight: 600;
+	text-align: center;
+	color: #bbb;
+	border: 1px solid transparent;
 }
 .admin-tab label:hover {
-  color: #2e9cdf;
-  cursor: pointer;
+	color: #2e9cdf;
+	cursor: pointer;
 }
 .admin-tab input:checked + label {
-  color: #555;
-  border: 1px solid #ddd;
-  border-top: 2px solid #2e9cdf;
-  border-bottom: 1px solid #ffffff;
+	color: #555;
+	border: 1px solid #ddd;
+	border-top: 2px solid #2e9cdf;
+	border-bottom: 1px solid #ffffff;
 }
 .admin-tab tab {
-  display: none;
-  width: 50em;
-  padding: 20px 0 0;
-  border-top: 1px solid #ddd;
+	display: none;
+	width: 50em;
+	padding: 20px 0 0;
+	border-top: 1px solid #ddd;
 }
 #tab1:checked ~ #content1,
 #tab2:checked ~ #content2 {
-  display: block;
+	display: block;
 }
 
 /* 상품 리스트 */
 #item_list {
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 #item_list li {
-  display: flex;
-  background: #d9d9d9;
+	display: flex;
+	background: #d9d9d9;
 }
 #item_list li a {
-  display: contents;
+	display: contents;
 }
 #item_list li a img {
-  width: 72px;
-  height: 72px;
+	width: 72px;
+	height: 72px;
 }
 #item_list li .info {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 #item_list li .info .title {
-  margin: 10px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
+	margin: 10px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
 }
 #item_list li .info .tags {
-  display: flex;
-  margin: 7px;
+	display: flex;
+	margin: 7px;
 }
 #item_list li .info .tags span {
-  max-width: 100%;
-  margin-right: 10px;
-  padding: 2px 3px 0 3px;
-  border: 1px solid #0c8a4e;
-  border-radius: 50px;
-  font-size: 13px;
-  /* line-height: 1.69; */
-  color: #0c8a4e;
-  text-decoration: none;
-  overflow: hidden;
+	max-width: 100%;
+	margin-right: 10px;
+	padding: 2px 3px 0 3px;
+	border: 1px solid #0c8a4e;
+	border-radius: 50px;
+	font-size: 13px;
+	/* line-height: 1.69; */
+	color: #0c8a4e;
+	text-decoration: none;
+	overflow: hidden;
 }
 
 #item_list li .price {
-  margin: 3% auto;
+	margin: 3% auto;
 }
 #item_list li .edit_btn {
-  font-size: 13px;
-  background-color: #0c8a4e;
-  color: white;
-  padding: 0px 10px;
-  margin: 20px 10px;
-  padding: 0px 10px;
-  margin: 20px 10px;
+	font-size: 13px;
+	background-color: #0c8a4e;
+	color: white;
+	padding: 0px 10px;
+	margin: 20px 10px;
+	padding: 0px 10px;
+	margin: 20px 10px;
 }
 #item_list li .delete_btn {
-  font-size: 13px;
-  background-color: #ffffff;
-  border: 2px solid #e83801;
-  padding: 0px 10px;
-  margin: 20px 10px;
+	font-size: 13px;
+	background-color: #ffffff;
+	border: 2px solid #e83801;
+	padding: 0px 10px;
+	margin: 20px 10px;
 }
 
 /* Modal 처리 */
 .modal {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 .hidden {
-  display: none;
+	display: none;
 }
 .modal__background {
-  background-color: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  position: absolute;
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+	position: absolute;
 }
 .modal__content {
-  text-align: center;
-  position: relative;
-  background-color: white;
-  border-radius: 10px;
-  width: 50%;
+	text-align: center;
+	position: relative;
+	background-color: white;
+	border-radius: 10px;
+	width: 50%;
 }
 .m_head {
-  padding: 20px;
-  display: flex;
-  justify-content: start;
-  background-color: #e7e5e5;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+	padding: 20px;
+	display: flex;
+	justify-content: start;
+	background-color: #e7e5e5;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
 }
 .m_footer {
-  height: 10%;
-  padding: 20px;
-  background-color: #e7e5e5;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+	height: 10%;
+	padding: 20px;
+	background-color: #e7e5e5;
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
 }
 
 /* Modal > m_body > 상품등록 Table */
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  /* margin-right: -0.75rem; */
-  /* margin-left: -0.75rem; */
+	display: flex;
+	flex-wrap: wrap;
+	/* margin-right: -0.75rem; */
+	/* margin-left: -0.75rem; */
 }
 .col-lg {
-  flex: 0 0 100%;
+	flex: 0 0 100%;
 }
 .table {
-  width: 100%;
-  /* margin-bottom: 1rem; */
+	width: 100%;
+	/* margin-bottom: 1rem; */
 }
 .table-bordered {
-  border: 1px solid #e9e9e9;
+	border: 1px solid #e9e9e9;
 }
 .table th {
-  padding: 0.75rem;
-  vertical-align: middle;
-  font-weight: 500;
+	padding: 0.75rem;
+	vertical-align: middle;
+	font-weight: 500;
 }
 .table td {
-  padding: 3px;
+	padding: 3px;
 }
 .required-input {
-  color: #fe6bb0;
+	color: #fe6bb0;
 }
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #e9e9e9;
+	border: 1px solid #e9e9e9;
 }
 .form-control {
-  box-sizing: border-box;
-  outline: none;
-  width: 100%;
-  padding: 0.5rem 0.875rem;
-  font-size: 0.8125rem;
-  line-height: 1.47;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
+	box-sizing: border-box;
+	outline: none;
+	width: 100%;
+	padding: 0.5rem 0.875rem;
+	font-size: 0.8125rem;
+	line-height: 1.47;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
 }
 .custom-select {
-  width: 100%;
-  padding: 0.5rem 1.875rem 0.5rem 0.875rem;
-  font-size: 0.8125rem;
-  line-height: 1.47;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
-  appearance: none;
+	width: 100%;
+	padding: 0.5rem 1.875rem 0.5rem 0.875rem;
+	font-size: 0.8125rem;
+	line-height: 1.47;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
+	appearance: none;
 }
 textarea {
-  resize: none;
+	resize: none;
 }
 .input-group {
-  position: relative;
-  display: flex;
-  -webkit-box-align: stretch;
-  align-items: stretch;
-  width: 100%;
+	position: relative;
+	display: flex;
+	-webkit-box-align: stretch;
+	align-items: stretch;
+	width: 100%;
 }
 .input-group-prepend {
-  display: flex;
-  margin-right: -1px;
+	display: flex;
+	margin-right: -1px;
 }
 .input-group-text {
-  display: -webkit-box;
-  -webkit-box-align: center;
-  align-items: center;
-  padding: 0.5rem 0.875rem;
-  margin-bottom: 0;
-  font-size: 0.8125rem;
-  font-weight: 400;
-  line-height: 1.47;
-  color: #495057;
-  text-align: center;
-  white-space: nowrap;
-  background-color: #f3f3f3;
-  border: 1px solid #e5e5e5;
-  border-radius: 4px;
+	display: -webkit-box;
+	-webkit-box-align: center;
+	align-items: center;
+	padding: 0.5rem 0.875rem;
+	margin-bottom: 0;
+	font-size: 0.8125rem;
+	font-weight: 400;
+	line-height: 1.47;
+	color: #495057;
+	text-align: center;
+	white-space: nowrap;
+	background-color: #f3f3f3;
+	border: 1px solid #e5e5e5;
+	border-radius: 4px;
 }
 .mb-photo {
-  display: flex;
+	display: flex;
 }
 .photo-thumb,
 .photo-detail {
-  width: 70px;
-  height: 70px;
+	width: 70px;
+	height: 70px;
 }
 
 /* Tag 처리 */
 .tag ul {
-  padding-top: 5px;
-  text-align: left;
+	padding-top: 5px;
+	text-align: left;
 }
 .tag ul li {
-  display: inline-block;
-  margin: 3px 5px;
-  font-size: 14px;
-  letter-spacing: -0.5px;
-  border: 1px solid #2f9546;
-  border-radius: 4px;
+	display: inline-block;
+	margin: 3px 5px;
+	font-size: 14px;
+	letter-spacing: -0.5px;
+	border: 1px solid #2f9546;
+	border-radius: 4px;
 }
 .tag ul li.tag-item {
-  padding: 5px;
-  color: #2f9546;
+	padding: 5px;
+	color: #2f9546;
 }
 .tag .tag-item:hover {
-  background-color: #0c8a4e;
-  color: #fff;
+	background-color: #0c8a4e;
+	color: #fff;
 }
 .tag .del-item {
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-left: 8px;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-left: 8px;
 }
 
 /* 페이징 처리 */
 #item_list .hidden {
-  display: none;
+	display: none;
 }
 .pagination {
-  width: calc(100% - 2rem);
-  display: flex;
-  align-items: center;
-  position: relative;
-  bottom: 0;
-  padding: 1rem;
-  justify-content: center;
+	width: calc(100% - 2rem);
+	display: flex;
+	align-items: center;
+	position: relative;
+	bottom: 0;
+	padding: 1rem;
+	justify-content: center;
 }
 .page-number,
 .admin-paging-btn {
-  font-size: 1.2rem;
-  background-color: transparent;
-  border: none;
-  margin: 0.25rem 0.25rem;
-  cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 0.2rem;
+	font-size: 1.2rem;
+	background-color: transparent;
+	border: none;
+	margin: 0.25rem 0.25rem;
+	cursor: pointer;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 0.2rem;
 }
 .page-number:hover,
 .admin-paging-btn:not(.disabled):hover {
-  background: #fff;
+	background: #fff;
 }
 .page-number.active {
-  color: #fff;
-  background: #0c8a4e;
+	color: #fff;
+	background: #0c8a4e;
 }
 
 /* 주문 리스트 */
 #order_list {
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+	margin: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
 }
 #order_list li {
-  display: flex;
-  background: #d9d9d9;
+	display: flex;
+	background: #d9d9d9;
 }
 #order_list li a {
-  display: contents;
+	display: contents;
 }
 #order_list li a img {
-  width: 72px;
-  height: 72px;
+	width: 72px;
+	height: 72px;
 }
 #order_list li .info {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
 }
 #order_list li .info .order-id {
-  /* margin: 10px; */
-  /* font-weight: 400; */
-  font-size: 12px;
-  line-height: 16px;
+	/* margin: 10px; */
+	/* font-weight: 400; */
+	font-size: 12px;
+	line-height: 16px;
 }
 #order_list li .info .title {
-  margin: 10px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 19px;
+	margin: 10px;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 19px;
 }
 #order_list li .info .user {
-  display: flex;
-  margin: 7px;
+	display: flex;
+	margin: 7px;
 }
 #order_list li .info .user span {
-  max-width: 100%;
-  margin-right: 10px;
-  padding: 2px 3px 0 3px;
-  /* border: 1px solid #0c8a4e; */
-  /* border-radius: 50px; */
-  font-size: 15px;
-  /* line-height: 1.69; */
-  /* color: #0c8a4e; */
-  /* text-decoration: none; */
-  /* overflow: hidden; */
+	max-width: 100%;
+	margin-right: 10px;
+	padding: 2px 3px 0 3px;
+	/* border: 1px solid #0c8a4e; */
+	/* border-radius: 50px; */
+	font-size: 15px;
+	/* line-height: 1.69; */
+	/* color: #0c8a4e; */
+	/* text-decoration: none; */
+	/* overflow: hidden; */
 }
 
 #order_list li .price {
-  margin: 3% auto;
+	margin: 3% auto;
 }
 #order_list li .edit_btn {
-  font-size: 13px;
-  background-color: #0c8a4e;
-  color: white;
-  padding: 0px 10px;
-  margin: 20px 10px;
-  padding: 0px 10px;
-  margin: 20px 10px;
+	font-size: 13px;
+	background-color: #0c8a4e;
+	color: white;
+	padding: 0px 10px;
+	margin: 20px 10px;
+	padding: 0px 10px;
+	margin: 20px 10px;
 }
 #order_list li .delete_btn {
-  font-size: 13px;
-  background-color: #ffffff;
-  border: 2px solid #e83801;
-  padding: 0px 10px;
-  margin: 20px 10px;
+	font-size: 13px;
+	background-color: #ffffff;
+	border: 2px solid #e83801;
+	padding: 0px 10px;
+	margin: 20px 10px;
 }

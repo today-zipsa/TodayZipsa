@@ -7,6 +7,7 @@ import Footer from "../components/templates/footer";
 /**
  * Pages
  */
+import detailPage from "../components/pages/detailPage";
 import homeMainPage from "../components/pages/homePage";
 import searchPage from "../components/pages/searchPage";
 import categoryPage from "../components/pages/categoryPage";
@@ -31,88 +32,83 @@ import Login from "../modules/login";
 const router = new Navigo("/");
 
 router
-  .on({
-    "/": () => {
-      renderPage([Header, homeMainPage, Footer]);
-      Home();
-    },
-    "/search/:searchText": (match) => {
-      const { searchText } = match?.data;
-      renderPage([Header, searchPage, Footer]);
-      Search(searchText);
-    },
-    "/hotel": () => {
-      renderPage([Header, categoryPage, Footer]);
-      Category("hotel");
-    },
-    "/rental": () => {
-      renderPage([Header, categoryPage, Footer]);
-      Category("rental");
-    },
-    "/sitter": () => {
-      renderPage([Header, categoryPage, Footer]);
-      Category("sitter");
-    },
-    "/spa": () => {
-      renderPage([Header, categoryPage, Footer]);
-      Category("spa");
-    },
-    "/detail": () => {
-      renderPage(/**DetailPage*/);
-    },
-    "/my": () => {
-      renderPage([Header, MyPage(), Footer]);
-      My();
-    },
-    "/my/order/detail": () => {
-      renderPage(/**MyOrderDetailPage*/);
-    },
-    "/my/payment/detail": () => {
-      renderPage(/**MyPaymentDetailPage*/);
-    },
-    "/login": () => {
-      renderPage([Header, LoginPage, Footer]);
-      Login();
-    },
-    "/join": () => {
-      renderPage([Header, JoinPage, Footer]);
-      Join();
-    },
-    "/payment": () => {
-      renderPage([Header, PaymentPage(), Footer]);
-    },
-    "/payment/done": () => {
-      renderPage([Header, PaymentDonePage(), Footer]);
-    },
-    "/admin": () => {
-      renderPage([AdminPage, Footer]);
-      Admin();
-    },
-    "product/:productId": (match) => {
-      const { productId } = match?.data;
+	.on({
+		"/": () => {
+			renderPage([Header, homeMainPage, Footer]);
+			Home();
+		},
+		"/hotel": () => {
+			renderPage([Header, categoryPage, Footer]);
+			Category("hotel");
+		},
+		"/rental": () => {
+			renderPage([Header, categoryPage, Footer]);
+			Category("rental");
+		},
+		"/sitter": () => {
+			renderPage([Header, categoryPage, Footer]);
+			Category("sitter");
+		},
+		"/spa": () => {
+			renderPage([Header, categoryPage, Footer]);
+			Category("spa");
+		},
+		"/detail": () => {
+			renderPage(/**DetailPage*/);
+		},
+		"/my": () => {
+			renderPage([Header, MyPage(), Footer]);
+			My();
+		},
+		"/my/order/detail": () => {
+			renderPage(/**MyOrderDetailPage*/);
+		},
+		"/my/payment/detail": () => {
+			renderPage(/**MyPaymentDetailPage*/);
+		},
+		"/login": () => {
+			renderPage([Header, LoginPage, Footer]);
+			Login();
+		},
+		"/join": () => {
+			renderPage([Header, JoinPage, Footer]);
+			Join();
+		},
+		"/payment": () => {
+			renderPage([Header, PaymentPage(), Footer]);
+		},
+		"/payment/done": () => {
+			renderPage([Header, PaymentDonePage(), Footer]);
+		},
+		"/admin": () => {
+			renderPage([AdminPage, Footer]);
+			Admin();
+		},
+		"product/:productId": (match) => {
+			const { productId } = match?.data;
+			console.log({ productId });
 
-      console.log({ productId });
-
-      renderPage(document.createTextNode(`product ID => ${productId}`));
-    },
-  })
-  .resolve();
+			renderPage(document.createTextNode(`product ID => ${productId}`));
+		},
+	})
+	.resolve();
 
 function renderPage(page) {
-  console.log({ app, page });
-  app.innerHTML = "";
-  if (Array.isArray(page)) {
-    app.append(...page);
-    page.forEach((node) => app.appendChild(node));
-  } else {
-    app.appendChild(page);
-  }
+	console.log({ app, page });
+	app.innerHTML = "";
+	if (Array.isArray(page)) {
+		app.append(...page);
+		page.forEach((node) => app.appendChild(node));
+	} else {
+		app.appendChild(page);
+	}
 }
 
 /**
- * 홈메인 /
+ * 홈페이지 /
+ * 호텔페이지 /hotel
  * 시터페이지 /sitter
- * 스낵페이지 /snack
+ * 스낵페이지 /spa
  * 렌트페이지 /rental
  * 상품상세페이지 /detail
  * 마이페이지 /my
@@ -120,8 +116,8 @@ function renderPage(page) {
  * 마이결제상세페이지 /my/payment/detail
  * 로그인페이지 /login
  * 회원가입페이지 /join
- * 결제페이지1 /payment1
- * 결제페이지2 /payment2
+ * 결제페이지 /payment
+ * 결제페이지 /paymentDone
  * 어드민페이지 /admin
  *
  *
