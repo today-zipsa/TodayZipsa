@@ -185,14 +185,12 @@ const get = document.querySelector(".getBtn")
 
 btn.addEventListener("click", function () {
     addHotels()
-
 })
 
 
 get.addEventListener("click", function () {
     seeSitters()
 })
-
 
 
 async function deleteHotels(todoId) {
@@ -218,7 +216,6 @@ async function seeSitters() {
 
 
 async function addHotels() {
-
     for (let i = 0; i < data["list"].length; i++) {
         const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products", {
             method: "POST",
@@ -248,7 +245,6 @@ async function addHotels() {
 // search.addEventListener("click", function () {
 //     if(inputValue){
 //         getHotels(inputValue, 1)
-
 //     }
 // })
 

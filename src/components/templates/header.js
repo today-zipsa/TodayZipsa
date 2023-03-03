@@ -1,5 +1,5 @@
-import request from "../../api/common";
-const token = JSON.parse(localStorage.getItem("accessToken"));
+import { request } from "../../api/common";
+let token = localStorage.getItem("accessToken");
 
 const Header = document.createElement("header");
 const headerWrapper = document.createElement("div");
@@ -80,11 +80,12 @@ function setLogout() {
 	if (token) {
 		request("MEB04");
 		window.localStorage.clear();
+		token = "";
 	}
 }
 
 function getNextUrl() {
-	const id = JSON.parse(localStorage.getItem("id"));
+	const id = localStorage.getItem("id");
 	if (id === "admin@zipsa.com") {
 		return "/admin";
 	} else {

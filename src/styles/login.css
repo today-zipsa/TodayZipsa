@@ -43,6 +43,7 @@
   margin: 0.5em 0 0.5em 14.5em;
 }
 #login-page .login-wrapper--find button {
+  cursor: pointer;
   border: none;
   background-color: transparent;
   font-size: 14px;
@@ -54,6 +55,7 @@
   flex-direction: column;
 }
 #login-page .login-wrapper .btn-wrapper button {
+  cursor: pointer;
   width: 26em;
   height: 3.5em;
   margin: 10px;

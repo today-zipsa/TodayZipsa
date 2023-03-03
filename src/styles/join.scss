@@ -169,27 +169,40 @@
 			.img-fileWrapper {
 				display: flex;
 				width: 320px;
-			}
-			img.upload-img {
-				display: block;
-				width: 6em;
-				height: 5.8em;
-				border: 2px solid var(--disable-color);
-				border-radius: 6px;
-				margin-right: 2em;
-			}
-			label.upload-btn {
-				padding: 2.5em 1em 3.3em 1em;
-				cursor: pointer;
-				border: 2px solid var(--main-key-color);
-				border-radius: 6px;
-				color: var(--main-key-color);
-				font-weight: 600;
-				background-color: transparent;
-				// .upload-txt {
-				// 	width: 3em;
-				// 	height: 2.8em;
-				// }
+				.imgs-wrapper {
+					display: block;
+					position: relative;
+					img.upload-img {
+						display: block;
+						position: absolute;
+						width: 6em;
+						height: 5.8em;
+						border: 2px solid var(--disable-color);
+						border-radius: 6px;
+						// margin-right: 2em;
+					}
+					img.default-img {
+						display: block;
+						position: absolute;
+						object-fit: fill;
+						width: 6em;
+						height: 5.8em;
+						border: 2px solid var(--disable-color);
+						border-radius: 6px;
+					}
+				}
+				label.upload-btn {
+					display: block;
+					position: relative;
+					left: 8em;
+					padding: 2.5em 1em 3.3em 1em;
+					cursor: pointer;
+					border: 2px solid var(--main-key-color);
+					border-radius: 6px;
+					color: var(--main-key-color);
+					font-weight: 600;
+					background-color: transparent;
+				}
 			}
 			input#input_file {
 				display: none;
@@ -220,7 +233,6 @@
 			.check-wrapper {
 				display: flex;
 				flex-direction: column;
-				justify-content: space-evenly;
 				.check-item:first-child {
 					label {
 						font-size: 23px !important;

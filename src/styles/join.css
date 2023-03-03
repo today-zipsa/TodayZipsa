@@ -157,15 +157,32 @@
   display: flex;
   width: 320px;
 }
-#join .join-wrapper #filebox img.upload-img {
+#join .join-wrapper #filebox .img-fileWrapper .imgs-wrapper {
   display: block;
+  position: relative;
+}
+#join .join-wrapper #filebox .img-fileWrapper .imgs-wrapper img.upload-img {
+  display: block;
+  position: absolute;
   width: 6em;
   height: 5.8em;
   border: 2px solid var(--disable-color);
   border-radius: 6px;
-  margin-right: 2em;
 }
-#join .join-wrapper #filebox label.upload-btn {
+#join .join-wrapper #filebox .img-fileWrapper .imgs-wrapper img.default-img {
+  display: block;
+  position: absolute;
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 6em;
+  height: 5.8em;
+  border: 2px solid var(--disable-color);
+  border-radius: 6px;
+}
+#join .join-wrapper #filebox .img-fileWrapper label.upload-btn {
+  display: block;
+  position: relative;
+  left: 8em;
   padding: 2.5em 1em 3.3em 1em;
   cursor: pointer;
   border: 2px solid var(--main-key-color);
@@ -201,7 +218,6 @@
 #join .label-wrapper--agree .check-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
 }
 #join .label-wrapper--agree .check-wrapper .check-item:first-child label {
   font-size: 23px !important;
