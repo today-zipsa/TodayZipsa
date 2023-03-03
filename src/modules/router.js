@@ -71,10 +71,13 @@ router
 			renderPage([Header, JoinPage, Footer]);
 			Join();
 		},
-		"/payment": () => {
-			renderPage([Header, PaymentPage(), Footer]);
-		},
-		"/payment/done": () => {
+		"/payment/:productId": (match) => {
+      const { productId } = match?.data;
+
+      console.log({ productId });
+      renderPage([Header, PaymentPage(productId), Footer]);
+    },
+		"/paymentDone": () => {
 			renderPage([Header, PaymentDonePage(), Footer]);
 		},
 		"/admin": () => {
@@ -85,10 +88,10 @@ router
 			const { productId } = match?.data;
 			console.log({ productId });
 
-			renderPage(document.createTextNode(`product ID => ${productId}`));
-		},
-	})
-	.resolve();
+      renderPage(document.createTextNode(`product ID => ${productId}`));
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
 	console.log({ app, page });

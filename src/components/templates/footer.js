@@ -12,7 +12,7 @@ fInfoTitle.innerText = "찾아오시는 길";
 const fInfoContent = document.createElement("label");
 fInfoContent.className = "content";
 fInfoContent.innerText = "서울 특별시 강남구 공주로 17길 NW1건물 8JR층";
-
+//a
 const fCatagories = document.createElement("div");
 fCatagories.className = "footer--catagories";
 const fCatagoriesTitle = document.createElement("label");
