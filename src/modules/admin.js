@@ -1,7 +1,7 @@
 import { request } from "../api/common.js";
 import { util } from "../api/util.js";
 
-export default function Admin() {
+export default async function Admin() {
   /**
    * 변수 선언
    *
@@ -589,4 +589,3 @@ export default function Admin() {
     button.classList.remove("disabled");
     button.removeAttribute("disabled");
   }
-}

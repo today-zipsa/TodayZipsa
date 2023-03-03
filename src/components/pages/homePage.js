@@ -5,38 +5,50 @@ const homePage = util.createEl("div", { class: "home-page" });
 /**
  * 메인 - 카테고리 메뉴
  */
-const homeHeaderEl = util.createEl('div', {class: 'home-header'});
-const homeMenusEl = util.createEl('div', {class: 'home-top-menus'});
-const homeNavDivEl = util.createEl('div', {class: 'home-top-div'});
-const homeNavEl = util.createEl('nav', {class: 'home-top-nav'});
+const homeHeaderEl = util.createEl("div", { class: "home-header" });
+const homeMenusEl = util.createEl("div", { class: "home-top-menus" });
+const homeNavDivEl = util.createEl("div", { class: "home-top-div" });
+const homeNavEl = util.createEl("nav", { class: "home-top-nav" });
 
-const homeEl = util.createEl('a', {class: 'home-link'}, {href: '/'});
-const homeDivEl = util.createEl('div');
-const homePEl = util.createEl('p', {textContent: '홈'});
+const homeEl = util.createEl("a", { class: "home-link" }, { href: "/" });
+const homeDivEl = util.createEl("div");
+const homePEl = util.createEl("p", { textContent: "홈" });
 homeDivEl.append(homePEl);
 homeEl.append(homeDivEl);
 
-const hotelEl = util.createEl('a', {class: 'home-category'}, {href: '/hotel'});
-const hotelDivEl = util.createEl('div');
-const hotelPEl = util.createEl('p', {textContent: '호텔'});
+const hotelEl = util.createEl(
+  "a",
+  { class: "home-category" },
+  { href: "/hotel" }
+);
+const hotelDivEl = util.createEl("div");
+const hotelPEl = util.createEl("p", { textContent: "호텔" });
 hotelDivEl.append(hotelPEl);
 hotelEl.append(hotelDivEl);
 
-const rentalEl = util.createEl('a', {class: 'home-category'}, {href: '/rental'});
-const rentalDivEl = util.createEl('div');
-const rentalPEl = util.createEl('p', {textContent: '차량'});
+const rentalEl = util.createEl(
+  "a",
+  { class: "home-category" },
+  { href: "/rental" }
+);
+const rentalDivEl = util.createEl("div");
+const rentalPEl = util.createEl("p", { textContent: "렌트카" });
 rentalDivEl.append(rentalPEl);
 rentalEl.append(rentalDivEl);
 
-const sitterEl = util.createEl('a', {class: 'home-category'}, {href: '/sitter'});
-const sitterDivEl = util.createEl('div');
-const sitterPEl = util.createEl('p', {textContent: '펫시터'});
+const sitterEl = util.createEl(
+  "a",
+  { class: "home-category" },
+  { href: "/sitter" }
+);
+const sitterDivEl = util.createEl("div");
+const sitterPEl = util.createEl("p", { textContent: "펫시터" });
 sitterDivEl.append(sitterPEl);
 sitterEl.append(sitterDivEl);
 
-const spaEl = util.createEl('a', {class: 'home-category'}, {href: '/spa'});
-const spaDivEl = util.createEl('div');
-const spaPEl = util.createEl('p', {textContent: '스파'});
+const spaEl = util.createEl("a", { class: "home-category" }, { href: "/spa" });
+const spaDivEl = util.createEl("div");
+const spaPEl = util.createEl("p", { textContent: "스파" });
 spaDivEl.append(spaPEl);
 spaEl.append(spaDivEl);
 
@@ -44,6 +56,43 @@ homeNavEl.append(homeEl, hotelEl, rentalEl, sitterEl, spaEl);
 homeNavDivEl.append(homeNavEl);
 homeMenusEl.append(homeNavDivEl);
 homeHeaderEl.append(homeMenusEl);
+
+/**
+ * 배너 swiper
+ */
+const swiperEl = util.createEl("div", { class: "swiper" });
+const swiperWrapper = util.createEl("div", { class: "swiper-wrapper" });
+
+const swiperSlide1 = util.createEl("div", { class: "swiper-slide" });
+const swiperImg1 = util.createEl("img", {
+  src: require("../../asset/swiper1.jpg"),
+});
+swiperSlide1.append(swiperImg1);
+
+const swiperSlide2 = util.createEl("div", { class: "swiper-slide" });
+const swiperImg2 = util.createEl("img", {
+  src: require("../../asset/swiper2.jpg"),
+});
+swiperSlide2.append(swiperImg2);
+
+const swiperSlide3 = util.createEl("div", { class: "swiper-slide" });
+const swiperImg3 = util.createEl("img", {
+  src: require("../../asset/swiper3.jpg"),
+});
+swiperSlide3.append(swiperImg3);
+
+swiperWrapper.append(swiperSlide1);
+swiperWrapper.append(swiperSlide2);
+swiperWrapper.append(swiperSlide3);
+
+const swiperButtonNext = util.createEl("div", { class: "swiper-button-next" });
+const swiperButtonPrev = util.createEl("div", { class: "swiper-button-prev" });
+const swiperPagination = util.createEl("div", { class: "swiper-pagination" });
+
+swiperEl.append(swiperWrapper);
+swiperEl.append(swiperButtonNext);
+swiperEl.append(swiperButtonPrev);
+swiperEl.append(swiperPagination);
 
 /**
  * 메인 - 상품 노출
@@ -165,5 +214,5 @@ homeMainEl.append(mainLayoutEl);
 // loading bar
 const loadingEl = util.createEl("div", { id: "loading_bar" });
 
-homePage.append(homeHeaderEl, homeMainEl, loadingEl);
+homePage.append(homeHeaderEl, swiperEl, homeMainEl, loadingEl);
 export default homePage;
