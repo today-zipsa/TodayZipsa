@@ -7,6 +7,7 @@ import Footer from "../components/templates/footer";
 /**
  * Pages
  */
+import detailPage from "../components/pages/detailPage";
 import homeMainPage from "../components/pages/homePage";
 import categoryPage from "../components/pages/categoryPage";
 import AdminPage from "../components/pages/adminPage";
@@ -105,9 +106,10 @@ function renderPage(page) {
 }
 
 /**
- * 홈메인 /
+ * 홈페이지 /
+ * 호텔페이지 /hotel
  * 시터페이지 /sitter
- * 스낵페이지 /snack
+ * 스낵페이지 /spa
  * 렌트페이지 /rental
  * 상품상세페이지 /detail
  * 마이페이지 /my
@@ -115,8 +117,8 @@ function renderPage(page) {
  * 마이결제상세페이지 /my/payment/detail
  * 로그인페이지 /login
  * 회원가입페이지 /join
- * 결제페이지1 /payment1
- * 결제페이지2 /payment2
+ * 결제페이지 /payment
+ * 결제페이지 /paymentDone
  * 어드민페이지 /admin
  *
  *
