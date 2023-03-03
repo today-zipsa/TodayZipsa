@@ -1,7 +1,6 @@
 import { accounts } from "../../api/my_accounts_dummy";
 import { payments } from "../../api/my_payment_dummy";
 import { request } from "../../api/common";
-import Navigo from "navigo";
 
 
 
@@ -9,10 +8,6 @@ import Navigo from "navigo";
 export default function PaymentPage(strId) {
    // *더미데이터 가져오기
   const BankAccountList = accounts.accounts;
-
-  // 계좌목록 (수정필요)
-  //const accountlist = document.querySelector(".payment1-emtpy");
-  //console.log("accountlist>>>> ", accountlist);
 
   //payment.html
   const paymentOrderpage = document.createElement("div");
@@ -44,15 +39,11 @@ export default function PaymentPage(strId) {
   const paymentLastAccountWrapper = document.createElement("div");
   const paymentLastDelivery = document.createElement("div");
   const paymentLastDeliveryWrapper = document.createElement("div");
-  // const paymentLastDiscount = document.createElement("div");
   const paymentLastDiscountWrapper = document.createElement("div");
   const paymentLastTotalAccount = document.createElement("div");
   const paymentLastTotalAccountWrapper = document.createElement("div");
   const paymentBtnA = document.createElement("a")
 	paymentBtnA.setAttribute("id","payment1-btn-a-id")
-	// paymentBtnA.href = "/payment/done"
-	// paymentBtnA.href = {check_input.value >= abc ? "../payment/done" : }
-	// paymentBtnA.setAttribute('data-navigo', '');
 	const paymentBtn = document.createElement("button");
 
   //classlist.add
@@ -89,7 +80,6 @@ export default function PaymentPage(strId) {
   paymentLastAccountWrapper.classList.add("payment1-last-account-wrapper");
   paymentLastDelivery.classList.add("payment1-text");
   paymentLastDeliveryWrapper.classList.add("payment1-last-delivery-wrapper");
-  // paymentLastDiscount.classList.add("payment1-text");
   paymentLastDiscountWrapper.classList.add("payment1-last-discount-wrapper");
   paymentLastTotalAccount.classList.add("payment1-text");
   paymentLastTotalAccountWrapper.classList.add(
@@ -108,13 +98,10 @@ export default function PaymentPage(strId) {
   paymentOrdererOrderer.textContent = "주문자";
   paymentEmail.textContent = "E-mail";
   paymentPayment.innerHTML = "<h3>결제수단</h3>";
-  // paymentHow.textContent = "결제수단";
   paymentAccountTransfer.textContent = "계좌이체";
-  // paymentEmtpy.innerHTML = "<h4>등록된 계좌가 없습니다</h4>"
   paymentMoney.innerHTML = "<h3>결제 금액</h3>";
   paymentLastAccount.textContent = "주문금액";
   paymentLastDelivery.textContent = "배송비";
-  // paymentLastDiscount.textContent = "상품할인";
   paymentLastTotalAccount.textContent = "총 금액";
 
   //append
@@ -148,7 +135,6 @@ export default function PaymentPage(strId) {
   paymentLastpayContainer.append(paymentLastDeliveryWrapper);
   paymentLastDeliveryWrapper.append(paymentLastDelivery);
   paymentLastpayContainer.append(paymentLastDiscountWrapper);
-  // paymentLastDiscountWrapper.append(paymentLastDiscount);
   paymentLastpayContainer.append(paymentLastTotalAccountWrapper);
   paymentLastTotalAccountWrapper.append(paymentLastTotalAccount);
 	paymentLastpayContainer.append(paymentBtnA)
@@ -220,47 +206,19 @@ export default function PaymentPage(strId) {
 
   //결제버튼!!BTN수정한것
   document.querySelector(".payment1-btn").innerText = "결제버튼";
-  // document.querySelector(".payment-btn").addEventListener('click', ()=> {/*원하시는 콜백함수 아무거나*/})
 
-  // span  태그를 만들어서
-  // 계좌목록 없음 텍스트를 넣어서
-  // append
-
-  //추후 수정
-  // if (BankAccountList.length === 0) {
-  //   accountlist.innerHTML = `<span>계좌목록이 없습니다</span>`;
-  // }
-
-  // console.log(BankAccountList)
-  // 뱅크어카운트 리스트를 순회해서
-  // 각 요소마다 li 태그를 생성하고
-  // li 태그에 account 정보를 span태그 안에 넣고
-  // 원하는 위치에 접목시킨다.
-  // input(type:radio)를 추가
-
-  //li태그 예외처리(type Error처리)
-
-  // payInfo = request
-  // const accounts = payInfo.accounts;
-  // for (let i = 0; i < accounts.length; i++) {}
-  // BankAccountList.forEach((account) => {});
-
-  //만약 계좌 잔액이 부족한 경우, ‘잔액이 부족합니다’라는 단순 텍스트 알림만 보여 주어야 한다.
-  //단일계좌기준
-  //bankaccount리스트에서 balance값이 상품값보다 부족할경우
-  //'잔액이 부족합니다'텍스트 출력
 
   let priceNum = 0;
 
   getProductInfo(strId);
   getUserInfo();
   getPaymentInfo();
-
+  
   async function getProductInfo(strId) {
     const productInfo = await request("PRD07", { productId: strId });
     console.log("productInfo>> ", productInfo);
     const payment_span_title = document.createElement("span");
-    payment_span_title.innerHTML = productInfo.title; // payments[0].product.title;
+    payment_span_title.innerHTML = productInfo.title;
     payment_span_title.style.flexGrow = 1;
     payment_span_title.style.margin = "10px";
     paymentProductInfo.after(payment_span_title);
@@ -360,6 +318,17 @@ export default function PaymentPage(strId) {
       return;
     }
   }
+  async function fn_product_purchase() {
+    console.log(accId)
+    const accId = check_input
+    const params = {
+      productId: strId,
+      accountId: accId,
+    };
+    const res = await request("PRD09", params);
+    console.log("purchase>>> ", res);
+  }
+  
 
   const totalBalance = accounts.totalBalance;
   const productPrice = payments;
@@ -368,12 +337,13 @@ export default function PaymentPage(strId) {
   //계좌목록 css적용
   paymentEmtpy.setAttribute("style", "list-style:none");
 
-
+  
   paymentBtn.addEventListener("click", () => {
     //은행잔고금액
     const check_input = document.querySelector(
       'input[name="accountSelection"]:checked'
-    );
+      );
+      
 
     // 계좌목록 클릭 안했을때 텍스트 출력하기
 		if (check_input == null) {
@@ -382,6 +352,7 @@ export default function PaymentPage(strId) {
 
     //은행잔고와 상품금액 비교. payments[]<값 비교
     if (Number(check_input.value) >= priceNum) {
+      fn_product_purchase()
       window.location.href = "/paymentDone";
 		
     } else {
