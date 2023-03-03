@@ -83,7 +83,6 @@ router
 		},
 		"product/:productId": (match) => {
 			const { productId } = match?.data;
-
 			console.log({ productId });
 
 			renderPage(document.createTextNode(`product ID => ${productId}`));
@@ -92,6 +91,7 @@ router
 	.resolve();
 
 function renderPage(page) {
+	console.log({ app, page });
 	app.innerHTML = "";
 	if (Array.isArray(page)) {
 		app.append(...page);

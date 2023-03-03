@@ -272,28 +272,88 @@
 			justify-content: space-around;
 			align-items: center;
 			flex-direction: column;
+			position: relative;
 
-			.input-box {
-				display: flex;
-				flex-direction: column;
-				.input-bar-name {
-					font-weight: 600;
-					margin-bottom: 5px;
-					color: #2f3438;
-					padding-left: 3px;
-				}
-				.input-bar {
-					height: 31px;
-					width: 280px;
-					border: 0.08em solid #dcdee0;
-					padding-left: 5px;
-					border-radius: 5px;
-				}
-
-				&::placeholder {
-					color: #dcdee06c;
+			.close-btn {
+				position: absolute;
+				top: 10px;
+				right: 10px;
+				width: 24px;
+				height: 24px;
+				cursor: pointer;
+			}
+			.banks-box {
+				.bank-selected-bar {
+					padding-left: 10px;
+					border: 0px solid rgba(167, 160, 160, 0.3);
+					border-radius: 20px;
+					&:focus {
+						outline: 2.6px solid var(--main-key-color);
+					}
 				}
 			}
+
+			.account-number-box {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 65px;
+				.account-number-block-box {
+					border-radius: 40px;
+					border: solid 1px white;
+					z-index: 1;
+					overflow: hidden;
+					box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+					height: 50px;
+					.account-input-block {
+						padding-left: 10px;
+						border: 0px;
+						height: inherit;
+						width: 50px;
+
+						&:focus {
+							outline: none;
+						}
+					}
+				}
+				.input-alert-word {
+					height: 10px;
+					margin-top: 5px;
+					color: #6f6f6f;
+					font-weight: 600;
+					font-size: 12px;
+				}
+			}
+
+			.card-name {
+				color: #f1f1f1;
+				letter-spacing: 5px;
+				font-family: monospace;
+				font-size: larger;
+			}
+
+			// .input-box {
+			// 	display: flex;
+			// 	flex-direction: column;
+			.input-bar-name {
+				font-weight: 600;
+				margin-bottom: 5px;
+				color: #2f3438;
+				padding-left: 3px;
+			}
+			.input-bar {
+				height: 31px;
+				width: 280px;
+				border: 0.08em solid #dcdee0;
+				padding-left: 5px;
+				border-radius: 5px;
+			}
+
+			&::placeholder {
+				color: #dcdee06c;
+			}
+			// }
 			.modal-btn-box {
 				display: flex;
 				flex-direction: column;
