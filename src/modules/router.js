@@ -71,10 +71,13 @@ router
 			renderPage([Header, JoinPage, Footer]);
 			Join();
 		},
-		"/payment": () => {
-			renderPage([Header, PaymentPage(), Footer]);
-		},
-		"/payment/done": () => {
+		"/payment/:productId": (match) => {
+      const { productId } = match?.data;
+
+      console.log({ productId });
+      renderPage([Header, PaymentPage(productId), Footer]);
+    },
+		"/paymentDone": () => {
 			renderPage([Header, PaymentDonePage(), Footer]);
 		},
 		"/admin": () => {
