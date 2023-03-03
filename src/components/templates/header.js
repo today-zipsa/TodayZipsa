@@ -85,7 +85,7 @@ function setLogout() {
 }
 
 function getNextUrl() {
-	const id = JSON.parse(localStorage.getItem("id"));
+	const id = localStorage.getItem("id");
 	if (id === "admin@zipsa.com") {
 		return "/admin";
 	} else {
