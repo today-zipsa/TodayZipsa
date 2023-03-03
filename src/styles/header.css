@@ -57,10 +57,18 @@
   right: 0.6em;
 }
 #app .my-header .my-header-wrapper .welcome-word {
+  text-decoration: none;
+  color: #000;
+}
+#app .my-header .my-header-wrapper .welcome-word .word {
   font-size: 1em;
   font-weight: 600;
 }
-#app .my-header .my-header-wrapper .logout {
+#app .my-header .my-header-wrapper .btn {
+  text-decoration: none;
+  color: #000;
+}
+#app .my-header .my-header-wrapper .btn .btn-name {
   font-size: 1em;
   font-weight: 600;
   margin-right: 0.2em;

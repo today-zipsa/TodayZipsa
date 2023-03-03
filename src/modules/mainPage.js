@@ -25,6 +25,9 @@ searchBar.addEventListener("input", function (e) {
 
 const searchBtn = document.createElement('img');
 searchBtn.setAttribute('src', '../asset/btnImg/search_btn.png');
+
+
+
 searchBtn.setAttribute('alt', 'search-btn');
 searchBtn.classList.add('search-btn');
 
@@ -242,11 +245,12 @@ async function addHotels() {
 // search.addEventListener("click", function () {
 //     if(inputValue){
 //         getHotels(inputValue, 1)
+
 //     }
 // })
 
-
 async function getHotels(searchText, pageNumber){
+
     const res = await fetch("https://asia-northeast3-heropy-api.cloudfunctions.net/api/products/search", {
         method: "POST",
         headers,
@@ -346,8 +350,6 @@ async function getHotels(searchText, pageNumber){
             document.body.append(div)
         }
     }
-    const pagesCount = Math.ceil(json.length / itemsPerPage)
-    const paginationDiv = document.createElement("div")
 
     paginationDiv.style.position = "absolute";
     paginationDiv.style.top = "950px";

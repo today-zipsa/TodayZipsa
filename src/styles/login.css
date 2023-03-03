@@ -43,6 +43,7 @@
   margin: 0.5em 0 0.5em 14.5em;
 }
 #login-page .login-wrapper--find button {
+  cursor: pointer;
   border: none;
   background-color: transparent;
   font-size: 14px;
@@ -54,6 +55,7 @@
   flex-direction: column;
 }
 #login-page .login-wrapper .btn-wrapper button {
+  cursor: pointer;
   width: 26em;
   height: 3.5em;
   margin: 10px;
@@ -66,80 +68,8 @@
   border: none;
   color: #fff;
 }
-#login-page .login-wrapper .btn-wrapper > .join-btn {
-  background-color: transparent;
+#login-page .login-wrapper .btn-wrapper .join-btn {
+  background-color: #fff;
   border: 1px solid var(--main-key-color);
   color: var(--main-key-color);
-
-}
-
-footer {
-  margin-top: 100px;
-  color: var(--disable-color);
-}
-footer .footer--top {
-  display: flex;
-  justify-content: space-between;
-  padding: 2% 12%;
-  align-items: center;
-  display: grid;
-  -moz-column-gap: 30px;
-       column-gap: 30px;
-  grid-template-columns: auto auto auto auto;
-  background-color: #f7f9fa;
-}
-footer .footer--top h1 {
-  font-size: 28px;
-  font-weight: 600;
-  margin-bottom: 75px;
-}
-footer .footer--top label.title {
-  font-size: 18px;
-  font-weight: 600;
-}
-footer .footer--top label.content {
-  font-size: 16px;
-  font-weight: 600;
-}
-footer .footer--top .footer--info {
-  display: flex;
-  flex-direction: column;
-  margin: 0 30px;
-}
-footer .footer--top .footer--info label.title {
-  margin-bottom: 10px;
-}
-footer .footer--top .footer--catagories {
-  display: flex;
-  flex-direction: column;
-}
-footer .footer--top .footer--catagories label {
-  margin: 10px 0;
-}
-footer .footer--top .footer--customerCare {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 70px;
-}
-footer .footer--top .footer--customerCare label {
-  margin: 10px 0;
-}
-footer .footer--top .footer--pages {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 70px;
-}
-footer .footer--top .footer--pages label {
-  margin: 10px 0;
-}
-footer .footer--bottom {
-  background-color: #e6f5ed;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1% 20%;
-}
-footer .footer--bottom img {
-  margin: 0 10px;
-
 }/*# sourceMappingURL=login.css.map */

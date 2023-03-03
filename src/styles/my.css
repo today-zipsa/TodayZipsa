@@ -238,4 +238,84 @@
   font-size: 0.7em;
   font-weight: 400;
   color: var(--main-key-color);
+}
+.my-section .modal-two {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(144, 145, 144, 0.4078431373);
+  z-index: 0;
+  position: absolute;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.my-section .modal-two .modal-two-template {
+  padding: 10px 0px;
+  margin-top: 50px;
+  width: 351px;
+  height: 490px;
+  background-color: #fff;
+  border-radius: 0.3em;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.my-section .modal-two .modal-two-template .input-box {
+  display: flex;
+  flex-direction: column;
+}
+.my-section .modal-two .modal-two-template .input-box .input-bar-name {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #2f3438;
+  padding-left: 3px;
+}
+.my-section .modal-two .modal-two-template .input-box .input-bar {
+  height: 31px;
+  width: 280px;
+  border: 0.08em solid #dcdee0;
+  padding-left: 5px;
+  border-radius: 5px;
+}
+.my-section .modal-two .modal-two-template .input-box::-moz-placeholder {
+  color: rgba(220, 222, 224, 0.4235294118);
+}
+.my-section .modal-two .modal-two-template .input-box::placeholder {
+  color: rgba(220, 222, 224, 0.4235294118);
+}
+.my-section .modal-two .modal-two-template .modal-btn-box {
+  display: flex;
+  flex-direction: column;
+}
+.my-section .modal-two .modal-two-template .modal-btn-box .complete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-weight: 500;
+  border: 0.08em solid var(--main-key-color);
+  margin-right: 0.4em;
+  color: var(--main-key-color);
+  border-radius: 0.3em;
+  cursor: pointer;
+  height: 35px;
+  width: 289px;
+  margin-bottom: 5px;
+}
+.my-section .modal-two .modal-two-template .modal-btn-box .cancel-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7em;
+  font-weight: 500;
+  border: 0.08em solid #dcdee0;
+  border-radius: 0.3em;
+  cursor: pointer;
+  height: 35px;
+  width: 289px;
+}
+.my-section .--hide {
+  display: none;
 }/*# sourceMappingURL=my.css.map */

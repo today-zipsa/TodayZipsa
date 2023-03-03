@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Jal_Onuel";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --main-key-color: #0c8a4e;
+  --main-bg-color: #f9f9f9;
+  --required-color: #de0404;
+  --disable-color: #666666;
+  --input-color: #d9d9d9;
+}
+
+footer {
+  margin: 100px 0 0 0;
+  background-color: rgb(247, 249, 250);
+  color: var(--disable-color);
+}
+footer .footerWrapper {
+  display: flex;
+  align-items: center;
+}
+footer .footerWrapper--top {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 12%;
+  align-items: center;
+  display: grid;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+  grid-template-columns: auto auto auto auto;
+  background-color: #f7f9fa;
+}
+footer .footerWrapper--top h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 75px;
+}
+footer .footerWrapper--top label.title {
+  font-size: 18px;
+  font-weight: 600;
+}
+footer .footerWrapper--top label.content {
+  font-size: 16px;
+  font-weight: 600;
+}
+footer .footerWrapper--top .footer--info {
+  display: flex;
+  flex-direction: column;
+  margin: 0 30px;
+}
+footer .footerWrapper--top .footer--info label.title {
+  margin-bottom: 10px;
+}
+footer .footerWrapper--top .footer--catagories {
+  display: flex;
+  flex-direction: column;
+}
+footer .footerWrapper--top .footer--catagories label {
+  margin: 10px 0;
+}
+footer .footerWrapper--top .footer--customerCare {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+footer .footerWrapper--top .footer--customerCare label {
+  margin: 10px 0;
+}
+footer .footerWrapper--top .footer--pages {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 70px;
+}
+footer .footerWrapper--top .footer--pages label {
+  margin: 10px 0;
+}
+footer .footerWrapper--bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 14%;
+  background-color: #f7f9fa;
+}
+footer .footerWrapper--bottom .social-wrapper img {
+  margin: 0 10px;
+}/*# sourceMappingURL=footer.css.map */
