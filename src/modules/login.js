@@ -55,7 +55,7 @@ export default async function Login() {
 			isValid = false;
 		}
 
-		if (!RegexPW.test(inputPW)) {
+		if (!RegexPW.test(inputPW.value)) {
 			alert("가입하신 비밀번호가 아닙니다 :(");
 			isValid = false;
 		}
@@ -66,6 +66,7 @@ export default async function Login() {
 	//로그인 버튼
 	loginBtnEl.addEventListener("click", async () => {
 		if (loginValidator()) {
+			console.log("되나?");
 			params.email = loginID.value;
 			params.password = loginPW.value;
 
@@ -75,9 +76,9 @@ export default async function Login() {
 			if (res === "유효한 사용자가 아닙니다.") {
 				alert(res);
 			}
-			if (res.accessToken != null) {
-				window.location.href = "/";
+			if (res.accessToken !== null) {
 				submitLocalStorage(res);
+				window.location.href = "/";
 			}
 		}
 	});
@@ -91,8 +92,8 @@ export default async function Login() {
 		//localStorage 초기화
 		window.localStorage.clear();
 		localStorage.setItem("accessToken", res.accessToken);
-		localStorage.setItem("email", res.email);
-		localStorage.setItem("displayName", res.displayName);
-		localStorage.setItem("profileImg", res.profileImgBase64);
+		localStorage.setItem("email", res.user.email);
+		localStorage.setItem("displayName", res.user.displayName);
+		localStorage.setItem("profileImg", res.user.profileImgBase64);
 	}
 }

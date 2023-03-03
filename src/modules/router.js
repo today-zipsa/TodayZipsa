@@ -26,6 +26,7 @@ import Category from "../modules/category";
 import Admin from "../modules/admin";
 import My from "../modules/my";
 import Join from "../modules/join";
+import Login from "../modules/login";
 
 const router = new Navigo("/");
 
@@ -61,6 +62,7 @@ router
     },
     "/my": () => {
       renderPage([Header, MyPage(), Footer]);
+      My();
     },
     "/my/order/detail": () => {
       renderPage(/**MyOrderDetailPage*/);
@@ -70,6 +72,7 @@ router
     },
     "/login": () => {
       renderPage([Header, LoginPage, Footer]);
+      Login();
     },
     "/join": () => {
       renderPage([Header, JoinPage, Footer]);
@@ -96,6 +99,7 @@ router
   .resolve();
 
 function renderPage(page) {
+  console.log({ app, page });
   app.innerHTML = "";
   if (Array.isArray(page)) {
     app.append(...page);
