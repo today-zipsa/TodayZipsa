@@ -2,6 +2,7 @@ import { request } from "../api/common.js";
 import { util } from "../api/util.js";
 
 export default async function Admin() {
+<<<<<<< HEAD
   /**
    * 변수 선언
    *
