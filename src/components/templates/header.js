@@ -1,5 +1,8 @@
 import { request } from "../../api/common";
+
 let token = localStorage.getItem("accessToken");
+let inputText = "";
+let isClickTwice = false;
 
 const Header = document.createElement("header");
 const headerWrapper = document.createElement("div");
@@ -74,6 +77,32 @@ logoutBtn.addEventListener("click", () => {
 	loginBtn.style.display = "inline";
 	logoutBtn.style.display = "none";
 	setLogout();
+});
+
+searchBar.addEventListener("input", () => {
+	inputText = searchBar.value;
+});
+
+searchBar.addEventListener("keydown", (event) => {
+	if (event.key === "Enter" && !event.isComposing) {
+		searchBtn.click();
+	}
+});
+
+searchBtn.addEventListener("click", async () => {
+	if (inputText === "") {
+		alert("검색어를 입력하세요.");
+		return;
+	}
+	if (isClickTwice) return;
+	isClickTwice = true;
+
+	window.location = `/search/${inputText}`;
+
+	//init
+	isClickTwice = false;
+	searchBar.value = "";
+	inputText = "";
 });
 
 function setLogout() {
