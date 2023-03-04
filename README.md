@@ -8,10 +8,10 @@
 <br /><br />
 ## 🐶 TodayZipsa 팀 소개
 이지영(팀장) | 이희서 | 김소희 | 이로운 | 정석화 
-:--: | :--: | :--: | :--: | :--: 
-<img src="https://avatars.githubusercontent.com/u/55748886?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/21377593?v=4" style="width: 200px" /> | <img src="https://avatars.githubusercontent.com/u/98999052?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/76941552?v=4" style="width: 200px;" /> | <img src="https://user-images.githubusercontent.com/76941552/222496605-341c257e-028d-48ef-b223-5991f2b66c6c.png" style="width: 200px"/>
+:--------: | :--: | :---: | :--: | :--: 
+<img src="https://avatars.githubusercontent.com/u/55748886?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/21377593?v=4" style="width: 150px" /> | <img src="https://avatars.githubusercontent.com/u/98999052?v=4" style="width: 150px;" /> | <img src="https://avatars.githubusercontent.com/u/76941552?v=4" style="width: 150px;" /> | <img src="https://user-images.githubusercontent.com/76941552/222496605-341c257e-028d-48ef-b223-5991f2b66c6c.png" style="width: 150px"/>
 [gygy7151](https://github.com/gygy7151) | [hlee686](https://github.com/hlee686) | [soheedev](https://github.com/soheedev) | [ronieo](https://github.com/ronieo) | [oysterjung](https://github.com/oysterjung) 
-[마이 페이지]<br> [주문 상세 페이지]<br> [결제 상세 페이지]<br> [로그인 페이지] <br>[공동 헤더]<br>[라우팅작업 및 유지보수]<br>[CI/CD]<br>|[메인 페이지]<br>- 제품 상세 페이지<br>|[어드민 페이지]<br>- 상품 관리페이지<br>- 거래 내역 페이지<br>[메인 페이지]<br>|[회원가입 페이지]<br> [로그인 페이지]<br>- 공동 Footer<br>|[결제 페이지]<br> [결제 완료 페이지]
+[마이 페이지]<br>  [주문 상세 페이지]<br>  [결제 상세 페이지]<br>  [회원가입 페이지]<br> [공동 헤더]<br> [라우팅작업 및 유지보수]<br> [CI/CD]<br>|[메인 페이지]<br>- 제품 상세 페이지<br>|[어드민 페이지]<br>- 상품 관리페이지<br>- 거래 내역 페이지<br> [메인 페이지]<br>|[회원가입 페이지]<br> [로그인 페이지]<br> [404 페이지]<br> [공동 Footer]<br>|[결제 페이지]<br> [결제 완료 페이지]
 
 <br/><br/>
  ## 📝 오늘의집사 프로젝트 소개
@@ -21,29 +21,46 @@
  - 관리자는 거래내역, 상품 등록, 등록 상품 내역을 볼 수 있고, 상품등록 및 수정, 거래취소 및 거래확정이 가능합니다.
  
 <br/><br/>
-![pages]() 웹 캡처 이미지 들어갈 자리
-<br/><br />
+### 🐶 메인페이지
+![Image](https://user-images.githubusercontent.com/76941552/222914196-275173fa-269b-4842-ace3-e47a77ff4cfe.png)
+![Image](https://user-images.githubusercontent.com/76941552/222914197-5b930c6b-837c-49ab-b71a-59326ce893d5.png)
+![Image](https://user-images.githubusercontent.com/76941552/222914199-3ead862e-18e7-4612-961c-db2dc97d6590.png)
 
 <br/><br />
-## ⏱오늘의집사 작업과정
+### 🐱 카테고리 페이지
+![Image](https://user-images.githubusercontent.com/76941552/222914198-79ba805f-6300-4278-9a70-4e769c3be2ec.png)
+
+<br/><br />
+### 🐶 검색 시 출력되는 화면
+![pages](https://user-images.githubusercontent.com/98999052/222499827-9faf887d-4bab-447a-bf02-4b4f2b2f6752.png)
+
+<br/><br />
+### 🐱 어드민 페이지
+![pages](https://user-images.githubusercontent.com/98999052/222729393-204bfe95-d435-479d-bbc3-ff2e1885b249.png)
+
+<br/><br />
+## ⏱ 오늘의집사 작업과정 - private라 이미지 파일을 첨부합니다 :)
  [TodayZipsa Project](https://github.com/orgs/today-zipsa/projects/2/views/1)
+
+![Image](https://user-images.githubusercontent.com/76941552/222759263-dc7c18a6-ae09-44e2-8ab7-7685864014da.png)
+
 <br/><br />
 
 - 작업 기간 : 2023.01.30 ~ 2023.03.03
-- 데모 사이트 : [🐾오늘의집사🐾]()
+- 데모 사이트 : [🐾오늘의집사🐾](https://todayzipsa.netlify.app/ )
 - 팀 레포지토리 주소 : [TodayZipsa](https://github.com/today-zipsa/TodayZipsa)
 
 - 테스트용 계정
   - 일반 사용자
-    - ID : dorazi@user.com
-    - PW : zirado321
+    - ID : zipsa@user.com 
+    - PW : 1234qwer
   - 관리자
     - ID : admin@zipsa.com
     - PW : 1q2w3e4r
 <br/><br />
 ---
 <br/><br />
-### 🛠️사용한 기술 스택
+### 🛠️오늘의집사 기술 스택
 ```
 - Basic: `HTML`, `SCSS`, `JavaScript`
 - Library:  `Swiper`, `Navigo`, `sass`
@@ -53,7 +70,7 @@
 <br/><br />
 ---
 <br/><br />
-### 📁 프로젝트 구조
+### 📁 오늘의집사 프로젝트 구조
 ```
 ┌─ src
 │  ├─ api
@@ -79,7 +96,7 @@
 <br/><br />
 ---
 <br/><br />
-### 💻 프로젝트 실행 방법
+### 💻 오늘의집사 프로젝트 실행 방법
 ```bash
 1. $ git clone https://github.com/today-zipsa/TodayZipsa.git
 2. $ cd today-zipsa
