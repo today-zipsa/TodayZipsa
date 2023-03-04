@@ -74,7 +74,6 @@ export default function My() {
 			const profileImgUrl = profileImgInputBox.innerText;
 			const presentPassword = nowPasswordInputBox.innerText;
 			const newPassword = newPasswordInputBox.innerText;
-			const params = [userName, profileImgUrl, nowPassword, newPassword];
 
 			formData.displayName = userName;
 			formData.oldPassword = presentPassword;
@@ -141,6 +140,7 @@ export default function My() {
 
 		limitNumsLength = optionList[0].dataset.digits
 			.split("")
+			.map(Number)
 			.reduce((a, b) => a + b);
 		setBankImage(optionList[0].value, bankImg);
 		setAccountNumsBlock(optionList[0].dataset.digits, accountNumberBox);
@@ -173,29 +173,30 @@ export default function My() {
 			setAccountNumsBlock(option.dataset.digits, accountNumberBox);
 			onChange(option);
 		});
-
+		console.log(limitNumsLength);
 		icTagBtn.addEventListener("click", async (e) => {
 			let accountNumbers = "";
 			accountNumberBox.children[0]
 				.querySelectorAll(".account-input-block")
 				.forEach((block) => {
 					accountNumbers += block.value;
-					limitNumsLength += block.maxLength;
+					limitNumsLength += Number(block.maxLength);
 				});
 
 			if (!isDigit(accountNumbers)) {
 				formData.accountNumber = accountNumbers;
-				if (!setAddAccount(formData) || accountNumbers < limitNumsLength) {
+				if (!setAddAccount(formData) || accountNumbers === "") {
 					alert("올바르지 않은 계좌 번호입니다.");
 				} else {
 					alert("계좌가 정상적으로 등록 되었습니다.");
 					closeAddAccountModal();
 					ModalContents.innerHTML = "";
-
-					account;
 					renderAccountList();
 				}
+			} else {
+				debounceOnKeydown("계좌번호를 다시 입력해주세요!");
 			}
+			debounceOnKeydown("계좌번호를 다시 입력해주세요!");
 		});
 
 		closeBtn.addEventListener("click", (e) => {
@@ -300,7 +301,10 @@ function isDigit(word) {
 
 async function setAddAccount(formData) {
 	const res = await request("ACC03", formData);
-	if (typeof res === "string" && res.length > 1) {
+	if (
+		formData.accountNumber.match(/(?:[a-z]|[가-힣])+/gi) === true ||
+		res === "유효한 계좌번호가 아닙니다."
+	) {
 		console.log(res);
 		return false;
 	}
