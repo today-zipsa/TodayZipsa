@@ -9,7 +9,7 @@ import Footer from "../components/templates/footer";
  * Pages
  */
 
-import homeMainPage from "../components/pages/homePage";
+import mainPage from "../components/pages/mainPage";
 import searchPage from "../components/pages/searchPage";
 import categoryPage from "../components/pages/categoryPage";
 import detailPage from "../components/pages/detailPage";
@@ -19,17 +19,20 @@ import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
 import PaymentPage from "../components/pages/paymentPage";
 import PaymentDonePage from "../components/pages/paymentDonePage";
+import NotFoundPage from "../components/pages/404Page";
 
 /**
  * Modules
  */
-import Home from "./home";
+// import Main from "./main";
 import Search from "./search";
 import Category from "./category";
 import Admin from "./admin";
 import My from "./my";
 import Join from "./join";
 import Login from "./login";
+import Main from "./main";
+import NotFound from "./404";
 
 export const router = new Navigo("/");
 
@@ -52,8 +55,8 @@ router.hooks({
 router
 	.on({
 		"/": () => {
-			renderPage([Header, homeMainPage, Footer]);
-			Home();
+			renderPage([Header, mainPage, Footer]);
+			Main();
 		},
 		"/search/:searchText": (match) => {
 			const { searchText } = match?.data;
@@ -117,9 +120,16 @@ router
 
 			renderPage(document.createTextNode(`product ID => ${productId}`));
 		},
+		"/404": () => {
+			renderPage([Header, NotFoundPage(), Footer]);
+			NotFound();
+		},
 	})
 	.notFound(() => {
-		router.navigate("/");
+		router.navigate("/404");
+		setTimeout(() => {
+			router.navigate("/");
+		}, 3000);
 	})
 	.resolve();
 
