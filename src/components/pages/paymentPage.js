@@ -297,6 +297,7 @@ export default function PaymentPage(strId) {
           const radioEl = document.createElement("input");
           radioEl.type = "radio";
           radioEl.name = "accountSelection";
+          radioEl.dataset.accountId = accounts[i].id;
           radioEl.value = accounts[i].balance;
           liEl.appendChild(radioEl);
           const spanEl = document.createElement("span");
@@ -318,18 +319,7 @@ export default function PaymentPage(strId) {
       return;
     }
   }
-  async function fn_product_purchase() {
-    console.log(accId)
-    const accId = check_input
-    const params = {
-      productId: strId,
-      accountId: accId,
-    };
-    const res = await request("PRD09", params);
-    console.log("purchase>>> ", res);
-  }
   
-
   const totalBalance = accounts.totalBalance;
   const productPrice = payments;
   checkBalance(totalBalance, productPrice);
@@ -338,7 +328,7 @@ export default function PaymentPage(strId) {
   paymentEmtpy.setAttribute("style", "list-style:none");
 
   
-  paymentBtn.addEventListener("click", () => {
+  paymentBtn.addEventListener("click", async () => {
     //은행잔고금액
     const check_input = document.querySelector(
       'input[name="accountSelection"]:checked'
@@ -350,15 +340,28 @@ export default function PaymentPage(strId) {
 			paymentFailModal.style.display = "block"
 		}
 
+    const acctId = check_input.dataset.accountId;
+
     //은행잔고와 상품금액 비교. payments[]<값 비교
     if (Number(check_input.value) >= priceNum) {
-      fn_product_purchase()
-      window.location.href = "/paymentDone";
-		
+      const params = {
+        productId: strId,
+        accountId: acctId,
+      };
+      const res = await request("PRD09", params);
+      console.log("purchase>>> ", res);
+
+      if(res){
+        window.location.href = "/paymentDone";
+      } else {
+        alert('결제 중 오류가 발생했습니다. 다시 시도해주세요.');
+      }
+    
     } else {
       paymentModal.style.display = "block";
     }
   });
+
 	//마이페이지 이동 버튼 눌렀을때 마이페이지로 이동
 	paymentModalBtnMove.addEventListener('click',() =>{
 		window.location.href = "/my"
