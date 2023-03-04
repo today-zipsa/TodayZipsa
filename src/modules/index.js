@@ -20,14 +20,14 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
 /**
  * Modules
  */
-import Home from "../modules/home";
-import Category from "../modules/category";
-import Admin from "../modules/admin";
-import My from "../modules/my";
-import Join from "../modules/join";
-import Login from "../modules/login";
+import Home from "./home";
+import Category from "./category";
+import Admin from "./admin";
+import My from "./my";
+import Join from "./join";
+import Login from "./login";
 
-const router = new Navigo("/");
+export const router = new Navigo("/");
 
 router
 	.on({
@@ -73,11 +73,11 @@ router
 			Join();
 		},
 		"/payment/:productId": (match) => {
-      const { productId } = match?.data;
+			const { productId } = match?.data;
 
-      console.log({ productId });
-      renderPage([Header, PaymentPage(productId), Footer]);
-    },
+			console.log({ productId });
+			renderPage([Header, PaymentPage(productId), Footer]);
+		},
 		"/paymentDone": () => {
 			renderPage([Header, PaymentDonePage(), Footer]);
 		},
@@ -89,10 +89,10 @@ router
 			const { productId } = match?.data;
 			console.log({ productId });
 
-      renderPage(document.createTextNode(`product ID => ${productId}`));
-    },
-  })
-  .resolve();
+			renderPage(document.createTextNode(`product ID => ${productId}`));
+		},
+	})
+	.resolve();
 
 function renderPage(page) {
 	console.log({ app, page });

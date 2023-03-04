@@ -2,7 +2,6 @@ import { request } from "../api/common.js";
 import { util } from "../api/util.js";
 
 export default async function Admin() {
-<<<<<<< HEAD
   /**
    * 변수 선언
    *
@@ -19,8 +18,6 @@ export default async function Admin() {
   const showListCnt = document.querySelector(".show-select-list"); // 페이지 노출 아이템수량
   const addProductBtn = document.querySelector("#add_product_btn"); // 상품 추가
   const itemListEl = document.querySelector("#item_list"); // 상품 리스트
-  const orderListEl = document.querySelector("#order_list"); // 주문 리스트
-
   // 모달 관련
   const modal = document.querySelector(".modal");
   const modalBackground = document.querySelector(".modal__background");
@@ -102,7 +99,6 @@ export default async function Admin() {
 
   // init
   fn_search_product();
-  fn_search_order();
 
   /**
    * 상품 조회
