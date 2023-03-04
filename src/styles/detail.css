@@ -1,0 +1,78 @@
+@font-face {
+  font-family: "Jal_Onuel";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --main-key-color: #0c8a4e;
+  --main-bg-color: #f9f9f9;
+  --required-color: #de0404;
+  --disable-color: #666666;
+  --input-color: #d9d9d9;
+}
+
+.detail-page {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.detail-page .detail-img {
+  width: 550px;
+  height: 380px;
+  margin: 60px;
+  border-radius: 12px;
+}
+.detail-page .detail-desWrapper {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  width: 550px;
+  height: 480px;
+}
+.detail-page .detail-desWrapper .detail-title {
+  display: flex;
+  font-size: 25px;
+  margin: 14px 0;
+  font-weight: 600;
+}
+.detail-page .detail-desWrapper .detail-Desc {
+  display: flex;
+  font-size: 22px;
+  line-height: 140%;
+  color: var(--disable-color);
+}
+.detail-page .detail-desWrapper .detail-price {
+  display: flex;
+  font-size: 20px;
+  font-weight: 600;
+  margin: 14px 0;
+}
+.detail-page .detail-desWrapper .buy-product-btn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 0.75em;
+  width: 8em;
+  height: 3em;
+  background-color: #fff;
+  color: var(--main-key-color);
+  border-radius: 6px;
+  border: 1px solid var(--main-key-color);
+  font-size: 18px;
+}
+.detail-page .detail-desWrapper .buy-product-btn:hover {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 0.75em;
+  width: 8em;
+  height: 3em;
+  border: none;
+  background-color: var(--main-key-color);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}/*# sourceMappingURL=detail.css.map */

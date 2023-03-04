@@ -7,13 +7,14 @@ import Footer from "../components/templates/footer";
 /**
  * Pages
  */
-import detailPage from "../components/pages/detailPage";
+import DetailPage from "../components/pages/detailPage";
 import homeMainPage from "../components/pages/homePage";
 import categoryPage from "../components/pages/categoryPage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
+import NotFound from "../components/pages/notFound";
 import PaymentPage from "../components/pages/paymentPage";
 import PaymentDonePage from "../components/pages/paymentDonePage";
 
@@ -51,8 +52,9 @@ router
 			renderPage([Header, categoryPage, Footer]);
 			Category("spa");
 		},
-		"/detail": () => {
-			renderPage(/**DetailPage*/);
+		"/detail/:productId": (match) => {
+			const { productId } = match?.data;
+			renderPage([Header, DetailPage(productId), Footer]);
 		},
 		"/my": () => {
 			renderPage([Header, MyPage(), Footer]);
@@ -69,15 +71,16 @@ router
 			Login();
 		},
 		"/join": () => {
-			renderPage([Header, JoinPage, Footer]);
-			Join();
+			renderPage([Header, NotFound, Footer]);
+			// renderPage([Header, JoinPage, Footer]);
+			// Join();
 		},
 		"/payment/:productId": (match) => {
-      const { productId } = match?.data;
+			const { productId } = match?.data;
 
-      console.log({ productId });
-      renderPage([Header, PaymentPage(productId), Footer]);
-    },
+			console.log({ productId });
+			renderPage([Header, PaymentPage(productId), Footer]);
+		},
 		"/paymentDone": () => {
 			renderPage([Header, PaymentDonePage(), Footer]);
 		},
@@ -89,10 +92,10 @@ router
 			const { productId } = match?.data;
 			console.log({ productId });
 
-      renderPage(document.createTextNode(`product ID => ${productId}`));
-    },
-  })
-  .resolve();
+			renderPage(document.createTextNode(`product ID => ${productId}`));
+		},
+	})
+	.resolve();
 
 function renderPage(page) {
 	console.log({ app, page });
