@@ -1,4 +1,4 @@
-function PaymentDonePage() {
+export default function PaymentDonePage() {
 	const paymentDoneFinishPage = document.createElement("div");
 	const paymentDoneOrderDone = document.createElement("div");
 	const paymentDoneOrderText1 = document.createElement("div");
@@ -22,7 +22,8 @@ function PaymentDonePage() {
 	paymentDoneOrderText1.innerHTML = "<h1>결제가 완료되었습니다!</h1>";
 	// paymentDoneOrderText2.textContent =
 	// 	"빠르게 가져다 드릴테니 조금만 기다려주세요!";
-	paymentDoneDelivery.innerHTML = "택배사 사정에 따라 <span class='delivery-span'>2~3일</span> 걸릴 예정입니다.";
+	paymentDoneDelivery.innerHTML =
+		"택배사 사정에 따라 <span class='delivery-span'>2~3일</span> 걸릴 예정입니다.";
 	paymentDoneDeliveryText.innerHTML =
 		"<span class='delivery-span'>도서, 산간지방</span>은 기존 배송일에 <span class='delivery-span'>2~3일<span> 추가됩니다.";
 	paymentDoneContinueShop.innerHTML = "계속 쇼핑하기";
@@ -38,13 +39,12 @@ function PaymentDonePage() {
 	paymentDoneBtn.append(paymentDoneContinueShop);
 	paymentDoneBtn.append(paymentDonePurchaseHistory);
 
-	paymentDoneContinueShop.addEventListener('click',() =>{
-		window.location.href = "/"
-	})
-	paymentDonePurchaseHistory.addEventListener('click',() =>{
-		window.location.href = "/my"
-	})
+	paymentDoneContinueShop.addEventListener("click", () => {
+		window.location.href = "/";
+	});
+	paymentDonePurchaseHistory.addEventListener("click", () => {
+		window.location.href = "/my";
+	});
 
 	return paymentDoneFinishPage;
 }
-export default PaymentDonePage;

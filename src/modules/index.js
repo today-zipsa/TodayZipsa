@@ -4,36 +4,64 @@ import Navigo from "navigo";
  */
 import Header from "../components/templates/header";
 import Footer from "../components/templates/footer";
+
 /**
  * Pages
  */
-import detailPage from "../components/pages/detailPage";
-import homeMainPage from "../components/pages/homePage";
+
+import mainPage from "../components/pages/mainPage";
+import searchPage from "../components/pages/searchPage";
 import categoryPage from "../components/pages/categoryPage";
+import detailPage from "../components/pages/detailPage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
 import JoinPage from "../components/pages/joinPage";
 import PaymentPage from "../components/pages/paymentPage";
 import PaymentDonePage from "../components/pages/paymentDonePage";
+import NotFoundPage from "../components/pages/404Page";
 
 /**
  * Modules
  */
-import Home from "./home";
+
+import Main from "./main";
+import Search from "./search";
 import Category from "./category";
 import Admin from "./admin";
 import My from "./my";
 import Join from "./join";
 import Login from "./login";
+import NotFound from "./404";
 
 export const router = new Navigo("/");
+
+const pagesNeedToGuard = ["my", "admin", "paymentDone"];
+
+router.hooks({
+	before: async (done, match) => {
+		console.log({ url: match.url });
+		if (pagesNeedToGuard.includes(match.url)) {
+			if (!localStorage.getItem("accessToken")) {
+				router.navigate("/login");
+				done();
+			}
+			done();
+		}
+		done();
+	},
+});
 
 router
 	.on({
 		"/": () => {
-			renderPage([Header, homeMainPage, Footer]);
-			Home();
+			renderPage([Header, mainPage, Footer]);
+			Main();
+		},
+		"/search/:searchText": (match) => {
+			const { searchText } = match?.data;
+			renderPage([Header, searchPage, Footer]);
+			Search(searchText);
 		},
 		"/hotel": () => {
 			renderPage([Header, categoryPage, Footer]);
@@ -51,8 +79,9 @@ router
 			renderPage([Header, categoryPage, Footer]);
 			Category("spa");
 		},
-		"/detail": () => {
-			renderPage(/**DetailPage*/);
+		"/detail/:productId": (match) => {
+			const { productId } = match?.data;
+			renderPage([Header, detailPage(productId), Footer]);
 		},
 		"/my": () => {
 			renderPage([Header, MyPage(), Footer]);
@@ -91,6 +120,16 @@ router
 
 			renderPage(document.createTextNode(`product ID => ${productId}`));
 		},
+		"/404": () => {
+			renderPage([Header, NotFoundPage(), Footer]);
+			NotFound();
+		},
+	})
+	.notFound(() => {
+		router.navigate("/404");
+		setTimeout(() => {
+			router.navigate("/");
+		}, 3000);
 	})
 	.resolve();
 
