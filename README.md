@@ -7,7 +7,7 @@
 
 <br /><br />
 ## 🐶 TodayZipsa 팀 소개
-[이지영(팀장)](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Agygy7151) | 이희서 | 김소희 | 이로운 | 정석화 
+[이지영(팀장)](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Agygy7151) | [이희서](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Ahlee686) | [김소희](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Asoheedev) | [이로운](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Aronieo) | [정석화](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Aoysterjung) 
 :--------: | :--: | :---: | :--: | :--: 
 <img src="https://avatars.githubusercontent.com/u/55748886?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/21377593?v=4" style="width: 150px" /> | <img src="https://avatars.githubusercontent.com/u/98999052?v=4" style="width: 150px;" /> | <img src="https://avatars.githubusercontent.com/u/76941552?v=4" style="width: 150px;" /> | <img src="https://user-images.githubusercontent.com/76941552/222496605-341c257e-028d-48ef-b223-5991f2b66c6c.png" style="width: 150px"/>
 [gygy7151](https://github.com/gygy7151) | [hlee686](https://github.com/hlee686) | [soheedev](https://github.com/soheedev) | [ronieo](https://github.com/ronieo) | [oysterjung](https://github.com/oysterjung) 
