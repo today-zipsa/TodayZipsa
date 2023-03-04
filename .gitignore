@@ -10,3 +10,6 @@ package-lock.json
 
 # scss css compiler
 /src/styles/*.css.map
+
+# .DS_Store
+.DS_Store
