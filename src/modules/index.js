@@ -8,9 +8,11 @@ import Footer from "../components/templates/footer";
 /**
  * Pages
  */
-import detailPage from "../components/pages/detailPage";
+
 import homeMainPage from "../components/pages/homePage";
+import searchPage from "../components/pages/searchPage";
 import categoryPage from "../components/pages/categoryPage";
+import detailPage from "../components/pages/detailPage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
 import LoginPage from "../components/pages/loginPage";
@@ -22,6 +24,7 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
  * Modules
  */
 import Home from "./home";
+import Search from "./search";
 import Category from "./category";
 import Admin from "./admin";
 import My from "./my";
@@ -52,6 +55,11 @@ router
 			renderPage([Header, homeMainPage, Footer]);
 			Home();
 		},
+		"/search/:searchText": (match) => {
+			const { searchText } = match?.data;
+			renderPage([Header, searchPage, Footer]);
+			Search(searchText);
+		},
 		"/hotel": () => {
 			renderPage([Header, categoryPage, Footer]);
 			Category("hotel");
@@ -68,8 +76,9 @@ router
 			renderPage([Header, categoryPage, Footer]);
 			Category("spa");
 		},
-		"/detail": () => {
-			renderPage(/**DetailPage*/);
+		"/detail/:productId": (match) => {
+			const { productId } = match?.data;
+			renderPage([Header, detailPage(productId), Footer]);
 		},
 		"/my": () => {
 			renderPage([Header, MyPage(), Footer]);
