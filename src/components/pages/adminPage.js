@@ -21,12 +21,12 @@ const div2El = util.createEl("div");
 const span1El = util.createEl(
 	"span",
 	{ class: "admin-welcome-word" },
-	{ textContent: "안녕하세요, 관리자님!" }
+	{ textContent: "안녕하세요, 관리자님! " }
 );
 const span2El = util.createEl(
 	"span",
 	{ clss: "logout" },
-	{ textContent: "로그아웃" }
+	{ textContent: " 로그아웃" }
 );
 div2El.append(span1El, span2El);
 
@@ -111,6 +111,10 @@ tab1El.append(itemDivEl, listDivEl);
 
 // tab2
 const tab2El = util.createEl("tab", { id: "content2" });
+const listDiv2El = util.createEl("div");
+const listUl2El = util.createEl("ul", { id: "order_list" });
+listDiv2El.append(listUl2El);
+tab2El.append(listDiv2El);
 
 // append
 adminTabEl.append(
@@ -136,6 +140,15 @@ const nextBtnEl = util.createEl("button", { id: "page-next-btn" });
 nextBtnEl.classList.add("admin-paging-btn");
 pagingEl.append(prevBtnEl, pagingNumbers, nextBtnEl);
 tab1El.append(pagingEl);
+
+const paging2El = util.createEl("nav", { class: "pagination" });
+const prevBtn2El = util.createEl("button", { id: "page-prev-btn2" });
+prevBtn2El.classList.add("admin-paging-btn");
+const pagingNumbers2 = util.createEl("div", { id: "page-numbers2" });
+const nextBtn2El = util.createEl("button", { id: "page-next-btn2" });
+nextBtn2El.classList.add("admin-paging-btn");
+paging2El.append(prevBtn2El, pagingNumbers2, nextBtn2El);
+tab2El.append(paging2El);
 
 /**
  * modal 생성
