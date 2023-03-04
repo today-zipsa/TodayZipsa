@@ -1,4 +1,4 @@
-import { util } from "/src/api/util.js";
+import { util } from "../../api/util";
 
 const homePage = util.createEl("div", { class: "home-page" });
 
@@ -17,9 +17,9 @@ homeDivEl.append(homePEl);
 homeEl.append(homeDivEl);
 
 const hotelEl = util.createEl(
-  "a",
-  { class: "home-category" },
-  { href: "/hotel" }
+	"a",
+	{ class: "home-category" },
+	{ href: "/hotel" }
 );
 const hotelDivEl = util.createEl("div");
 const hotelPEl = util.createEl("p", { textContent: "호텔" });
@@ -27,9 +27,9 @@ hotelDivEl.append(hotelPEl);
 hotelEl.append(hotelDivEl);
 
 const rentalEl = util.createEl(
-  "a",
-  { class: "home-category" },
-  { href: "/rental" }
+	"a",
+	{ class: "home-category" },
+	{ href: "/rental" }
 );
 const rentalDivEl = util.createEl("div");
 const rentalPEl = util.createEl("p", { textContent: "렌트카" });
@@ -37,9 +37,9 @@ rentalDivEl.append(rentalPEl);
 rentalEl.append(rentalDivEl);
 
 const sitterEl = util.createEl(
-  "a",
-  { class: "home-category" },
-  { href: "/sitter" }
+	"a",
+	{ class: "home-category" },
+	{ href: "/sitter" }
 );
 const sitterDivEl = util.createEl("div");
 const sitterPEl = util.createEl("p", { textContent: "펫시터" });
@@ -65,19 +65,19 @@ const swiperWrapper = util.createEl("div", { class: "swiper-wrapper" });
 
 const swiperSlide1 = util.createEl("div", { class: "swiper-slide" });
 const swiperImg1 = util.createEl("img", {
-  src: require("../../asset/swiper1.jpg"),
+	src: require("../../asset/swiper1.jpg"),
 });
 swiperSlide1.append(swiperImg1);
 
 const swiperSlide2 = util.createEl("div", { class: "swiper-slide" });
 const swiperImg2 = util.createEl("img", {
-  src: require("../../asset/swiper2.jpg"),
+	src: require("../../asset/swiper2.jpg"),
 });
 swiperSlide2.append(swiperImg2);
 
 const swiperSlide3 = util.createEl("div", { class: "swiper-slide" });
 const swiperImg3 = util.createEl("img", {
-  src: require("../../asset/swiper3.jpg"),
+	src: require("../../asset/swiper3.jpg"),
 });
 swiperSlide3.append(swiperImg3);
 
@@ -109,16 +109,16 @@ const hotelIntroEl = util.createEl("div", { class: "home-items-intro" });
 const hotelTitleEl = util.createEl("div", { class: "intro-title" });
 const hotelTitleDiv = util.createEl("div");
 const hotelTitleStr = util.createEl("strong", {
-  textContent: "집처럼 편안한 집사와 반려묘의 쉼터 💕",
+	textContent: "집처럼 편안한 집사와 반려묘의 쉼터 💕",
 });
 hotelTitleDiv.append(hotelTitleStr);
 hotelTitleEl.append(hotelTitleDiv);
 // 호텔 상품 더보기
 const hotelShowMoreDiv = util.createEl("div", { class: "show-more" });
 const hotelShowMoreBtn = util.createEl(
-  "button",
-  { textContent: "더보기" },
-  { class: "hotel-show-more" }
+	"button",
+	{ textContent: "더보기" },
+	{ class: "hotel-show-more" }
 );
 hotelShowMoreDiv.append(hotelShowMoreBtn);
 // 호텔 상품 라인
@@ -135,16 +135,16 @@ const rentalIntroEl = util.createEl("div", { class: "home-items-intro" });
 const rentalTitleEl = util.createEl("div", { class: "intro-title" });
 const rentalTitleDiv = util.createEl("div");
 const rentalTitleStr = util.createEl("strong", {
-  textContent: "🙌 부르면 언제든지 달려오는 펫택시! 🏅",
+	textContent: "🙌 부르면 언제든지 달려오는 펫택시! 🏅",
 });
 rentalTitleDiv.append(rentalTitleStr);
 rentalTitleEl.append(rentalTitleDiv);
 // 렌트카 상품 더보기
 const rentalShowMoreDiv = util.createEl("div", { class: "show-more" });
 const rentalShowMoreBtn = util.createEl(
-  "button",
-  { textContent: "더보기" },
-  { class: "rental-show-more" }
+	"button",
+	{ textContent: "더보기" },
+	{ class: "rental-show-more" }
 );
 rentalShowMoreDiv.append(rentalShowMoreBtn);
 // 렌트카 상품 라인
@@ -161,16 +161,16 @@ const sitterIntroEl = util.createEl("div", { class: "home-items-intro" });
 const sitterTitleEl = util.createEl("div", { class: "intro-title" });
 const sitterTitleDiv = util.createEl("div");
 const sitterTitleStr = util.createEl("strong", {
-  textContent: "믿고 맡기는 전문 펫시터 서비스! 🙋‍♀️",
+	textContent: "믿고 맡기는 전문 펫시터 서비스! 🙋‍♀️",
 });
 sitterTitleDiv.append(sitterTitleStr);
 sitterTitleEl.append(sitterTitleDiv);
 // 펫시터 상품 더보기
 const sitterShowMoreDiv = util.createEl("div", { class: "show-more" });
 const sitterShowMoreBtn = util.createEl(
-  "button",
-  { textContent: "더보기" },
-  { class: "sitter-show-more" }
+	"button",
+	{ textContent: "더보기" },
+	{ class: "sitter-show-more" }
 );
 sitterShowMoreDiv.append(sitterShowMoreBtn);
 // 펫시터 상품 라인
@@ -187,16 +187,16 @@ const spaIntroEl = util.createEl("div", { class: "home-items-intro" });
 const spaTitleEl = util.createEl("div", { class: "intro-title" });
 const spaTitleDiv = util.createEl("div");
 const spaTitleStr = util.createEl("strong", {
-  textContent: "반려묘 전문 집사로 레벨업! 📈",
+	textContent: "반려묘 전문 집사로 레벨업! 📈",
 });
 spaTitleDiv.append(spaTitleStr);
 spaTitleEl.append(spaTitleDiv);
 // 스파 상품 더보기
 const spaShowMoreDiv = util.createEl("div", { class: "show-more" });
 const spaShowMoreBtn = util.createEl(
-  "button",
-  { textContent: "더보기" },
-  { class: "spa-show-more" }
+	"button",
+	{ textContent: "더보기" },
+	{ class: "spa-show-more" }
 );
 spaShowMoreDiv.append(spaShowMoreBtn);
 // 스파 상품 라인
