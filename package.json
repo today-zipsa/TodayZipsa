@@ -1,34 +1,35 @@
 {
-  "name": "todayzipsa",
-  "version": "1.0.0",
-  "description": "![IMG_5258 2](https://user-images.githubusercontent.com/55748886/216059408-1616791d-2a54-4b5e-bda1-ea2e96623e44.jpg)",
-  "source": "index.html",
-  "dependencies": {
-    "navigo": "^8.11.1",
-    "swiper": "^9.1.0",
-    "asset": "^0.4.13",
-    "lodash": "^4.17.21"
-  },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "sass": "^1.58.3"
-  },
-  "scripts": {
-    "dev": "parcel --port 3000 index.html",
-    "build": "parcel build index.html"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/today-zipsa/TodayZipsa.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/today-zipsa/TodayZipsa/issues"
-  },
-  "homepage": "https://github.com/today-zipsa/TodayZipsa#readme",
-  "staticFiles": {
-    "staticPath": "config"
-  }
+	"name": "todayzipsa",
+	"version": "1.0.0",
+	"description": "![IMG_5258 2](https://user-images.githubusercontent.com/55748886/216059408-1616791d-2a54-4b5e-bda1-ea2e96623e44.jpg)",
+	"source": "index.html",
+	"type": "module",
+	"dependencies": {
+		"swiper": "^9.1.0",
+		"asset": "^0.4.13",
+		"lodash": "^4.17.21",
+		"navigo": "^8.11.1"
+	},
+	"devDependencies": {
+		"parcel-bundler": "^1.12.5",
+		"parcel-plugin-static-files-copy": "^2.6.0",
+		"sass": "^1.58.3"
+	},
+	"scripts": {
+		"dev": "parcel --port 3000 index.html",
+		"build": "parcel build index.html"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/today-zipsa/TodayZipsa.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/today-zipsa/TodayZipsa/issues"
+	},
+	"homepage": "https://github.com/today-zipsa/TodayZipsa#readme",
+	"staticFiles": {
+		"staticPath": "config"
+	}
 }

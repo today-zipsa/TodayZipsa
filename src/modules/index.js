@@ -9,7 +9,6 @@ import Footer from "../components/templates/footer";
  */
 import detailPage from "../components/pages/detailPage";
 import homeMainPage from "../components/pages/homePage";
-import searchPage from "../components/pages/searchPage";
 import categoryPage from "../components/pages/categoryPage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
@@ -22,7 +21,6 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
  * Modules
  */
 import Home from "../modules/home";
-import Search from "../modules/search";
 import Category from "../modules/category";
 import Admin from "../modules/admin";
 import My from "../modules/my";
@@ -74,10 +72,13 @@ router
 			renderPage([Header, JoinPage, Footer]);
 			Join();
 		},
-		"/payment": () => {
-			renderPage([Header, PaymentPage(), Footer]);
-		},
-		"/payment/done": () => {
+		"/payment/:productId": (match) => {
+      const { productId } = match?.data;
+
+      console.log({ productId });
+      renderPage([Header, PaymentPage(productId), Footer]);
+    },
+		"/paymentDone": () => {
 			renderPage([Header, PaymentDonePage(), Footer]);
 		},
 		"/admin": () => {
@@ -88,10 +89,10 @@ router
 			const { productId } = match?.data;
 			console.log({ productId });
 
-			renderPage(document.createTextNode(`product ID => ${productId}`));
-		},
-	})
-	.resolve();
+      renderPage(document.createTextNode(`product ID => ${productId}`));
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
 	console.log({ app, page });
