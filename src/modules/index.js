@@ -24,14 +24,13 @@ import NotFoundPage from "../components/pages/404Page";
 /**
  * Modules
  */
-// import Main from "./main";
+import Main from "./main";
 import Search from "./search";
 import Category from "./category";
 import Admin from "./admin";
 import My from "./my";
 import Join from "./join";
 import Login from "./login";
-import Main from "./main";
 import NotFound from "./404";
 
 export const router = new Navigo("/");
@@ -40,7 +39,7 @@ const pagesNeedToGuard = ["my", "admin", "paymentDone"];
 
 router.hooks({
 	before: async (done, match) => {
-		console.log({ url: match.url });
+		// console.log({ url: match.url });
 		if (pagesNeedToGuard.includes(match.url)) {
 			if (!localStorage.getItem("accessToken")) {
 				router.navigate("/login");
