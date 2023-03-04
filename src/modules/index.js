@@ -1,7 +1,4 @@
 import Navigo from "navigo";
-import { request } from "../api/common";
-
-/**
  * Common
  */
 import Header from "../components/templates/header";
