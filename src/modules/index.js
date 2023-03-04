@@ -9,6 +9,7 @@ import Footer from "../components/templates/footer";
  */
 import detailPage from "../components/pages/detailPage";
 import homeMainPage from "../components/pages/homePage";
+import searchPage from "../components/pages/searchPage";
 import categoryPage from "../components/pages/categoryPage";
 import AdminPage from "../components/pages/adminPage";
 import MyPage from "../components/pages/myPage";
@@ -21,6 +22,7 @@ import PaymentDonePage from "../components/pages/paymentDonePage";
  * Modules
  */
 import Home from "./home";
+import Search from "./search";
 import Category from "./category";
 import Admin from "./admin";
 import My from "./my";
@@ -30,79 +32,85 @@ import Login from "./login";
 export const router = new Navigo("/");
 
 router
-	.on({
-		"/": () => {
-			renderPage([Header, homeMainPage, Footer]);
-			Home();
-		},
-		"/hotel": () => {
-			renderPage([Header, categoryPage, Footer]);
-			Category("hotel");
-		},
-		"/rental": () => {
-			renderPage([Header, categoryPage, Footer]);
-			Category("rental");
-		},
-		"/sitter": () => {
-			renderPage([Header, categoryPage, Footer]);
-			Category("sitter");
-		},
-		"/spa": () => {
-			renderPage([Header, categoryPage, Footer]);
-			Category("spa");
-		},
-		"/detail": () => {
-			renderPage(/**DetailPage*/);
-		},
-		"/my": () => {
-			renderPage([Header, MyPage(), Footer]);
-			My();
-		},
-		"/my/order/detail": () => {
-			renderPage(/**MyOrderDetailPage*/);
-		},
-		"/my/payment/detail": () => {
-			renderPage(/**MyPaymentDetailPage*/);
-		},
-		"/login": () => {
-			renderPage([Header, LoginPage, Footer]);
-			Login();
-		},
-		"/join": () => {
-			renderPage([Header, JoinPage, Footer]);
-			Join();
-		},
-		"/payment/:productId": (match) => {
-			const { productId } = match?.data;
+  .on({
+    "/": () => {
+      renderPage([Header, homeMainPage, Footer]);
+      Home();
+    },
+    "/search/:searchText": (match) => {
+      const { searchText } = match?.data;
+      renderPage([Header, searchPage, Footer]);
+      Search(searchText);
+    },
+    "/hotel": () => {
+      renderPage([Header, categoryPage, Footer]);
+      Category("hotel");
+    },
+    "/rental": () => {
+      renderPage([Header, categoryPage, Footer]);
+      Category("rental");
+    },
+    "/sitter": () => {
+      renderPage([Header, categoryPage, Footer]);
+      Category("sitter");
+    },
+    "/spa": () => {
+      renderPage([Header, categoryPage, Footer]);
+      Category("spa");
+    },
+    "/detail/:productId": (match) => {
+      const { productId } = match?.data;
+      renderPage([Header, detailPage(productId), Footer]);
+    },
+    "/my": () => {
+      renderPage([Header, MyPage(), Footer]);
+      My();
+    },
+    "/my/order/detail": () => {
+      renderPage(/**MyOrderDetailPage*/);
+    },
+    "/my/payment/detail": () => {
+      renderPage(/**MyPaymentDetailPage*/);
+    },
+    "/login": () => {
+      renderPage([Header, LoginPage, Footer]);
+      Login();
+    },
+    "/join": () => {
+      renderPage([Header, JoinPage, Footer]);
+      Join();
+    },
+    "/payment/:productId": (match) => {
+      const { productId } = match?.data;
 
-			console.log({ productId });
-			renderPage([Header, PaymentPage(productId), Footer]);
-		},
-		"/paymentDone": () => {
-			renderPage([Header, PaymentDonePage(), Footer]);
-		},
-		"/admin": () => {
-			renderPage([AdminPage, Footer]);
-			Admin();
-		},
-		"product/:productId": (match) => {
-			const { productId } = match?.data;
-			console.log({ productId });
+      console.log({ productId });
+      renderPage([Header, PaymentPage(productId), Footer]);
+    },
+    "/paymentDone": () => {
+      renderPage([Header, PaymentDonePage(), Footer]);
+    },
+    "/admin": () => {
+      renderPage([AdminPage, Footer]);
+      Admin();
+    },
+    "product/:productId": (match) => {
+      const { productId } = match?.data;
+      console.log({ productId });
 
-			renderPage(document.createTextNode(`product ID => ${productId}`));
-		},
-	})
-	.resolve();
+      renderPage(document.createTextNode(`product ID => ${productId}`));
+    },
+  })
+  .resolve();
 
 function renderPage(page) {
-	console.log({ app, page });
-	app.innerHTML = "";
-	if (Array.isArray(page)) {
-		app.append(...page);
-		page.forEach((node) => app.appendChild(node));
-	} else {
-		app.appendChild(page);
-	}
+  console.log({ app, page });
+  app.innerHTML = "";
+  if (Array.isArray(page)) {
+    app.append(...page);
+    page.forEach((node) => app.appendChild(node));
+  } else {
+    app.appendChild(page);
+  }
 }
 
 /**
