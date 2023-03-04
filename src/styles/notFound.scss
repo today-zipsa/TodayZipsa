@@ -1,0 +1,47 @@
+@font-face {
+	font-family: "Jal_Onuel";
+	src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Jal_Onuel.woff")
+		format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+
+:root {
+	--main-key-color: #0c8a4e;
+	--main-bg-color: #f9f9f9;
+	--required-color: #de0404;
+	--disable-color: #666666;
+	--input-color: #d9d9d9;
+}
+
+.not-found-wrapper {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-direction: column;
+	img.not-found-img {
+		display: flex;
+		justify-content: center;
+		align-content: center;
+	}
+	.not-found-title {
+		color: var(--main-key-color);
+		font-size: 25px;
+		font-weight: 600;
+		margin: 20px 0;
+	}
+	.not-found-content {
+		line-height: 120%;
+		font-size: 20px;
+		color: var(--disable-color);
+		margin-bottom: 32px;
+	}
+	.back-to-main {
+		border-radius: 50px;
+		border: 1px solid var(--main-key-color);
+		color: var(--main-key-color);
+		background-color: transparent;
+		width: 8em;
+		height: 3em;
+	}
+}
