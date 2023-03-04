@@ -1,6 +1,7 @@
 import { debounce } from "lodash";
 import { request } from "../api/common";
 import { getKRW } from "../components/pages/myPage";
+import IC_chip from "../asset/bankImg/IC_chip.png";
 import ModalTwo from "../components/templates/modalTwo";
 
 export default function My() {
@@ -147,7 +148,7 @@ export default function My() {
 
 		cardName.innerText = "TODAY ZIPSA";
 		closeBtn.src = require("../asset/btnImg/close_btn.png");
-		icTagBtn.src = require("../asset/bankImg/IC_chip.png");
+		icTagBtn.src = IC_chip;
 		icTagBtn.style.width = "60px";
 		icTagBtn.style.height = "60px";
 		icTagBtn.style.opacity = "68%";
