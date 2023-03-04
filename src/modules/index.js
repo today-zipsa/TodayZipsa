@@ -1,9 +1,12 @@
 import Navigo from "navigo";
+import { request } from "../api/common";
+
 /**
  * Common
  */
 import Header from "../components/templates/header";
 import Footer from "../components/templates/footer";
+
 /**
  * Pages
  */
@@ -28,6 +31,22 @@ import Join from "./join";
 import Login from "./login";
 
 export const router = new Navigo("/");
+
+const pagesNeedToGuard = ["my", "admin", "paymentDone"];
+
+router.hooks({
+	before: async (done, match) => {
+		console.log({ url: match.url });
+		if (pagesNeedToGuard.includes(match.url)) {
+			if (!localStorage.getItem("accessToken")) {
+				router.navigate("/login");
+				done();
+			}
+			done();
+		}
+		done();
+	},
+});
 
 router
 	.on({
@@ -91,6 +110,9 @@ router
 
 			renderPage(document.createTextNode(`product ID => ${productId}`));
 		},
+	})
+	.notFound(() => {
+		router.navigate("/");
 	})
 	.resolve();
 
