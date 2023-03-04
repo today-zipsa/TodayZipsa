@@ -5,6 +5,7 @@ import Navigo from "navigo";
 import Header from "../components/templates/header";
 import Footer from "../components/templates/footer";
 
+
 /**
  * Pages
  */
