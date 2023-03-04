@@ -1,6 +1,4 @@
 import Navigo from "navigo";
-import { request } from "../api/common";
-
 /**
  * Common
  */
