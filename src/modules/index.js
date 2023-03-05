@@ -87,10 +87,10 @@ router
 			My();
 		},
 		"/my/order/detail": () => {
-			renderPage(/**MyOrderDetailPage*/);
+			renderPage([Header, MyPage(), Footer]);
 		},
 		"/my/payment/detail": () => {
-			renderPage(/**MyPaymentDetailPage*/);
+			renderPage([Header, MyPage(), Footer]);
 		},
 		"/login": () => {
 			renderPage([Header, LoginPage, Footer]);
