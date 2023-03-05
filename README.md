@@ -7,11 +7,11 @@
 
 <br /><br />
 ## 🐶 TodayZipsa 팀 소개
-[이지영(팀장)](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Agygy7151) | [이희서](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Ahlee686) | [김소희](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Asoheedev) | [이로운](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Aronieo) | [정석화](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Aoysterjung) 
+이지영(팀장) | 이희서 | 김소희 | 이로운 | 정석화 
 :--------: | :--: | :---: | :--: | :--: 
 <img src="https://avatars.githubusercontent.com/u/55748886?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/21377593?v=4" style="width: 150px" /> | <img src="https://avatars.githubusercontent.com/u/98999052?v=4" style="width: 150px;" /> | <img src="https://avatars.githubusercontent.com/u/76941552?v=4" style="width: 150px;" /> | <img src="https://user-images.githubusercontent.com/76941552/222496605-341c257e-028d-48ef-b223-5991f2b66c6c.png" style="width: 150px"/>
 [gygy7151](https://github.com/gygy7151) | [hlee686](https://github.com/hlee686) | [soheedev](https://github.com/soheedev) | [ronieo](https://github.com/ronieo) | [oysterjung](https://github.com/oysterjung) 
-[서비스기획] <br> [피그마디자인] <br> [마이 페이지]<br>  [주문 상세 페이지]<br>  [결제 상세 페이지]<br>  [회원가입 페이지]<br> [404 페이지]<br> [공동 헤더]<br> [라우팅작업 및 유지보수]<br> [CI/CD]<br>|[메인 페이지]<br>- 제품 상세 페이지<br>|[어드민 페이지]<br>- 상품 관리페이지<br>- 거래 내역 페이지<br> [메인 페이지]<br>|[회원가입 페이지]<br> [로그인 페이지]<br> [404 페이지]<br> [공동 Footer]<br> - 제품 상세 페이지<br>|[결제 페이지]<br> [결제 완료 페이지]
+[마이 페이지]<br>  [주문 상세 페이지]<br>  [결제 상세 페이지]<br>  [회원가입 페이지]<br> [공동 헤더]<br> [라우팅작업 및 유지보수]<br> [CI/CD]<br>|[메인 페이지]<br>- 제품 상세 페이지<br>|[어드민 페이지]<br>- 상품 관리페이지<br>- 거래 내역 페이지<br> [메인 페이지]<br>|[회원가입 페이지]<br> [로그인 페이지]<br> [404 페이지]<br> [공동 Footer]<br> - 제품 상세 페이지<br>|[결제 페이지]<br> [결제 완료 페이지]
 
 <br/><br/>
  ## 📝 오늘의집사 프로젝트 소개
@@ -36,11 +36,15 @@
 ![pages](https://user-images.githubusercontent.com/98999052/222499827-9faf887d-4bab-447a-bf02-4b4f2b2f6752.png)
 
 <br/><br />
-### 🐱 어드민 페이지
+### 🐱 마이 페이지
+![Image](https://user-images.githubusercontent.com/76941552/222939623-9443a01b-36dd-4841-bbce-e4632f93ae04.png)
+
+<br/><br />
+### 🐶 어드민 페이지
 ![pages](https://user-images.githubusercontent.com/98999052/222729393-204bfe95-d435-479d-bbc3-ff2e1885b249.png)
 
 <br/><br />
-## ⏱ 오늘의집사 작업과정
+## ⏱ 오늘의집사 작업과정 - private라 이미지 파일을 첨부합니다 :)
  [TodayZipsa Project](https://github.com/orgs/today-zipsa/projects/2/views/1)
 
 ![Image](https://user-images.githubusercontent.com/76941552/222759263-dc7c18a6-ae09-44e2-8ab7-7685864014da.png)
