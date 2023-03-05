@@ -6,32 +6,42 @@ const AdminPage = util.createEl("div");
  * admin header 생성
  */
 const headerEl = util.createEl("header", { class: "admin-header" });
-const div1El = util.createEl("div", { class: "admin-header-wrapper" });
+const headerDiv = util.createEl("div", { class: "admin-header-wrapper" });
 
-const aEl = util.createEl("a", { href: "/" }, { class: "admin-logo-btn" });
+const headerAEl = util.createEl(
+  "a",
+  { href: "/" },
+  { class: "admin-logo-btn" }
+);
 const imgEl = util.createEl(
   "img",
   { src: require("../../asset/global/main-logo.png") },
   { alt: "main-logo" },
   { class: "main-logo-btn-image" }
 );
-aEl.append(imgEl);
+headerAEl.append(imgEl);
 
-const div2El = util.createEl("div");
-const span1El = util.createEl(
+const headerTextEl = util.createEl("div", { class: "admin-header-text" });
+const headerWord = util.createEl(
   "span",
   { class: "admin-welcome-word" },
   { textContent: "안녕하세요, 관리자님! " }
 );
-const span2El = util.createEl(
+const logOutA = util.createEl(
+  "a",
+  { href: "/" },
+  { class: "admin-header-btn" }
+);
+logOutA.setAttribute("data-navigo", "");
+const logOutSpan = util.createEl(
   "span",
-  { clss: "logout" },
+  { class: "logout" },
   { textContent: " 로그아웃" }
 );
-div2El.append(span1El, span2El);
-
-div1El.append(aEl, div2El);
-headerEl.append(div1El);
+logOutA.append(logOutSpan);
+headerTextEl.append(headerWord, logOutA);
+headerDiv.append(headerAEl, headerTextEl);
+headerEl.append(headerDiv);
 
 /**
  * admin main 생성
@@ -70,31 +80,87 @@ const label2El = util.createEl(
 
 // tab1
 const tab1El = util.createEl("tab", { id: "content1" });
-const itemDivEl = util.createEl("div", { class: "item_btn" });
-const pageShowEl = util.createEl("div");
-const showTextEl = util.createEl("span", { textContent: "List: " });
-const showSelectEl = util.createEl(
-  "select",
-  { class: "show-select-list" },
-  { textContent: "Show: " }
+const tab1DivEl = util.createEl("div", { class: "item_search" });
+const searchItems1El = util.createEl("div", { class: "item-search-div" });
+
+// 전체 상품 수량 표기
+const totalCount1El = util.createEl("div");
+const totalCntText1 = util.createEl(
+  "div",
+  { id: "total_pro_cnt" },
+  { class: "item-search-count" }
 );
-const showOption1El = util.createEl(
+totalCount1El.append(totalCntText1);
+// 카테고리 SelectBox
+const cateSearch1El = util.createEl("div");
+const cateShow1El = util.createEl("div");
+const cateText1El = util.createEl("span", { textContent: "Category: " });
+const cateSelect1El = util.createEl(
+  "select",
+  { id: "category_selbox" },
+  { class: "show-select-list" }
+);
+const cate1Option0El = util.createEl(
+  "option",
+  { value: "" },
+  { textContent: "전체" }
+);
+cate1Option0El.setAttribute("selected", "");
+const cate1Option1El = util.createEl(
+  "option",
+  { value: "호텔" },
+  { textContent: "호텔" }
+);
+const cate1Option2El = util.createEl(
+  "option",
+  { value: "렌트카" },
+  { textContent: "렌트카" }
+);
+const cate1Option3El = util.createEl(
+  "option",
+  { value: "펫시터" },
+  { textContent: "펫시터" }
+);
+const cate1Option4El = util.createEl(
+  "option",
+  { value: "스파" },
+  { textContent: "스파" }
+);
+cateSelect1El.append(
+  cate1Option0El,
+  cate1Option1El,
+  cate1Option2El,
+  cate1Option3El,
+  cate1Option4El
+);
+cateShow1El.append(cateText1El, cateSelect1El);
+cateSearch1El.append(cateShow1El);
+// 페이지당 검색 수 SelectBox
+const pageShow1El = util.createEl("div");
+const showText1El = util.createEl("span", { textContent: "List: " });
+const showSelect1El = util.createEl(
+  "select",
+  { id: "show_count_selbox" },
+  { class: "show-select-list" }
+);
+const show1Option1El = util.createEl(
   "option",
   { value: 5 },
   { textContent: "5" }
 );
-const showOption2El = util.createEl(
+const show1Option2El = util.createEl(
   "option",
   { value: 10 },
   { textContent: "10" }
 );
-const showOption3El = util.createEl(
+const show1Option3El = util.createEl(
   "option",
   { value: 20 },
   { textContent: "20" }
 );
-showSelectEl.append(showOption1El, showOption2El, showOption3El);
-pageShowEl.append(showTextEl, showSelectEl);
+showSelect1El.append(show1Option1El, show1Option2El, show1Option3El);
+pageShow1El.append(showText1El, showSelect1El);
+searchItems1El.append(totalCount1El, cateSearch1El, pageShow1El);
 
 const addBtnEl = util.createEl(
   "button",
@@ -103,18 +169,103 @@ const addBtnEl = util.createEl(
 );
 addBtnEl.classList.add("admin_btn");
 addBtnEl.classList.add("admin_main_btn");
-itemDivEl.append(pageShowEl, addBtnEl);
+tab1DivEl.append(searchItems1El, addBtnEl);
+
 const listDivEl = util.createEl("div");
 const listUlEl = util.createEl("ul", { id: "item_list" });
 listDivEl.append(listUlEl);
-tab1El.append(itemDivEl, listDivEl);
+tab1El.append(tab1DivEl, listDivEl);
 
 // tab2
 const tab2El = util.createEl("tab", { id: "content2" });
+const tab2DivEl = util.createEl("div", { class: "item_search" });
+const searchItems2El = util.createEl("div", { class: "item-search-div" });
+
+// 전체 상품 수량 표기
+const totalCount2El = util.createEl("div");
+const totalCntText2 = util.createEl(
+  "div",
+  { id: "total_ord_cnt" },
+  { class: "item-search-count" }
+);
+totalCount2El.append(totalCntText2);
+// 카테고리 SelectBox
+const cateSearch2El = util.createEl("div");
+const cateShow2El = util.createEl("div");
+const cateText2El = util.createEl("span", { textContent: "Category: " });
+const cateSelect2El = util.createEl(
+  "select",
+  { id: "category_selbox2" },
+  { class: "show-select-list" }
+);
+const cate2Option0El = util.createEl(
+  "option",
+  { value: "" },
+  { textContent: "전체" }
+);
+cate2Option0El.setAttribute("selected", "");
+const cate2Option1El = util.createEl(
+  "option",
+  { value: "호텔" },
+  { textContent: "호텔" }
+);
+const cate2Option2El = util.createEl(
+  "option",
+  { value: "렌트카" },
+  { textContent: "렌트카" }
+);
+const cate2Option3El = util.createEl(
+  "option",
+  { value: "펫시터" },
+  { textContent: "펫시터" }
+);
+const cate2Option4El = util.createEl(
+  "option",
+  { value: "스파" },
+  { textContent: "스파" }
+);
+cateSelect2El.append(
+  cate2Option0El,
+  cate2Option1El,
+  cate2Option2El,
+  cate2Option3El,
+  cate2Option4El
+);
+cateShow2El.append(cateText2El, cateSelect2El);
+cateSearch2El.append(cateShow2El);
+// 페이지당 검색 수 SelectBox
+const pageShow2El = util.createEl("div");
+const showText2El = util.createEl("span", { textContent: "List: " });
+const showSelect2El = util.createEl(
+  "select",
+  { id: "show_count_selbox2" },
+  { class: "show-select-list" }
+);
+const show2Option1El = util.createEl(
+  "option",
+  { value: 5 },
+  { textContent: "5" }
+);
+const show2Option2El = util.createEl(
+  "option",
+  { value: 10 },
+  { textContent: "10" }
+);
+const show2Option3El = util.createEl(
+  "option",
+  { value: 20 },
+  { textContent: "20" }
+);
+showSelect2El.append(show2Option1El, show2Option2El, show2Option3El);
+pageShow2El.append(showText2El, showSelect2El);
+searchItems2El.append(totalCount2El, cateSearch2El, pageShow2El);
+
+tab2DivEl.append(searchItems2El);
+
 const listDiv2El = util.createEl("div");
 const listUl2El = util.createEl("ul", { id: "order_list" });
 listDiv2El.append(listUl2El);
-tab2El.append(listDiv2El);
+tab2El.append(tab2DivEl, listDiv2El);
 
 // append
 adminTabEl.append(

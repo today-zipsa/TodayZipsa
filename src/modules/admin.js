@@ -10,14 +10,27 @@ export default async function Admin() {
   let currentPage = 1;
   let pageLimit = 5;
   let productLiEls = [];
+  let pageCount2 = 0;
+  let currentPage2 = 1;
+  let pageLimit2 = 5;
+  let orderLiEls = [];
   let thumbnailBase64 = "";
   let photoBase64 = "";
 
-  const tabsEl = document.getElementsByName("tabs");
-  const showListCnt = document.querySelector(".show-select-list"); // 페이지 노출 아이템수량
+  // 상품 검색 조건(Tab1)
+  const totalItemsEl = document.querySelector("#total_pro_cnt"); // 검색 전체 수량 표기
+  const categorySelectEl = document.querySelector("#category_selbox"); // 카테고리 selectBox
+  const showListCnt = document.querySelector("#show_count_selbox"); // 페이지당 수량
+  // 상품 검색 조건(Tab2)
+  const totalItems2El = document.querySelector("#total_ord_cnt");
+  const categorySelect2El = document.querySelector("#category_selbox2");
+  const showList2Cnt = document.querySelector("#show_count_selbox2");
+
   const addProductBtn = document.querySelector("#add_product_btn"); // 상품 추가
-  const itemListEl = document.querySelector("#item_list"); // 상품 리스트
-  const orderListEl = document.querySelector("#order_list"); // 주문 리스트
+  // 상품 리스트
+  const itemListEl = document.querySelector("#item_list");
+  // 주문 리스트
+  const orderListEl = document.querySelector("#order_list");
   // 모달 관련
   const modal = document.querySelector(".modal");
   const modalBackground = document.querySelector(".modal__background");
@@ -41,9 +54,19 @@ export default async function Admin() {
   /**
    * 이벤트
    */
+  categorySelectEl.addEventListener("change", async (event) => {
+    fn_search_product();
+  });
   showListCnt.addEventListener("change", (event) => {
     pageLimit = Number(event.target.value);
     setPagination(pageLimit);
+  });
+  categorySelect2El.addEventListener("change", async (event) => {
+    fn_search_order();
+  });
+  showList2Cnt.addEventListener("change", (event) => {
+    pageLimit2 = Number(event.target.value);
+    setPagination2(pageLimit2);
   });
   modalBackground.addEventListener("click", displayModal);
   // 상품 등록 모달 호출
@@ -107,11 +130,17 @@ export default async function Admin() {
   async function fn_search_product() {
     util.loadingBar(true);
     const items = await request("PRD01");
-    await getProductList(items);
+    await getProductList(items, categorySelectEl.value);
     util.loadingBar(false);
   }
-  async function getProductList(items) {
-    const liEls = items.map((item) => {
+  async function getProductList(items, tag) {
+    let arrItems = [];
+    if (tag) {
+      arrItems = items.filter((item) => item.tags.includes(tag));
+    } else {
+      arrItems = items;
+    }
+    const liEls = arrItems.map((item) => {
       const liEl = document.createElement("li");
 
       // 썸네일
@@ -180,6 +209,8 @@ export default async function Admin() {
     itemListEl.innerHTML = "";
     itemListEl.append(...liEls);
     productLiEls = liEls;
+    const totalCnt = productLiEls.length;
+    totalItemsEl.textContent = "Total: " + totalCnt;
     setPagination(pageLimit);
   }
 
@@ -590,19 +621,25 @@ export default async function Admin() {
     button.classList.remove("disabled");
     button.removeAttribute("disabled");
   }
+
   /**
    * 주문 내역 조회
    */
   async function fn_search_order() {
     util.loadingBar(true);
     const orders = await request("PRD02");
-    await getOrdertList(orders);
+    await getOrdertList(orders, categorySelect2El.value);
     util.loadingBar(false);
-    console.log("orderList>>> ", orders);
   }
 
-  async function getOrdertList(orders) {
-    const liEls = orders.map((order) => {
+  async function getOrdertList(orders, tag) {
+    let arrOrders = [];
+    if (tag) {
+      arrOrders = orders.filter((order) => order.product.tags.includes(tag));
+    } else {
+      arrOrders = orders;
+    }
+    const liEls = arrOrders.map((order) => {
       const userInfo = order.user;
       const accInfo = order.account;
       const prodInfo = order.product;
@@ -685,8 +722,10 @@ export default async function Admin() {
 
     orderListEl.innerHTML = "";
     orderListEl.append(...liEls);
-    //productLiEls = liEls;
-    // setPagination(pageLimit);
+    orderLiEls = liEls;
+    const totalCnt = orderLiEls.length;
+    totalItems2El.textContent = "Total: " + totalCnt;
+    setPagination2(pageLimit2);
   }
 
   /**
@@ -718,17 +757,91 @@ export default async function Admin() {
       }
     }
   }
-  // fn_product_purchase();
-  async function fn_product_purchase() {
-    const params = {
-      productId: "QrurqbMKQ9Wqy5RmmCzQ",
-      accountId: "jjqGeFHwHBIc44iGwrD0",
-    };
-    const res = await request("PRD09", params);
+
+  /**
+   * 페이징 처리2 (주문관리 탭)
+   */
+  // 변수 선언
+  const pagingNumbers2 = document.getElementById("page-numbers2");
+  const prevButton2 = document.getElementById("page-prev-btn2");
+  const nextButton2 = document.getElementById("page-next-btn2");
+
+  // pagination 구성
+  function setPagination2(ordersPerPage) {
+    pageCount2 = Math.ceil(orderLiEls.length / ordersPerPage);
+    pageLimit2 = ordersPerPage;
+
+    if (pageCount2 > 0) {
+      prevButton2.textContent = "<";
+      nextButton2.textContent = ">";
+    }
+
+    // 리스트 하단에 페이지 번호 세팅
+    pagingNumbers2.innerHTML = "";
+    for (let i = 1; i <= pageCount2; i++) {
+      const pageNumber = document.createElement("button");
+      pageNumber.classList.add("page-number2");
+      pageNumber.innerHTML = i;
+      pageNumber.dataset.pageIndex = i;
+      pagingNumbers2.append(pageNumber);
+    }
+    showCurrentPage2(1);
+
+    prevButton2.addEventListener("click", () => {
+      showCurrentPage2(currentPage2 - 1);
+    });
+    nextButton2.addEventListener("click", () => {
+      showCurrentPage2(currentPage2 + 1);
+    });
+
+    document.querySelectorAll(".page-number2").forEach((button) => {
+      const pageIndex = Number(button.dataset.pageIndex);
+      if (pageIndex) {
+        button.addEventListener("click", () => {
+          showCurrentPage2(pageIndex);
+        });
+      }
+    });
   }
-  // fn_user_accountInfo();
-  async function fn_user_accountInfo() {
-    const res = await request("ACC02");
-    console.log("accountInfo>>> ", res);
+
+  // 현재 페이지에 상품 노출
+  function showCurrentPage2(pageNum) {
+    util.loadingBar(true);
+    currentPage2 = pageNum;
+
+    // 현 페이지번호 활성화
+    document.querySelectorAll(".page-number2").forEach((button) => {
+      button.classList.remove("active"); // 초기화
+      const pageIndex = Number(button.dataset.pageIndex);
+      if (pageIndex == currentPage2) {
+        button.classList.add("active");
+      }
+    });
+
+    // 이전(<), 다음(>) 버튼 컨트롤
+    if (currentPage2 === 1) {
+      disableButton(prevButton2);
+    } else {
+      enableButton(prevButton2);
+    }
+    if (pageCount2 === currentPage2) {
+      disableButton(nextButton2);
+    } else {
+      enableButton(nextButton2);
+    }
+
+    const prevRange = (pageNum - 1) * pageLimit2;
+    const currRange = pageNum * pageLimit2;
+
+    orderLiEls.forEach((item, index) => {
+      item.classList.add("hidden");
+      if (index >= prevRange && index < currRange) {
+        item.classList.remove("hidden");
+      }
+    });
+
+    setTimeout(() => {
+      util.loadingBar(false);
+    }, 500);
   }
 }
