@@ -24,7 +24,6 @@ import NotFoundPage from "../components/pages/404Page";
 /**
  * Modules
  */
- 
 import Main from "./main";
 import Search from "./search";
 import Category from "./category";
@@ -89,10 +88,10 @@ router
 			My();
 		},
 		"/my/order/detail": () => {
-			renderPage(/**MyOrderDetailPage*/);
+			renderPage([Header, MyPage(), Footer]);
 		},
 		"/my/payment/detail": () => {
-			renderPage(/**MyPaymentDetailPage*/);
+			renderPage([Header, MyPage(), Footer]);
 		},
 		"/login": () => {
 			renderPage([Header, LoginPage, Footer]);

@@ -1,12 +1,8 @@
 import ModalTwo from "../templates/modalTwo";
 import { request } from "../../api/common";
-import { payments } from "../../api/my_payment_dummy";
-import { accounts } from "../../api/my_accounts_dummy";
-import { renderAccountList } from "../../modules/my";
 import profileImg from "../../asset/myImg/profile.png";
 import addBtnImg from "../../asset/btnImg/add_btn.png";
 import deleteBtnImg from "../../asset/btnImg/close_btn.png";
-const paymentsInfo = payments; //request("PRD12");
 
 export default function MyPage() {
 	const MyPage = document.createElement("section");
@@ -42,14 +38,131 @@ export default function MyPage() {
 	addAccountBtnBox.className = "add-account-btn-box";
 	btnImg.className = "btn-img";
 	btnTitle.className = "btn-title";
-
-	profileImage.src = localStorage.getItem("profileImg");
 	btnImg.src = require("../../asset/btnImg/add_btn.png");
 	profileImage.alt = "profile-image";
 	btnImg.alt = "add-btn-image";
 	accountsContainerTitle.innerHTML = "계좌관리";
 	btnTitle.innerHTML = "계좌연결";
 
+	profileContainer.addEventListener("click", (e) => {
+		const modalContainer = document.createElement("section");
+		const nameInputBox = document.createElement("box");
+		const profileImgInputBox = document.createElement("box");
+		const profileImgInputTitle = document.createElement("span");
+		const profileImg = document.createElement("img");
+		const profileUploadBtn = document.createElement("div");
+		const shadowUploadBtn = document.createElement("input");
+		const addBtn = document.createElement("div");
+		const nowPasswordInputBox = document.createElement("box");
+		const newPasswordInputBox = document.createElement("box");
+		const modalBtnBox = document.createElement("box");
+		const completeBtn = document.createElement("div");
+		const cancelBtn = document.createElement("div");
+		addBtn.classList.add("add-btn");
+		const editingInputTemplate = [
+			nameInputBox,
+			nowPasswordInputBox,
+			newPasswordInputBox,
+		];
+		const inputBarInfo = [
+			{ innerText: "닉네임", placeholder: "별명(20자이내)" },
+			{ innerText: "현재비밀번호", placeholder: "현재 비밀번호" },
+			{ innerText: "신규비밀번호", placeholder: "신규 비밀번호" },
+		];
+		const formData = {
+			displayName: "",
+			profileImgBase64: "",
+			oldPassword: "",
+			newPassword: "",
+		};
+
+		modalContainer.classList.add("profile-edit-modal");
+		profileImgInputTitle.classList.add("input-bar-name");
+		profileImgInputBox.classList.add("profile-image-input-box");
+		profileImg.classList.add("profile-image");
+		profileUploadBtn.classList.add("profile-upload-btn");
+		nameInputBox.classList.add("input-box");
+		nowPasswordInputBox.classList.add("input-box");
+		newPasswordInputBox.classList.add("input-box");
+		modalBtnBox.classList.add("modal-btn-box");
+		completeBtn.classList.add("complete-btn");
+		cancelBtn.classList.add("cancel-btn");
+
+		completeBtn.innerText = "확인";
+		cancelBtn.innerText = "취소";
+		profileUploadBtn.innerText = "업로드";
+		profileImgInputTitle.innerText = "프로필";
+		shadowUploadBtn.type = "file";
+		shadowUploadBtn.name = "file";
+		shadowUploadBtn.style.display = "none";
+
+		profileImgInputBox.append(profileImg, profileUploadBtn, shadowUploadBtn);
+		modalContainer.append(profileImgInputTitle, profileImgInputBox);
+		editingInputTemplate.forEach((userInfoBox, idx) => {
+			const inputBar = document.createElement("input");
+			const inputBarName = document.createElement("span");
+
+			inputBar.classList.add("input-bar");
+			inputBarName.classList.add("input-bar-name");
+
+			inputBar.type = "text";
+			inputBarName.innerText = inputBarInfo[idx].innerText;
+			inputBar.placeholder = inputBarInfo[idx].placeholder;
+
+			modalBtnBox.append(completeBtn, cancelBtn);
+			modalContainer.append(inputBarName, inputBar, modalBtnBox);
+		});
+
+		profileUploadBtn.addEventListener("click", () => {
+			shadowUploadBtn.click();
+		});
+
+		shadowUploadBtn.addEventListener("change", (e) => {
+			const file = e.target.files[0];
+
+			if (file.size > 1024 * 1024) {
+				alert("업로드 가능한 파일의 최대 용량은 1MB입니다.");
+			} else {
+				const reader = new FileReader();
+				reader.readAsDataURL(file);
+				reader.addEventListener("load", (e) => {
+					const newImgURL = e.target.result;
+					formData.profileImgBase64 = newImgURL;
+					profileImg.src = newImgURL;
+				});
+			}
+		});
+
+		completeBtn.addEventListener("click", async () => {
+			const userName = nameInputBox.innerText;
+			const presentPassword = nowPasswordInputBox.innerText;
+			const newPassword = newPasswordInputBox.innerText;
+
+			formData.displayName = userName;
+			formData.oldPassword = presentPassword;
+			formData.newPassword = newPassword;
+
+			const res = await request("MEB05", formData);
+			localStorage.setItem("email", res.email);
+			localStorage.setItem("displayName", res.displayName);
+			localStorage.setItem("profileImg", res.profileImg);
+
+			alert("프로필 수정 완료 되었습니다!");
+
+			document.querySelector(".modal-two-template").innerHTML = "";
+			document.querySelector(".modal-two-template").style.backgroundImage = "";
+			ModalTwo.classList.add("--hide");
+		});
+
+		cancelBtn.addEventListener("click", () => {
+			document.querySelector(".modal-two-template").innerHTML = "";
+			document.querySelector(".modal-two-template").style.backgroundImage = "";
+			ModalTwo.classList.add("--hide");
+		});
+
+		document.querySelector(".modal-two-template").append(modalContainer);
+		document.querySelector(".modal-two").classList.remove("--hide");
+	});
 	welcomeWordBox.append(profileImage, profileWords1);
 	profileBox.append(welcomeWordBox, profileWords2);
 	profileContainer.append(profileBox, paymentPeriod);
@@ -83,39 +196,33 @@ async function renderTest(page) {
 	const [profileContainer, infoContainer, profileEditmodal] = Array.from(
 		page.children
 	);
-	const paymentsInfo = payments;
-	const lastDateToPay = paymentsInfo[0].timePaid
+	const paymentsInfo = await request("PRD12");
+	const firstDateToPay = paymentsInfo[0].timePaid
 		.slice(0, 10)
 		.split("-")
 		.join(".");
-	const firstDateToPay = paymentsInfo[paymentsInfo.length - 1].timePaid
+	const lastDateToPay = paymentsInfo[paymentsInfo.length - 2].timePaid
 		.slice(0, 10)
 		.split("-")
 		.join(".");
 
+	const profileImgSrc =
+		localStorage.getItem("profileImg") !== "undefined" &&
+		localStorage.getItem("profileImg") !== null
+			? localStorage.getItem("profileImg")
+			: profileImg;
+
 	profileContainer.innerHTML = `
 				<box class="profile-box">
 					<box class="welcome-word-box">
-						<img class="profile-image" src="${profileImg}" alt="profile-image">
+						<img class="profile-image" src="${profileImgSrc}" alt="profile-image">
 						<span class="profile-words1">안녕하세요, 이지영님</span>
 					</box>
 					<span class="profile-words2">${firstDateToPay} ~ ${lastDateToPay} 동안 구매해주신 내역이에요.</span>
 				</box>
 			`;
 
-	infoContainer.innerHTML = `
-				<box class="payments-container">${paymentsList()
-					.map((x) => x.outerHTML)
-					.join("")}</box>
-				<box class="accounts-container">
-					<div class="accounts-container-title">계좌관리</div>
-					<div class="accounts-list"></div>
-					<div class="add-account-btn-box">
-					<img class="btn-img" src="${addBtnImg}" alt="add-btn-image"/>
-					<span class="btn-title">계좌연결</span>
-					</div>
-				</box>
-				`;
+	paymentsList();
 }
 
 function setDetailInfoButtonState(paymentState) {
@@ -130,9 +237,9 @@ function setDetailInfoButtonState(paymentState) {
 function setDetailInfoHref(paymentState) {
 	switch (paymentState) {
 		case "구매확정완료":
-			return "../pages/my_order_detail.html";
+			return "/my";
 		default:
-			return "../pages/my_payment_detail.html";
+			return "/my";
 	}
 }
 
@@ -154,8 +261,9 @@ export function getKRW(digit) {
 	return newArray.reverse().join("") + "원";
 }
 
-function paymentsList() {
-	return payments.map((payment) => {
+async function paymentsList() {
+	const paymentsInfo = await request("PRD12");
+	const paymentsListItems = paymentsInfo.map((payment) => {
 		const isTransactionCompleted = payment.done;
 		const isCanceled = payment.isCanceled;
 		const productPrice = payment.product.price;
@@ -219,8 +327,28 @@ function paymentsList() {
 		itemImage.src = thumbnailUrl;
 		itemImage.alt = "상품이미지";
 		deleteBtn.src = deleteBtnImg;
+		deleteBtn.dataset.id = payment.product.productId;
 		btnPayConfirmed.innerText = "구매확정";
 		btnPayCanceled.innerText = "주문취소";
+
+		deleteBtn.addEventListener("click", async (e) => {
+			await request("PRD10", {
+				detailId: e.target.dataset.id,
+			});
+			alert("서비스 준비중입니다.");
+		});
+
+		btnPayCanceled.addEventListener("click", () => {
+			alert("서비스 준비중입니다.");
+		});
+
+		btnPayConfirmed.addEventListener("click", () => {
+			alert("서비스 준비중입니다.");
+		});
+
+		detailInfoBtn.addEventListener("click", () => {
+			alert("서비스 준비중입니다.");
+		});
 
 		paymentStateBox.append(paymentStateWord);
 		itemInfoBox.append(paymentDate, itemName, itemPrice, detailInfoBtn);
@@ -232,6 +360,11 @@ function paymentsList() {
 			twoBtnBox,
 			deleteBtn
 		);
+
 		return paymentContainer;
 	});
+
+	document
+		.querySelector(".payments-container")
+		.append(...paymentsListItems.slice(0, 4));
 }

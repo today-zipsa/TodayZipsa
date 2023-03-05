@@ -4,9 +4,9 @@ import { getKRW } from "../components/pages/myPage";
 import IC_chip from "../asset/bankImg/IC_chip.png";
 import ModalTwo from "../components/templates/modalTwo";
 
-export default function My() {
+export default async function My() {
 	const app = document.querySelector("#app");
-	const profileContainer = document.querySelector(".welcome-word-box");
+	const profileContainer = document.querySelector(".profile-words1");
 	const addAccountBtn = document.querySelector(".btn-img");
 	const ModalTemplate = document.querySelector(".modal-two");
 	const ModalContents = document.querySelector(".modal-two-template");
@@ -14,80 +14,6 @@ export default function My() {
 
 	addAccountBtn.addEventListener("click", () => {
 		showAddAccountModal();
-	});
-
-	profileContainer.addEventListener("click", (e) => {
-		const modalContainer = document.createElement("section");
-		const nameInputBox = document.createElement("box");
-		const profileImgInputBox = document.createElement("box");
-		const nowPasswordInputBox = document.createElement("box");
-		const newPasswordInputBox = document.createElement("box");
-		const modalBtnBox = document.createElement("box");
-		const completeBtn = document.createElement("img");
-		const cancelBtn = document.createElement("img");
-		const editingInputTemplate = [
-			nameInputBox,
-			profileImgInputBox,
-			nowPasswordInputBox,
-			newPasswordInputBox,
-		];
-		const inputBarInfo = [
-			{ innerText: "닉네임", placeholder: "별명(20자이내)" },
-			{ innerText: "프로필이미지", placeholder: "프로필 URL주소" },
-			{ innerText: "현재비밀번호", placeholder: "현재 비밀번호" },
-			{ innerText: "신규비밀번호", placeholder: "신규 비밀번호" },
-		];
-		const formData = {
-			displayName: "",
-			profileImgBase64: "",
-			oldPassword: "",
-			newPassword: "",
-		};
-
-		nameInputBox.classList.add("input-box");
-		profileImgInputBox.classList.add("input-box");
-		nowPasswordInputBox.classList.add("input-box");
-		newPasswordInputBox.classList.add("input-box");
-		modalBtnBox.classList.add("modal-btn-box");
-		completeBtn.classList.add("complete-btn");
-		cancelBtn.classList.add("cancel-btn");
-
-		completeBtn.src = require("../asset/btnImg/add_btn.png");
-		cancelBtn.src = require("../asset/btnImg/close_btn.png");
-
-		editingInputTemplate.forEach((userInfoBox, idx) => {
-			const inputBar = document.createElement("input");
-			const inputBarName = document.createElement("span");
-
-			inputBar.classList.add("input-bar");
-			inputBarName.classList.add("input-bar-name");
-
-			inputBar.type = "text";
-			inputBarName.innerText = inputBarInfo[idx].innerText;
-			inputBar.placeholder = inputBarInfo[idx].placeholder;
-
-			modalContainer.append(inputBarName, inputBar);
-		});
-
-		completeBtn.addEventListener("click", async () => {
-			const userName = nameInputBox.innerText;
-			const profileImgUrl = profileImgInputBox.innerText;
-			const presentPassword = nowPasswordInputBox.innerText;
-			const newPassword = newPasswordInputBox.innerText;
-
-			formData.displayName = userName;
-			formData.oldPassword = presentPassword;
-			formData.newPassword = newPassword;
-			// 이미지 사진 추가 및 수정 기능은 추후 업데이트 예정
-
-			await request("MEB0", formData);
-			alert("프로필 수정 완료 되었습니다!");
-
-			closeAddAccountModal();
-		});
-
-		ModalContents.append(modalContainer);
-		showAddAccountModal(true);
 	});
 
 	function showAddAccountModal(isProfile) {
@@ -98,7 +24,8 @@ export default function My() {
 	}
 
 	function closeAddAccountModal() {
-		ModalContents.innerHTML = "";
+		ModalTwo.querySelector(".modal-two-template").innerHTML = "";
+		ModalTwo.querySelector(".modal-two-template").style.backgroundImage = "";
 		ModalTwo.classList.add("--hide");
 	}
 
@@ -119,16 +46,18 @@ export default function My() {
 		};
 		let limitNumsLength = 0;
 		const optionList = availableBankInfo
-			.filter(({ disabled }) => !disabled)
-			.map(({ name, code, digits }) => {
-				const accountOption = document.createElement("option");
-				accountOption.classList.add("account-option");
-				accountOption.innerText = name;
-				accountOption.value = name;
-				accountOption.dataset.code = code;
-				accountOption.dataset.digits = digits.join("");
-				return accountOption;
-			});
+			? availableBankInfo
+					.filter(({ disabled }) => !disabled)
+					.map(({ name, code, digits }) => {
+						const accountOption = document.createElement("option");
+						accountOption.classList.add("account-option");
+						accountOption.innerText = name;
+						accountOption.value = name;
+						accountOption.dataset.code = code;
+						accountOption.dataset.digits = digits.join("");
+						return accountOption;
+					})
+			: [];
 
 		closeBtn.classList.add("close-btn");
 		banksBox.classList.add("banks-box");
@@ -315,7 +244,9 @@ async function setAddAccount(formData) {
 async function renderAccountList() {
 	const accountsInfo = await request("ACC02");
 	const totalBalance = accountsInfo.totalBalance;
-	const accountsListItems = accountsList(accountsInfo.accounts);
+	const accountsListItems = accountsInfo
+		? accountsList(accountsInfo.accounts)
+		: [];
 	const AccountListBox = document.querySelector(".accounts-list");
 	AccountListBox.innerHTML = "";
 	AccountListBox.append(...accountsListItems);
@@ -334,7 +265,6 @@ const accountsList = (accountsInfo) => {
 		const accountInfo = document.createElement("span");
 		const accountBalance = document.createElement("span");
 		const deleteBtn = document.createElement("img");
-
 		accountContainer.classList.add("account-container");
 		bankImgBox.classList.add("bank-img-box");
 		bankImg.classList.add("bank-img");
@@ -362,11 +292,3 @@ const accountsList = (accountsInfo) => {
 		return accountContainer;
 	});
 };
-
-function showAlertModalDeletingAccount(Modal) {
-	ModalTwo.classList.remove("--hide");
-}
-
-function closeAlertModalDeletingAccount(Modal) {
-	ModalTwo.classList.add("--hide");
-}
