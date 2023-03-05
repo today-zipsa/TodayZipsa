@@ -1,4 +1,4 @@
-import { util } from "/src/api/util.js";
+import { util } from "../../api/util";
 
 const AdminPage = util.createEl("div");
 
@@ -11,7 +11,7 @@ const div1El = util.createEl("div", { class: "admin-header-wrapper" });
 const aEl = util.createEl("a", { href: "/" }, { class: "admin-logo-btn" });
 const imgEl = util.createEl(
   "img",
-  { src: require("/src/asset/global/main-logo.png") },
+  { src: require("../../asset/global/main-logo.png") },
   { alt: "main-logo" },
   { class: "main-logo-btn-image" }
 );

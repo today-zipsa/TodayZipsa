@@ -1,5 +1,8 @@
 import { request } from "../../api/common";
+
 let token = localStorage.getItem("accessToken");
+let inputText = "";
+let isClickTwice = false;
 
 const Header = document.createElement("header");
 const headerWrapper = document.createElement("div");
@@ -45,9 +48,12 @@ logoutBtn.setAttribute("data-navigo", "");
 logoutBtn.href = "/";
 nameOfLoginBtn.innerText = "로그인";
 nameOfLogoutBtn.innerText = "로그아웃";
-!token
-	? (logoutBtn.style.display = "none") & (welcomeWord.style.display = "none")
-	: (loginBtn.style.display = "none");
+if (token === null) {
+	logoutBtn.style.display = "none";
+	welcomeWord.style.display = "none";
+} else {
+	loginBtn.style.display = "none";
+}
 
 mainLogoBtn.append(mainLogoBtnImage);
 searchBtnWrapper.append(searchBar, searchBtn);
@@ -95,14 +101,41 @@ searchBtn.addEventListener("click", async () => {
 loginBtn.addEventListener("click", () => {
 	if (token) {
 		loginBtn.style.display = "none";
-		logoutBtn.style.display = "inline";
+		welcomeWord.style.display = "inline";
 	}
 });
 
 logoutBtn.addEventListener("click", () => {
-	loginBtn.style.display = "inline";
 	logoutBtn.style.display = "none";
+	welcomeWord.style.display = "none";
+	loginBtn.style.display = "inline";
 	setLogout();
+});
+
+searchBar.addEventListener("input", () => {
+	inputText = searchBar.value;
+});
+
+searchBar.addEventListener("keydown", (event) => {
+	if (event.key === "Enter" && !event.isComposing) {
+		searchBtn.click();
+	}
+});
+
+searchBtn.addEventListener("click", async () => {
+	if (inputText === "") {
+		alert("검색어를 입력하세요.");
+		return;
+	}
+	if (isClickTwice) return;
+	isClickTwice = true;
+
+	window.location = `/search/${inputText}`;
+
+	//init
+	isClickTwice = false;
+	searchBar.value = "";
+	inputText = "";
 });
 
 function setLogout() {
@@ -114,7 +147,7 @@ function setLogout() {
 }
 
 function getNextUrl() {
-	const id = localStorage.getItem("id");
+	const id = localStorage.getItem("email");
 	if (id === "admin@zipsa.com") {
 		return "/admin";
 	} else {

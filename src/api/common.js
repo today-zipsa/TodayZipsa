@@ -45,18 +45,17 @@ export async function request(api, params) {
       reqParams.hasOwnProperty("detailId") ||
       reqParams.hasOwnProperty("productId")
     ) {
+      strId = reqParams["detailId"] || reqParams["productId"];
+
       // 특정 API요청의 경우 파라미터에 직접 productId가 들어가지 않고
       // url 뒤에 붙어서 호출되기에 실제 파라미터에서는 제외
-      // 그 외 호출의 경우 strId변수 초기화
       if (prdSkipAPI.includes(api)) {
-        strId = reqParams["detailId"] || reqParams["productId"];
         delete reqParams.productId;
       } else {
         strId = "";
       }
     }
   }
-
   try {
     const res = await fetch(url + `${strId}`, {
       method: method,

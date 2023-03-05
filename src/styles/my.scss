@@ -25,6 +25,7 @@
 				align-items: center;
 				justify-content: flex-start;
 				height: 3.2em;
+				cursor: pointer;
 				.profile-image {
 					width: 2.2em;
 					height: 2.2em;
@@ -274,6 +275,90 @@
 			flex-direction: column;
 			position: relative;
 
+			.profile-edit-modal {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: start;
+
+				.profile-image-input-box {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					height: 150px;
+
+					.profile-image {
+						width: 76px;
+						height: 70px;
+						object-fit: cover;
+						margin-bottom: 10px;
+					}
+
+					.profile-upload-btn {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-size: 0.7em;
+						font-weight: 500;
+						border: 0.08em solid var(--main-key-color);
+						margin-right: 0.4em;
+						color: var(--main-key-color);
+						border-radius: 0.3em;
+						cursor: pointer;
+						height: 26px;
+						width: 140px;
+						margin-bottom: 5px;
+					}
+				}
+
+				.input-bar-name {
+					font-weight: 600;
+					margin-bottom: 5px;
+					color: #2f3438;
+					padding-left: 3px;
+				}
+				.input-bar {
+					height: 30px;
+					width: 280px;
+					border: 0.08em solid #dcdee0;
+					padding-left: 5px;
+					border-radius: 5px;
+					margin-bottom: 24px;
+				}
+				.modal-btn-box {
+					display: flex;
+					flex-direction: column;
+					.complete-btn {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-size: 0.7em;
+						font-weight: 500;
+						border: 0.08em solid var(--main-key-color);
+						margin-right: 0.4em;
+						color: var(--main-key-color);
+						border-radius: 0.3em;
+						cursor: pointer;
+						height: 30px;
+						width: 289px;
+						margin-bottom: 5px;
+					}
+					.cancel-btn {
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						font-size: 0.7em;
+						font-weight: 500;
+						border: 0.08em solid #dcdee0;
+						border-radius: 0.3em;
+						cursor: pointer;
+						height: 30px;
+						width: 289px;
+					}
+				}
+			}
+
 			.close-btn {
 				position: absolute;
 				top: 10px;
@@ -282,6 +367,7 @@
 				height: 24px;
 				cursor: pointer;
 			}
+
 			.banks-box {
 				.bank-selected-bar {
 					padding-left: 10px;
@@ -333,27 +419,10 @@
 				font-size: larger;
 			}
 
-			// .input-box {
-			// 	display: flex;
-			// 	flex-direction: column;
-			.input-bar-name {
-				font-weight: 600;
-				margin-bottom: 5px;
-				color: #2f3438;
-				padding-left: 3px;
-			}
-			.input-bar {
-				height: 31px;
-				width: 280px;
-				border: 0.08em solid #dcdee0;
-				padding-left: 5px;
-				border-radius: 5px;
-			}
-
 			&::placeholder {
 				color: #dcdee06c;
 			}
-			// }
+
 			.modal-btn-box {
 				display: flex;
 				flex-direction: column;
