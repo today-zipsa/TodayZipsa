@@ -16,10 +16,6 @@ export default async function My() {
 		showAddAccountModal();
 	});
 
-	profileContainer.addEventListener("click", () => {
-		console.log("까꽁");
-	});
-
 	function showAddAccountModal(isProfile) {
 		if (!isProfile) {
 			setAddAccountModal();
@@ -106,7 +102,7 @@ export default async function My() {
 			setAccountNumsBlock(option.dataset.digits, accountNumberBox);
 			onChange(option);
 		});
-
+		console.log(limitNumsLength);
 		icTagBtn.addEventListener("click", async (e) => {
 			let accountNumbers = "";
 			accountNumberBox.children[0]
