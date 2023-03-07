@@ -11,7 +11,7 @@
 :--------: | :--: | :---: | :--: | :--: 
 <img src="https://avatars.githubusercontent.com/u/55748886?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/21377593?v=4" style="width: 150px" /> | <img src="https://avatars.githubusercontent.com/u/98999052?v=4" style="width: 150px;" /> | <img src="https://avatars.githubusercontent.com/u/76941552?v=4" style="width: 150px;" /> | <img src="https://user-images.githubusercontent.com/76941552/222496605-341c257e-028d-48ef-b223-5991f2b66c6c.png" style="width: 150px"/>
 [gygy7151](https://github.com/gygy7151) | [hlee686](https://github.com/hlee686) | [soheedev](https://github.com/soheedev) | [ronieo](https://github.com/ronieo) | [oysterjung](https://github.com/oysterjung) 
-[마이 페이지]<br>  [주문 상세 페이지]<br>  [결제 상세 페이지]<br>  [회원가입 페이지]<br> [공동 헤더]<br> [라우팅작업 및 유지보수]<br> [CI/CD]<br>|[메인 페이지]<br>- 제품 상세 페이지<br>|[어드민 페이지]<br>- 상품 관리페이지<br>- 거래 내역 페이지<br> [메인 페이지]<br>|[회원가입 페이지]<br> [로그인 페이지]<br> [404 페이지]<br> [공동 Footer]<br> - 제품 상세 페이지<br>|[결제 페이지]<br> [결제 완료 페이지]
+[마이 페이지]<br>  [주문 상세 페이지]<br>  [결제 상세 페이지]<br>  [회원가입 페이지]<br> [공동 헤더]<br> [라우팅작업 및 유지보수]<br> [CI/CD]<br>|[메인 페이지]<br>- 제품 상세 페이지<br>|[공통API]<br>[어드민 페이지]<br>- 상품 관리페이지<br>- 거래 내역 페이지<br> [메인 페이지]<br>- 홈, 메뉴, 검색페이지<br>|[회원가입 페이지]<br> [로그인 페이지]<br> [404 페이지]<br> [공동 Footer]<br> - 제품 상세 페이지<br>|[결제 페이지]<br> [결제 완료 페이지]
 
 <br/><br/>
  ## 📝 오늘의집사 프로젝트 소개
@@ -37,11 +37,18 @@
 
 <br/><br />
 ### 🐱 마이 페이지
-![Image](https://user-images.githubusercontent.com/76941552/222939623-9443a01b-36dd-4841-bbce-e4632f93ae04.png)
+### 구매내역 조회 및 페이징 처리 기능
+<img width="943" alt="image" src="https://user-images.githubusercontent.com/55748886/223410130-8b00e043-844e-45c4-84e0-e52543239a75.png">
+
+### 계좌관리 기능
+<img width="679" alt="image" src="https://user-images.githubusercontent.com/55748886/223389770-7e02a25a-6d30-4972-81f0-fc97688a9910.png">
+### 프로필 수정기능
+<img width="727" alt="image" src="https://user-images.githubusercontent.com/55748886/223390125-868cdb60-e137-4420-9a4c-c162f4d4cfc4.png">
 
 <br/><br />
 ### 🐶 어드민 페이지
-![pages](https://user-images.githubusercontent.com/98999052/222729393-204bfe95-d435-479d-bbc3-ff2e1885b249.png)
+<img width="839" alt="image" src="https://user-images.githubusercontent.com/98999052/222963025-510f6843-bb7b-4c16-9846-390e1f341624.png">
+<img width="824" alt="image" src="https://user-images.githubusercontent.com/98999052/222963082-05233334-3bee-4e66-a816-aeab8af1a032.png">
 
 <br/><br />
 ## ⏱ 오늘의집사 작업과정
