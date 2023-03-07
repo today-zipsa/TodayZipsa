@@ -483,5 +483,4 @@ function renderPaymentsList(paymentsListItems, pageContainer) {
 	paymentsContainer.innerHTML = "";
 
 	paymentsContainer.append(...paymentsListItems, pageContainer);
-	renderAccountList();
 }
