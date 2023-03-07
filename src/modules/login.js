@@ -66,7 +66,6 @@ export default async function Login() {
 	//로그인 버튼
 	loginBtnEl.addEventListener("click", async () => {
 		if (loginValidator()) {
-			console.log("되나?");
 			params.email = loginID.value;
 			params.password = loginPW.value;
 
@@ -94,6 +93,6 @@ export default async function Login() {
 		localStorage.setItem("accessToken", res.accessToken);
 		localStorage.setItem("email", res.user.email);
 		localStorage.setItem("displayName", res.user.displayName);
-		localStorage.setItem("profileImg", res.user.profileImgBase64);
+		localStorage.setItem("profileImg", res.user.profileImg);
 	}
 }
