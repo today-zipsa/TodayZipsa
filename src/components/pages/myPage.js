@@ -15,6 +15,7 @@ export default function MyPage() {
 	const addAccountBtnBox = document.createElement("div");
 	const btnImg = document.createElement("img");
 	const btnTitle = document.createElement("span");
+	const loadingEl = util.createEl("div", { id: "loading_bar" });
 
 	MyPage.className = "my-section";
 	profileContainer.className = "profile-container";
@@ -167,7 +168,7 @@ export default function MyPage() {
 		accountsList,
 		addAccountBtnBox
 	);
-	MyPage.append(profileContainer, infoContainer, ModalTwo);
+	MyPage.append(profileContainer, infoContainer, ModalTwo, loadingEl);
 
 	// console.log(MyPage.outerHTML); 문자열 html 태그값
 
@@ -279,7 +280,7 @@ async function paymentsList() {
 		const isCanceled = payment.isCanceled;
 		const productPrice = payment.product.price;
 		const productName = payment.product.title;
-		const thumbnailUrl = "https://picsum.photos/id/237/200/300"; //myimg; //payment.product.thumbnail;
+		const thumbnailUrl = payment.product.thumbnail;
 		const paymentTime = payment.timePaid
 			.slice(5, 10)
 			.split("-")
@@ -402,6 +403,7 @@ async function paymentsList() {
 	pageNumbers.children[0].classList.add("active");
 
 	pageNumbers.addEventListener("click", (e) => {
+		window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
 		const nowPageNumber = e.target.dataset.pageNumber;
 		Array.from(pageNumbers.children).forEach((button) => {
 			button.classList.remove("active");
@@ -422,6 +424,7 @@ async function paymentsList() {
 	prevBtn.addEventListener("click", () => {
 		const nowPageNumber = presentPageNumber - 1;
 		if (nowPageNumber > 0) {
+			window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
 			presentPageNumber = nowPageNumber;
 			Array.from(pageNumbers.children).forEach((button) => {
 				button.classList.remove("active");
@@ -443,6 +446,7 @@ async function paymentsList() {
 	nextBtn.addEventListener("click", () => {
 		const nowPageNumber = presentPageNumber + 1;
 		if (nowPageNumber <= pageCount) {
+			window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
 			presentPageNumber = nowPageNumber;
 
 			Array.from(pageNumbers.children).forEach((button) => {
@@ -479,4 +483,5 @@ function renderPaymentsList(paymentsListItems, pageContainer) {
 	paymentsContainer.innerHTML = "";
 
 	paymentsContainer.append(...paymentsListItems, pageContainer);
+	renderAccountList();
 }
