@@ -44,7 +44,7 @@
 ![pages](https://user-images.githubusercontent.com/98999052/222729393-204bfe95-d435-479d-bbc3-ff2e1885b249.png)
 
 <br/><br />
-## ⏱ 오늘의집사 작업과정 - private라 이미지 파일을 첨부합니다 :)
+## ⏱ 오늘의집사 작업과정
  [TodayZipsa Project](https://github.com/orgs/today-zipsa/projects/2/views/1)
 
 ![Image](https://user-images.githubusercontent.com/76941552/222759263-dc7c18a6-ae09-44e2-8ab7-7685864014da.png)
