@@ -475,7 +475,6 @@ async function paymentsList() {
 			.slice(presentPageNumber * 10, (presentPageNumber + 1) * 10),
 		pageContainer
 	);
-}
 
 function renderPaymentsList(paymentsListItems, pageContainer) {
 	const paymentsContainer = document.querySelector(".payments-container");

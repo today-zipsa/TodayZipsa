@@ -92,7 +92,7 @@ export default async function Search(searchText) {
 			searchBuyBtn.classList.add("category-buy");
 			searchBuyBtn.textContent = "바로구매";
 			searchBuyBtn.addEventListener("click", () => {
-				window.location = `payment/${item.id}`;
+				window.location = `/payment/${item.id}`;
 			});
 			searchBuy.append(searchBuyBtn);
 
