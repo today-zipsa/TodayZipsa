@@ -1,19 +1,13 @@
+import { util } from "../../api/util";
 import ModalTwo from "../templates/modalTwo";
 import { request } from "../../api/common";
-import profileImg from "../../asset/myImg/profile.png";
-import addBtnImg from "../../asset/btnImg/add_btn.png";
 import deleteBtnImg from "../../asset/btnImg/close_btn.png";
+import { renderAccountList } from "../../modules/my";
 
 export default function MyPage() {
 	const MyPage = document.createElement("section");
-	const profileContainer = document.createElement("box");
-	const profileBox = document.createElement("box");
-	const welcomeWordBox = document.createElement("box");
-	const profileImage = document.createElement("img");
-	const profileWords1 = document.createElement("span");
-	const profileWords2 = document.createElement("span");
-	const paymentPeriod = document.createElement("span");
 	const infoContainer = document.createElement("box");
+	const profileContainer = document.createElement("box");
 	const paymentsContainer = document.createElement("box");
 	const accountsContainer = document.createElement("box");
 	const accountsContainerTitle = document.createElement("div");
@@ -24,12 +18,6 @@ export default function MyPage() {
 
 	MyPage.className = "my-section";
 	profileContainer.className = "profile-container";
-	profileBox.className = "profile-box";
-	welcomeWordBox.className = "welcome-word-box";
-	profileImage.className = "profile-image";
-	profileWords1.className = "profile-words1";
-	profileWords2.className = "profile-words2";
-	paymentPeriod.className = "payment-period";
 	infoContainer.className = "info-container";
 	paymentsContainer.className = "payments-container";
 	accountsContainer.className = "accounts-container";
@@ -39,7 +27,6 @@ export default function MyPage() {
 	btnImg.className = "btn-img";
 	btnTitle.className = "btn-title";
 	btnImg.src = require("../../asset/btnImg/add_btn.png");
-	profileImage.alt = "profile-image";
 	btnImg.alt = "add-btn-image";
 	accountsContainerTitle.innerHTML = "계좌관리";
 	btnTitle.innerHTML = "계좌연결";
@@ -88,6 +75,11 @@ export default function MyPage() {
 		completeBtn.classList.add("complete-btn");
 		cancelBtn.classList.add("cancel-btn");
 
+		profileImg.src =
+			localStorage.getItem("profileImg") !== "undefined" &&
+			localStorage.getItem("profileImg") !== null
+				? localStorage.getItem("profileImg")
+				: require("../../asset/myImg/profile.png");
 		completeBtn.innerText = "확인";
 		cancelBtn.innerText = "취소";
 		profileUploadBtn.innerText = "업로드";
@@ -134,20 +126,24 @@ export default function MyPage() {
 		});
 
 		completeBtn.addEventListener("click", async () => {
-			const userName = nameInputBox.innerText;
-			const presentPassword = nowPasswordInputBox.innerText;
-			const newPassword = newPasswordInputBox.innerText;
+			const newData = [];
+			document.querySelectorAll(".input-bar").forEach((inputBar) => {
+				newData.push(inputBar.value);
+			});
+			const [userName, presentPassword, newPassword] = newData;
 
 			formData.displayName = userName;
 			formData.oldPassword = presentPassword;
 			formData.newPassword = newPassword;
 
 			const res = await request("MEB05", formData);
+
 			localStorage.setItem("email", res.email);
 			localStorage.setItem("displayName", res.displayName);
 			localStorage.setItem("profileImg", res.profileImg);
 
 			alert("프로필 수정 완료 되었습니다!");
+			renderTest(MyPage);
 
 			document.querySelector(".modal-two-template").innerHTML = "";
 			document.querySelector(".modal-two-template").style.backgroundImage = "";
@@ -163,11 +159,9 @@ export default function MyPage() {
 		document.querySelector(".modal-two-template").append(modalContainer);
 		document.querySelector(".modal-two").classList.remove("--hide");
 	});
-	welcomeWordBox.append(profileImage, profileWords1);
-	profileBox.append(welcomeWordBox, profileWords2);
-	profileContainer.append(profileBox, paymentPeriod);
+
 	infoContainer.append(paymentsContainer, accountsContainer);
-	addAccountBtnBox.append(btnImg, btnImg);
+	addAccountBtnBox.append(btnImg);
 	accountsContainer.append(
 		accountsContainerTitle,
 		accountsList,
@@ -180,16 +174,6 @@ export default function MyPage() {
 	renderTest(MyPage);
 
 	return MyPage;
-
-	function setUserInfo(params) {
-		// 사용자 정보 수정 API로직
-		try {
-			if (localStorage.getItem("accessToken")) {
-			}
-		} catch (error) {
-			window.alert(error);
-		}
-	}
 }
 
 async function renderTest(page) {
@@ -197,11 +181,13 @@ async function renderTest(page) {
 		page.children
 	);
 	const paymentsInfo = await request("PRD12");
+
 	const firstDateToPay = paymentsInfo[0].timePaid
 		.slice(0, 10)
 		.split("-")
 		.join(".");
-	const lastDateToPay = paymentsInfo[paymentsInfo.length - 2].timePaid
+
+	const lastDateToPay = paymentsInfo[paymentsInfo.length - 1].timePaid
 		.slice(0, 10)
 		.split("-")
 		.join(".");
@@ -210,18 +196,35 @@ async function renderTest(page) {
 		localStorage.getItem("profileImg") !== "undefined" &&
 		localStorage.getItem("profileImg") !== null
 			? localStorage.getItem("profileImg")
-			: profileImg;
+			: require("../../asset/myImg/profile.png");
 
-	profileContainer.innerHTML = `
-				<box class="profile-box">
-					<box class="welcome-word-box">
-						<img class="profile-image" src="${profileImgSrc}" alt="profile-image">
-						<span class="profile-words1">안녕하세요, 이지영님</span>
-					</box>
-					<span class="profile-words2">${firstDateToPay} ~ ${lastDateToPay} 동안 구매해주신 내역이에요.</span>
-				</box>
-			`;
+	const profileName = localStorage.getItem("displayName");
 
+	const profileBox = document.createElement("box");
+	const welcomeWordBox = document.createElement("box");
+	const profileImage = document.createElement("img");
+	const profileWords1 = document.createElement("span");
+	const profileWords2 = document.createElement("span");
+	const paymentPeriod = document.createElement("span");
+
+	profileBox.className = "profile-box";
+	welcomeWordBox.className = "welcome-word-box";
+	profileImage.className = "profile-image";
+	profileWords1.className = "profile-words1";
+	profileWords2.className = "profile-words2";
+	paymentPeriod.className = "payment-period";
+
+	profileImage.alt = "profile-image";
+	profileImage.src = profileImgSrc;
+	profileWords1.innerText = `안녕하세요,${profileName}님`;
+	profileWords2.innerText = `${firstDateToPay} ~ ${lastDateToPay} 동안 구매해주신 내역이에요.`;
+
+	welcomeWordBox.append(profileImage, profileWords1);
+	profileBox.append(welcomeWordBox, profileWords2);
+
+	profileContainer.innerHTML = "";
+	infoContainer.querySelector(".payments-container").innerHTML = "";
+	profileContainer.append(profileBox);
 	paymentsList();
 }
 
@@ -263,6 +266,14 @@ export function getKRW(digit) {
 
 async function paymentsList() {
 	const paymentsInfo = await request("PRD12");
+	const pageContainer = util.createEl("nav", { class: "pagination" });
+	const pageNumbers = util.createEl("div", { class: "page-numbers" });
+	const prevBtn = util.createEl("img", {
+		class: "prev-btn",
+	});
+	const nextBtn = util.createEl("img", {
+		class: "next-btn",
+	});
 	const paymentsListItems = paymentsInfo.map((payment) => {
 		const isTransactionCompleted = payment.done;
 		const isCanceled = payment.isCanceled;
@@ -312,7 +323,7 @@ async function paymentsList() {
 			paymentStateBox.style.color = "#909190";
 		}
 		if (isTransactionCompleted) {
-			btnPayConfirmed.classList.add("none");
+			twoBtnBox.classList.add("none");
 			paymentState = "구매확정완료";
 			paymentStateBox.style.color = "#909190";
 		}
@@ -327,23 +338,33 @@ async function paymentsList() {
 		itemImage.src = thumbnailUrl;
 		itemImage.alt = "상품이미지";
 		deleteBtn.src = deleteBtnImg;
-		deleteBtn.dataset.id = payment.product.productId;
+		deleteBtn.dataset.productId = payment.product.productId;
+		btnPayCanceled.dataset.detailId = payment.detailId; // 거래내역 ID
+		btnPayConfirmed.dataset.detailId = payment.detailId;
 		btnPayConfirmed.innerText = "구매확정";
 		btnPayCanceled.innerText = "주문취소";
+		prevBtn.style.display = "none";
+		prevBtn.src = require("../../asset/btnImg/prev_btn.png");
+		nextBtn.style.display = "none";
+		nextBtn.src = require("../../asset/btnImg/next_btn.png");
 
-		deleteBtn.addEventListener("click", async (e) => {
-			await request("PRD10", {
-				detailId: e.target.dataset.id,
+		btnPayCanceled.addEventListener("click", async (e) => {
+			const res = await request("PRD10", {
+				detailId: e.target.dataset.detailId,
 			});
-			alert("서비스 준비중입니다.");
+			console.log(res);
+			paymentsList();
+			renderAccountList();
+			alert("주문 취소 되었습니다.");
 		});
 
-		btnPayCanceled.addEventListener("click", () => {
-			alert("서비스 준비중입니다.");
-		});
-
-		btnPayConfirmed.addEventListener("click", () => {
-			alert("서비스 준비중입니다.");
+		btnPayConfirmed.addEventListener("click", async (e) => {
+			const res = await request("PRD11", {
+				detailId: e.target.dataset.detailId,
+			});
+			paymentsList();
+			console.log(res);
+			alert("주문 확정 완료되었습니다.");
 		});
 
 		detailInfoBtn.addEventListener("click", () => {
@@ -354,17 +375,108 @@ async function paymentsList() {
 		itemInfoBox.append(paymentDate, itemName, itemPrice, detailInfoBtn);
 		paymentInfoBox.append(itemImage, itemInfoBox);
 		twoBtnBox.append(btnPayConfirmed, btnPayCanceled);
-		paymentContainer.append(
-			paymentStateBox,
-			paymentInfoBox,
-			twoBtnBox,
-			deleteBtn
-		);
+		paymentContainer.append(paymentStateBox, paymentInfoBox, twoBtnBox);
 
 		return paymentContainer;
 	});
 
-	document
-		.querySelector(".payments-container")
-		.append(...paymentsListItems.slice(0, 4));
+	const pageCount = Math.ceil(paymentsListItems.length / 10);
+	let presentPageNumber = 0;
+
+	if (pageCount > 0) {
+		prevBtn.style.display = "block";
+		nextBtn.style.display = "block";
+	}
+
+	pageNumbers.innerHTML = "";
+	for (let i = 1; i <= pageCount; i++) {
+		const pageNumber = document.createElement("button");
+		pageNumber.classList.add("page-number");
+		pageNumber.innerHTML = i;
+		pageNumber.dataset.pageNumber = i;
+
+		pageNumber.addEventListener("click", () => {});
+
+		pageNumbers.append(pageNumber);
+	}
+	pageNumbers.children[0].classList.add("active");
+
+	pageNumbers.addEventListener("click", (e) => {
+		const nowPageNumber = e.target.dataset.pageNumber;
+		Array.from(pageNumbers.children).forEach((button) => {
+			button.classList.remove("active");
+			if (button.dataset.pageNumber === nowPageNumber) {
+				button.classList.add("active");
+				presentPageNumber = nowPageNumber;
+			}
+		});
+		renderPaymentsList(
+			paymentsListItems.slice(
+				(presentPageNumber - 1) * 10,
+				presentPageNumber * 10
+			),
+			pageContainer
+		);
+	});
+
+	prevBtn.addEventListener("click", () => {
+		const nowPageNumber = presentPageNumber - 1;
+		if (nowPageNumber > 0) {
+			presentPageNumber = nowPageNumber;
+			Array.from(pageNumbers.children).forEach((button) => {
+				button.classList.remove("active");
+				if (button.dataset.pageNumber === String(nowPageNumber)) {
+					button.classList.add("active");
+					presentPageNumber = nowPageNumber;
+				}
+			});
+			renderPaymentsList(
+				paymentsListItems.slice(
+					(presentPageNumber - 1) * 10,
+					presentPageNumber * 10
+				),
+				pageContainer
+			);
+		}
+	});
+
+	nextBtn.addEventListener("click", () => {
+		const nowPageNumber = presentPageNumber + 1;
+		if (nowPageNumber <= pageCount) {
+			presentPageNumber = nowPageNumber;
+
+			Array.from(pageNumbers.children).forEach((button) => {
+				button.classList.remove("active");
+
+				console.log(button.dataset.pageNumber, nowPageNumber);
+				if (button.dataset.pageNumber === String(nowPageNumber)) {
+					button.classList.add("active");
+					presentPageNumber = nowPageNumber;
+				}
+			});
+			renderPaymentsList(
+				paymentsListItems.slice(
+					(presentPageNumber - 1) * 10,
+					presentPageNumber * 10
+				),
+				pageContainer
+			);
+		}
+	});
+
+	pageContainer.append(prevBtn, pageNumbers, nextBtn);
+	renderPaymentsList(
+		paymentsListItems
+			.reverse()
+			.slice(presentPageNumber * 10, (presentPageNumber + 1) * 10),
+		pageContainer
+	);
+}
+
+function renderPaymentsList(paymentsListItems, pageContainer) {
+	const paymentsContainer = document.querySelector(".payments-container");
+
+	paymentsContainer.innerHTML = "";
+
+	paymentsContainer.append(...paymentsListItems, pageContainer);
 }
