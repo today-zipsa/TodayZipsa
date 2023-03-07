@@ -31,6 +31,7 @@ import Admin from "./admin";
 import My from "./my";
 import Join from "./join";
 import Login from "./login";
+import Main from "./main";
 import NotFound from "./404";
 
 export const router = new Navigo("/");
