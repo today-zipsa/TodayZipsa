@@ -37,7 +37,15 @@ body {
 	font-size: 1em;
 	font-weight: 600;
 }
-.admin-header .admin-header-wrapper .logout {
+.admin-header .admin-header-wrapper .admin-header-text {
+	display: flex;
+	gap: 40px;
+}
+.admin-header .admin-header-wrapper .admin-header-btn {
+	text-decoration: none;
+	color: #000;
+}
+.admin-header .admin-header-wrapper .admin-header-btn .logout {
 	font-size: 1em;
 	font-weight: 600;
 	margin-right: 0.2em;
@@ -78,9 +86,17 @@ body {
 	padding: 5px 25px;
 	margin: 5px;
 }
-.item_btn {
+.item_search {
 	display: flex;
-	justify-content: end;
+	justify-content: space-between;
+}
+.item-search-div {
+	display: flex;
+	gap: 10px;
+}
+.item-search-count {
+	padding: 8px 0px;
+	margin: 5px;
 }
 
 /* Tab 생성 */
@@ -374,6 +390,28 @@ textarea {
 	background: #fff;
 }
 .page-number.active {
+	color: #fff;
+	background: #0c8a4e;
+}
+#order_list .hidden {
+	display: none;
+}
+.page-number2,
+.admin-paging-btn {
+	font-size: 1.2rem;
+	background-color: transparent;
+	border: none;
+	margin: 0.25rem 0.25rem;
+	cursor: pointer;
+	height: 2rem;
+	width: 2rem;
+	border-radius: 0.2rem;
+}
+.page-number2:hover,
+.admin-paging-btn:not(.disabled):hover {
+	background: #fff;
+}
+.page-number2.active {
 	color: #fff;
 	background: #0c8a4e;
 }
