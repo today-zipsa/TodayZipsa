@@ -5,11 +5,13 @@ import IC_chip from "../asset/bankImg/IC_chip.png";
 import ModalTwo from "../components/templates/modalTwo";
 
 export default async function My() {
-	const app = document.querySelector("#app");
-	const profileContainer = document.querySelector(".profile-words1");
 	const addAccountBtn = document.querySelector(".btn-img");
 	const ModalTemplate = document.querySelector(".modal-two");
 	const ModalContents = document.querySelector(".modal-two-template");
+	const pagingNumbers = document.getElementById("page-numbers");
+	const prevButton = document.getElementById("page-prev-btn");
+	const nextButton = document.getElementById("page-next-btn");
+
 	renderAccountList();
 
 	addAccountBtn.addEventListener("click", () => {
@@ -102,7 +104,7 @@ export default async function My() {
 			setAccountNumsBlock(option.dataset.digits, accountNumberBox);
 			onChange(option);
 		});
-		console.log(limitNumsLength);
+
 		icTagBtn.addEventListener("click", async (e) => {
 			let accountNumbers = "";
 			accountNumberBox.children[0]
@@ -196,13 +198,17 @@ function setBankImage(bankName, bankImg) {
 }
 
 const debounceOnKeydown = debounce((error) => {
-	document.querySelector(".input-alert-word").innerText = error;
+	if (document.querySelector(".input-alert-word")) {
+		document.querySelector(".input-alert-word").innerText = error;
+	}
 	setInputAlertWord();
 }, 100);
 
 function setInputAlertWord() {
 	setTimeout(() => {
-		document.querySelector(".input-alert-word").innerText = "";
+		if (document.querySelector(".input-alert-word")) {
+			document.querySelector(".input-alert-word").innerText = "";
+		}
 	}, 1200);
 }
 
@@ -241,7 +247,7 @@ async function setAddAccount(formData) {
 	return true;
 }
 
-async function renderAccountList() {
+export async function renderAccountList() {
 	const accountsInfo = await request("ACC02");
 	const totalBalance = accountsInfo.totalBalance;
 	const accountsListItems = accountsInfo
