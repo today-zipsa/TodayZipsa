@@ -12,8 +12,6 @@ export default async function My() {
 	const prevButton = document.getElementById("page-prev-btn");
 	const nextButton = document.getElementById("page-next-btn");
 
-	renderAccountList();
-
 	addAccountBtn.addEventListener("click", () => {
 		showAddAccountModal();
 	});
