@@ -22,34 +22,138 @@
  - 404페이지 출력 시, 3초 뒤 메인화면으로 돌아가거나, 버튼을 눌러 메인화면으로 돌아 갈 수 있습니다.
  
 <br/><br/>
-### 🐶 메인페이지
-![Image](https://user-images.githubusercontent.com/76941552/222914196-275173fa-269b-4842-ace3-e47a77ff4cfe.png)
-![Image](https://user-images.githubusercontent.com/76941552/222914197-5b930c6b-837c-49ab-b71a-59326ce893d5.png)
-![Image](https://user-images.githubusercontent.com/76941552/222914199-3ead862e-18e7-4612-961c-db2dc97d6590.png)
-
-<br/><br />
-### 🐱 카테고리 페이지
-![Image](https://user-images.githubusercontent.com/76941552/222914198-79ba805f-6300-4278-9a70-4e769c3be2ec.png)
-
-<br/><br />
-### 🐶 검색 시 출력되는 화면
-![pages](https://user-images.githubusercontent.com/98999052/222499827-9faf887d-4bab-447a-bf02-4b4f2b2f6752.png)
-
-<br/><br />
-### 🐱 마이 페이지
-### 구매내역 조회 및 페이징 처리 기능
-<img width="943" alt="image" src="https://user-images.githubusercontent.com/55748886/223410130-8b00e043-844e-45c4-84e0-e52543239a75.png">
-
-### 계좌관리 기능
-<img width="679" alt="image" src="https://user-images.githubusercontent.com/55748886/223389770-7e02a25a-6d30-4972-81f0-fc97688a9910.png">
-
-### 프로필 수정기능
-<img width="727" alt="image" src="https://user-images.githubusercontent.com/55748886/223390125-868cdb60-e137-4420-9a4c-c162f4d4cfc4.png">
-
-<br/><br />
-### 🐶 어드민 페이지
-<img width="839" alt="image" src="https://user-images.githubusercontent.com/98999052/222963025-510f6843-bb7b-4c16-9846-390e1f341624.png">
-<img width="824" alt="image" src="https://user-images.githubusercontent.com/98999052/222963082-05233334-3bee-4e66-a816-aeab8af1a032.png">
+<div align="center">
+<table>
+<tr>
+    <th>
+      <div >
+        <img src="https://user-images.githubusercontent.com/76941552/222914196-275173fa-269b-4842-ace3-e47a77ff4cfe.png" width="380" height="270">
+      </div>
+      <div align="center">
+     🐶 메인페이지
+      </div>
+    </th>
+    <th>
+      <div>
+        <img src="https://user-images.githubusercontent.com/76941552/222914199-3ead862e-18e7-4612-961c-db2dc97d6590.png" width="400" height="270">
+      </div>
+     <div align="center">
+     🐶 메인페이지
+      </div>
+    </th>
+  </tr>
+<!-- 구분선-->
+<tr>
+    <th>
+      <div >
+        <img src="https://user-images.githubusercontent.com/76941552/223715933-cfe0fe41-2ef3-4e39-a03f-d7a7c322bc46.png" width="380" height="270">
+      </div>
+      <div align="center">
+     🐱회원가입 - 프로필 업로드,이용약관 팝업
+      </div>
+    </th>
+    <th>
+      <div>
+        <img src="https://user-images.githubusercontent.com/76941552/223715934-5eee426c-58ea-4017-a6c5-b2fe22cc576c.png" width="400" height="270">
+      </div>
+     <div align="center">
+     🐶 로그인
+      </div>
+    </th>
+  </tr>
+<tr>
+<!-- 구분선-->
+    <th>
+      <div >
+        <img src="https://user-images.githubusercontent.com/76941552/222914198-79ba805f-6300-4278-9a70-4e769c3be2ec.png" width="380" height="270">
+      </div>
+      <div align="center">
+     🐱 카테고리 페이지
+      </div>
+    </th>
+    <th>
+      <div>
+        <img src="https://user-images.githubusercontent.com/98999052/222499827-9faf887d-4bab-447a-bf02-4b4f2b2f6752.png" width="400" height="270">
+      </div>
+     <div align="center">
+     🐶 검색 시 출력되는 화면
+      </div>
+    </th>
+  </tr>
+<!-- 구분선-->
+    <th>
+      <div >
+        <img src="https://user-images.githubusercontent.com/76941552/223716543-58be8395-d08c-4e15-9eb7-9c306a630d9c.png" width="380" height="270">
+      </div>
+      <div align="center">
+     🐱 결제페이지
+      </div>
+    </th>
+    <th>
+      <div>
+        <img src="https://user-images.githubusercontent.com/76941552/223716542-83caf47b-5449-41a9-ab40-94c44c73f38c.png" width="400" height="270">
+      </div>
+     <div align="center">
+     🐶 결제완료페이지
+      </div>
+    </th>
+  </tr>
+<!-- 구분선-->
+    <th>
+      <div >
+        <img src="https://user-images.githubusercontent.com/55748886/223410130-8b00e043-844e-45c4-84e0-e52543239a75.png" width="380" height="270">
+      </div>
+      <div align="center">
+     🐱 마이페이지 - 구매내역 조회 및 페이징 처리
+      </div>
+    </th>
+    <th>
+      <div>
+        <img src="https://user-images.githubusercontent.com/55748886/223389770-7e02a25a-6d30-4972-81f0-fc97688a9910.png" width="400" height="270">
+      </div>
+     <div align="center">
+     🐱 마이페이지 - 계좌관리 기능
+      </div>
+    </th>
+  </tr>
+<!-- 구분선-->
+    <th>
+      <div >
+        <img src="https://user-images.githubusercontent.com/55748886/223390125-868cdb60-e137-4420-9a4c-c162f4d4cfc4.png" width="380" height="270">
+      </div>
+      <div align="center">
+     🐱 마이페이지 -프로필 수정
+      </div>
+    </th>
+    <th>
+      <div>
+        <img src="https://user-images.githubusercontent.com/98999052/222963025-510f6843-bb7b-4c16-9846-390e1f341624.png" width="400" height="270">
+      </div>
+     <div align="center">
+     🐶 어드민 페이지 - 상품관리
+      </div>
+    </th>
+  </tr>
+<!-- 구분선-->
+    <th>
+      <div>
+        <img src="https://user-images.githubusercontent.com/98999052/222963082-05233334-3bee-4e66-a816-aeab8af1a032.png" width="400" height="270">
+      </div>
+     <div align="center">
+     🐶 어드민 페이지 - 주문관리
+      </div>
+    </th>
+    <th>
+      <div >
+        <img src="https://user-images.githubusercontent.com/76941552/223716541-9f0f789b-c212-4e08-8666-403e66e64675.png" width="380" height="270">
+      </div>
+      <div align="center">
+      🐶 404
+      </div>
+    </th>
+  </tr>
+</table>
+</div>
 
 <br/><br />
 ## ⏱ 오늘의집사 작업과정
@@ -118,6 +222,11 @@
 5. $ npm run dev
 ``` 
 <br/><br />
+
+<h2>📚 팀 오늘의집사 개발 일지</h2>
+
+- [debounce 활용 계좌번호 예외처리 UI 성능 최적화](https://foxvox.tistory.com/220)  
+
 ---
 <br/><br/>
  ## 🐱 오늘의집사 프로덕트 소개
