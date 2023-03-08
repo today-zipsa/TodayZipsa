@@ -7,7 +7,7 @@
 
 <br /><br />
 ## 🐶 TodayZipsa 팀 소개
-이지영(팀장) | 이희서 | 김소희 | 이로운 | 정석화 
+[이지영(팀장)](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Agygy7151)  | [이희서](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Ahlee686) | [김소희](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Asoheedev) | [이로운](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Aronieo) | [정석화](https://github.com/today-zipsa/TodayZipsa/pulls?q=is%3Apr+is%3Aclosed+author%3Aoysterjung) 
 :--------: | :--: | :---: | :--: | :--: 
 <img src="https://avatars.githubusercontent.com/u/55748886?v=4" style="width: 200px;" /> | <img src="https://avatars.githubusercontent.com/u/21377593?v=4" style="width: 150px" /> | <img src="https://avatars.githubusercontent.com/u/98999052?v=4" style="width: 150px;" /> | <img src="https://avatars.githubusercontent.com/u/76941552?v=4" style="width: 150px;" /> | <img src="https://user-images.githubusercontent.com/76941552/222496605-341c257e-028d-48ef-b223-5991f2b66c6c.png" style="width: 150px"/>
 [gygy7151](https://github.com/gygy7151) | [hlee686](https://github.com/hlee686) | [soheedev](https://github.com/soheedev) | [ronieo](https://github.com/ronieo) | [oysterjung](https://github.com/oysterjung) 
@@ -17,7 +17,7 @@
  ## 📝 오늘의집사 프로젝트 소개
  
  REST API를 활용하여 Vanilla JavaScript로 제작한 반려동물 전문 라이프 서비스 쇼핑몰입니다.
- - 유저는 회원가입 및 로그인 후 상품 구매 및 장바구니를 사용할 수 있으며 그 외 주문내역, 개인정보수정 등이 가능하고 계좌관리(계좌등록)을 통해 구매가 가능합니다.
+ - 유저는 회원가입 및 로그인 후 상품 구매를 사용할 수 있으며 그 외 주문내역, 개인정보수정 등이 가능하고 계좌관리(계좌등록)을 통해 구매가 가능합니다.
  - 관리자는 거래내역, 상품 등록, 등록 상품 내역을 볼 수 있고, 상품등록 및 수정, 거래취소 및 거래확정이 가능합니다.
  - 404페이지 출력 시, 3초 뒤 메인화면으로 돌아가거나, 버튼을 눌러 메인화면으로 돌아 갈 수 있습니다.
  
@@ -42,6 +42,7 @@
 
 ### 계좌관리 기능
 <img width="679" alt="image" src="https://user-images.githubusercontent.com/55748886/223389770-7e02a25a-6d30-4972-81f0-fc97688a9910.png">
+
 ### 프로필 수정기능
 <img width="727" alt="image" src="https://user-images.githubusercontent.com/55748886/223390125-868cdb60-e137-4420-9a4c-c162f4d4cfc4.png">
 
