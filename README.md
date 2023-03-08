@@ -224,9 +224,8 @@
 <br/><br />
 
 <h2>📚 팀 오늘의집사 개발 일지</h2>
-- [디바운스를 활용한 계좌번호 예외처리 모듈 성능 최적화](https://foxvox.tistory.com/220)
 
-<br/><br />
+- [디바운스를 활용한 계좌번호 예외처리UI 성능 최적화](https://foxvox.tistory.com/220)  
 
 ---
 <br/><br/>
