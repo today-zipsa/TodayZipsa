@@ -42,6 +42,7 @@
 
 ### 계좌관리 기능
 <img width="679" alt="image" src="https://user-images.githubusercontent.com/55748886/223389770-7e02a25a-6d30-4972-81f0-fc97688a9910.png">
+
 ### 프로필 수정기능
 <img width="727" alt="image" src="https://user-images.githubusercontent.com/55748886/223390125-868cdb60-e137-4420-9a4c-c162f4d4cfc4.png">
 
