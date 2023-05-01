@@ -165,7 +165,8 @@
 
 - 작업 기간 : 2023.01.30 ~ 2023.03.03
 - 데모 사이트 : [🐾오늘의집사🐾](https://todayzipsa.netlify.app/ )
-- 팀 레포지토리 주소 : [TodayZipsa](https://github.com/today-zipsa/TodayZipsa/tree/develop)
+- 팀 레포지토리 주소 : [TodayZipsa Repo](https://github.com/today-zipsa/TodayZipsa/tree/develop)
+- 팀 노션 문서 주소: [TodayZipsa Notion](https://helpful-busby-05f.notion.site/23bc095902b94a2fadd831cf84a69223)
 
 - 테스트용 계정
   - 일반 사용자
